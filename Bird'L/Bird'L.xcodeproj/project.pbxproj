@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78B11AB64631002100B5 /* AppDelegate.swift */; };
 		BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78B31AB64631002100B5 /* Bird_L.xcdatamodeld */; };
-		BF1F78B71AB64631002100B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78B61AB64631002100B5 /* ViewController.swift */; };
-		BF1F78BA1AB64631002100B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
+		BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78B61AB64631002100B5 /* LoginViewController.swift */; };
 		BF1F78BC1AB64631002100B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78BB1AB64631002100B5 /* Images.xcassets */; };
 		BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78BD1AB64631002100B5 /* LaunchScreen.xib */; };
 		BF1F78CB1AB64631002100B5 /* Bird_LTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */; };
+		BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +31,7 @@
 		BF1F78B01AB64631002100B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1F78B11AB64631002100B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF1F78B41AB64631002100B5 /* Bird_L.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bird_L.xcdatamodel; sourceTree = "<group>"; };
-		BF1F78B61AB64631002100B5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF1F78B61AB64631002100B5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF1F78B91AB64631002100B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF1F78BB1AB64631002100B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF1F78BE1AB64631002100B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 				BF1F78D51AB646D3002100B5 /* Login */,
 				BF1F78D41AB646B2002100B5 /* Views */,
 				BF1F78B11AB64631002100B5 /* AppDelegate.swift */,
-				BF1F78B61AB64631002100B5 /* ViewController.swift */,
+				BF1F78B61AB64631002100B5 /* LoginViewController.swift */,
 				BF1F78BB1AB64631002100B5 /* Images.xcassets */,
 				BF1F78B31AB64631002100B5 /* Bird_L.xcdatamodeld */,
 				BF1F78AF1AB64631002100B5 /* Supporting Files */,
@@ -227,7 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF1F78BA1AB64631002100B5 /* Main.storyboard in Resources */,
+				BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */,
 				BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */,
 				BF1F78BC1AB64631002100B5 /* Images.xcassets in Resources */,
 			);
@@ -247,7 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF1F78B71AB64631002100B5 /* ViewController.swift in Sources */,
+				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
 				BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */,
 			);
@@ -443,6 +443,7 @@
 				BF1F78D01AB64631002100B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BF1F78D11AB64631002100B5 /* Build configuration list for PBXNativeTarget "Bird'LTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +452,7 @@
 				BF1F78D31AB64631002100B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
