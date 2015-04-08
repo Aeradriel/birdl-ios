@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Bird'L
 //
 //  Created by Thibaut Roche on 15/03/2015.
