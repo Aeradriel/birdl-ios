@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9381C1ADE46E300E09C0B /* SignupViewController.swift */; };
+		BF0A90BA1B3097B600571062 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A90B91B3097B600571062 /* CircleProgressView.swift */; };
+		BF113C581B30804C005B87FF /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF113C571B30804C005B87FF /* HomePageViewController.swift */; };
+		BF113C5F1B308ADB005B87FF /* Badge.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF113C5E1B308ADB005B87FF /* Badge.xib */; };
 		BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78B11AB64631002100B5 /* AppDelegate.swift */; };
 		BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78B31AB64631002100B5 /* Bird_L.xcdatamodeld */; };
 		BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78B61AB64631002100B5 /* LoginViewController.swift */; };
@@ -29,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		01A9381C1ADE46E300E09C0B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		BF0A90B91B3097B600571062 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		BF113C571B30804C005B87FF /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		BF113C5E1B308ADB005B87FF /* Badge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Badge.xib; sourceTree = "<group>"; };
 		BF1F78AC1AB64631002100B5 /* Bird'L.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bird'L.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F78B01AB64631002100B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1F78B11AB64631002100B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +66,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF113C541B307E00005B87FF /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				01A9381C1ADE46E300E09C0B /* SignupViewController.swift */,
+			);
+			name = "Sign Up";
+			sourceTree = "<group>";
+		};
+		BF113C591B308A0A005B87FF /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A90B91B3097B600571062 /* CircleProgressView.swift */,
+			);
+			name = Plugins;
+			sourceTree = "<group>";
+		};
 		BF1F78A31AB64630002100B5 = {
 			isa = PBXGroup;
 			children = (
@@ -81,13 +103,13 @@
 		BF1F78AE1AB64631002100B5 /* Bird'L */ = {
 			isa = PBXGroup;
 			children = (
+				BF113C591B308A0A005B87FF /* Plugins */,
 				BF1F78D71AB646E5002100B5 /* Events */,
 				BF1F78D61AB646D9002100B5 /* HomePage */,
 				BF1F78D51AB646D3002100B5 /* Login */,
+				BF113C541B307E00005B87FF /* Sign Up */,
 				BF1F78D41AB646B2002100B5 /* Views */,
 				BF1F78B11AB64631002100B5 /* AppDelegate.swift */,
-				BF1F78B61AB64631002100B5 /* LoginViewController.swift */,
-				01A9381C1ADE46E300E09C0B /* SignupViewController.swift */,
 				BF1F78BB1AB64631002100B5 /* Images.xcassets */,
 				BF1F78B31AB64631002100B5 /* Bird_L.xcdatamodeld */,
 				BF1F78AF1AB64631002100B5 /* Supporting Files */,
@@ -125,6 +147,7 @@
 			children = (
 				BF1F78BD1AB64631002100B5 /* LaunchScreen.xib */,
 				BF1F78B81AB64631002100B5 /* Main.storyboard */,
+				BF113C5E1B308ADB005B87FF /* Badge.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -132,6 +155,7 @@
 		BF1F78D51AB646D3002100B5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				BF1F78B61AB64631002100B5 /* LoginViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -139,6 +163,7 @@
 		BF1F78D61AB646D9002100B5 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				BF113C571B30804C005B87FF /* HomePageViewController.swift */,
 			);
 			name = HomePage;
 			sourceTree = "<group>";
@@ -231,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */,
+				BF113C5F1B308ADB005B87FF /* Badge.xib in Resources */,
 				BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */,
 				BF1F78BC1AB64631002100B5 /* Images.xcassets in Resources */,
 			);
@@ -253,7 +279,9 @@
 				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
 				01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */,
+				BF113C581B30804C005B87FF /* HomePageViewController.swift in Sources */,
 				BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */,
+				BF0A90BA1B3097B600571062 /* CircleProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
