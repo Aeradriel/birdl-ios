@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9381C1ADE46E300E09C0B /* SignupViewController.swift */; };
 		BF02BCED1B330558007532A1 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02BCEC1B330558007532A1 /* Badge.swift */; };
+		BF02BCEF1B3355F5007532A1 /* BadgeModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02BCEE1B3355F5007532A1 /* BadgeModule.swift */; };
+		BF02BCF21B33563C007532A1 /* BadgeModule.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF02BCF11B33563C007532A1 /* BadgeModule.xib */; };
 		BF0A90BA1B3097B600571062 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A90B91B3097B600571062 /* CircleProgressView.swift */; };
 		BF113C581B30804C005B87FF /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF113C571B30804C005B87FF /* HomePageViewController.swift */; };
 		BF113C5F1B308ADB005B87FF /* Badge.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF113C5E1B308ADB005B87FF /* Badge.xib */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		01A9381C1ADE46E300E09C0B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		BF02BCEC1B330558007532A1 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		BF02BCEE1B3355F5007532A1 /* BadgeModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeModule.swift; sourceTree = "<group>"; };
+		BF02BCF11B33563C007532A1 /* BadgeModule.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeModule.xib; sourceTree = "<group>"; };
 		BF0A90B91B3097B600571062 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		BF113C571B30804C005B87FF /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		BF113C5E1B308ADB005B87FF /* Badge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Badge.xib; sourceTree = "<group>"; };
@@ -68,6 +72,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF02BCF31B33564D007532A1 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BF02BCF41B335659007532A1 /* Badges */,
+			);
+			name = Modules;
+			sourceTree = "<group>";
+		};
+		BF02BCF41B335659007532A1 /* Badges */ = {
+			isa = PBXGroup;
+			children = (
+				BF02BCEE1B3355F5007532A1 /* BadgeModule.swift */,
+				BF02BCEC1B330558007532A1 /* Badge.swift */,
+			);
+			name = Badges;
+			sourceTree = "<group>";
+		};
 		BF113C541B307E00005B87FF /* Sign Up */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +171,7 @@
 				BF1F78BD1AB64631002100B5 /* LaunchScreen.xib */,
 				BF1F78B81AB64631002100B5 /* Main.storyboard */,
 				BF113C5E1B308ADB005B87FF /* Badge.xib */,
+				BF02BCF11B33563C007532A1 /* BadgeModule.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -165,8 +187,8 @@
 		BF1F78D61AB646D9002100B5 /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				BF02BCF31B33564D007532A1 /* Modules */,
 				BF113C571B30804C005B87FF /* HomePageViewController.swift */,
-				BF02BCEC1B330558007532A1 /* Badge.swift */,
 			);
 			name = HomePage;
 			sourceTree = "<group>";
@@ -259,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */,
+				BF02BCF21B33563C007532A1 /* BadgeModule.xib in Resources */,
 				BF113C5F1B308ADB005B87FF /* Badge.xib in Resources */,
 				BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */,
 				BF1F78BC1AB64631002100B5 /* Images.xcassets in Resources */,
@@ -284,6 +307,7 @@
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
 				01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */,
 				BF113C581B30804C005B87FF /* HomePageViewController.swift in Sources */,
+				BF02BCEF1B3355F5007532A1 /* BadgeModule.swift in Sources */,
 				BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */,
 				BF0A90BA1B3097B600571062 /* CircleProgressView.swift in Sources */,
 			);

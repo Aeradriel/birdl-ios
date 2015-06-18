@@ -13,5 +13,4 @@ class Badge : UIView
 {
     @IBOutlet weak var progressCircleView: CircleProgressView!
     @IBOutlet weak var progressionValue: UILabel!
-    
 }
