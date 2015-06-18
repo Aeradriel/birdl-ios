@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014069EA1B1C9C72000E740C /* APICommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014069E91B1C9C72000E740C /* APICommunicator.swift */; };
 		01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9381C1ADE46E300E09C0B /* SignupViewController.swift */; };
+		01D5F5261B338073003EEF39 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D5F5251B338073003EEF39 /* json.swift */; };
 		BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78B11AB64631002100B5 /* AppDelegate.swift */; };
 		BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78B31AB64631002100B5 /* Bird_L.xcdatamodeld */; };
 		BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78B61AB64631002100B5 /* LoginViewController.swift */; };
@@ -28,7 +30,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		014069E91B1C9C72000E740C /* APICommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICommunicator.swift; sourceTree = "<group>"; };
 		01A9381C1ADE46E300E09C0B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		01D5F5251B338073003EEF39 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		BF1F78AC1AB64631002100B5 /* Bird'L.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bird'L.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F78B01AB64631002100B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1F78B11AB64631002100B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				BF1F78D41AB646B2002100B5 /* Views */,
 				BF1F78B11AB64631002100B5 /* AppDelegate.swift */,
 				BF1F78B61AB64631002100B5 /* LoginViewController.swift */,
+				01D5F5251B338073003EEF39 /* json.swift */,
+				014069E91B1C9C72000E740C /* APICommunicator.swift */,
 				01A9381C1ADE46E300E09C0B /* SignupViewController.swift */,
 				BF1F78BB1AB64631002100B5 /* Images.xcassets */,
 				BF1F78B31AB64631002100B5 /* Bird_L.xcdatamodeld */,
@@ -253,7 +259,9 @@
 				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
 				01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */,
+				014069EA1B1C9C72000E740C /* APICommunicator.swift in Sources */,
 				BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */,
+				01D5F5261B338073003EEF39 /* json.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

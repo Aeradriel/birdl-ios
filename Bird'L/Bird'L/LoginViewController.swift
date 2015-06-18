@@ -17,6 +17,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.passwordTextField.secureTextEntry = true
+        
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+    }
+    
+    func DismissKeyboard(){
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +32,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func signinButtonUp(sender: AnyObject) {
+        g_APICommunicator.authenticateUser(loginField.text, password: passwordTextField.text);
         
     }
     @IBAction func signupButtonUp(sender: AnyObject) {
