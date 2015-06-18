@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9381C1ADE46E300E09C0B /* SignupViewController.swift */; };
+		BF02BCED1B330558007532A1 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02BCEC1B330558007532A1 /* Badge.swift */; };
 		BF0A90BA1B3097B600571062 /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A90B91B3097B600571062 /* CircleProgressView.swift */; };
 		BF113C581B30804C005B87FF /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF113C571B30804C005B87FF /* HomePageViewController.swift */; };
 		BF113C5F1B308ADB005B87FF /* Badge.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF113C5E1B308ADB005B87FF /* Badge.xib */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		01A9381C1ADE46E300E09C0B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		BF02BCEC1B330558007532A1 /* Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		BF0A90B91B3097B600571062 /* CircleProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		BF113C571B30804C005B87FF /* HomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		BF113C5E1B308ADB005B87FF /* Badge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Badge.xib; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				BF113C571B30804C005B87FF /* HomePageViewController.swift */,
+				BF02BCEC1B330558007532A1 /* Badge.swift */,
 			);
 			name = HomePage;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF02BCED1B330558007532A1 /* Badge.swift in Sources */,
 				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
 				01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */,
