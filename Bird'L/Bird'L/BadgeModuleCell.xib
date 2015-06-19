@@ -2,59 +2,108 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BadgeModuleCell" rowHeight="200" id="eax-TC-vd5" customClass="BadgeModuleCell" customModule="Bird_L" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="-1" width="375" height="200"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eax-TC-vd5" id="5rc-sV-zcf">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Xkn-z0-Wyd" customClass="BadgeView" customModule="Bird_L" customModuleProvider="target">
-                        <rect key="frame" x="267" y="8" width="100" height="183"/>
-                        <color key="backgroundColor" white="0.5" alpha="0.01" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="raR-vA-FUn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Xkn-z0-Wyd" customClass="BadgeView" customModule="Bird_L" customModuleProvider="target">
+                                <rect key="frame" x="120" y="20" width="80" height="159"/>
+                                <color key="backgroundColor" white="0.5" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Xkn-z0-Wyd" secondAttribute="height" multiplier="100:183" id="2TV-94-Hqs"/>
+                                    <constraint firstAttribute="width" priority="250" constant="100" id="Sda-6k-uWP"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2TV-94-Hqs"/>
+                                        <exclude reference="Sda-6k-uWP"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="A4w-ME-XLN" customClass="BadgeView" customModule="Bird_L" customModuleProvider="target">
+                                <rect key="frame" x="20" y="20" width="80" height="159"/>
+                                <color key="backgroundColor" white="0.5" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="A4w-ME-XLN" secondAttribute="height" multiplier="100:183" id="fed-dG-T1k"/>
+                                    <constraint firstAttribute="width" priority="250" constant="100" id="qHn-Hp-yCQ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fed-dG-T1k"/>
+                                        <exclude reference="qHn-Hp-yCQ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="mVR-U1-1Pg" customClass="BadgeView" customModule="Bird_L" customModuleProvider="target">
+                                <rect key="frame" x="220" y="20" width="80" height="159"/>
+                                <color key="backgroundColor" white="0.5" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="250" constant="100" id="nwX-yk-CQY"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nwX-yk-CQY"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.060633840278943252" blue="0.080110909738955072" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" priority="250" constant="100" id="Sda-6k-uWP"/>
+                            <constraint firstAttribute="width" secondItem="Xkn-z0-Wyd" secondAttribute="width" multiplier="1:4" id="0pL-aA-V2Q"/>
+                            <constraint firstItem="A4w-ME-XLN" firstAttribute="top" secondItem="raR-vA-FUn" secondAttribute="top" constant="20" symbolic="YES" id="4nT-a0-O94"/>
+                            <constraint firstAttribute="centerY" secondItem="Xkn-z0-Wyd" secondAttribute="centerY" id="7ba-bs-CN2"/>
+                            <constraint firstItem="Xkn-z0-Wyd" firstAttribute="top" secondItem="raR-vA-FUn" secondAttribute="top" constant="20" symbolic="YES" id="AZw-fi-bys"/>
+                            <constraint firstItem="mVR-U1-1Pg" firstAttribute="top" secondItem="raR-vA-FUn" secondAttribute="top" constant="20" symbolic="YES" id="BRX-Gi-iDi"/>
+                            <constraint firstItem="A4w-ME-XLN" firstAttribute="width" secondItem="Xkn-z0-Wyd" secondAttribute="width" id="BkB-JI-xQe"/>
+                            <constraint firstAttribute="bottom" secondItem="A4w-ME-XLN" secondAttribute="bottom" constant="20" symbolic="YES" id="GGK-V8-8fa"/>
+                            <constraint firstItem="mVR-U1-1Pg" firstAttribute="width" secondItem="Xkn-z0-Wyd" secondAttribute="width" id="GIl-Hm-IlY"/>
+                            <constraint firstItem="A4w-ME-XLN" firstAttribute="width" secondItem="Xkn-z0-Wyd" secondAttribute="width" id="Lkz-ev-6Oa"/>
+                            <constraint firstAttribute="centerX" secondItem="Xkn-z0-Wyd" secondAttribute="centerX" id="SGt-WM-sAC"/>
+                            <constraint firstAttribute="trailing" secondItem="mVR-U1-1Pg" secondAttribute="trailing" constant="20" symbolic="YES" id="afM-hK-19f"/>
+                            <constraint firstAttribute="width" secondItem="Xkn-z0-Wyd" secondAttribute="width" multiplier="4:1" id="aiR-Oq-rfB"/>
+                            <constraint firstAttribute="bottom" secondItem="Xkn-z0-Wyd" secondAttribute="bottom" constant="20" symbolic="YES" id="dTw-Ra-Qsd"/>
+                            <constraint firstAttribute="centerY" secondItem="A4w-ME-XLN" secondAttribute="centerY" id="fYz-0L-Odn"/>
+                            <constraint firstItem="A4w-ME-XLN" firstAttribute="width" secondItem="Xkn-z0-Wyd" secondAttribute="width" id="fpH-s9-n4i"/>
+                            <constraint firstItem="mVR-U1-1Pg" firstAttribute="width" secondItem="Xkn-z0-Wyd" secondAttribute="width" id="gwb-Xh-Awb"/>
+                            <constraint firstAttribute="bottom" secondItem="mVR-U1-1Pg" secondAttribute="bottom" constant="20" symbolic="YES" id="oHf-rf-Paq"/>
+                            <constraint firstItem="A4w-ME-XLN" firstAttribute="width" secondItem="raR-vA-FUn" secondAttribute="width" multiplier="4:1" id="pdJ-9Y-1WC"/>
+                            <constraint firstAttribute="centerY" secondItem="mVR-U1-1Pg" secondAttribute="centerY" id="x3Y-H6-TWQ"/>
+                            <constraint firstItem="A4w-ME-XLN" firstAttribute="leading" secondItem="raR-vA-FUn" secondAttribute="leading" constant="20" symbolic="YES" id="yrK-WE-ra8"/>
                         </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="mVR-U1-1Pg" customClass="BadgeView" customModule="Bird_L" customModuleProvider="target">
-                        <rect key="frame" x="138" y="8" width="100" height="183"/>
-                        <color key="backgroundColor" white="0.5" alpha="0.01" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" priority="250" constant="100" id="nwX-yk-CQY"/>
-                        </constraints>
-                    </view>
-                    <view contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="A4w-ME-XLN" customClass="BadgeView" customModule="Bird_L" customModuleProvider="target">
-                        <rect key="frame" x="8" y="8" width="100" height="183"/>
-                        <color key="backgroundColor" white="0.5" alpha="0.01" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" priority="250" constant="100" id="qHn-Hp-yCQ"/>
-                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BkB-JI-xQe"/>
+                                <exclude reference="Lkz-ev-6Oa"/>
+                                <exclude reference="pdJ-9Y-1WC"/>
+                                <exclude reference="0pL-aA-V2Q"/>
+                                <exclude reference="GIl-Hm-IlY"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="centerY" secondItem="mVR-U1-1Pg" secondAttribute="centerY" id="6W5-nv-JQd"/>
-                    <constraint firstAttribute="centerX" secondItem="mVR-U1-1Pg" secondAttribute="centerX" id="8JO-bv-1GI"/>
-                    <constraint firstAttribute="centerY" secondItem="A4w-ME-XLN" secondAttribute="centerY" id="EyK-eA-uMF"/>
-                    <constraint firstItem="A4w-ME-XLN" firstAttribute="top" secondItem="5rc-sV-zcf" secondAttribute="topMargin" id="VHz-fc-d76"/>
-                    <constraint firstAttribute="centerY" secondItem="Xkn-z0-Wyd" secondAttribute="centerY" id="W2K-UC-Cv0"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="A4w-ME-XLN" secondAttribute="bottom" id="WpI-9y-soX"/>
-                    <constraint firstItem="Xkn-z0-Wyd" firstAttribute="top" secondItem="5rc-sV-zcf" secondAttribute="topMargin" id="h3p-ri-OfO"/>
-                    <constraint firstItem="A4w-ME-XLN" firstAttribute="leading" secondItem="5rc-sV-zcf" secondAttribute="leadingMargin" id="iAn-P8-JlO"/>
-                    <constraint firstItem="mVR-U1-1Pg" firstAttribute="top" secondItem="5rc-sV-zcf" secondAttribute="topMargin" id="mVY-uW-Zax"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Xkn-z0-Wyd" secondAttribute="trailing" id="oa8-Gf-z8m"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="mVR-U1-1Pg" secondAttribute="bottom" id="wyV-Dg-qFT"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Xkn-z0-Wyd" secondAttribute="bottom" id="yj1-qk-kGF"/>
+                    <constraint firstItem="raR-vA-FUn" firstAttribute="top" secondItem="5rc-sV-zcf" secondAttribute="top" id="4DU-6k-swC"/>
+                    <constraint firstItem="raR-vA-FUn" firstAttribute="leading" secondItem="5rc-sV-zcf" secondAttribute="leading" id="CA9-gu-3kB"/>
+                    <constraint firstAttribute="trailing" secondItem="raR-vA-FUn" secondAttribute="trailing" id="MLQ-Oo-Ci1"/>
+                    <constraint firstAttribute="bottom" secondItem="raR-vA-FUn" secondAttribute="bottom" id="p8g-A0-nbs"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outletCollection property="badges" destination="A4w-ME-XLN" collectionClass="NSMutableArray" id="ylM-Ei-WDs"/>
-                <outletCollection property="badges" destination="mVR-U1-1Pg" collectionClass="NSMutableArray" id="eiu-rI-lEx"/>
                 <outletCollection property="badges" destination="Xkn-z0-Wyd" collectionClass="NSMutableArray" id="V1Q-zE-VcX"/>
+                <outletCollection property="badges" destination="mVR-U1-1Pg" collectionClass="NSMutableArray" id="eiu-rI-lEx"/>
                 <outletCollection property="badges" destination="A4w-ME-XLN" collectionClass="NSMutableArray" id="cOF-ED-Q5i"/>
+                <outletCollection property="badges" destination="A4w-ME-XLN" collectionClass="NSMutableArray" id="ylM-Ei-WDs"/>
             </connections>
             <point key="canvasLocation" x="212.5" y="431"/>
         </tableViewCell>
