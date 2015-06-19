@@ -42,7 +42,7 @@ class SignupViewController: UIViewController {
                 self.displayError("Please enter the same password in both fields");
                 return false;
             }
-            else if (countElements(self.passwordField.text) < 8) {
+            else if (count(self.passwordField.text) < 8) {
                 self.displayError("Your password must lenght more than 8 characters");
                 return false
             }
@@ -57,7 +57,7 @@ class SignupViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "signupSegue1") {
-            var svc = segue.destinationViewController as SignupViewController2;
+            var svc = segue.destinationViewController as! SignupViewController2;
             svc.username = self.usernameField.text;
             svc.password = self.passwordField.text;
         }
@@ -70,11 +70,9 @@ class SignupViewController: UIViewController {
     func isValidEmail(testStr:String) -> Bool {
         println("validate calendar: \(testStr)")
         let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         
-        if let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx) {
-            return emailTest.evaluateWithObject(testStr)
-        }
-        return false
+        return emailTest.evaluateWithObject(testStr)
     }
     
     func displayError(result : String) -> Void {
@@ -117,7 +115,7 @@ class SignupViewController2: UIViewController {
         
         if (identifier == "signupSegue2") {
             
-            if (countElements(self.firstNameField.text) < 1 || countElements(self.lastNameField.text) < 1) {
+            if (count(self.firstNameField.text) < 1 || count(self.lastNameField.text) < 1) {
                 self.displayError("You must enter your first and last names")
                 return false;
             }
@@ -132,7 +130,7 @@ class SignupViewController2: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "signupSegue2") {
-            var svc = segue.destinationViewController as SignupViewController3;
+            var svc = segue.destinationViewController as! SignupViewController3;
             svc.username = self.username;
             svc.password = self.password;
             svc.firstName = self.firstNameField.text;

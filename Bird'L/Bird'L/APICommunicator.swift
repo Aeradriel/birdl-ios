@@ -32,7 +32,7 @@ import Foundation
                     println(authenticationResult)
                     if (authenticationResult == "Authentication succeed") {
                         if let httpResponse = response as? NSHTTPURLResponse {
-                            self.token = httpResponse.allHeaderFields["Access-Token"] as String;
+                            self.token = httpResponse.allHeaderFields["Access-Token"] as! String;
                             println(self.token);
                             self.isAuth = true;
                             success!();

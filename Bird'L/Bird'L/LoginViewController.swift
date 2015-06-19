@@ -54,7 +54,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signinButtonUp(sender: AnyObject) {
-        g_APICommunicator.authenticateUser(loginField.text, password: passwordTextField.text, signinSucceed, signinError);
+        g_APICommunicator.authenticateUser(loginField.text, password: passwordTextField.text, success: signinSucceed, errorFunc: signinError);
         
     }
     
