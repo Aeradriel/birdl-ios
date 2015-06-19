@@ -15,7 +15,7 @@ import Foundation
     
     
     // toDo : add callback function + proper error messages
-    func authenticateUser(email : String, password : String, completion: (() -> Void)?) {
+    func authenticateUser(email : String, password : String, success: (() -> Void)?, errorFunc: ((String) -> Void)?) {
         
         let url = NSURL(string: netConfig.apiURL + netConfig.loginURL);
         var jsonError : NSError?;
@@ -35,26 +35,29 @@ import Foundation
                             self.token = httpResponse.allHeaderFields["Access-Token"] as String;
                             println(self.token);
                             self.isAuth = true;
-                            completion!();
+                            success!();
                         }
                         else {
-                            println("Authentication failed")
+                            errorFunc!("Authentication failed")
                         }
                     }
                     else {
-                        println("Incorrect email or password");
+                        errorFunc!("Unknown Error")
                     }
                     
                 } else {
-                    println("Can't connect to the server")
+                    errorFunc!("Incorrect email or password")
                 }
+            }
+            else {
+                errorFunc!("Can't reach server")
             }
         }
         
     }
     
     
-    func createAccount(email: String, password : String, first_name : String, last_name : String, gender : Bool, birthdate: String, country_id : Int) {
+    func createAccount(email: String, password : String, first_name : String, last_name : String, gender : Bool, birthdate: String, country_id : Int, success: (() -> Void)?, errorFunc: ((String) -> Void)?) {
         
         let url = NSURL(string: netConfig.apiURL + netConfig.registerURL);
         var jsonError : NSError?;
@@ -66,11 +69,16 @@ import Foundation
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
             if (data != nil) {
                 println(NSString(data: data, encoding: NSUTF8StringEncoding))
+               
                 let json = JSON(data: data)
                 
                 if let registrationResult = json["user"].asString {
                     println(registrationResult)
+                    success!();
                 }
+            }
+            else {
+                errorFunc!("Can't reach server");
             }
         }
     }

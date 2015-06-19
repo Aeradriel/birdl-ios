@@ -35,6 +35,26 @@ class SignupViewController: UIViewController {
     @IBAction func nextButtonUp(sender: AnyObject) {
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if (identifier == "signupSegue1") {
+            
+            if ((self.passwordField.text != self.passwordField2.text)) {
+                self.displayError("Please enter the same password in both fields");
+                return false;
+            }
+            else if (countElements(self.passwordField.text) < 8) {
+                self.displayError("Your password must lenght more than 8 characters");
+                return false
+            }
+            else if (!isValidEmail(self.usernameField.text)) {
+                self.displayError("Your email is not valid");
+                return false
+            }
+            return true;
+        }
+        return false
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "signupSegue1") {
             var svc = segue.destinationViewController as SignupViewController2;
@@ -45,6 +65,24 @@ class SignupViewController: UIViewController {
     
     func DismissKeyboard(){
         view.endEditing(true)
+    }
+    
+    func isValidEmail(testStr:String) -> Bool {
+        println("validate calendar: \(testStr)")
+        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+        
+        if let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx) {
+            return emailTest.evaluateWithObject(testStr)
+        }
+        return false
+    }
+    
+    func displayError(result : String) -> Void {
+        let alertController = UIAlertController(title: "Error", message:
+            result, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }
 
@@ -75,6 +113,23 @@ class SignupViewController2: UIViewController {
 
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        
+        if (identifier == "signupSegue2") {
+            
+            if (countElements(self.firstNameField.text) < 1 || countElements(self.lastNameField.text) < 1) {
+                self.displayError("You must enter your first and last names")
+                return false;
+            }
+            else if (calculateAge(self.birthDatePicker.date) < 18) {
+                self.displayError("You must be over 18 to create an account")
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "signupSegue2") {
             var svc = segue.destinationViewController as SignupViewController3;
@@ -83,7 +138,7 @@ class SignupViewController2: UIViewController {
             svc.firstName = self.firstNameField.text;
             svc.lastName = self.lastNameField.text;
             svc.gender = self.genderPicker.on
-            
+        
             var timeFormatter = NSDateFormatter()
             timeFormatter.dateFormat = "yyyy/M/d"
             svc.birthDate = timeFormatter.stringFromDate(self.birthDatePicker.date);
@@ -92,6 +147,33 @@ class SignupViewController2: UIViewController {
     
     func DismissKeyboard(){
         view.endEditing(true)
+    }
+    
+    func displayError(result : String) -> Void {
+        let alertController = UIAlertController(title: "Error", message:
+            result, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func calculateAge (birthday: NSDate) -> NSInteger {
+        
+        var userAge : NSInteger = 0
+        var calendar : NSCalendar = NSCalendar.currentCalendar()
+        var unitFlags : NSCalendarUnit = NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay
+        var dateComponentNow : NSDateComponents = calendar.components(unitFlags, fromDate: NSDate())
+        var dateComponentBirth : NSDateComponents = calendar.components(unitFlags, fromDate: birthday)
+        
+        if ( (dateComponentNow.month < dateComponentBirth.month) ||
+            ((dateComponentNow.month == dateComponentBirth.month) && (dateComponentNow.day < dateComponentBirth.day))
+            )
+        {
+            return dateComponentNow.year - dateComponentBirth.year - 1
+        }
+        else {
+            return dateComponentNow.year - dateComponentBirth.year
+        }
     }
     
 }
@@ -121,10 +203,38 @@ class SignupViewController3: UIViewController {
     
     @IBAction func validButtonUp(sender: AnyObject) {
         
-        g_APICommunicator.createAccount(username, password: password, first_name : firstName, last_name : lastName, gender : gender, birthdate: birthDate, country_id : 1)
+        g_APICommunicator.createAccount(username, password: password, first_name : firstName, last_name : lastName, gender : gender, birthdate: birthDate, country_id : 1, success: signupSucceed, errorFunc: signupError)
     }
     
     func DismissKeyboard(){
         view.endEditing(true)
+    }
+    
+    func signupSucceed() -> Void {
+        println("signup succeed");
+        
+        let alertController = UIAlertController(title: "Success !", message:
+            "Your account has been created", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "To Signin", style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        //
+        //
+        //
+        //
+        //
+        // present home view here
+        //
+        //
+        //
+        //
+    }
+    
+    func signupError(result : String) -> Void {
+        let alertController = UIAlertController(title: "Error", message:
+            result, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 }

@@ -33,11 +33,28 @@ class LoginViewController: UIViewController {
 
     func signinSucceed() -> Void {
         println("signin succeed")
+        //
+        //
+        //
+        //
+        //
+        // present home view here
+        //
+        //
+        //
+        //
+    }
+    
+    func signinError(result : String) -> Void {
+        let alertController = UIAlertController(title: "Error", message:
+            result, preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     @IBAction func signinButtonUp(sender: AnyObject) {
-        g_APICommunicator.authenticateUser(loginField.text, password: passwordTextField.text, signinSucceed);
+        g_APICommunicator.authenticateUser(loginField.text, password: passwordTextField.text, signinSucceed, signinError);
         
     }
     
