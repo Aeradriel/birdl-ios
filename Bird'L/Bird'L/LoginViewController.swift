@@ -31,10 +31,17 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func signinButtonUp(sender: AnyObject) {
-        g_APICommunicator.authenticateUser(loginField.text, password: passwordTextField.text);
+    func signinSucceed() -> Void {
+        println("signin succeed")
         
     }
+    
+    @IBAction func signinButtonUp(sender: AnyObject) {
+        g_APICommunicator.authenticateUser(loginField.text, password: passwordTextField.text, signinSucceed);
+        
+    }
+    
+    
     @IBAction func signupButtonUp(sender: AnyObject) {
     }
 }

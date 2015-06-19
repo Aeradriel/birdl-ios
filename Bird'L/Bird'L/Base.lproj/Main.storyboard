@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="npc-nO-3jG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="npc-nO-3jG">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -30,7 +30,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xVT-pe-OzW">
                                 <rect key="frame" x="97" y="244" width="126" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="75" y="269" width="170" height="30"/>
                                 </variation>
@@ -146,7 +146,7 @@
                                     <constraint firstAttribute="width" constant="150" id="eLs-Jw-qex"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="CBe-9K-E4r"/>
@@ -162,7 +162,7 @@
                                     <constraint firstAttribute="width" constant="150" id="zvh-0c-TEi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="G2X-0T-cfa"/>
@@ -177,7 +177,7 @@
                                     <constraint firstAttribute="width" constant="150" id="siB-wC-yGJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="GOU-3j-WxZ"/>
@@ -238,7 +238,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="nextButtonUp:" destination="7uK-LV-LwO" eventType="touchUpInside" id="aWG-qa-gWn"/>
-                                    <segue destination="z5L-OW-eRx" kind="presentation" id="D89-Tz-qYO"/>
+                                    <segue destination="z5L-OW-eRx" kind="presentation" identifier="signupSegue1" id="D89-Tz-qYO"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -392,7 +392,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="nextButtonUp:" destination="z5L-OW-eRx" eventType="touchUpInside" id="vF0-lt-X2Z"/>
-                                    <segue destination="1LJ-K4-34W" kind="presentation" id="KaN-BY-4I5"/>
+                                    <segue destination="1LJ-K4-34W" kind="presentation" identifier="signupSegue2" id="KaN-BY-4I5"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VrM-ea-FjC">
@@ -404,7 +404,7 @@
                                     <constraint firstAttribute="width" constant="151" id="sVH-xk-oqS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="8ph-ov-qie"/>
@@ -474,7 +474,7 @@
                                 </constraints>
                                 <color key="textColor" red="1" green="0.5000820145" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="YpQ-1m-Qb8"/>
@@ -563,13 +563,6 @@
                                 <exclude reference="s0A-OI-yjx"/>
                                 <exclude reference="tMn-tX-Sua"/>
                                 <exclude reference="vV3-Vg-McF"/>
-                                <exclude reference="FYT-03-qbH"/>
-                                <exclude reference="VCy-qs-ySd"/>
-                                <exclude reference="d9i-nP-JUj"/>
-                                <exclude reference="eU7-ER-4M0"/>
-                                <exclude reference="fxs-0i-x3t"/>
-                                <exclude reference="k7H-gS-8u6"/>
-                                <exclude reference="xQf-0V-eze"/>
                                 <exclude reference="6pj-Er-2nE"/>
                                 <exclude reference="ZX9-eu-DAh"/>
                                 <exclude reference="2IR-SW-TxG"/>
@@ -582,6 +575,13 @@
                                 <exclude reference="zCU-YE-kLf"/>
                                 <exclude reference="1YC-HX-RLs"/>
                                 <exclude reference="cLU-MA-GwQ"/>
+                                <exclude reference="FYT-03-qbH"/>
+                                <exclude reference="VCy-qs-ySd"/>
+                                <exclude reference="d9i-nP-JUj"/>
+                                <exclude reference="eU7-ER-4M0"/>
+                                <exclude reference="fxs-0i-x3t"/>
+                                <exclude reference="k7H-gS-8u6"/>
+                                <exclude reference="xQf-0V-eze"/>
                                 <exclude reference="Awf-kM-Em8"/>
                                 <exclude reference="FQE-97-Mip"/>
                                 <exclude reference="cFb-yQ-ZMb"/>

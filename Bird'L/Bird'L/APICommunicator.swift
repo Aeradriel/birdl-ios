@@ -12,16 +12,18 @@ import Foundation
     
     var isAuth = false;
     var token = "";
-    let apiURL = "http://localhost:3000/api";
-    let loginURL = "/login";
     
-    func authenticateUser(email : String, password : String) -> Bool {
-        let url = NSURL(string: apiURL + loginURL);
+    
+    // toDo : add callback function + proper error messages
+    func authenticateUser(email : String, password : String, completion: (() -> Void)?) {
+        
+        let url = NSURL(string: netConfig.apiURL + netConfig.loginURL);
         var jsonError : NSError?;
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
         var bodyData = "email=\(email)&password=\(password)"
         request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
             if (data != nil) {
                 println(NSString(data: data, encoding: NSUTF8StringEncoding))
@@ -33,6 +35,7 @@ import Foundation
                             self.token = httpResponse.allHeaderFields["Access-Token"] as String;
                             println(self.token);
                             self.isAuth = true;
+                            completion!();
                         }
                         else {
                             println("Authentication failed")
@@ -47,11 +50,29 @@ import Foundation
                 }
             }
         }
-        return false;
+        
     }
     
-    func createAccount() {
+    
+    func createAccount(email: String, password : String, first_name : String, last_name : String, gender : Bool, birthdate: String, country_id : Int) {
         
+        let url = NSURL(string: netConfig.apiURL + netConfig.registerURL);
+        var jsonError : NSError?;
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "POST"
+        var bodyData = "user={\"email\": \"\(email)\",\"first_name\": \"\(first_name)\",\"last_name\": \"\(last_name)\",\"password\": \"\(password)\",\"gender\": \"\(gender ? 1 : 0)\",\"birthdate\": \"\(birthdate)\",\"country_id\": \"\(country_id)\"}"
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+            if (data != nil) {
+                println(NSString(data: data, encoding: NSUTF8StringEncoding))
+                let json = JSON(data: data)
+                
+                if let registrationResult = json["user"].asString {
+                    println(registrationResult)
+                }
+            }
+        }
     }
 }
 
