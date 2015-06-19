@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		014069EA1B1C9C72000E740C /* APICommunicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014069E91B1C9C72000E740C /* APICommunicator.swift */; };
 		01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9381C1ADE46E300E09C0B /* SignupViewController.swift */; };
 		BF02BCED1B330558007532A1 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02BCEC1B330558007532A1 /* BadgeView.swift */; };
 		BF02BCEF1B3355F5007532A1 /* BadgeModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02BCEE1B3355F5007532A1 /* BadgeModuleCell.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		014069E91B1C9C72000E740C /* APICommunicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICommunicator.swift; sourceTree = "<group>"; };
 		01A9381C1ADE46E300E09C0B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		BF02BCEC1B330558007532A1 /* BadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		BF02BCEE1B3355F5007532A1 /* BadgeModuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeModuleCell.swift; sourceTree = "<group>"; };
