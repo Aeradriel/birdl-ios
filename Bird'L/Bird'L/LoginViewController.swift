@@ -33,16 +33,9 @@ class LoginViewController: UIViewController {
 
     func signinSucceed() -> Void {
         println("signin succeed")
-        //
-        //
-        //
-        //
-        //
-        // present home view here
-        //
-        //
-        //
-        //
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     func signinError(result : String) -> Void {
