@@ -14,7 +14,8 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     
     //MARK: -
     //MARK: UIViewController functions
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         var nibName = UINib(nibName: "BadgeModuleCell", bundle:nil)
@@ -50,21 +51,22 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         var cell = tableView.dequeueReusableCellWithIdentifier("BadgeModuleCell") as! BadgeModuleCell
-        let loadedBadge = Badge(progression: 65, andName: "Bilingue")
+        let loadedBadge = Badge(progression: 89, andName: "Bilingue")
         
-        for badge in cell.badges
+        for (i, badge) in enumerate(cell.badges)
         {
             let nib = NSBundle.mainBundle().loadNibNamed("BadgeView", owner: self, options: nil)
             let badgeView = nib[0] as! BadgeView
             
-            badgeView.frame = badge.frame
             badgeView.name.adjustsFontSizeToFitWidth = true
             badgeView.progressionValue.adjustsFontSizeToFitWidth = true
             badgeView.progressionValue.center = badgeView.progressCircleView.center
-            self.view.addSubview(badgeView)
-            //badge.name.text = loadedBadge.name
-            //badge.progressionValue.text = "\(loadedBadge.progression)%"
-            //badge.progressCircleView.progress = Double(loadedBadge.progression) / 100.0
+            badgeView.frame = badge.frame
+            cell.addSubview(badgeView)
+            cell.badges[i] = badgeView
+            cell.badges[i].name.text = loadedBadge.name
+            cell.badges[i].progressionValue.text = "\(loadedBadge.progression)%"
+            cell.badges[i].progressCircleView.progress = Double(loadedBadge.progression) / 100.0
         }
         return cell
     }

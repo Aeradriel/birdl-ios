@@ -118,9 +118,8 @@
         <!--Accueil-->
         <scene sceneID="kKo-nV-m3f">
             <objects>
-                <navigationController navigationBarHidden="YES" id="TCa-Si-L6m" sceneMemberID="viewController">
+                <navigationController id="TCa-Si-L6m" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Accueil" id="NIm-sP-4VH"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="32m-bW-KEh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -134,7 +133,7 @@
             </objects>
             <point key="canvasLocation" x="877.5" y="985.5"/>
         </scene>
-        <!--Home Page View Controller-->
+        <!--Accueil-->
         <scene sceneID="8dt-gz-8j5">
             <objects>
                 <tableViewController id="mwm-ii-nC0" customClass="HomePageViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,17 +141,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableFooterView" contentMode="scaleToFill" id="8o8-N8-rG9">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
                         <connections>
                             <outlet property="dataSource" destination="mwm-ii-nC0" id="BXb-3V-7Zv"/>
                             <outlet property="delegate" destination="mwm-ii-nC0" id="8CD-Bb-Kik"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="xzn-iI-wYV"/>
+                    <navigationItem key="navigationItem" title="Accueil" id="xzn-iI-wYV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="XIs-ld-3AU" id="V6S-gt-oLE"/>

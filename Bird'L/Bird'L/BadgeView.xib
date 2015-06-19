@@ -84,7 +84,7 @@
                             </variation>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.5" alpha="0.0" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.16439494286253131" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="Jz3-rA-zcm" firstAttribute="top" secondItem="Row-Ia-Be4" secondAttribute="top" constant="20" symbolic="YES" id="8C8-53-8qc"/>
                         <constraint firstItem="LwE-kA-64a" firstAttribute="width" secondItem="Jz3-rA-zcm" secondAttribute="width" multiplier="1:2" id="HEh-hX-nzF"/>
