@@ -8,6 +8,7 @@
 
 import UIKit
 
-class BadgeModule: UIView {
-
+class BadgeModuleCell: UITableViewCell
+{
+    @IBOutlet var badges: [BadgeView]!
 }

@@ -7,10 +7,26 @@
 //
 
 import Foundation
-import UIKit
 
-class Badge : UIView
+class Badge
 {
-    @IBOutlet weak var progressCircleView: CircleProgressView!
-    @IBOutlet weak var progressionValue: UILabel!
+    var progression: Int = 0
+    var name: String = ""
+
+    init(progression: Int, andName name: String)
+    {
+        if progression < 0
+        {
+            self.progression = 0
+        }
+        else if progression > 100
+        {
+            self.progression = 100
+        }
+        else
+        {
+            self.progression = progression
+        }
+        self.name = name
+    }
 }

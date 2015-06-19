@@ -119,12 +119,29 @@
             </objects>
             <point key="canvasLocation" x="877.5" y="985.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Home Page View Controller-->
         <scene sceneID="8dt-gz-8j5">
             <objects>
-                <tableViewController id="mwm-ii-nC0" sceneMemberID="viewController">
+                <tableViewController id="mwm-ii-nC0" customClass="HomePageViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XIs-ld-3AU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="8o8-N8-rG9">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="mwm-ii-nC0" id="BXb-3V-7Zv"/>
+                            <outlet property="delegate" destination="mwm-ii-nC0" id="8CD-Bb-Kik"/>
+                        </connections>
+                    </tableView>
                     <navigationItem key="navigationItem" id="xzn-iI-wYV"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="XIs-ld-3AU" id="V6S-gt-oLE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="znD-UL-iRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
