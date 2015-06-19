@@ -60,6 +60,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
             badgeView.frame = badge.frame
             badgeView.name.adjustsFontSizeToFitWidth = true
             badgeView.progressionValue.adjustsFontSizeToFitWidth = true
+            badgeView.progressionValue.center = badgeView.progressCircleView.center
             self.view.addSubview(badgeView)
             //badge.name.text = loadedBadge.name
             //badge.progressionValue.text = "\(loadedBadge.progression)%"
