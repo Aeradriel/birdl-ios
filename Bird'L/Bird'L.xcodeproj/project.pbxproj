@@ -142,11 +142,9 @@
 				BF113C541B307E00005B87FF /* Sign Up */,
 				BF1F78D41AB646B2002100B5 /* Views */,
 				BF1F78B11AB64631002100B5 /* AppDelegate.swift */,
-				BF1F78B61AB64631002100B5 /* LoginViewController.swift */,
 				01D5F5251B338073003EEF39 /* json.swift */,
 				014069E91B1C9C72000E740C /* APICommunicator.swift */,
 				01D5F5271B338B65003EEF39 /* Config.swift */,
-				01A9381C1ADE46E300E09C0B /* SignupViewController.swift */,
 				BF1F78BB1AB64631002100B5 /* Images.xcassets */,
 				BF1F78B31AB64631002100B5 /* Bird_L.xcdatamodeld */,
 				BF1F78AF1AB64631002100B5 /* Supporting Files */,
@@ -263,6 +261,7 @@
 				TargetAttributes = {
 					BF1F78AB1AB64630002100B5 = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = KQWVHFR4W7;
 					};
 					BF1F78C31AB64631002100B5 = {
 						CreatedOnToolsVersion = 6.2;
@@ -450,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Bird'L/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -461,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Bird'L/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

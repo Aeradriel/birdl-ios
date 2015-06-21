@@ -47,26 +47,26 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     {
         return 150.0
     }
-
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         var cell = tableView.dequeueReusableCellWithIdentifier("BadgeModuleCell") as! BadgeModuleCell
         let loadedBadge = Badge(progression: 89, andName: "Bilingue")
         
-        for (i, badge) in enumerate(cell.badges)
+        for (i, location) in enumerate(cell.badges)
         {
             let nib = NSBundle.mainBundle().loadNibNamed("BadgeView", owner: self, options: nil)
             let badgeView = nib[0] as! BadgeView
             
+            println(cell.moduleTitle)
+            badgeView.name.text = loadedBadge.name
+            badgeView.progressionValue.text = "\(loadedBadge.progression)%"
+            badgeView.progressCircleView.progress = Double(loadedBadge.progression) / 100.0
             badgeView.name.adjustsFontSizeToFitWidth = true
             badgeView.progressionValue.adjustsFontSizeToFitWidth = true
             badgeView.progressionValue.center = badgeView.progressCircleView.center
-            badgeView.frame = badge.frame
-            cell.addSubview(badgeView)
-            cell.badges[i] = badgeView
-            cell.badges[i].name.text = loadedBadge.name
-            cell.badges[i].progressionValue.text = "\(loadedBadge.progression)%"
-            cell.badges[i].progressCircleView.progress = Double(loadedBadge.progression) / 100.0
+            badgeView.frame = CGRectMake(0, 0, location.frame.size.width, location.frame.size.height)
+            location.addSubview(badgeView)
         }
         return cell
     }

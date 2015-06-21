@@ -51,7 +51,6 @@ class LoginViewController: UIViewController {
         
     }
     
-    
     @IBAction func signupButtonUp(sender: AnyObject) {
     }
 }

@@ -10,5 +10,7 @@ import UIKit
 
 class BadgeModuleCell: UITableViewCell
 {
-    @IBOutlet var badges: [BadgeView]!
+    @IBOutlet weak var topLevelView: UIView!
+    @IBOutlet var badges: [UIView]!
+    @IBOutlet weak var moduleTitle: UILabel!
 }

@@ -22,7 +22,7 @@
                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="204" id="eA6-Kb-tyH"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
                                 <mask key="constraints">
@@ -41,7 +41,7 @@
                                         <constraint firstAttribute="width" secondItem="5Ay-Sd-0Tt" secondAttribute="height" multiplier="26:15" id="ryR-Qt-dDy"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -84,7 +84,7 @@
                             </variation>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.16439494286253131" green="1" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.11936556212499649" alpha="0.0" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="Jz3-rA-zcm" firstAttribute="top" secondItem="Row-Ia-Be4" secondAttribute="top" constant="20" symbolic="YES" id="8C8-53-8qc"/>
                         <constraint firstItem="LwE-kA-64a" firstAttribute="width" secondItem="Jz3-rA-zcm" secondAttribute="width" multiplier="1:2" id="HEh-hX-nzF"/>
@@ -120,7 +120,7 @@
                     </variation>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Row-Ia-Be4" secondAttribute="trailing" id="2I2-av-Tp1"/>
                 <constraint firstItem="Row-Ia-Be4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="97Z-a6-Jrq"/>
