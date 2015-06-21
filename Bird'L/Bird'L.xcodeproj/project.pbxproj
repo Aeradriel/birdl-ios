@@ -135,18 +135,14 @@
 		BF1F78AE1AB64631002100B5 /* Bird'L */ = {
 			isa = PBXGroup;
 			children = (
+				BF9D8FC01B374D630098F785 /* NetworkManager */,
 				BF113C591B308A0A005B87FF /* Plugins */,
 				BF1F78D71AB646E5002100B5 /* Events */,
 				BF1F78D61AB646D9002100B5 /* HomePage */,
 				BF1F78D51AB646D3002100B5 /* Login */,
 				BF113C541B307E00005B87FF /* Sign Up */,
 				BF1F78D41AB646B2002100B5 /* Views */,
-				BF1F78B11AB64631002100B5 /* AppDelegate.swift */,
-				01D5F5251B338073003EEF39 /* json.swift */,
-				014069E91B1C9C72000E740C /* APICommunicator.swift */,
-				01D5F5271B338B65003EEF39 /* Config.swift */,
 				BF1F78BB1AB64631002100B5 /* Images.xcassets */,
-				BF1F78B31AB64631002100B5 /* Bird_L.xcdatamodeld */,
 				BF1F78AF1AB64631002100B5 /* Supporting Files */,
 			);
 			path = "Bird'L";
@@ -155,6 +151,8 @@
 		BF1F78AF1AB64631002100B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF1F78B31AB64631002100B5 /* Bird_L.xcdatamodeld */,
+				BF1F78B11AB64631002100B5 /* AppDelegate.swift */,
 				BF1F78B01AB64631002100B5 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -210,6 +208,16 @@
 			children = (
 			);
 			name = Events;
+			sourceTree = "<group>";
+		};
+		BF9D8FC01B374D630098F785 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				01D5F5251B338073003EEF39 /* json.swift */,
+				014069E91B1C9C72000E740C /* APICommunicator.swift */,
+				01D5F5271B338B65003EEF39 /* Config.swift */,
+			);
+			name = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
