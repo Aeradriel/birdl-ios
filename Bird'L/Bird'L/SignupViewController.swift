@@ -11,10 +11,7 @@ import UIKit
 class SignupViewController: UIViewController {
     
     @IBOutlet weak var nextButton: UIButton!
-    
-    
     @IBOutlet weak var usernameField: UITextField!
-    
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordField2: UITextField!
     
@@ -68,7 +65,6 @@ class SignupViewController: UIViewController {
     }
     
     func isValidEmail(testStr:String) -> Bool {
-        println("validate calendar: \(testStr)")
         let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         
@@ -97,7 +93,6 @@ class SignupViewController2: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(username)
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
     }
@@ -176,8 +171,9 @@ class SignupViewController2: UIViewController {
     
 }
 
-class SignupViewController3: UIViewController {
+class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    //MARK: Variables
     @IBOutlet weak var countryPicker: UIPickerView!
     
     var username : String!
@@ -186,12 +182,17 @@ class SignupViewController3: UIViewController {
     var lastName : String!
     var gender : Bool!
     var birthDate : String!
+    var countries: [Country] = []
+    var selectedCountry: Country!
     
+    //MARK: UIViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(self.birthDate);
         var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        
         view.addGestureRecognizer(tap)
+        self.countries = g_APICommunicator.getAllCountries(errorHandler: nil)
+        self.selectedCountry = countries.first
     }
     
     override func didReceiveMemoryWarning() {
@@ -199,36 +200,48 @@ class SignupViewController3: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func DismissKeyboard(){
+        self.view.endEditing(true)
+    }
+    
+    //MARK: UIPickerView mmethods
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return self.countries[row].name
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.countries.count
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.selectedCountry = countries[row]
+    }
+    
+    //MARK: IBActions
     @IBAction func validButtonUp(sender: AnyObject) {
         
-        g_APICommunicator.createAccount(username, password: password, first_name : firstName, last_name : lastName, gender : gender, birthdate: birthDate, country_id : 1, success: signupSucceed, errorFunc: signupError)
+        g_APICommunicator.createAccount(username, password: password, first_name : firstName, last_name : lastName, gender : gender, birthdate: birthDate, country_id : selectedCountry.id, success: signupSucceed, errorFunc: signupError)
     }
     
-    func DismissKeyboard(){
-        view.endEditing(true)
-    }
-    
+    //MARK: Callbacks
     func signupSucceed() -> Void {
-        println("signup succeed");
-        
         let alertController = UIAlertController(title: "Success !", message:
             "Your account has been created", preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "To Signin", style: UIAlertActionStyle.Default, handler: nil))
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as! UIViewController
         
-        self.presentViewController(alertController, animated: true, completion: nil)
-        //
-        //
-        //
-        //
-        //
-        // present home view here
-        //
-        //
-        //
-        //
+        alertController.addAction(UIAlertAction(title: "To Signin", style: UIAlertActionStyle.Default, handler:
+            { (action) in
+                self.presentViewController(alertController, animated: true, completion: nil)                
+        }));
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
-    func signupError(result : String) -> Void {
+    func signupError(result: String) -> Void {
         let alertController = UIAlertController(title: "Error", message:
             result, preferredStyle: UIAlertControllerStyle.Alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))

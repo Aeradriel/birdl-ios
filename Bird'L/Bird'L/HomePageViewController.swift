@@ -58,7 +58,6 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
             let nib = NSBundle.mainBundle().loadNibNamed("BadgeView", owner: self, options: nil)
             let badgeView = nib[0] as! BadgeView
             
-            println(cell.moduleTitle)
             badgeView.name.text = loadedBadge.name
             badgeView.progressionValue.text = "\(loadedBadge.progression)%"
             badgeView.progressCircleView.progress = Double(loadedBadge.progression) / 100.0

@@ -25,6 +25,7 @@
 		BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78BD1AB64631002100B5 /* LaunchScreen.xib */; };
 		BF1F78CB1AB64631002100B5 /* Bird_LTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */; };
 		BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
+		BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CA61B38582B00D775D7 /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		BF1F78C41AB64631002100B5 /* Bird'LTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bird'LTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F78C91AB64631002100B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird_LTests.swift; sourceTree = "<group>"; };
+		BFDF4CA61B38582B00D775D7 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		BFDF4CA81B397F5700D775D7 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,7 @@
 				BF1F78D41AB646B2002100B5 /* Views */,
 				BF1F78BB1AB64631002100B5 /* Images.xcassets */,
 				BF1F78AF1AB64631002100B5 /* Supporting Files */,
+				BFDF4CA61B38582B00D775D7 /* Country.swift */,
 			);
 			path = "Bird'L";
 			sourceTree = "<group>";
@@ -216,6 +220,7 @@
 				01D5F5251B338073003EEF39 /* json.swift */,
 				014069E91B1C9C72000E740C /* APICommunicator.swift */,
 				01D5F5271B338B65003EEF39 /* Config.swift */,
+				BFDF4CA81B397F5700D775D7 /* MyPlayground.playground */,
 			);
 			name = NetworkManager;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
 				01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */,
+				BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */,
 				01D5F5281B338B65003EEF39 /* Config.swift in Sources */,
 				014069EA1B1C9C72000E740C /* APICommunicator.swift in Sources */,
 				BF113C581B30804C005B87FF /* HomePageViewController.swift in Sources */,

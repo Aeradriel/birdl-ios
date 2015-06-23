@@ -35,14 +35,15 @@ class LoginViewController: UIViewController {
         println("signin succeed")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as! UIViewController
+        
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
     func signinError(result : String) -> Void {
         let alertController = UIAlertController(title: "Error", message:
             result, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     

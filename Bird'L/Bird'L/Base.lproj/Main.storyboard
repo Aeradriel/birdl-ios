@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f1K-ow-2KO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C81f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="yyq-1Q-W4a">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -10,7 +10,7 @@
         <!--Navigation Controller-->
         <scene sceneID="S5Q-pB-9OK">
             <objects>
-                <navigationController id="yyq-1Q-W4a" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="loginNavigationController" id="yyq-1Q-W4a" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I9o-e8-4li">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -156,7 +156,7 @@
             </objects>
             <point key="canvasLocation" x="1442.5" y="985.5"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Messages-->
         <scene sceneID="Vl3-Rk-UX1">
             <objects>
                 <tableViewController id="KAc-Qk-cdg" sceneMemberID="viewController">
@@ -169,7 +169,7 @@
                             <outlet property="delegate" destination="KAc-Qk-cdg" id="NAk-Ay-T3J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ucz-Tw-jqZ"/>
+                    <navigationItem key="navigationItem" title="Messages" id="ucz-Tw-jqZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VA1-Jn-JOo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,9 +179,8 @@
         <!--Messages-->
         <scene sceneID="ZCW-8r-XnM">
             <objects>
-                <navigationController navigationBarHidden="YES" id="r3y-Mn-Ze9" sceneMemberID="viewController">
+                <navigationController id="r3y-Mn-Ze9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Messages" id="5uo-xx-huh"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gdf-3o-C4D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -195,7 +194,7 @@
             </objects>
             <point key="canvasLocation" x="877.5" y="1760.5"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Événements-->
         <scene sceneID="TRg-Ju-rpV">
             <objects>
                 <tableViewController id="ByB-yH-4tr" sceneMemberID="viewController">
@@ -208,7 +207,7 @@
                             <outlet property="delegate" destination="ByB-yH-4tr" id="wF3-T8-jOF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="DEM-VL-AUP"/>
+                    <navigationItem key="navigationItem" title="Événements" id="DEM-VL-AUP"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pP5-LV-5TH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -784,6 +783,10 @@
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmq-k9-ryq">
                                 <rect key="frame" x="47" y="287" width="320" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="1LJ-K4-34W" id="f9I-h7-nwD"/>
+                                    <outlet property="delegate" destination="1LJ-K4-34W" id="leb-Tn-gVK"/>
+                                </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2F-V9-1cE">
                                 <rect key="frame" x="0.0" y="688" width="414" height="48"/>

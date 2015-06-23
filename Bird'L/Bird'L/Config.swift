@@ -12,4 +12,6 @@ struct netConfig {
     static let apiURL = "http://localhost:3000/api";
     static let loginURL = "/login";
     static let registerURL = "/register";
+    
+    static let countriesUrl = "/countries"
 }
