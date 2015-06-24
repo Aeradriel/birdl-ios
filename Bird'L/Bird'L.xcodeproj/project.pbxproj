@@ -26,6 +26,27 @@
 		BF1F78CB1AB64631002100B5 /* Bird_LTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */; };
 		BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
 		BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CA61B38582B00D775D7 /* Country.swift */; };
+		BFDF4CC21B39D33900D775D7 /* FormBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */; };
+		BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */; };
+		BFDF4CC41B39D33900D775D7 /* FormValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAE1B39D33900D775D7 /* FormValueCell.swift */; };
+		BFDF4CC51B39D33900D775D7 /* FormButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAF1B39D33900D775D7 /* FormButtonCell.swift */; };
+		BFDF4CC61B39D33900D775D7 /* FormCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CB01B39D33900D775D7 /* FormCheckCell.swift */; };
+		BFDF4CC71B39D33900D775D7 /* FormDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CB11B39D33900D775D7 /* FormDateCell.swift */; };
+		BFDF4CC81B39D33900D775D7 /* FormPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CB21B39D33900D775D7 /* FormPickerCell.swift */; };
+		BFDF4CC91B39D33900D775D7 /* FormSegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CB31B39D33900D775D7 /* FormSegmentedControlCell.swift */; };
+		BFDF4CCA1B39D33900D775D7 /* FormSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CB41B39D33900D775D7 /* FormSelectorCell.swift */; };
+		BFDF4CCB1B39D33900D775D7 /* FormSliderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CB51B39D33900D775D7 /* FormSliderCell.swift */; };
+		BFDF4CCC1B39D33900D775D7 /* FormStepperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CB61B39D33900D775D7 /* FormStepperCell.swift */; };
+		BFDF4CCD1B39D33900D775D7 /* FormSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CB71B39D33900D775D7 /* FormSwitchCell.swift */; };
+		BFDF4CCE1B39D33900D775D7 /* FormTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CB81B39D33900D775D7 /* FormTextFieldCell.swift */; };
+		BFDF4CCF1B39D33900D775D7 /* FormTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CB91B39D33900D775D7 /* FormTextViewCell.swift */; };
+		BFDF4CD01B39D33900D775D7 /* FormOptionsSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CBB1B39D33900D775D7 /* FormOptionsSelectorController.swift */; };
+		BFDF4CD11B39D33900D775D7 /* FormSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CBC1B39D33900D775D7 /* FormSelector.swift */; };
+		BFDF4CD21B39D33900D775D7 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CBD1B39D33900D775D7 /* FormViewController.swift */; };
+		BFDF4CD31B39D33900D775D7 /* FormDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CBF1B39D33900D775D7 /* FormDescriptor.swift */; };
+		BFDF4CD41B39D33900D775D7 /* FormRowDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CC01B39D33900D775D7 /* FormRowDescriptor.swift */; };
+		BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CC11B39D33900D775D7 /* FormSectionDescriptor.swift */; };
+		BFDF4CD81B39D3B200D775D7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +83,27 @@
 		BF1F78C91AB64631002100B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird_LTests.swift; sourceTree = "<group>"; };
 		BFDF4CA61B38582B00D775D7 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		BFDF4CA81B397F5700D775D7 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBaseCell.swift; sourceTree = "<group>"; };
+		BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTitleCell.swift; sourceTree = "<group>"; };
+		BFDF4CAE1B39D33900D775D7 /* FormValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormValueCell.swift; sourceTree = "<group>"; };
+		BFDF4CAF1B39D33900D775D7 /* FormButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormButtonCell.swift; sourceTree = "<group>"; };
+		BFDF4CB01B39D33900D775D7 /* FormCheckCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormCheckCell.swift; sourceTree = "<group>"; };
+		BFDF4CB11B39D33900D775D7 /* FormDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormDateCell.swift; sourceTree = "<group>"; };
+		BFDF4CB21B39D33900D775D7 /* FormPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormPickerCell.swift; sourceTree = "<group>"; };
+		BFDF4CB31B39D33900D775D7 /* FormSegmentedControlCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSegmentedControlCell.swift; sourceTree = "<group>"; };
+		BFDF4CB41B39D33900D775D7 /* FormSelectorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSelectorCell.swift; sourceTree = "<group>"; };
+		BFDF4CB51B39D33900D775D7 /* FormSliderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSliderCell.swift; sourceTree = "<group>"; };
+		BFDF4CB61B39D33900D775D7 /* FormStepperCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormStepperCell.swift; sourceTree = "<group>"; };
+		BFDF4CB71B39D33900D775D7 /* FormSwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSwitchCell.swift; sourceTree = "<group>"; };
+		BFDF4CB81B39D33900D775D7 /* FormTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextFieldCell.swift; sourceTree = "<group>"; };
+		BFDF4CB91B39D33900D775D7 /* FormTextViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTextViewCell.swift; sourceTree = "<group>"; };
+		BFDF4CBB1B39D33900D775D7 /* FormOptionsSelectorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormOptionsSelectorController.swift; sourceTree = "<group>"; };
+		BFDF4CBC1B39D33900D775D7 /* FormSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSelector.swift; sourceTree = "<group>"; };
+		BFDF4CBD1B39D33900D775D7 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		BFDF4CBF1B39D33900D775D7 /* FormDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormDescriptor.swift; sourceTree = "<group>"; };
+		BFDF4CC01B39D33900D775D7 /* FormRowDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRowDescriptor.swift; sourceTree = "<group>"; };
+		BFDF4CC11B39D33900D775D7 /* FormSectionDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSectionDescriptor.swift; sourceTree = "<group>"; };
+		BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +153,7 @@
 		BF113C591B308A0A005B87FF /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				BFDF4CA91B39D33900D775D7 /* SwiftForms */,
 				BF0A90B91B3097B600571062 /* CircleProgressView.swift */,
 			);
 			name = Plugins;
@@ -138,6 +180,7 @@
 		BF1F78AE1AB64631002100B5 /* Bird'L */ = {
 			isa = PBXGroup;
 			children = (
+				BFDF4CD61B39D34F00D775D7 /* Models */,
 				BF9D8FC01B374D630098F785 /* NetworkManager */,
 				BF113C591B308A0A005B87FF /* Plugins */,
 				BF1F78D71AB646E5002100B5 /* Events */,
@@ -147,7 +190,6 @@
 				BF1F78D41AB646B2002100B5 /* Views */,
 				BF1F78BB1AB64631002100B5 /* Images.xcassets */,
 				BF1F78AF1AB64631002100B5 /* Supporting Files */,
-				BFDF4CA61B38582B00D775D7 /* Country.swift */,
 			);
 			path = "Bird'L";
 			sourceTree = "<group>";
@@ -210,6 +252,7 @@
 		BF1F78D71AB646E5002100B5 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -220,9 +263,75 @@
 				01D5F5251B338073003EEF39 /* json.swift */,
 				014069E91B1C9C72000E740C /* APICommunicator.swift */,
 				01D5F5271B338B65003EEF39 /* Config.swift */,
-				BFDF4CA81B397F5700D775D7 /* MyPlayground.playground */,
 			);
 			name = NetworkManager;
+			sourceTree = "<group>";
+		};
+		BFDF4CA91B39D33900D775D7 /* SwiftForms */ = {
+			isa = PBXGroup;
+			children = (
+				BFDF4CAA1B39D33900D775D7 /* cells */,
+				BFDF4CBA1B39D33900D775D7 /* controllers */,
+				BFDF4CBE1B39D33900D775D7 /* descriptors */,
+			);
+			path = SwiftForms;
+			sourceTree = "<group>";
+		};
+		BFDF4CAA1B39D33900D775D7 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				BFDF4CAB1B39D33900D775D7 /* base */,
+				BFDF4CAF1B39D33900D775D7 /* FormButtonCell.swift */,
+				BFDF4CB01B39D33900D775D7 /* FormCheckCell.swift */,
+				BFDF4CB11B39D33900D775D7 /* FormDateCell.swift */,
+				BFDF4CB21B39D33900D775D7 /* FormPickerCell.swift */,
+				BFDF4CB31B39D33900D775D7 /* FormSegmentedControlCell.swift */,
+				BFDF4CB41B39D33900D775D7 /* FormSelectorCell.swift */,
+				BFDF4CB51B39D33900D775D7 /* FormSliderCell.swift */,
+				BFDF4CB61B39D33900D775D7 /* FormStepperCell.swift */,
+				BFDF4CB71B39D33900D775D7 /* FormSwitchCell.swift */,
+				BFDF4CB81B39D33900D775D7 /* FormTextFieldCell.swift */,
+				BFDF4CB91B39D33900D775D7 /* FormTextViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		BFDF4CAB1B39D33900D775D7 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */,
+				BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */,
+				BFDF4CAE1B39D33900D775D7 /* FormValueCell.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		BFDF4CBA1B39D33900D775D7 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFDF4CBB1B39D33900D775D7 /* FormOptionsSelectorController.swift */,
+				BFDF4CBC1B39D33900D775D7 /* FormSelector.swift */,
+				BFDF4CBD1B39D33900D775D7 /* FormViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		BFDF4CBE1B39D33900D775D7 /* descriptors */ = {
+			isa = PBXGroup;
+			children = (
+				BFDF4CBF1B39D33900D775D7 /* FormDescriptor.swift */,
+				BFDF4CC01B39D33900D775D7 /* FormRowDescriptor.swift */,
+				BFDF4CC11B39D33900D775D7 /* FormSectionDescriptor.swift */,
+			);
+			path = descriptors;
+			sourceTree = "<group>";
+		};
+		BFDF4CD61B39D34F00D775D7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BFDF4CA61B38582B00D775D7 /* Country.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,19 +437,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFDF4CC61B39D33900D775D7 /* FormCheckCell.swift in Sources */,
+				BFDF4CD11B39D33900D775D7 /* FormSelector.swift in Sources */,
 				BF02BCED1B330558007532A1 /* BadgeView.swift in Sources */,
 				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
+				BFDF4CC71B39D33900D775D7 /* FormDateCell.swift in Sources */,
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
+				BFDF4CC81B39D33900D775D7 /* FormPickerCell.swift in Sources */,
+				BFDF4CD31B39D33900D775D7 /* FormDescriptor.swift in Sources */,
+				BFDF4CCA1B39D33900D775D7 /* FormSelectorCell.swift in Sources */,
 				01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */,
+				BFDF4CCB1B39D33900D775D7 /* FormSliderCell.swift in Sources */,
+				BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */,
+				BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */,
 				BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */,
 				01D5F5281B338B65003EEF39 /* Config.swift in Sources */,
+				BFDF4CC91B39D33900D775D7 /* FormSegmentedControlCell.swift in Sources */,
 				014069EA1B1C9C72000E740C /* APICommunicator.swift in Sources */,
 				BF113C581B30804C005B87FF /* HomePageViewController.swift in Sources */,
+				BFDF4CC21B39D33900D775D7 /* FormBaseCell.swift in Sources */,
+				BFDF4CCF1B39D33900D775D7 /* FormTextViewCell.swift in Sources */,
+				BFDF4CD21B39D33900D775D7 /* FormViewController.swift in Sources */,
 				BF02BCEF1B3355F5007532A1 /* BadgeModuleCell.swift in Sources */,
 				BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */,
 				01D5F5261B338073003EEF39 /* json.swift in Sources */,
+				BFDF4CCD1B39D33900D775D7 /* FormSwitchCell.swift in Sources */,
+				BFDF4CC51B39D33900D775D7 /* FormButtonCell.swift in Sources */,
 				BF02BCFA1B337298007532A1 /* Badge.swift in Sources */,
+				BFDF4CD01B39D33900D775D7 /* FormOptionsSelectorController.swift in Sources */,
 				BF0A90BA1B3097B600571062 /* CircleProgressView.swift in Sources */,
+				BFDF4CC41B39D33900D775D7 /* FormValueCell.swift in Sources */,
+				BFDF4CD41B39D33900D775D7 /* FormRowDescriptor.swift in Sources */,
+				BFDF4CCC1B39D33900D775D7 /* FormStepperCell.swift in Sources */,
+				BFDF4CCE1B39D33900D775D7 /* FormTextFieldCell.swift in Sources */,
+				BFDF4CD81B39D3B200D775D7 /* AccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
