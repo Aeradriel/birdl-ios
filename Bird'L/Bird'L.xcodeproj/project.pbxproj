@@ -180,6 +180,7 @@
 		BF1F78AE1AB64631002100B5 /* Bird'L */ = {
 			isa = PBXGroup;
 			children = (
+				BFDF4D091B3AA68500D775D7 /* Account */,
 				BFDF4CD61B39D34F00D775D7 /* Models */,
 				BF9D8FC01B374D630098F785 /* NetworkManager */,
 				BF113C591B308A0A005B87FF /* Plugins */,
@@ -252,7 +253,6 @@
 		BF1F78D71AB646E5002100B5 /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -332,6 +332,14 @@
 				BFDF4CA61B38582B00D775D7 /* Country.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		BFDF4D091B3AA68500D775D7 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */,
+			);
+			name = Account;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

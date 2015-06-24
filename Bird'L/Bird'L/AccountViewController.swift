@@ -17,12 +17,22 @@ class AccountViewController: FormViewController {
         "fname": "prénom",
         "lname": "nom",
         "password": "mot de passe",
+        "country": "pays"
     ]
+    var countries: [Country] = []
+    var countriesId: [Int] = []
+    var countriesValue: [Int : String] = [Int : String]()
     
     //MARK: UIViewController methods
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
+        self.countries = g_APICommunicator.getAllCountries(errorHandler: nil)
+        for country in self.countries
+        {
+            self.countriesId.append(country.id)
+            self.countriesValue[country.id] = country.name
+        }
         self.loadForm()
     }
     
@@ -33,16 +43,25 @@ class AccountViewController: FormViewController {
     //MARK: Actions
     func formSubmitted()
     {
-        println(self.form.formValues())
+        var error = ""
+        
         for (key, value) in self.form.formValues()
         {
             if value as? NSNull != nil
             {
                 let readableTag = self.tags[key as! String]
                 
-                UIAlertView(title: "Erreur", message: "Le champ \"\(readableTag!)\" n'est pas rempli", delegate: nil, cancelButtonTitle: "OK").show()
-                break
+                error += "Le champ \"\(readableTag!)\" n'est pas rempli"
+                error += "\n"
             }
+        }
+        if error != ""
+        {
+            UIAlertView(title: "Erreur", message: error, delegate: nil, cancelButtonTitle: "OK").show()
+        }
+        else
+        {
+            
         }
     }
     
@@ -85,21 +104,17 @@ class AccountViewController: FormViewController {
         } as TitleFormatterClosure
         row.value = 1
         section1.addRow(row)
-        /*row = FormRowDescriptor(tag: "country", rowType: .Picker, title: "Pays")
-        row.configuration[FormRowDescriptor.Configuration.Options] = [1, 2]
+        row = FormRowDescriptor(tag: "country", rowType: .Picker, title: "Pays")
+        row.configuration[FormRowDescriptor.Configuration.Options] = self.countriesId
         row.configuration[FormRowDescriptor.Configuration.TitleFormatterClosure] =
             { value in
                 switch (value)
                 {
-                case 1:
-                    return "Homme"
-                case 2:
-                    return "Femme"
                 default:
-                    return nil
+                    return self.countriesValue[value as! Int]
                 }
-            } as TitleFormatterClosure
-        section1.addRow(row)*/
+        } as TitleFormatterClosure
+        section1.addRow(row)
 
         
         // Password
