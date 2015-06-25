@@ -65,7 +65,6 @@ import Foundation
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
             if (data != nil) {
-                println(data)
                 let json = JSON(data: data)
                 
                 if let userObject = json["user"].asDictionary
@@ -76,18 +75,8 @@ import Foundation
                 {
                     if errorFunc != nil
                     {
-                        var error: String = ""
-                        let separator: String = ", "
-                        
-                        for (key, value) in json
-                        {
-                            error += (key as! String).capitalizedString + " "
-                            for value2 in value.asArray!
-                            {
-                                error += value2.asString!
-                            }
-                            error += "\n"
-                        }
+                        let error = self.errorFromJson(json)
+
                         errorFunc!(error)
                     }
                 }
@@ -106,9 +95,10 @@ import Foundation
         var ret: [Country] = []
         var response: NSURLResponse?
         var data: NSData?
-        request.HTTPMethod = "GET"
-        data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &jsonError)
         
+        request.HTTPMethod = "GET"
+        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
+        data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &jsonError)
         if data != nil
         {
             let json = JSON(data: data!)
@@ -121,12 +111,114 @@ import Foundation
                     ret.append(newCountry)
                 }
             }
+            else if errorFunc != nil
+            {
+                errorFunc!(errorFromJson(json))
+            }
         }
         else
         {
-            errorFunc!("Cannot reach server")
+            if errorFunc != nil
+            {
+                errorFunc!("Cannot reach server")
+            }
         }
         return ret
+    }
+    
+    func getBaseUserInfo(errorHander errorFunc: ((String) -> Void)?, successHandler successFunc: (([String : JSON]?) -> Void)?)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.accountEditionUrl)
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "GET"
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil)
+                {
+                    let json = JSON(data: data)
+                    
+                    if let userObject = json["user"].asDictionary
+                    {
+                        successFunc!(userObject)
+                    }
+                    else
+                    {
+                        if errorFunc != nil
+                        {
+                            let error = self.errorFromJson(json)
+                            
+                            errorFunc!(error)
+                        }
+                    }
+                }
+        }
+    }
+    
+    func updateUser(userDictionary user: NSDictionary, errorHander errorFunc: ((String) -> Void)?, successHandler successFunc: (() -> Void)?)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.accountEditionUrl)
+        let request = NSMutableURLRequest(URL: url!)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let birthdate = dateFormatter.stringFromDate(user["birthdate"] as! NSDate)
+        var bodyData = "user={\"email\": \"" + (user["email"] as! String) + "\",\"first_name\": \""
+        bodyData += (user["fname"] as! String) + "\",\"last_name\": \"" + (user["lname"] as! String)
+        bodyData += "\",\"gender\": \"" + String(user["gender"] as! Int) + "\",\"birthdate\": \""
+        bodyData += (birthdate) + "\",\"country_id\": \"" + String(user["country"] as! Int) + "\"}"
+        
+        request.HTTPMethod = "POST"
+        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+            if (data != nil) {
+                let json = JSON(data: data)
+                
+                if let userObject = json["user"].asDictionary
+                {
+                    successFunc!();
+                }
+                else
+                {
+                    if errorFunc != nil
+                    {
+                        let error = self.errorFromJson(json)
+                        
+                        errorFunc!(error)
+                    }
+                }
+            }
+            else {
+                if errorFunc != nil
+                {
+                    errorFunc!("Can't reach server")
+                }
+            }
+        }
+    }
+    
+    func errorFromJson(jsonError: JSON) -> String
+    {
+        var error: String = ""
+        let separator: String = ", "
+        
+        for (key, value) in jsonError
+        {
+            error += (key as! String).capitalizedString + " "
+            if value.isArray
+            {
+                for value2 in value.asArray!
+                {
+                    error += value2.asString!
+                }
+            }
+            else
+            {
+                error = value.asString!
+            }
+            error += "\n"
+        }
+        return error
     }
 }
 

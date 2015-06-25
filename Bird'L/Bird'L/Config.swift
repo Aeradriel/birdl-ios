@@ -14,4 +14,6 @@ struct netConfig {
     static let registerURL = "/register";
     
     static let countriesUrl = "/countries"
+    static let accountEditionUrl = "/me";
+
 }

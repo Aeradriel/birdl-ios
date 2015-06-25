@@ -27,7 +27,7 @@ class AccountViewController: FormViewController {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.countries = g_APICommunicator.getAllCountries(errorHandler: nil)
+        self.countries = g_APICommunicator.getAllCountries(errorHandler: self.errorHandler)
         for country in self.countries
         {
             self.countriesId.append(country.id)
@@ -41,6 +41,14 @@ class AccountViewController: FormViewController {
     }
     
     //MARK: Actions
+    func userDidUpdate()
+    {
+        let title = "Profil mis à jour"
+        let message = "Votre profil a bien été mis à jour"
+        
+        UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: "OK").show()
+    }
+    
     func formSubmitted()
     {
         var error = ""
@@ -61,8 +69,13 @@ class AccountViewController: FormViewController {
         }
         else
         {
-            
+            g_APICommunicator.updateUser(userDictionary: self.form.formValues() as! [String : AnyObject], errorHander: nil, successHandler: userDidUpdate)
         }
+    }
+    
+    func errorHandler(error: String)
+    {
+        UIAlertView(title: "Erreur", message: error, delegate: nil, cancelButtonTitle: "OK").show()
     }
     
     //MARK: Load Form
