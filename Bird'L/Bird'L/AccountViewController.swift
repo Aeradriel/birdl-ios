@@ -40,7 +40,45 @@ class AccountViewController: FormViewController {
         super.viewDidLoad()
     }
     
-    //MARK: Actions
+    override func viewDidAppear(animated: Bool) {
+        g_APICommunicator.getBaseUserInfo(errorHander: self.errorHandler, successHandler: self.updateUIWithUser)
+    }
+    
+    //MARK: Checks
+    func UserJsonIsValid(userJson: [String : JSON]) -> Bool
+    {
+        let requiredFields = ["email", "first_name", "last_name", "gender", "birthdate", "country"]
+        
+        for key in requiredFields
+        {
+            if userJson[key]!.isNull
+            {
+                return false
+            }
+        }
+        return true
+    }
+    
+    //MARK: Callbacks
+    func updateUIWithUser(userJson: [String : JSON])
+    {
+        if self.UserJsonIsValid(userJson)
+        {
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy/MM/dd"
+            
+            let date = dateFormatter.dateFromString(userJson["birthdate"]!.asString!)
+            let country = userJson["country"]!.asDictionary
+            
+            self.setValue(userJson["email"]!.asString!, forTag: "email")
+            self.setValue(userJson["first_name"]!.asString!, forTag: "fname")
+            self.setValue(userJson["last_name"]!.asString!, forTag: "lname")
+            self.setValue(userJson["gender"]!.asInt!, forTag: "gender")
+            self.setValue(date!, forTag: "birthdate")
+            self.setValue(country!["id"]!.asInt!, forTag: "country")
+        }
+    }
+    
     func userDidUpdate()
     {
         let title = "Profil mis à jour"
@@ -78,7 +116,7 @@ class AccountViewController: FormViewController {
         UIAlertView(title: "Erreur", message: error, delegate: nil, cancelButtonTitle: "OK").show()
     }
     
-    //MARK: Load Form
+    //MARK: Form
     func loadForm()
     {
         // Create form instace

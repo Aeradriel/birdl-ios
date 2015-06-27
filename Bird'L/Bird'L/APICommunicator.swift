@@ -126,12 +126,13 @@ import Foundation
         return ret
     }
     
-    func getBaseUserInfo(errorHander errorFunc: ((String) -> Void)?, successHandler successFunc: (([String : JSON]?) -> Void)?)
+    func getBaseUserInfo(errorHander errorFunc: ((String) -> Void)?, successHandler successFunc: (([String : JSON]) -> Void)?)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.accountEditionUrl)
         let request = NSMutableURLRequest(URL: url!)
         
         request.HTTPMethod = "GET"
+        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
             { (response, data, error) in
                 if (data != nil)
