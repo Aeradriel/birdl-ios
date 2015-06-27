@@ -36,7 +36,7 @@ public class FormViewController : UITableViewController {
         super.init(style: style)
     }
     
-    public override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!) {
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         baseInit()
     }
@@ -105,14 +105,14 @@ public class FormViewController : UITableViewController {
         
         let rowDescriptor = formRowDescriptorAtIndexPath(indexPath)
         
-        var formBaseCellClass = formBaseCellClassFromRowDescriptor(rowDescriptor)
+        let formBaseCellClass = formBaseCellClassFromRowDescriptor(rowDescriptor)
         
         let reuseIdentifier = NSStringFromClass(formBaseCellClass)
         
         var cell: FormBaseCell? = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier) as? FormBaseCell
         if cell == nil {
             
-            cell = formBaseCellClass(style: .Default, reuseIdentifier: reuseIdentifier)
+            cell = formBaseCellClass.init(style: .Default, reuseIdentifier: reuseIdentifier)
             cell?.formViewController = self
             cell?.configure()
         }

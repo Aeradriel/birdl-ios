@@ -19,7 +19,7 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
     }
     
@@ -32,18 +32,18 @@ class SignupViewController: UIViewController {
     @IBAction func nextButtonUp(sender: AnyObject) {
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if (identifier == "signupSegue1") {
             
             if ((self.passwordField.text != self.passwordField2.text)) {
                 self.displayError("Please enter the same password in both fields");
                 return false;
             }
-            else if (count(self.passwordField.text) < 8) {
+            else if (self.passwordField.text!.characters.count < 8) {
                 self.displayError("Your password must lenght more than 8 characters");
                 return false
             }
-            else if (!isValidEmail(self.usernameField.text)) {
+            else if (!isValidEmail(self.usernameField.text!)) {
                 self.displayError("Your email is not valid");
                 return false
             }
@@ -54,7 +54,7 @@ class SignupViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "signupSegue1") {
-            var svc = segue.destinationViewController as! SignupViewController2;
+            let svc = segue.destinationViewController as! SignupViewController2;
             svc.username = self.usernameField.text;
             svc.password = self.passwordField.text;
         }
@@ -93,7 +93,7 @@ class SignupViewController2: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
     }
     
@@ -106,11 +106,11 @@ class SignupViewController2: UIViewController {
 
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         
         if (identifier == "signupSegue2") {
             
-            if (count(self.firstNameField.text) < 1 || count(self.lastNameField.text) < 1) {
+            if (self.firstNameField.text!.characters.count < 1 || self.lastNameField.text!.characters.count < 1) {
                 self.displayError("You must enter your first and last names")
                 return false;
             }
@@ -125,14 +125,14 @@ class SignupViewController2: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "signupSegue2") {
-            var svc = segue.destinationViewController as! SignupViewController3;
+            let svc = segue.destinationViewController as! SignupViewController3;
             svc.username = self.username;
             svc.password = self.password;
             svc.firstName = self.firstNameField.text;
             svc.lastName = self.lastNameField.text;
             svc.gender = self.genderPicker.on
         
-            var timeFormatter = NSDateFormatter()
+            let timeFormatter = NSDateFormatter()
             timeFormatter.dateFormat = "yyyy/M/d"
             svc.birthDate = timeFormatter.stringFromDate(self.birthDatePicker.date);
         }
@@ -152,11 +152,10 @@ class SignupViewController2: UIViewController {
     
     func calculateAge (birthday: NSDate) -> NSInteger {
         
-        var userAge : NSInteger = 0
-        var calendar : NSCalendar = NSCalendar.currentCalendar()
-        var unitFlags : NSCalendarUnit = NSCalendarUnit.CalendarUnitYear | NSCalendarUnit.CalendarUnitMonth | NSCalendarUnit.CalendarUnitDay
-        var dateComponentNow : NSDateComponents = calendar.components(unitFlags, fromDate: NSDate())
-        var dateComponentBirth : NSDateComponents = calendar.components(unitFlags, fromDate: birthday)
+        let calendar : NSCalendar = NSCalendar.currentCalendar()
+        let unitFlags : NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day]
+        let dateComponentNow : NSDateComponents = calendar.components(unitFlags, fromDate: NSDate())
+        let dateComponentBirth : NSDateComponents = calendar.components(unitFlags, fromDate: birthday)
         
         if ( (dateComponentNow.month < dateComponentBirth.month) ||
             ((dateComponentNow.month == dateComponentBirth.month) && (dateComponentNow.day < dateComponentBirth.day))
@@ -188,7 +187,7 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
     //MARK: UIViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         
         view.addGestureRecognizer(tap)
         self.countries = g_APICommunicator.getAllCountries(errorHandler: nil)
@@ -205,7 +204,7 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     //MARK: UIPickerView mmethods
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return self.countries[row].name
     }
     
@@ -232,7 +231,7 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
         let alertController = UIAlertController(title: "Success !", message:
             "Your account has been created", preferredStyle: UIAlertControllerStyle.Alert)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as! UIViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as UIViewController
         
         alertController.addAction(UIAlertAction(title: "To Signin", style: UIAlertActionStyle.Default, handler:
             { (action) in

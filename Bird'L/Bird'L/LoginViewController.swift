@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.passwordTextField.secureTextEntry = true
         
-        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
     }
     
@@ -32,9 +32,8 @@ class LoginViewController: UIViewController {
     }
 
     func signinSucceed() -> Void {
-        println("signin succeed")
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as! UIViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as UIViewController
         
         self.presentViewController(vc, animated: true, completion: nil)
     }
@@ -48,7 +47,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signinButtonUp(sender: AnyObject) {
-        g_APICommunicator.authenticateUser(loginField.text, password: passwordTextField.text, success: signinSucceed, errorFunc: signinError);
+        g_APICommunicator.authenticateUser(loginField.text!, password: passwordTextField.text!, success: signinSucceed, errorFunc: signinError);
         
     }
     

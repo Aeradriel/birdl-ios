@@ -18,15 +18,15 @@ import Foundation
     func authenticateUser(email : String, password : String, success: (() -> Void)?, errorFunc: ((String) -> Void)?) {
         
         let url = NSURL(string: netConfig.apiURL + netConfig.loginURL);
-        var jsonError : NSError?;
+        var _ : NSError?;
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
-        var bodyData = "email=\(email)&password=\(password)"
+        let bodyData = "email=\(email)&password=\(password)"
         request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
             if (data != nil) {
-                let json = JSON(data: data)
+                let json = JSON(data: data!)
                 if let authenticationResult = json["data"].asString {
                     if (authenticationResult == "Authentication succeed") {
                         if let httpResponse = response as? NSHTTPURLResponse {
@@ -57,17 +57,16 @@ import Foundation
     func createAccount(email: String, password : String, first_name : String, last_name : String, gender : Bool, birthdate: String, country_id : Int, success: (() -> Void)?, errorFunc: ((String) -> Void)?) {
         
         let url = NSURL(string: netConfig.apiURL + netConfig.registerURL)
-        var jsonError : NSError?
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
-        var bodyData = "user={\"email\": \"\(email)\",\"first_name\": \"\(first_name)\",\"last_name\": \"\(last_name)\",\"password\": \"\(password)\",\"gender\": \"\(gender ? 1 : 0)\",\"birthdate\": \"\(birthdate)\",\"country_id\": \"\(country_id)\"}"
+        let bodyData = "user={\"email\": \"\(email)\",\"first_name\": \"\(first_name)\",\"last_name\": \"\(last_name)\",\"password\": \"\(password)\",\"gender\": \"\(gender ? 1 : 0)\",\"birthdate\": \"\(birthdate)\",\"country_id\": \"\(country_id)\"}"
         request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
             if (data != nil) {
-                let json = JSON(data: data)
+                let json = JSON(data: data!)
                 
-                if let userObject = json["user"].asDictionary
+                if let _ = json["user"].asDictionary
                 {
                     success!();
                 }
@@ -90,7 +89,6 @@ import Foundation
     func getAllCountries(errorHandler errorFunc: ((String) -> Void)?) -> [Country]
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.countriesUrl)
-        var jsonError: NSError?
         let request = NSMutableURLRequest(URL: url!)
         var ret: [Country] = []
         var response: NSURLResponse?
@@ -98,7 +96,19 @@ import Foundation
         
         request.HTTPMethod = "GET"
         request.addValue(self.token, forHTTPHeaderField: "Access-Token")
-        data = NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &jsonError)
+        do
+        {
+            data = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
+        }
+        catch let error as NSError
+        {
+            data = nil
+            
+            if errorFunc != nil
+            {
+                errorFunc!(error.localizedDescription)
+            }
+        }
         if data != nil
         {
             let json = JSON(data: data!)
@@ -116,13 +126,6 @@ import Foundation
                 errorFunc!(errorFromJson(json))
             }
         }
-        else
-        {
-            if errorFunc != nil
-            {
-                errorFunc!("Cannot reach server")
-            }
-        }
         return ret
     }
     
@@ -137,7 +140,7 @@ import Foundation
             { (response, data, error) in
                 if (data != nil)
                 {
-                    let json = JSON(data: data)
+                    let json = JSON(data: data!)
                     
                     if let userObject = json["user"].asDictionary
                     {
@@ -156,7 +159,7 @@ import Foundation
         }
     }
     
-    func updateUser(userDictionary user: NSDictionary, errorHander errorFunc: ((String) -> Void)?, successHandler successFunc: (() -> Void)?)
+    func updateUser(userDictionary user: NSDictionary, password: String, errorHandler errorFunc: ((String) -> Void)?, successHandler successFunc: (() -> Void)?)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.accountEditionUrl)
         let request = NSMutableURLRequest(URL: url!)
@@ -167,15 +170,16 @@ import Foundation
         bodyData += (user["fname"] as! String) + "\",\"last_name\": \"" + (user["lname"] as! String)
         bodyData += "\",\"gender\": \"" + String(user["gender"] as! Int) + "\",\"birthdate\": \""
         bodyData += (birthdate) + "\",\"country_id\": \"" + String(user["country"] as! Int) + "\"}"
+        bodyData += "&password=" + password
         
         request.HTTPMethod = "POST"
         request.addValue(self.token, forHTTPHeaderField: "Access-Token")
         request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
             if (data != nil) {
-                let json = JSON(data: data)
+                let json = JSON(data: data!)
                 
-                if let userObject = json["user"].asDictionary
+                if let _ = json["user"].asDictionary
                 {
                     successFunc!();
                 }
@@ -201,7 +205,6 @@ import Foundation
     func errorFromJson(jsonError: JSON) -> String
     {
         var error: String = ""
-        let separator: String = ", "
         
         for (key, value) in jsonError
         {

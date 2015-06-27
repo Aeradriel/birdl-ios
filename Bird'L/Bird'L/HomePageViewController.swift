@@ -18,7 +18,7 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     {
         super.viewDidLoad()
 
-        var nibName = UINib(nibName: "BadgeModuleCell", bundle:nil)
+        let nibName = UINib(nibName: "BadgeModuleCell", bundle:nil)
         
         self.tableView.registerNib(nibName, forCellReuseIdentifier: "BadgeModuleCell")
     }
@@ -50,10 +50,10 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell = tableView.dequeueReusableCellWithIdentifier("BadgeModuleCell") as! BadgeModuleCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("BadgeModuleCell") as! BadgeModuleCell
         let loadedBadge = Badge(progression: 89, andName: "Bilingue")
         
-        for (i, location) in enumerate(cell.badges)
+        for location in cell.badges
         {
             let nib = NSBundle.mainBundle().loadNibNamed("BadgeView", owner: self, options: nil)
             let badgeView = nib[0] as! BadgeView

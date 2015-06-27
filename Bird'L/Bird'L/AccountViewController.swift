@@ -107,7 +107,7 @@ class AccountViewController: FormViewController {
         }
         else
         {
-            g_APICommunicator.updateUser(userDictionary: self.form.formValues() as! [String : AnyObject], errorHander: nil, successHandler: userDidUpdate)
+            g_APICommunicator.updateUser(userDictionary: self.form.formValues() as! [String : AnyObject], password: self.form.formValues()["password"] as! String, errorHandler: self.errorHandler, successHandler: self.userDidUpdate)
         }
     }
     
