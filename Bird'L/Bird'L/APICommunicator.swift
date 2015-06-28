@@ -202,6 +202,44 @@ import Foundation
         }
     }
     
+    func getAllEvents(errorHandler errorFunc: ((String) -> Void), successHandler successFunc: ([Event]) -> Void)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.eventsUrl)
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "GET"
+        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+            if (data != nil) {
+                let json = JSON(data: data!)
+                var ret: [Event] = []
+                
+                if let events = json["events"].asArray
+                {
+                    for event in events
+                    {
+                        let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: event["address_id"].asInt!, language: event["language"].asString)
+                        
+                        ret.append(newEvent)
+                    }
+                    successFunc(ret)
+                }
+                else
+                {
+                    let error = self.errorFromJson(json)
+                    
+                    errorFunc(error)
+                }
+            }
+            else
+            {
+                errorFunc("Can't reach server")
+            }
+        }
+
+    }
+    
     func errorFromJson(jsonError: JSON) -> String
     {
         var error: String = ""

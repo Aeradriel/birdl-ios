@@ -38,6 +38,8 @@ class AccountViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     override func viewDidAppear(animated: Bool) {

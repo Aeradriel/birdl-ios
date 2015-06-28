@@ -25,6 +25,11 @@
 		BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78BD1AB64631002100B5 /* LaunchScreen.xib */; };
 		BF1F78CB1AB64631002100B5 /* Bird_LTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */; };
 		BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
+		BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */; };
+		BFAC2E571B4062E70098B1E6 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */; };
+		BFAC2E5A1B40630A0098B1E6 /* EventResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */; };
+		BFAC2E5B1B40630A0098B1E6 /* EventResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E591B40630A0098B1E6 /* EventResultTableViewCell.xib */; };
+		BFAC2E5D1B4067D90098B1E6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E5C1B4067D90098B1E6 /* Event.swift */; };
 		BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CA61B38582B00D775D7 /* Country.swift */; };
 		BFDF4CC21B39D33900D775D7 /* FormBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */; };
 		BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */; };
@@ -82,6 +87,11 @@
 		BF1F78C41AB64631002100B5 /* Bird'LTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bird'LTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F78C91AB64631002100B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird_LTests.swift; sourceTree = "<group>"; };
+		BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSearchViewController.swift; sourceTree = "<group>"; };
+		BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResultTableViewCell.swift; sourceTree = "<group>"; };
+		BFAC2E591B40630A0098B1E6 /* EventResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventResultTableViewCell.xib; sourceTree = "<group>"; };
+		BFAC2E5C1B4067D90098B1E6 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		BFDF4CA61B38582B00D775D7 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBaseCell.swift; sourceTree = "<group>"; };
 		BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTitleCell.swift; sourceTree = "<group>"; };
@@ -253,6 +263,10 @@
 		BF1F78D71AB646E5002100B5 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */,
+				BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */,
+				BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */,
+				BFAC2E591B40630A0098B1E6 /* EventResultTableViewCell.xib */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -330,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				BFDF4CA61B38582B00D775D7 /* Country.swift */,
+				BFAC2E5C1B4067D90098B1E6 /* Event.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -429,6 +444,7 @@
 				BF113C5F1B308ADB005B87FF /* BadgeView.xib in Resources */,
 				BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */,
 				BF1F78BC1AB64631002100B5 /* Images.xcassets in Resources */,
+				BFAC2E5B1B40630A0098B1E6 /* EventResultTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +468,7 @@
 				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
 				BFDF4CC71B39D33900D775D7 /* FormDateCell.swift in Sources */,
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
+				BFAC2E5D1B4067D90098B1E6 /* Event.swift in Sources */,
 				BFDF4CC81B39D33900D775D7 /* FormPickerCell.swift in Sources */,
 				BFDF4CD31B39D33900D775D7 /* FormDescriptor.swift in Sources */,
 				BFDF4CCA1B39D33900D775D7 /* FormSelectorCell.swift in Sources */,
@@ -459,6 +476,7 @@
 				BFDF4CCB1B39D33900D775D7 /* FormSliderCell.swift in Sources */,
 				BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */,
 				BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */,
+				BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */,
 				BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */,
 				01D5F5281B338B65003EEF39 /* Config.swift in Sources */,
 				BFDF4CC91B39D33900D775D7 /* FormSegmentedControlCell.swift in Sources */,
@@ -469,12 +487,14 @@
 				BFDF4CD21B39D33900D775D7 /* FormViewController.swift in Sources */,
 				BF02BCEF1B3355F5007532A1 /* BadgeModuleCell.swift in Sources */,
 				BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */,
+				BFAC2E5A1B40630A0098B1E6 /* EventResultTableViewCell.swift in Sources */,
 				01D5F5261B338073003EEF39 /* json.swift in Sources */,
 				BFDF4CCD1B39D33900D775D7 /* FormSwitchCell.swift in Sources */,
 				BFDF4CC51B39D33900D775D7 /* FormButtonCell.swift in Sources */,
 				BF02BCFA1B337298007532A1 /* Badge.swift in Sources */,
 				BFDF4CD01B39D33900D775D7 /* FormOptionsSelectorController.swift in Sources */,
 				BF0A90BA1B3097B600571062 /* CircleProgressView.swift in Sources */,
+				BFAC2E571B4062E70098B1E6 /* EventDetailViewController.swift in Sources */,
 				BFDF4CC41B39D33900D775D7 /* FormValueCell.swift in Sources */,
 				BFDF4CD41B39D33900D775D7 /* FormRowDescriptor.swift in Sources */,
 				BFDF4CCC1B39D33900D775D7 /* FormStepperCell.swift in Sources */,
