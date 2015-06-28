@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Country
+class Country : NSObject
 {
     var name: String!
     var language: String!
