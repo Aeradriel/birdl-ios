@@ -32,9 +32,10 @@ class LoginViewController: UIViewController {
     }
 
     func signinSucceed() -> Void {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as UIViewController
+        let userDefaults = NSUserDefaults.standardUserDefaults()
         
+        userDefaults.setValue(g_APICommunicator.token, forKey: "access-token")
+        userDefaults.synchronize()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

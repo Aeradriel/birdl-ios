@@ -13,6 +13,13 @@ import Foundation
     var isAuth = false;
     var token = "";
     
+    init()
+    {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let token = userDefaults.valueForKey("access-token")
+        
+        self.token =  token as? String != nil ? token as! String : ""
+    }
     
     // toDo : add callback function + proper error messages
     func authenticateUser(email : String, password : String, success: (() -> Void)?, errorFunc: ((String) -> Void)?) {
