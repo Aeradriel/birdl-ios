@@ -16,4 +16,5 @@ struct netConfig {
     static let countriesUrl = "/countries"
     static let accountEditionUrl = "/me";
     static let eventsUrl = "/events"
+    static let checkTokenUrl = "/check_token"
 }

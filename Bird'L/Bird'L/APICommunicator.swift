@@ -240,6 +240,22 @@ import Foundation
 
     }
     
+    func checkToken(errorHandler: () -> Void)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.checkTokenUrl)
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "GET"
+        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if error != nil
+                {
+                    errorHandler()
+                }
+        }
+    }
+    
     func errorFromJson(jsonError: JSON) -> String
     {
         var error: String = ""
