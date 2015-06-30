@@ -38,6 +38,9 @@
 		BFAC2E711B42AB240098B1E6 /* EventTitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E701B42AB240098B1E6 /* EventTitleRow.swift */; };
 		BFAC2E761B42ABC60098B1E6 /* EventTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E741B42ABC60098B1E6 /* EventTitleTableViewCell.swift */; };
 		BFAC2E771B42ABC60098B1E6 /* EventTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E751B42ABC60098B1E6 /* EventTitleTableViewCell.xib */; };
+		BFAC2E791B42ADCC0098B1E6 /* EventDescRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E781B42ADCC0098B1E6 /* EventDescRow.swift */; };
+		BFAC2E7C1B42B1D10098B1E6 /* EventDescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E7A1B42B1D10098B1E6 /* EventDescTableViewCell.swift */; };
+		BFAC2E7D1B42B1D10098B1E6 /* EventDescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E7B1B42B1D10098B1E6 /* EventDescTableViewCell.xib */; };
 		BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CA61B38582B00D775D7 /* Country.swift */; };
 		BFDF4CC21B39D33900D775D7 /* FormBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */; };
 		BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */; };
@@ -108,6 +111,9 @@
 		BFAC2E701B42AB240098B1E6 /* EventTitleRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTitleRow.swift; sourceTree = "<group>"; };
 		BFAC2E741B42ABC60098B1E6 /* EventTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTitleTableViewCell.swift; sourceTree = "<group>"; };
 		BFAC2E751B42ABC60098B1E6 /* EventTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTitleTableViewCell.xib; sourceTree = "<group>"; };
+		BFAC2E781B42ADCC0098B1E6 /* EventDescRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDescRow.swift; sourceTree = "<group>"; };
+		BFAC2E7A1B42B1D10098B1E6 /* EventDescTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDescTableViewCell.swift; sourceTree = "<group>"; };
+		BFAC2E7B1B42B1D10098B1E6 /* EventDescTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescTableViewCell.xib; sourceTree = "<group>"; };
 		BFDF4CA61B38582B00D775D7 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBaseCell.swift; sourceTree = "<group>"; };
 		BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTitleCell.swift; sourceTree = "<group>"; };
@@ -314,6 +320,8 @@
 				BFAC2E6B1B42A8DA0098B1E6 /* EventDetailTableViewCell.swift */,
 				BFAC2E741B42ABC60098B1E6 /* EventTitleTableViewCell.swift */,
 				BFAC2E751B42ABC60098B1E6 /* EventTitleTableViewCell.xib */,
+				BFAC2E7A1B42B1D10098B1E6 /* EventDescTableViewCell.swift */,
+				BFAC2E7B1B42B1D10098B1E6 /* EventDescTableViewCell.xib */,
 			);
 			name = Rows;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 				BFAC2E631B42A5CC0098B1E6 /* EventRow.swift */,
 				BFAC2E6E1B42A9850098B1E6 /* EventBannerRow.swift */,
 				BFAC2E701B42AB240098B1E6 /* EventTitleRow.swift */,
+				BFAC2E781B42ADCC0098B1E6 /* EventDescRow.swift */,
 			);
 			name = EventRows;
 			sourceTree = "<group>";
@@ -491,6 +500,7 @@
 				BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */,
 				BF02BCF21B33563C007532A1 /* BadgeModuleCell.xib in Resources */,
 				BFAC2E771B42ABC60098B1E6 /* EventTitleTableViewCell.xib in Resources */,
+				BFAC2E7D1B42B1D10098B1E6 /* EventDescTableViewCell.xib in Resources */,
 				BF113C5F1B308ADB005B87FF /* BadgeView.xib in Resources */,
 				BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */,
 				BF1F78BC1AB64631002100B5 /* Images.xcassets in Resources */,
@@ -517,6 +527,7 @@
 				BF02BCED1B330558007532A1 /* BadgeView.swift in Sources */,
 				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
 				BFDF4CC71B39D33900D775D7 /* FormDateCell.swift in Sources */,
+				BFAC2E7C1B42B1D10098B1E6 /* EventDescTableViewCell.swift in Sources */,
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
 				BFAC2E5D1B4067D90098B1E6 /* Event.swift in Sources */,
 				BFDF4CC81B39D33900D775D7 /* FormPickerCell.swift in Sources */,
@@ -531,6 +542,7 @@
 				BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */,
 				BFAC2E6C1B42A8DA0098B1E6 /* EventDetailTableViewCell.swift in Sources */,
 				BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */,
+				BFAC2E791B42ADCC0098B1E6 /* EventDescRow.swift in Sources */,
 				01D5F5281B338B65003EEF39 /* Config.swift in Sources */,
 				BFDF4CC91B39D33900D775D7 /* FormSegmentedControlCell.swift in Sources */,
 				014069EA1B1C9C72000E740C /* APICommunicator.swift in Sources */,
