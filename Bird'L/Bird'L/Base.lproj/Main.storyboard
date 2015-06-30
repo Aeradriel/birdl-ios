@@ -259,10 +259,42 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="xiQ-Mj-I0A" id="MpP-VZ-zHX"/>
+                        <segue destination="zYT-nT-XvY" kind="show" identifier="eventDetailSegue" id="fkK-xY-z0T"/>
                     </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1442.5" y="3502.5"/>
+        </scene>
+        <!--Event Detail View Controller-->
+        <scene sceneID="EtC-IJ-S4u">
+            <objects>
+                <viewController id="zYT-nT-XvY" customClass="EventDetailViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rDd-Gb-ZNC"/>
+                        <viewControllerLayoutGuide type="bottom" id="gRc-kL-Jnu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A7P-Gc-XOL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xyC-eW-a0X">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zYT-nT-XvY" id="46a-7x-B9X"/>
+                                    <outlet property="delegate" destination="zYT-nT-XvY" id="8YW-an-igF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="xyC-eW-a0X" id="yuL-ca-wg4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sTJ-QC-Fdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2040.5" y="3502.5"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="WN7-1B-Ho1">

@@ -21,7 +21,7 @@ import Foundation
         self.token =  token as? String != nil ? token as! String : ""
     }
     
-    // toDo : add callback function + proper error messages
+    //TODO: add callback function + proper error messages
     func authenticateUser(email : String, password : String, success: (() -> Void)?, errorFunc: ((String) -> Void)?) {
         
         let url = NSURL(string: netConfig.apiURL + netConfig.loginURL);
@@ -59,7 +59,6 @@ import Foundation
         }
         
     }
-    
     
     func createAccount(email: String, password : String, first_name : String, last_name : String, gender : Bool, birthdate: String, country_id : Int, success: (() -> Void)?, errorFunc: ((String) -> Void)?) {
         
