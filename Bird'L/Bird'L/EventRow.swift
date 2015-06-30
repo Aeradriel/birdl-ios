@@ -11,11 +11,9 @@ import Foundation
 class EventRow
 {
     var cellIdentifier: String
-    var type: String
     
     init()
     {
         self.cellIdentifier = ""
-        self.type = ""
     }
 }

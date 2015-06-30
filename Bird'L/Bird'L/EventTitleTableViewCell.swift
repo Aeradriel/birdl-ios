@@ -8,17 +8,25 @@
 
 import UIKit
 
-class EventTitleTableViewCell: UITableViewCell {
-
+class EventTitleTableViewCell: EventDetailTableViewCell
+{
+    @IBOutlet weak var title: UILabel!
+    
+    //MARK: UITableViewCell methods
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    //MARK: Custom methods
+    override func fillCell(row: EventRow)
+    {
+        if let titleRow = row as? EventTitleRow
+        {
+            self.title.text = titleRow.title
+        }
+    }
 }

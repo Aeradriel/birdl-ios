@@ -30,7 +30,6 @@
 		BFAC2E5A1B40630A0098B1E6 /* EventResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */; };
 		BFAC2E5B1B40630A0098B1E6 /* EventResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E591B40630A0098B1E6 /* EventResultTableViewCell.xib */; };
 		BFAC2E5D1B4067D90098B1E6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E5C1B4067D90098B1E6 /* Event.swift */; };
-		BFAC2E621B41E3790098B1E6 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E611B41E3790098B1E6 /* NotificationsViewController.swift */; };
 		BFAC2E641B42A5CC0098B1E6 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E631B42A5CC0098B1E6 /* EventRow.swift */; };
 		BFAC2E691B42A7500098B1E6 /* EventBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E671B42A7500098B1E6 /* EventBannerTableViewCell.swift */; };
 		BFAC2E6A1B42A7500098B1E6 /* EventBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E681B42A7500098B1E6 /* EventBannerTableViewCell.xib */; };
@@ -101,7 +100,6 @@
 		BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResultTableViewCell.swift; sourceTree = "<group>"; };
 		BFAC2E591B40630A0098B1E6 /* EventResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventResultTableViewCell.xib; sourceTree = "<group>"; };
 		BFAC2E5C1B4067D90098B1E6 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		BFAC2E611B41E3790098B1E6 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		BFAC2E631B42A5CC0098B1E6 /* EventRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
 		BFAC2E671B42A7500098B1E6 /* EventBannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBannerTableViewCell.swift; sourceTree = "<group>"; };
 		BFAC2E681B42A7500098B1E6 /* EventBannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventBannerTableViewCell.xib; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 		BF1F78AE1AB64631002100B5 /* Bird'L */ = {
 			isa = PBXGroup;
 			children = (
-				BFAC2E5E1B41E2F10098B1E6 /* Notifications */,
 				BFDF4D091B3AA68500D775D7 /* Account */,
 				BFDF4CD61B39D34F00D775D7 /* Models */,
 				BF9D8FC01B374D630098F785 /* NetworkManager */,
@@ -298,14 +295,6 @@
 				01D5F5271B338B65003EEF39 /* Config.swift */,
 			);
 			name = NetworkManager;
-			sourceTree = "<group>";
-		};
-		BFAC2E5E1B41E2F10098B1E6 /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				BFAC2E611B41E3790098B1E6 /* NotificationsViewController.swift */,
-			);
-			name = Notifications;
 			sourceTree = "<group>";
 		};
 		BFAC2E651B42A7110098B1E6 /* EventDetail */ = {
@@ -526,7 +515,6 @@
 				BFDF4CC61B39D33900D775D7 /* FormCheckCell.swift in Sources */,
 				BFDF4CD11B39D33900D775D7 /* FormSelector.swift in Sources */,
 				BF02BCED1B330558007532A1 /* BadgeView.swift in Sources */,
-				BFAC2E621B41E3790098B1E6 /* NotificationsViewController.swift in Sources */,
 				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
 				BFDF4CC71B39D33900D775D7 /* FormDateCell.swift in Sources */,
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
