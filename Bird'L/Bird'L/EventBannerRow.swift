@@ -15,5 +15,10 @@ class EventBannerRow : EventRow
     init(imagePath: String)
     {
         self.imagePath = imagePath
+        
+        super.init()
+
+        self.cellIdentifier = "EventBannerTableViewCell"
+        self.height = 100
     }
 }

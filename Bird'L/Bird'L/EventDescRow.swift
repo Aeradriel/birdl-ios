@@ -15,5 +15,10 @@ class EventDescRow : EventRow
     init(desc: String)
     {
         self.desc = desc
+     
+        super.init()
+
+        self.cellIdentifier = "EventDescTableViewCell"
+        self.height = 150
     }
 }

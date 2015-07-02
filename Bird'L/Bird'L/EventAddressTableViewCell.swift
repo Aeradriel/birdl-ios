@@ -1,5 +1,5 @@
 //
-//  EventBannerTableViewCell.swift
+//  EventAddressTableViewCell.swift
 //  Bird'L
 //
 //  Created by Thibaut Roche on 30/06/2015.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class EventBannerTableViewCell: EventDetailTableViewCell
+class EventAddressTableViewCell: EventDetailTableViewCell
 {
-    @IBOutlet weak var banner: UIImageView!
+    @IBOutlet weak var address: UITextView!
     
     //MARK: UITableViewCell methods
     override func awakeFromNib() {
@@ -24,9 +24,12 @@ class EventBannerTableViewCell: EventDetailTableViewCell
     //MARK: Custom methods
     override func fillCell(row: EventRow)
     {
-        if let bannerRow = row as? EventBannerRow
+        if let addressRow = row as? EventAddressRow
         {
-            self.banner.image = UIImage(named: bannerRow.imagePath)
+            var addressLitteral = "\(addressRow.nbr) \(addressRow.street)\n"
+            
+            addressLitteral += "\(addressRow.zipcode) \(addressRow.city)"
+            self.address.text = addressLitteral
         }
     }
 }

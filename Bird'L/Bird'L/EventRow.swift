@@ -11,9 +11,11 @@ import Foundation
 class EventRow
 {
     var cellIdentifier: String
+    var height: Int
     
     init()
     {
         self.cellIdentifier = ""
+        self.height = 0
     }
 }

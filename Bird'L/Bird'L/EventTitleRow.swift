@@ -15,5 +15,10 @@ class EventTitleRow : EventRow
     init(title: String)
     {
         self.title = title
+        
+        super.init()
+
+        self.cellIdentifier = "EventTitleTableViewCell"
+        self.height = 50
     }
 }

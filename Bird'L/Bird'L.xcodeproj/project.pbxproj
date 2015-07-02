@@ -41,6 +41,12 @@
 		BFAC2E791B42ADCC0098B1E6 /* EventDescRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E781B42ADCC0098B1E6 /* EventDescRow.swift */; };
 		BFAC2E7C1B42B1D10098B1E6 /* EventDescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E7A1B42B1D10098B1E6 /* EventDescTableViewCell.swift */; };
 		BFAC2E7D1B42B1D10098B1E6 /* EventDescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E7B1B42B1D10098B1E6 /* EventDescTableViewCell.xib */; };
+		BFAC2E7F1B42D0160098B1E6 /* EventAddressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E7E1B42D0160098B1E6 /* EventAddressRow.swift */; };
+		BFAC2E831B42D0FF0098B1E6 /* EventAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E811B42D0FF0098B1E6 /* EventAddressTableViewCell.swift */; };
+		BFAC2E841B42D0FF0098B1E6 /* EventAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E821B42D0FF0098B1E6 /* EventAddressTableViewCell.xib */; };
+		BFAC2E871B42E4D10098B1E6 /* EventMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */; };
+		BFAC2E881B42E4D10098B1E6 /* EventMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */; };
+		BFAC2E8A1B42F4F10098B1E6 /* EventMapRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */; };
 		BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CA61B38582B00D775D7 /* Country.swift */; };
 		BFDF4CC21B39D33900D775D7 /* FormBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */; };
 		BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */; };
@@ -114,6 +120,12 @@
 		BFAC2E781B42ADCC0098B1E6 /* EventDescRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDescRow.swift; sourceTree = "<group>"; };
 		BFAC2E7A1B42B1D10098B1E6 /* EventDescTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDescTableViewCell.swift; sourceTree = "<group>"; };
 		BFAC2E7B1B42B1D10098B1E6 /* EventDescTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescTableViewCell.xib; sourceTree = "<group>"; };
+		BFAC2E7E1B42D0160098B1E6 /* EventAddressRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAddressRow.swift; sourceTree = "<group>"; };
+		BFAC2E811B42D0FF0098B1E6 /* EventAddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAddressTableViewCell.swift; sourceTree = "<group>"; };
+		BFAC2E821B42D0FF0098B1E6 /* EventAddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventAddressTableViewCell.xib; sourceTree = "<group>"; };
+		BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapTableViewCell.swift; sourceTree = "<group>"; };
+		BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMapTableViewCell.xib; sourceTree = "<group>"; };
+		BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapRow.swift; sourceTree = "<group>"; };
 		BFDF4CA61B38582B00D775D7 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBaseCell.swift; sourceTree = "<group>"; };
 		BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTitleCell.swift; sourceTree = "<group>"; };
@@ -322,6 +334,10 @@
 				BFAC2E751B42ABC60098B1E6 /* EventTitleTableViewCell.xib */,
 				BFAC2E7A1B42B1D10098B1E6 /* EventDescTableViewCell.swift */,
 				BFAC2E7B1B42B1D10098B1E6 /* EventDescTableViewCell.xib */,
+				BFAC2E811B42D0FF0098B1E6 /* EventAddressTableViewCell.swift */,
+				BFAC2E821B42D0FF0098B1E6 /* EventAddressTableViewCell.xib */,
+				BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */,
+				BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */,
 			);
 			name = Rows;
 			sourceTree = "<group>";
@@ -333,6 +349,8 @@
 				BFAC2E6E1B42A9850098B1E6 /* EventBannerRow.swift */,
 				BFAC2E701B42AB240098B1E6 /* EventTitleRow.swift */,
 				BFAC2E781B42ADCC0098B1E6 /* EventDescRow.swift */,
+				BFAC2E7E1B42D0160098B1E6 /* EventAddressRow.swift */,
+				BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */,
 			);
 			name = EventRows;
 			sourceTree = "<group>";
@@ -503,8 +521,10 @@
 				BFAC2E7D1B42B1D10098B1E6 /* EventDescTableViewCell.xib in Resources */,
 				BF113C5F1B308ADB005B87FF /* BadgeView.xib in Resources */,
 				BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */,
+				BFAC2E881B42E4D10098B1E6 /* EventMapTableViewCell.xib in Resources */,
 				BF1F78BC1AB64631002100B5 /* Images.xcassets in Resources */,
 				BFAC2E5B1B40630A0098B1E6 /* EventResultTableViewCell.xib in Resources */,
+				BFAC2E841B42D0FF0098B1E6 /* EventAddressTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,17 +572,21 @@
 				BFDF4CD21B39D33900D775D7 /* FormViewController.swift in Sources */,
 				BF02BCEF1B3355F5007532A1 /* BadgeModuleCell.swift in Sources */,
 				BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */,
+				BFAC2E8A1B42F4F10098B1E6 /* EventMapRow.swift in Sources */,
 				BFAC2E5A1B40630A0098B1E6 /* EventResultTableViewCell.swift in Sources */,
 				BFAC2E641B42A5CC0098B1E6 /* EventRow.swift in Sources */,
 				01D5F5261B338073003EEF39 /* json.swift in Sources */,
 				BFAC2E761B42ABC60098B1E6 /* EventTitleTableViewCell.swift in Sources */,
+				BFAC2E7F1B42D0160098B1E6 /* EventAddressRow.swift in Sources */,
 				BFDF4CCD1B39D33900D775D7 /* FormSwitchCell.swift in Sources */,
 				BFDF4CC51B39D33900D775D7 /* FormButtonCell.swift in Sources */,
+				BFAC2E831B42D0FF0098B1E6 /* EventAddressTableViewCell.swift in Sources */,
 				BF02BCFA1B337298007532A1 /* Badge.swift in Sources */,
 				BFDF4CD01B39D33900D775D7 /* FormOptionsSelectorController.swift in Sources */,
 				BF0A90BA1B3097B600571062 /* CircleProgressView.swift in Sources */,
 				BFAC2E571B4062E70098B1E6 /* EventDetailViewController.swift in Sources */,
 				BFDF4CC41B39D33900D775D7 /* FormValueCell.swift in Sources */,
+				BFAC2E871B42E4D10098B1E6 /* EventMapTableViewCell.swift in Sources */,
 				BFDF4CD41B39D33900D775D7 /* FormRowDescriptor.swift in Sources */,
 				BFAC2E6F1B42A9850098B1E6 /* EventBannerRow.swift in Sources */,
 				BFDF4CCC1B39D33900D775D7 /* FormStepperCell.swift in Sources */,

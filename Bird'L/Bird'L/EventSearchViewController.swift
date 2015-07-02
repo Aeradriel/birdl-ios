@@ -11,6 +11,7 @@ import UIKit
 class EventSearchViewController: UITableViewController, UISearchResultsUpdating
 {
     var events: [Event] = []
+    var selectedEvent: [EventRow] = []
     var searchResult: [Event] = []
     var resultSearchController = UISearchController(searchResultsController: nil)
 
@@ -39,6 +40,17 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if (segue.identifier == "eventDetailsSegue")
+        {
+            let destinationVc: EventDetailViewController = segue.destinationViewController as! EventDetailViewController
+            
+            destinationVc.rows = self.selectedEvent
+        }
+    }
+    
     //MARK: Callbacks
     func errorHandler(error: String)
     {
@@ -54,11 +66,13 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
     }
     
     //MARK: UITableViewController delegate
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         if self.resultSearchController.active
         {
             return self.searchResult.count
@@ -83,6 +97,18 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
             
             return cell
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let selectedEvent = self.events[indexPath.row]
+        self.selectedEvent = []
+        self.selectedEvent.append(EventBannerRow(imagePath: "BannerExample"))
+        self.selectedEvent.append(EventTitleRow(title: selectedEvent.name))
+        self.selectedEvent.append(EventDescRow(desc: selectedEvent.desc!))
+        self.selectedEvent.append(EventAddressRow(nbr: 47, street: "Rue du Coq", zipcode: "98400", city: "Trouville sur Siennes"))
+        self.selectedEvent.append(EventMapRow(nbr: 47, street: "Rue du Coq", zipcode: "98400", city: "Trouville sur Siennes"))
+        performSegueWithIdentifier("eventDetailsSegue", sender: self)
     }
     
     //MARK: UISearchResultsUpdating delegate

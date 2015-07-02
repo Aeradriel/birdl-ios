@@ -24,9 +24,9 @@ class EventDescTableViewCell: EventDetailTableViewCell
     //MARK: Custom methods
     override func fillCell(row: EventRow)
     {
-        if let titleRow = row as? EventDescRow
+        if let descRow = row as? EventDescRow
         {
-            self.desc.text = titleRow.desc
+            self.desc.text = descRow.desc
         }
     }
 }
