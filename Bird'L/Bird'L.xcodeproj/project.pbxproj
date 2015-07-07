@@ -47,6 +47,7 @@
 		BFAC2E871B42E4D10098B1E6 /* EventMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */; };
 		BFAC2E881B42E4D10098B1E6 /* EventMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */; };
 		BFAC2E8A1B42F4F10098B1E6 /* EventMapRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */; };
+		BFC6BF141B4C177000B02CC0 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */; };
 		BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CA61B38582B00D775D7 /* Country.swift */; };
 		BFDF4CC21B39D33900D775D7 /* FormBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */; };
 		BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */; };
@@ -69,6 +70,7 @@
 		BFDF4CD41B39D33900D775D7 /* FormRowDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CC01B39D33900D775D7 /* FormRowDescriptor.swift */; };
 		BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CC11B39D33900D775D7 /* FormSectionDescriptor.swift */; };
 		BFDF4CD81B39D3B200D775D7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */; };
+		F4D2AD0A9B64C688A5EC650B /* libPods-Bird'L.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE31359DA5626DEF33CABF11 /* libPods-Bird'L.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,7 @@
 		01A9381C1ADE46E300E09C0B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		01D5F5251B338073003EEF39 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		01D5F5271B338B65003EEF39 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		7D0B48FDD6A9DA82C21A70BB /* Pods-Bird'L.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bird'L.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bird'L/Pods-Bird'L.debug.xcconfig"; sourceTree = "<group>"; };
 		BF02BCEC1B330558007532A1 /* BadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		BF02BCEE1B3355F5007532A1 /* BadgeModuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeModuleCell.swift; sourceTree = "<group>"; };
 		BF02BCF11B33563C007532A1 /* BadgeModuleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BadgeModuleCell.xib; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 		BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapTableViewCell.swift; sourceTree = "<group>"; };
 		BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMapTableViewCell.xib; sourceTree = "<group>"; };
 		BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapRow.swift; sourceTree = "<group>"; };
+		BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		BFC6BF151B4C17BB00B02CC0 /* Bird'L-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bird'L-Bridging-Header.h"; sourceTree = "<group>"; };
 		BFDF4CA61B38582B00D775D7 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBaseCell.swift; sourceTree = "<group>"; };
 		BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTitleCell.swift; sourceTree = "<group>"; };
@@ -148,6 +153,8 @@
 		BFDF4CC01B39D33900D775D7 /* FormRowDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRowDescriptor.swift; sourceTree = "<group>"; };
 		BFDF4CC11B39D33900D775D7 /* FormSectionDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSectionDescriptor.swift; sourceTree = "<group>"; };
 		BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		CD9F76C4E770B53330BDE54B /* Pods-Bird'L.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bird'L.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bird'L/Pods-Bird'L.release.xcconfig"; sourceTree = "<group>"; };
+		CE31359DA5626DEF33CABF11 /* libPods-Bird'L.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bird'L.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4D2AD0A9B64C688A5EC650B /* libPods-Bird'L.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +176,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2157159899BA9E68FCCCD584 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE31359DA5626DEF33CABF11 /* libPods-Bird'L.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D258B8AF89CA8A33997AD8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7D0B48FDD6A9DA82C21A70BB /* Pods-Bird'L.debug.xcconfig */,
+				CD9F76C4E770B53330BDE54B /* Pods-Bird'L.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BF02BCF31B33564D007532A1 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +234,8 @@
 				BF1F78AE1AB64631002100B5 /* Bird'L */,
 				BF1F78C71AB64631002100B5 /* Bird'LTests */,
 				BF1F78AD1AB64631002100B5 /* Products */,
+				2D258B8AF89CA8A33997AD8D /* Pods */,
+				2157159899BA9E68FCCCD584 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,6 +251,7 @@
 		BF1F78AE1AB64631002100B5 /* Bird'L */ = {
 			isa = PBXGroup;
 			children = (
+				BFC6BF121B4C175000B02CC0 /* Messages */,
 				BFDF4D091B3AA68500D775D7 /* Account */,
 				BFDF4CD61B39D34F00D775D7 /* Models */,
 				BF9D8FC01B374D630098F785 /* NetworkManager */,
@@ -235,6 +263,7 @@
 				BF1F78D41AB646B2002100B5 /* Views */,
 				BF1F78BB1AB64631002100B5 /* Images.xcassets */,
 				BF1F78AF1AB64631002100B5 /* Supporting Files */,
+				BFC6BF151B4C17BB00B02CC0 /* Bird'L-Bridging-Header.h */,
 			);
 			path = "Bird'L";
 			sourceTree = "<group>";
@@ -355,6 +384,14 @@
 			name = EventRows;
 			sourceTree = "<group>";
 		};
+		BFC6BF121B4C175000B02CC0 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
 		BFDF4CA91B39D33900D775D7 /* SwiftForms */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,9 +476,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF1F78CE1AB64631002100B5 /* Build configuration list for PBXNativeTarget "Bird'L" */;
 			buildPhases = (
+				AB8997B52D5E6EBD6B97F7CB /* Check Pods Manifest.lock */,
 				BF1F78A81AB64630002100B5 /* Sources */,
 				BF1F78A91AB64630002100B5 /* Frameworks */,
 				BF1F78AA1AB64630002100B5 /* Resources */,
+				2FD0D05CFDF254361741F7FF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -537,6 +576,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FD0D05CFDF254361741F7FF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bird'L/Pods-Bird'L-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB8997B52D5E6EBD6B97F7CB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BF1F78A81AB64630002100B5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -545,6 +617,7 @@
 				BFDF4CC61B39D33900D775D7 /* FormCheckCell.swift in Sources */,
 				BFDF4CD11B39D33900D775D7 /* FormSelector.swift in Sources */,
 				BF02BCED1B330558007532A1 /* BadgeView.swift in Sources */,
+				BFC6BF141B4C177000B02CC0 /* MessagesViewController.swift in Sources */,
 				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
 				BFDF4CC71B39D33900D775D7 /* FormDateCell.swift in Sources */,
 				BFAC2E7C1B42B1D10098B1E6 /* EventDescTableViewCell.swift in Sources */,
@@ -713,6 +786,7 @@
 		};
 		BF1F78CF1AB64631002100B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D0B48FDD6A9DA82C21A70BB /* Pods-Bird'L.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -720,12 +794,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Birdl.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bird'L/Bird'L-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BF1F78D01AB64631002100B5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD9F76C4E770B53330BDE54B /* Pods-Bird'L.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -733,6 +809,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Birdl.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bird'L/Bird'L-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
