@@ -243,7 +243,44 @@ import Foundation
                 errorFunc("Can't reach server")
             }
         }
-
+    }
+    
+    func getRelations(errorHandler errorFunc: ((String) -> Void), successHandler successFunc: ([[String : AnyObject]]) -> Void)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.relationsUrl)
+        let request = NSMutableURLRequest(URL: url!)
+        var ret: [[String : AnyObject]] = []
+        
+        request.HTTPMethod = "GET"
+        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil)
+                {
+                    let json = JSON(data: data!)
+                    
+                    if let relations = json["relations"].asArray
+                    {
+                        for rel in relations
+                        {
+                            let relation = rel.asDictionary!
+                            
+                            ret.append(["id" : relation["id"]!.asInt!, "name" : relation["name"]!.asString!])
+                        }
+                        successFunc(ret)
+                    }
+                    else
+                    {
+                        let error = self.errorFromJson(json)
+                            
+                        errorFunc(error)
+                    }
+                }
+                else
+                {
+                    errorFunc("Cannot reach server")
+                }
+        }
     }
     
     func checkToken(errorHandler: () -> Void)

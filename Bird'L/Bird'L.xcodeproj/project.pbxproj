@@ -48,6 +48,7 @@
 		BFAC2E881B42E4D10098B1E6 /* EventMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */; };
 		BFAC2E8A1B42F4F10098B1E6 /* EventMapRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */; };
 		BFC6BF141B4C177000B02CC0 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */; };
+		BFDE16FD1B4E6A0800BCB73F /* MessagesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE16FC1B4E6A0800BCB73F /* MessagesListTableViewController.swift */; };
 		BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CA61B38582B00D775D7 /* Country.swift */; };
 		BFDF4CC21B39D33900D775D7 /* FormBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */; };
 		BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */; };
@@ -131,6 +132,7 @@
 		BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapRow.swift; sourceTree = "<group>"; };
 		BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		BFC6BF151B4C17BB00B02CC0 /* Bird'L-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bird'L-Bridging-Header.h"; sourceTree = "<group>"; };
+		BFDE16FC1B4E6A0800BCB73F /* MessagesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewController.swift; sourceTree = "<group>"; };
 		BFDF4CA61B38582B00D775D7 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		BFDF4CAC1B39D33900D775D7 /* FormBaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormBaseCell.swift; sourceTree = "<group>"; };
 		BFDF4CAD1B39D33900D775D7 /* FormTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormTitleCell.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */,
+				BFDE16FC1B4E6A0800BCB73F /* MessagesListTableViewController.swift */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 				BFDF4CD21B39D33900D775D7 /* FormViewController.swift in Sources */,
 				BF02BCEF1B3355F5007532A1 /* BadgeModuleCell.swift in Sources */,
 				BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */,
+				BFDE16FD1B4E6A0800BCB73F /* MessagesListTableViewController.swift in Sources */,
 				BFAC2E8A1B42F4F10098B1E6 /* EventMapRow.swift in Sources */,
 				BFAC2E5A1B40630A0098B1E6 /* EventResultTableViewCell.swift in Sources */,
 				BFAC2E641B42A5CC0098B1E6 /* EventRow.swift in Sources */,

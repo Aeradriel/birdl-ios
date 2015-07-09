@@ -19,6 +19,7 @@ class MessagesViewController: JSQMessagesViewController
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.automaticallyAdjustsScrollViewInsets = false
         self.username = "iPhone"
         for i in 1...20 {
             let sender = (i%2 == 0) ? "Syncano" : self.username
@@ -30,7 +31,7 @@ class MessagesViewController: JSQMessagesViewController
         self.senderId = self.username
         self.inputToolbar!.contentView!.leftBarButtonItem = JSQMessagesToolbarButtonFactory.defaultSendButtonItem()
         self.inputToolbar!.contentView!.rightBarButtonItem = JSQMessagesToolbarButtonFactory.defaultAccessoryButtonItem()
-        self.inputToolbar?.backgroundColor = UIColor.purpleColor()
+        self.inputToolbar!.maximumHeight = 150
     }
     
     //MARK: JSQMessagesViewController methods
