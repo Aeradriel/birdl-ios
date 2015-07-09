@@ -29,8 +29,8 @@ class MessagesViewController: JSQMessagesViewController
         self.collectionView!.reloadData()
         self.senderDisplayName = self.username
         self.senderId = self.username
-        self.inputToolbar!.contentView!.leftBarButtonItem = JSQMessagesToolbarButtonFactory.defaultSendButtonItem()
-        self.inputToolbar!.contentView!.rightBarButtonItem = JSQMessagesToolbarButtonFactory.defaultAccessoryButtonItem()
+        self.inputToolbar!.contentView!.leftBarButtonItem = JSQMessagesToolbarButtonFactory.defaultAccessoryButtonItem()
+        self.inputToolbar!.contentView!.rightBarButtonItem = JSQMessagesToolbarButtonFactory.defaultSendButtonItem()
         self.inputToolbar!.maximumHeight = 150
     }
     

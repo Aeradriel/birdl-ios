@@ -252,7 +252,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="dnp-t9-PTg"/>
                     <connections>
-                        <segue destination="1Jq-f4-luh" kind="show" identifier="messagesViewControllerSegue" id="0bt-LU-G6b"/>
+                        <segue destination="1Jq-f4-luh" kind="show" identifier="messagesSegue" id="0bt-LU-G6b"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BzF-1o-dDn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -272,9 +272,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ijk-K4-IT6">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="f94-KN-o3G"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="ijk-K4-IT6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5R6-WS-0xU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

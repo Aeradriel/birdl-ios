@@ -63,4 +63,9 @@ class MessagesListTableViewController: UITableViewController
         cell.textLabel?.text = self.relations[indexPath.row]["name"] as? String
         return cell
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        performSegueWithIdentifier("messagesSegue", sender: self)
+    }
 }
