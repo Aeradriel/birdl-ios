@@ -21,17 +21,35 @@ class MessagesViewController: JSQMessagesViewController
 
         self.automaticallyAdjustsScrollViewInsets = false
         self.username = "iPhone"
-        for i in 1...20 {
-            let sender = (i%2 == 0) ? "Syncano" : self.username
-            let message = JSQMessage(senderId: sender, displayName: sender, text: "Text")
-            self.messages += [message]
-        }
-        self.collectionView!.reloadData()
         self.senderDisplayName = self.username
         self.senderId = self.username
         self.inputToolbar!.contentView!.leftBarButtonItem = JSQMessagesToolbarButtonFactory.defaultAccessoryButtonItem()
         self.inputToolbar!.contentView!.rightBarButtonItem = JSQMessagesToolbarButtonFactory.defaultSendButtonItem()
         self.inputToolbar!.maximumHeight = 150
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        //TODO: Dynamic relation
+        g_APICommunicator.getMessages(1, successFunc: self.messagesDidLoad, errorFunc: self.errorHandler)
+    }
+    
+    //MARK: Callback
+    func messagesDidLoad(messages: [Message])
+    {
+        for message in messages
+        {
+            //TODO: Dynamic username
+            let sender = "Thibaut Roche"
+            let message = JSQMessage(senderId: sender, displayName: sender, text: message.content)
+            self.messages += [message]
+            self.collectionView!.reloadData()
+        }
+    }
+    
+    func errorHandler(error: String)
+    {
+        UIAlertView(title: "Erreur", message: error, delegate: nil, cancelButtonTitle: "OK").show()
     }
     
     //MARK: JSQMessagesViewController methods
@@ -50,7 +68,18 @@ class MessagesViewController: JSQMessagesViewController
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
-        return nil
+        let words = split(self.messages[indexPath.row].senderDisplayName.characters) { $0 == " " }.map { String($0) }
+        var initials = ""
+        
+        for i in 0...(words.count >= 2 ? 1 : 0)
+        {
+            let w = words[i]
+            
+            initials.append(w[w.startIndex])
+        }
+        let avatar = JSQMessagesAvatarImageFactory.avatarImageWithUserInitials(initials, backgroundColor: UIColor.grayColor(), textColor: UIColor.whiteColor(), font: UIFont.systemFontOfSize(10), diameter: UInt(kJSQMessagesCollectionViewAvatarSizeDefault))
+
+        return avatar
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

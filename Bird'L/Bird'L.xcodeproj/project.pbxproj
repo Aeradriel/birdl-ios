@@ -24,6 +24,7 @@
 		BF1F78BC1AB64631002100B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78BB1AB64631002100B5 /* Images.xcassets */; };
 		BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78BD1AB64631002100B5 /* LaunchScreen.xib */; };
 		BF1F78CB1AB64631002100B5 /* Bird_LTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */; };
+		BF377F9B1B50044700099040 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF377F9A1B50044700099040 /* Message.swift */; };
 		BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
 		BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */; };
 		BFAC2E571B4062E70098B1E6 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */; };
@@ -108,6 +109,7 @@
 		BF1F78C41AB64631002100B5 /* Bird'LTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bird'LTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F78C91AB64631002100B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird_LTests.swift; sourceTree = "<group>"; };
+		BF377F9A1B50044700099040 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSearchViewController.swift; sourceTree = "<group>"; };
 		BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResultTableViewCell.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 				BFAC2E6D1B42A9240098B1E6 /* EventRows */,
 				BFDF4CA61B38582B00D775D7 /* Country.swift */,
 				BFAC2E5C1B4067D90098B1E6 /* Event.swift */,
+				BF377F9A1B50044700099040 /* Message.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */,
 				BFAC2E6C1B42A8DA0098B1E6 /* EventDetailTableViewCell.swift in Sources */,
 				BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */,
+				BF377F9B1B50044700099040 /* Message.swift in Sources */,
 				BFAC2E791B42ADCC0098B1E6 /* EventDescRow.swift in Sources */,
 				01D5F5281B338B65003EEF39 /* Config.swift in Sources */,
 				BFDF4CC91B39D33900D775D7 /* FormSegmentedControlCell.swift in Sources */,

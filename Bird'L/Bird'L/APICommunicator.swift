@@ -283,6 +283,48 @@ import Foundation
         }
     }
     
+    func getMessages(relation: Int, successFunc: ([Message]) -> Void, errorFunc: (String) -> Void)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.messagesUrl + "?relation=" + String(relation))
+        let request = NSMutableURLRequest(URL: url!)
+        var ret: [Message] = []
+        
+        request.HTTPMethod = "GET"
+        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil)
+                {
+                    let json = JSON(data: data!)
+                    
+                    if let messages = json["messages"].asArray
+                    {
+                        for m in messages
+                        {
+                            if m.asDictionary != nil
+                            {
+                                let message = m.asDictionary!
+                                let newMessage = Message(id: message["id"]!.asInt!, sender_id: message["sender_id"]!.asInt!, receiver_id: message["receiver_id"]!.asInt!, content: message["content"]!.asString!)
+                                
+                                ret.append(newMessage)
+                            }
+                        }
+                        successFunc(ret)
+                    }
+                    else
+                    {
+                        let error = self.errorFromJson(json)
+                        
+                        errorFunc(error)
+                    }
+                }
+                else
+                {
+                    errorFunc("Cannot reach server")
+                }
+        }
+    }
+    
     func checkToken(errorHandler: () -> Void)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.checkTokenUrl)

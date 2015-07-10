@@ -18,4 +18,5 @@ struct netConfig {
     static let eventsUrl = "/events"
     static let checkTokenUrl = "/check_token"
     static let relationsUrl = "/messages/relations"
+    static let messagesUrl = "/messages"
 }
