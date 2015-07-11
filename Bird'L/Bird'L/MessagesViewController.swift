@@ -20,7 +20,8 @@ class MessagesViewController: JSQMessagesViewController
         super.viewDidLoad()
 
         self.automaticallyAdjustsScrollViewInsets = false
-        self.username = "iPhone"
+        //TODO: Dynamic username
+        self.username = "User"
         self.senderDisplayName = self.username
         self.senderId = self.username
         self.inputToolbar!.contentView!.leftBarButtonItem = JSQMessagesToolbarButtonFactory.defaultAccessoryButtonItem()
@@ -39,10 +40,9 @@ class MessagesViewController: JSQMessagesViewController
     {
         for message in messages
         {
-            //TODO: Dynamic username
-            let sender = "Thibaut Roche"
-            let message = JSQMessage(senderId: sender, displayName: sender, text: message.content)
-            self.messages += [message]
+            let sender = message.sender_name
+            let newMessage = JSQMessage(senderId: sender, displayName: sender, text: message.content)
+            self.messages += [newMessage]
             self.collectionView!.reloadData()
         }
     }
@@ -67,7 +67,8 @@ class MessagesViewController: JSQMessagesViewController
         }
     }
     
-    override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
+    override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource!
+    {
         let words = split(self.messages[indexPath.row].senderDisplayName.characters) { $0 == " " }.map { String($0) }
         var initials = ""
         
@@ -82,16 +83,19 @@ class MessagesViewController: JSQMessagesViewController
         return avatar
     }
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
         return self.messages.count;
     }
     
-    override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
+    override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!)
+    {
         let newMessage = JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text);
         messages += [newMessage]
         self.finishSendingMessage()
     }
     
-    override func didPressAccessoryButton(sender: UIButton!) {
+    override func didPressAccessoryButton(sender: UIButton!)
+    {
     }
 }

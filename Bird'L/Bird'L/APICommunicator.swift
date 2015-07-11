@@ -304,7 +304,7 @@ import Foundation
                             if m.asDictionary != nil
                             {
                                 let message = m.asDictionary!
-                                let newMessage = Message(id: message["id"]!.asInt!, sender_id: message["sender_id"]!.asInt!, receiver_id: message["receiver_id"]!.asInt!, content: message["content"]!.asString!)
+                                let newMessage = Message(id: message["id"]!.asInt!, sender_id: message["sender_id"]!.asInt!, sender_name: message["sender_name"]!.asString!, receiver_id: message["receiver_id"]!.asInt!, receiver_name: message["receiver_name"]!.asString!, content: message["content"]!.asString!)
                                 
                                 ret.append(newMessage)
                             }
