@@ -11,6 +11,7 @@ import UIKit
 class MessagesListTableViewController: UITableViewController
 {
     var relations: [[String : AnyObject]] = []
+    var selectedRelation: [String : AnyObject]!
  
     //MARK: UIViewController methods
     required init(coder aDecoder: NSCoder)
@@ -31,6 +32,16 @@ class MessagesListTableViewController: UITableViewController
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if (segue.identifier == "messagesSegue")
+        {
+            let destinationVc: MessagesViewController = segue.destinationViewController as! MessagesViewController
+            
+            destinationVc.relationId = self.selectedRelation["id"] as! Int
+        }
     }
     
     //MARK: Callbacks
@@ -66,6 +77,7 @@ class MessagesListTableViewController: UITableViewController
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        self.selectedRelation = self.relations[indexPath.row]
         performSegueWithIdentifier("messagesSegue", sender: self)
     }
 }

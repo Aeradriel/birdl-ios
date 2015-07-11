@@ -10,6 +10,7 @@ import UIKit
 
 class MessagesViewController: JSQMessagesViewController
 {
+    var relationId: Int!
     var username = ""
     var messages = [JSQMessage]()
     let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
@@ -30,8 +31,7 @@ class MessagesViewController: JSQMessagesViewController
     
     override func viewDidAppear(animated: Bool)
     {
-        //TODO: Dynamic relation
-        g_APICommunicator.getMessages(1, successFunc: self.messagesDidLoad, errorFunc: self.errorHandler)
+        g_APICommunicator.getMessages(self.relationId, successFunc: self.messagesDidLoad, errorFunc: self.errorHandler)
     }
     
     //MARK: Callback
