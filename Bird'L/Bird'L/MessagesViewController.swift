@@ -20,8 +20,7 @@ class MessagesViewController: JSQMessagesViewController
         super.viewDidLoad()
 
         self.automaticallyAdjustsScrollViewInsets = false
-        //TODO: Dynamic username
-        self.username = "User"
+        self.username = "\(User.currentUser().firstName) \(User.currentUser().lastName)"
         self.senderDisplayName = self.username
         self.senderId = self.username
         self.inputToolbar!.contentView!.leftBarButtonItem = JSQMessagesToolbarButtonFactory.defaultAccessoryButtonItem()
