@@ -40,6 +40,7 @@ import Foundation
                         if let httpResponse = response as? NSHTTPURLResponse {
                             self.token = httpResponse.allHeaderFields["Access-Token"] as! String;
                             self.isAuth = true;
+                            self.getBaseUserInfo(errorHander: nil, successHandler: User.setCurrentUser)
                             success!();
                         }
                         else {
@@ -335,7 +336,16 @@ import Foundation
         request.addValue(self.token, forHTTPHeaderField: "Access-Token")
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
             { (response, data, error) in
-                if error != nil
+                if response != nil
+                {
+                    let httpResponse = response as! NSHTTPURLResponse
+                
+                    if httpResponse.statusCode != 200
+                    {
+                        errorHandler()
+                    }
+                }
+                else
                 {
                     errorHandler()
                 }
