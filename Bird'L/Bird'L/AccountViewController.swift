@@ -165,9 +165,8 @@ class AccountViewController: FormViewController {
                 default:
                     return self.countriesValue[value as! Int]
                 }
-        } as TitleFormatterClosure
+            } as TitleFormatterClosure
         section1.addRow(row)
-
         
         // Password
         let section2 = FormSectionDescriptor()
