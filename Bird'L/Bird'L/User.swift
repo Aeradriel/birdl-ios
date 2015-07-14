@@ -103,6 +103,81 @@ class User : NSObject
         }
     }
     
+    //TODO: Not class function
+    class func update(userDictionary user: NSDictionary, password: String, errorHandler errorFunc: ((String) -> Void)?, successHandler successFunc: (() -> Void)?)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.accountEditionUrl)
+        let request = NSMutableURLRequest(URL: url!)
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        let birthdate = dateFormatter.stringFromDate(user["birthdate"] as! NSDate)
+        var bodyData = "user={\"email\": \"" + (user["email"] as! String) + "\",\"first_name\": \""
+        
+        bodyData += (user["fname"] as! String) + "\",\"last_name\": \"" + (user["lname"] as! String)
+        bodyData += "\",\"gender\": \"" + String(user["gender"] as! Int) + "\",\"birthdate\": \""
+        bodyData += (birthdate) + "\",\"country_id\": \"" + String(user["country"] as! Int) + "\"}"
+        bodyData += "&password=" + password
+        
+        request.HTTPMethod = "POST"
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+            if (data != nil) {
+                let json = JSON(data: data!)
+                
+                if let _ = json["user"].asDictionary
+                {
+                    successFunc!();
+                }
+                else
+                {
+                    if errorFunc != nil
+                    {
+                        let error = APICommunicator.errorFromJson(json)
+                        
+                        errorFunc!(error)
+                    }
+                }
+            }
+            else {
+                if errorFunc != nil
+                {
+                    errorFunc!("Can't reach server")
+                }
+            }
+        }
+    }
+    
+    class func getBaseInfo(token: String?, errorHander errorFunc: ((String) -> Void)?, successHandler successFunc: (([String : JSON]) -> Void)?)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.accountEditionUrl)
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "GET"
+        request.addValue(token!, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil)
+                {
+                    let json = JSON(data: data!)
+                    
+                    if let userObject = json["user"].asDictionary
+                    {
+                        successFunc!(userObject)
+                    }
+                    else
+                    {
+                        if errorFunc != nil
+                        {
+                            let error = APICommunicator.errorFromJson(json)
+                            
+                            errorFunc!(error)
+                        }
+                    }
+                }
+        }
+    }
+    
     class func relations(errorHandler errorFunc: ((String) -> Void), successHandler successFunc: ([[String : AnyObject]]) -> Void)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.relationsUrl)

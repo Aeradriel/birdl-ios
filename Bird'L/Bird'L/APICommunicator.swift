@@ -19,81 +19,8 @@ class APICommunicator
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let token = userDefaults.valueForKey("access-token")
         
-        self.token =  token as? String != nil ? token as! String : ""
-        self.getBaseUserInfo(errorHander: nil, successHandler: User.setCurrentUser)
-    }
-    
-    func getBaseUserInfo(errorHander errorFunc: ((String) -> Void)?, successHandler successFunc: (([String : JSON]) -> Void)?)
-    {
-        let url = NSURL(string: netConfig.apiURL + netConfig.accountEditionUrl)
-        let request = NSMutableURLRequest(URL: url!)
-        
-        request.HTTPMethod = "GET"
-        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
-            { (response, data, error) in
-                if (data != nil)
-                {
-                    let json = JSON(data: data!)
-                    
-                    if let userObject = json["user"].asDictionary
-                    {
-                        successFunc!(userObject)
-                    }
-                    else
-                    {
-                        if errorFunc != nil
-                        {
-                            let error = APICommunicator.errorFromJson(json)
-                            
-                            errorFunc!(error)
-                        }
-                    }
-                }
-        }
-    }
-    
-    func updateUser(userDictionary user: NSDictionary, password: String, errorHandler errorFunc: ((String) -> Void)?, successHandler successFunc: (() -> Void)?)
-    {
-        let url = NSURL(string: netConfig.apiURL + netConfig.accountEditionUrl)
-        let request = NSMutableURLRequest(URL: url!)
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
-        let birthdate = dateFormatter.stringFromDate(user["birthdate"] as! NSDate)
-        var bodyData = "user={\"email\": \"" + (user["email"] as! String) + "\",\"first_name\": \""
-        bodyData += (user["fname"] as! String) + "\",\"last_name\": \"" + (user["lname"] as! String)
-        bodyData += "\",\"gender\": \"" + String(user["gender"] as! Int) + "\",\"birthdate\": \""
-        bodyData += (birthdate) + "\",\"country_id\": \"" + String(user["country"] as! Int) + "\"}"
-        bodyData += "&password=" + password
-        
-        request.HTTPMethod = "POST"
-        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
-        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-            if (data != nil) {
-                let json = JSON(data: data!)
-                
-                if let _ = json["user"].asDictionary
-                {
-                    successFunc!();
-                }
-                else
-                {
-                    if errorFunc != nil
-                    {
-                        let error = APICommunicator.errorFromJson(json)
-                        
-                        errorFunc!(error)
-                    }
-                }
-            }
-            else {
-                if errorFunc != nil
-                {
-                    errorFunc!("Can't reach server")
-                }
-            }
-        }
+        self.token = token as? String != nil ? token as! String : ""
+        User.getBaseInfo(self.token, errorHander: nil, successHandler: User.setCurrentUser)
     }
     
     //MARK: Authentication
@@ -122,6 +49,7 @@ class APICommunicator
         }
     }
     
+    //TODO: Proper error messages
     func authenticateUser(email : String, password : String, success: (() -> Void)?, errorFunc: ((String) -> Void)?)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.loginURL);
@@ -138,7 +66,7 @@ class APICommunicator
                     if (authenticationResult == "Authentication succeed") {
                         if let httpResponse = response as? NSHTTPURLResponse {
                             self.token = httpResponse.allHeaderFields["Access-Token"] as! String;
-                            self.getBaseUserInfo(errorHander: nil, successHandler: User.setCurrentUser)
+                            User.getBaseInfo(self.token, errorHander: nil, successHandler: User.setCurrentUser)
                             success!();
                         }
                         else {

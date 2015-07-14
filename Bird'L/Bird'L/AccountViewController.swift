@@ -24,6 +24,7 @@ class AccountViewController: FormViewController {
     var countriesValue: [Int : String] = [Int : String]()
     
     //MARK: UIViewController methods
+    //TODO: Find a way to put call in viewDidAppear
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -38,12 +39,10 @@ class AccountViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     override func viewDidAppear(animated: Bool) {
-        g_APICommunicator.getBaseUserInfo(errorHander: self.errorHandler, successHandler: self.updateUIWithUser)
+        User.getBaseInfo(g_APICommunicator.token, errorHander: self.errorHandler, successHandler: self.updateUIWithUser)
     }
     
     //MARK: Checks
@@ -109,7 +108,7 @@ class AccountViewController: FormViewController {
         }
         else
         {
-            g_APICommunicator.updateUser(userDictionary: self.form.formValues() as! [String : AnyObject], password: self.form.formValues()["password"] as! String, errorHandler: self.errorHandler, successHandler: self.userDidUpdate)
+            User.update(userDictionary: self.form.formValues() as! [String : AnyObject], password: self.form.formValues()["password"] as! String, errorHandler: self.errorHandler, successHandler: self.userDidUpdate)
         }
     }
     
