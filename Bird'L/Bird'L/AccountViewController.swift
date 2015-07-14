@@ -27,7 +27,7 @@ class AccountViewController: FormViewController {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.countries = g_APICommunicator.getAllCountries(errorHandler: self.errorHandler)
+        self.countries = Country.all(errorHandler: self.errorHandler)
         for country in self.countries
         {
             self.countriesId.append(country.id)

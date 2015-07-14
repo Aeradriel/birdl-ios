@@ -10,9 +10,10 @@ import Foundation
 
 class APICommunicator
 {
-    var isAuth = false
+    //MARK: Variables
     var token = ""
     
+    //MARK: Init
     init()
     {
         let userDefaults = NSUserDefaults.standardUserDefaults()
@@ -20,121 +21,6 @@ class APICommunicator
         
         self.token =  token as? String != nil ? token as! String : ""
         self.getBaseUserInfo(errorHander: nil, successHandler: User.setCurrentUser)
-    }
-    
-    //TODO: add callback function + proper error messages
-    func authenticateUser(email : String, password : String, success: (() -> Void)?, errorFunc: ((String) -> Void)?)
-    {
-        let url = NSURL(string: netConfig.apiURL + netConfig.loginURL);
-        var _ : NSError?;
-        let request = NSMutableURLRequest(URL: url!)
-        request.HTTPMethod = "POST"
-        let bodyData = "email=\(email)&password=\(password)"
-        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
-        
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-            if (data != nil) {
-                let json = JSON(data: data!)
-                if let authenticationResult = json["data"].asString {
-                    if (authenticationResult == "Authentication succeed") {
-                        if let httpResponse = response as? NSHTTPURLResponse {
-                            self.token = httpResponse.allHeaderFields["Access-Token"] as! String;
-                            self.isAuth = true;
-                            self.getBaseUserInfo(errorHander: nil, successHandler: User.setCurrentUser)
-                            success!();
-                        }
-                        else {
-                            errorFunc!("Authentication failed")
-                        }
-                    }
-                    else {
-                        errorFunc!("Unknown Error")
-                    }
-                    
-                } else {
-                    errorFunc!("Incorrect email or password")
-                }
-            }
-            else {
-                errorFunc!("Can't reach server")
-            }
-        }
-        
-    }
-    
-    func createAccount(email: String, password : String, first_name : String, last_name : String, gender : Bool, birthdate: String, country_id : Int, success: (() -> Void)?, errorFunc: ((String) -> Void)?)
-    {
-        let url = NSURL(string: netConfig.apiURL + netConfig.registerURL)
-        let request = NSMutableURLRequest(URL: url!)
-        request.HTTPMethod = "POST"
-        let bodyData = "user={\"email\": \"\(email)\",\"first_name\": \"\(first_name)\",\"last_name\": \"\(last_name)\",\"password\": \"\(password)\",\"gender\": \"\(gender ? 1 : 0)\",\"birthdate\": \"\(birthdate)\",\"country_id\": \"\(country_id)\"}"
-        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
-        
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-            if (data != nil) {
-                let json = JSON(data: data!)
-                
-                if let _ = json["user"].asDictionary
-                {
-                    success!();
-                }
-                else
-                {
-                    if errorFunc != nil
-                    {
-                        let error = APICommunicator.errorFromJson(json)
-
-                        errorFunc!(error)
-                    }
-                }
-            }
-            else {
-                errorFunc!("Can't reach server")
-            }
-        }
-    }
-    
-    func getAllCountries(errorHandler errorFunc: ((String) -> Void)?) -> [Country]
-    {
-        let url = NSURL(string: netConfig.apiURL + netConfig.countriesUrl)
-        let request = NSMutableURLRequest(URL: url!)
-        var ret: [Country] = []
-        var response: NSURLResponse?
-        var data: NSData?
-        
-        request.HTTPMethod = "GET"
-        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
-        do
-        {
-            data = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
-        }
-        catch let error as NSError
-        {
-            data = nil
-            
-            if errorFunc != nil
-            {
-                errorFunc!(error.localizedDescription)
-            }
-        }
-        if data != nil
-        {
-            let json = JSON(data: data!)
-            if let countries = json["countries"].asArray
-            {
-                for country in countries
-                {
-                    let newCountry = Country(id: country["id"].asInt!, andName: country["name"].asString, andLanguage: country["language"].asString, andI18nKey: country["i18n_key"].asString, andAvailable: country["available"].asBool!)
-                    
-                    ret.append(newCountry)
-                }
-            }
-            else if errorFunc != nil
-            {
-                errorFunc!(APICommunicator.errorFromJson(json))
-            }
-        }
-        return ret
     }
     
     func getBaseUserInfo(errorHander errorFunc: ((String) -> Void)?, successHandler successFunc: (([String : JSON]) -> Void)?)
@@ -210,123 +96,7 @@ class APICommunicator
         }
     }
     
-    func getAllEvents(errorHandler errorFunc: ((String) -> Void), successHandler successFunc: ([Event]) -> Void)
-    {
-        let url = NSURL(string: netConfig.apiURL + netConfig.eventsUrl)
-        let request = NSMutableURLRequest(URL: url!)
-        
-        request.HTTPMethod = "GET"
-        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
-            { (response, data, error) in
-            if (data != nil) {
-                let json = JSON(data: data!)
-                var ret: [Event] = []
-                
-                if let events = json["events"].asArray
-                {
-                    for event in events
-                    {
-                        let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: event["address_id"].asInt!, language: event["language"].asString)
-                        
-                        ret.append(newEvent)
-                    }
-                    successFunc(ret)
-                }
-                else
-                {
-                    let error = APICommunicator.errorFromJson(json)
-                    
-                    errorFunc(error)
-                }
-            }
-            else
-            {
-                errorFunc("Can't reach server")
-            }
-        }
-    }
-    
-    func getRelations(errorHandler errorFunc: ((String) -> Void), successHandler successFunc: ([[String : AnyObject]]) -> Void)
-    {
-        let url = NSURL(string: netConfig.apiURL + netConfig.relationsUrl)
-        let request = NSMutableURLRequest(URL: url!)
-        var ret: [[String : AnyObject]] = []
-        
-        request.HTTPMethod = "GET"
-        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
-            { (response, data, error) in
-                if (data != nil)
-                {
-                    let json = JSON(data: data!)
-                    
-                    if let relations = json["relations"].asArray
-                    {
-                        for rel in relations
-                        {
-                            let relation = rel.asDictionary!
-                            
-                            ret.append(["id" : relation["id"]!.asInt!, "name" : relation["name"]!.asString!])
-                        }
-                        successFunc(ret)
-                    }
-                    else
-                    {
-                        let error = APICommunicator.errorFromJson(json)
-
-                        errorFunc(error)
-                    }
-                }
-                else
-                {
-                    errorFunc("Cannot reach server")
-                }
-        }
-    }
-    
-    func getMessages(relation: Int, successFunc: ([Message]) -> Void, errorFunc: (String) -> Void)
-    {
-        let url = NSURL(string: netConfig.apiURL + netConfig.messagesUrl + "?relation=" + String(relation))
-        let request = NSMutableURLRequest(URL: url!)
-        var ret: [Message] = []
-        
-        request.HTTPMethod = "GET"
-        request.addValue(self.token, forHTTPHeaderField: "Access-Token")
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
-            { (response, data, error) in
-                if (data != nil)
-                {
-                    let json = JSON(data: data!)
-                    
-                    if let messages = json["messages"].asArray
-                    {
-                        for m in messages
-                        {
-                            if m.asDictionary != nil
-                            {
-                                let message = m.asDictionary!
-                                let newMessage = Message(id: message["id"]!.asInt!, sender_id: message["sender_id"]!.asInt!, sender_name: message["sender_name"]!.asString!, receiver_id: message["receiver_id"]!.asInt!, receiver_name: message["receiver_name"]!.asString!, content: message["content"]!.asString!)
-                                
-                                ret.append(newMessage)
-                            }
-                        }
-                        successFunc(ret)
-                    }
-                    else
-                    {
-                        let error = APICommunicator.errorFromJson(json)
-                        
-                        errorFunc(error)
-                    }
-                }
-                else
-                {
-                    errorFunc("Cannot reach server")
-                }
-        }
-    }
-    
+    //MARK: Authentication
     func checkToken(errorHandler: () -> Void)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.checkTokenUrl)
@@ -352,6 +122,46 @@ class APICommunicator
         }
     }
     
+    func authenticateUser(email : String, password : String, success: (() -> Void)?, errorFunc: ((String) -> Void)?)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.loginURL);
+        var _ : NSError?;
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "POST"
+        let bodyData = "email=\(email)&password=\(password)"
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+            if (data != nil) {
+                let json = JSON(data: data!)
+                if let authenticationResult = json["data"].asString {
+                    if (authenticationResult == "Authentication succeed") {
+                        if let httpResponse = response as? NSHTTPURLResponse {
+                            self.token = httpResponse.allHeaderFields["Access-Token"] as! String;
+                            self.getBaseUserInfo(errorHander: nil, successHandler: User.setCurrentUser)
+                            success!();
+                        }
+                        else {
+                            errorFunc!("Authentication failed")
+                        }
+                    }
+                    else {
+                        errorFunc!("Unknown Error")
+                    }
+                    
+                } else {
+                    errorFunc!("Incorrect email or password")
+                }
+            }
+            else {
+                errorFunc!("Can't reach server")
+            }
+        }
+        
+    }
+
+    
+    //MARK: Error handling
     class func errorFromJson(jsonError: JSON) -> String
     {
         var error: String = ""

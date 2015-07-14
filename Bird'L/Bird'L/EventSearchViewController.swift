@@ -32,7 +32,7 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
     
     override func viewWillAppear(animated: Bool)
     {
-        g_APICommunicator.getAllEvents(errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
+        Event.all(errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,6 +10,7 @@ import Foundation
 
 class User : NSObject
 {
+    //Variables
     var id: Int!
     var firstName: String!
     var lastName: String!
@@ -20,6 +21,7 @@ class User : NSObject
     
     private static var current: User!
     
+    //MARK: Init
     init(userInfos: [String : JSON])
     {
         super.init()
@@ -42,6 +44,7 @@ class User : NSObject
         }
     }
     
+    //MARK: Singleton implementation
     class func currentUser() -> User
     {
         return self.current
@@ -52,6 +55,7 @@ class User : NSObject
         self.current = User(userInfos: userInfos)
     }
     
+    //MARK: Private checks
     private class func userJsonIsValid(userJson: [String : JSON]) -> Bool
     {
         let requiredFields = ["id", "email", "first_name", "last_name", "gender", "birthdate", "country"]
@@ -65,4 +69,76 @@ class User : NSObject
         }
         return true
     }
+    
+    //MARK: ActiveRecord functions
+    class func create(email: String, password : String, first_name : String, last_name : String, gender : Bool, birthdate: String, country_id : Int, success: (() -> Void)?, errorFunc: ((String) -> Void)?)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.registerURL)
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "POST"
+        let bodyData = "user={\"email\": \"\(email)\",\"first_name\": \"\(first_name)\",\"last_name\": \"\(last_name)\",\"password\": \"\(password)\",\"gender\": \"\(gender ? 1 : 0)\",\"birthdate\": \"\(birthdate)\",\"country_id\": \"\(country_id)\"}"
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+            if (data != nil) {
+                let json = JSON(data: data!)
+                
+                if let _ = json["user"].asDictionary
+                {
+                    success!();
+                }
+                else
+                {
+                    if errorFunc != nil
+                    {
+                        let error = APICommunicator.errorFromJson(json)
+                        
+                        errorFunc!(error)
+                    }
+                }
+            }
+            else {
+                errorFunc!("Can't reach server")
+            }
+        }
+    }
+    
+    class func relations(errorHandler errorFunc: ((String) -> Void), successHandler successFunc: ([[String : AnyObject]]) -> Void)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.relationsUrl)
+        let request = NSMutableURLRequest(URL: url!)
+        var ret: [[String : AnyObject]] = []
+        
+        request.HTTPMethod = "GET"
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil)
+                {
+                    let json = JSON(data: data!)
+                    
+                    if let relations = json["relations"].asArray
+                    {
+                        for rel in relations
+                        {
+                            let relation = rel.asDictionary!
+                            
+                            ret.append(["id" : relation["id"]!.asInt!, "name" : relation["name"]!.asString!])
+                        }
+                        successFunc(ret)
+                    }
+                    else
+                    {
+                        let error = APICommunicator.errorFromJson(json)
+                        
+                        errorFunc(error)
+                    }
+                }
+                else
+                {
+                    errorFunc("Cannot reach server")
+                }
+        }
+    }
+
 }

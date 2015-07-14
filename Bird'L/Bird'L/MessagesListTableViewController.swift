@@ -26,7 +26,7 @@ class MessagesListTableViewController: UITableViewController
 
     override func viewDidAppear(animated: Bool)
     {
-        g_APICommunicator.getRelations(errorHandler: self.errorHandler, successHandler: self.relationsDidLoad)
+        User.relations(errorHandler: self.errorHandler, successHandler: self.relationsDidLoad)
     }
     
     override func didReceiveMemoryWarning()

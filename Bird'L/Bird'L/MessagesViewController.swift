@@ -31,7 +31,7 @@ class MessagesViewController: JSQMessagesViewController
     
     override func viewDidAppear(animated: Bool)
     {
-        g_APICommunicator.getMessages(self.relationId, successFunc: self.messagesDidLoad, errorFunc: self.errorHandler)
+        Message.with(self.relationId, successFunc: self.messagesDidLoad, errorFunc: self.errorHandler)
     }
     
     //MARK: Callback

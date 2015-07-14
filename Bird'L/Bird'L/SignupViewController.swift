@@ -190,7 +190,7 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         
         view.addGestureRecognizer(tap)
-        self.countries = g_APICommunicator.getAllCountries(errorHandler: nil)
+        self.countries = Country.all(errorHandler: nil)
         self.selectedCountry = countries.first
     }
     
@@ -223,7 +223,7 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
     //MARK: IBActions
     @IBAction func validButtonUp(sender: AnyObject) {
         
-        g_APICommunicator.createAccount(username, password: password, first_name : firstName, last_name : lastName, gender : gender, birthdate: birthDate, country_id : selectedCountry.id, success: signupSucceed, errorFunc: signupError)
+        User.create(username, password: password, first_name : firstName, last_name : lastName, gender : gender, birthdate: birthDate, country_id : selectedCountry.id, success: signupSucceed, errorFunc: signupError)
     }
     
     //MARK: Callbacks
