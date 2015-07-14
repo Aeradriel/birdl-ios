@@ -26,4 +26,40 @@ class Message : NSObject
         self.receiver_name = receiver_name
         self.content = content
     }
+    
+    func publish(successFunc: (() -> Void)?, errorFunc: ((String) -> Void)?)
+    {
+        let baseUrl = netConfig.apiURL + netConfig.newMessageUrl
+        let args = "sender_id=\(self.sender_id)&receiver_id=\(self.receiver_id)&content=\(self.content)"
+        let request = NSMutableURLRequest(URL: NSURL(string: baseUrl + "?" + args.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)!)
+
+        request.HTTPMethod = "POST"
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            {(response, data, error) in
+            if (data != nil) {
+                let json = JSON(data: data!)
+                
+                if let _ = json["message"].asDictionary
+                {
+                    if successFunc != nil
+                    {
+                        successFunc!()
+                    }
+                }
+                else
+                {
+                    if errorFunc != nil
+                    {
+                        let error = APICommunicator.errorFromJson(json)
+                        
+                        errorFunc!(error)
+                    }
+                }
+            }
+            else {
+                errorFunc!("Can't reach server")
+            }
+        }
+    }
 }

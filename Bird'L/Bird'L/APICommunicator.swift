@@ -8,10 +8,10 @@
 
 import Foundation
 
- class APICommunicator {
-    
-    var isAuth = false;
-    var token = "";
+class APICommunicator
+{
+    var isAuth = false
+    var token = ""
     
     init()
     {
@@ -82,7 +82,7 @@ import Foundation
                 {
                     if errorFunc != nil
                     {
-                        let error = self.errorFromJson(json)
+                        let error = APICommunicator.errorFromJson(json)
 
                         errorFunc!(error)
                     }
@@ -131,7 +131,7 @@ import Foundation
             }
             else if errorFunc != nil
             {
-                errorFunc!(errorFromJson(json))
+                errorFunc!(APICommunicator.errorFromJson(json))
             }
         }
         return ret
@@ -158,7 +158,7 @@ import Foundation
                     {
                         if errorFunc != nil
                         {
-                            let error = self.errorFromJson(json)
+                            let error = APICommunicator.errorFromJson(json)
                             
                             errorFunc!(error)
                         }
@@ -195,7 +195,7 @@ import Foundation
                 {
                     if errorFunc != nil
                     {
-                        let error = self.errorFromJson(json)
+                        let error = APICommunicator.errorFromJson(json)
                         
                         errorFunc!(error)
                     }
@@ -235,7 +235,7 @@ import Foundation
                 }
                 else
                 {
-                    let error = self.errorFromJson(json)
+                    let error = APICommunicator.errorFromJson(json)
                     
                     errorFunc(error)
                 }
@@ -273,8 +273,8 @@ import Foundation
                     }
                     else
                     {
-                        let error = self.errorFromJson(json)
-                            
+                        let error = APICommunicator.errorFromJson(json)
+
                         errorFunc(error)
                     }
                 }
@@ -315,7 +315,7 @@ import Foundation
                     }
                     else
                     {
-                        let error = self.errorFromJson(json)
+                        let error = APICommunicator.errorFromJson(json)
                         
                         errorFunc(error)
                     }
@@ -352,7 +352,7 @@ import Foundation
         }
     }
     
-    func errorFromJson(jsonError: JSON) -> String
+    class func errorFromJson(jsonError: JSON) -> String
     {
         var error: String = ""
         

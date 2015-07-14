@@ -41,11 +41,17 @@ class MessagesViewController: JSQMessagesViewController
         {
             let sender = message.sender_name
             let newMessage = JSQMessage(senderId: sender, displayName: sender, text: message.content)
+            
             self.messages += [newMessage]
-            self.collectionView!.reloadData()
         }
+        self.collectionView!.reloadData()
     }
     
+    func messageDidNotPublish(error: String)
+    {
+        UIAlertView(title: "Erreur", message: "Erreur lors de l'envoi du message\n\n\(error)", delegate: nil, cancelButtonTitle: "OK").show()
+    }
+
     func errorHandler(error: String)
     {
         UIAlertView(title: "Erreur", message: error, delegate: nil, cancelButtonTitle: "OK").show()
@@ -90,7 +96,9 @@ class MessagesViewController: JSQMessagesViewController
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!)
     {
         let newMessage = JSQMessage(senderId: senderId, displayName: senderDisplayName, text: text);
+        
         messages += [newMessage]
+        Message(id: 0, sender_id: User.currentUser().id, sender_name: "", receiver_id: self.relationId, receiver_name: "", content: text).publish(nil, errorFunc: self.messageDidNotPublish)
         self.finishSendingMessage()
     }
     

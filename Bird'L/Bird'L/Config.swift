@@ -9,14 +9,16 @@
 import Foundation
 
 struct netConfig {
-    static let apiURL = "http://163.5.84.208:3000/api";
-    static let loginURL = "/login";
-    static let registerURL = "/register";
+    //static let apiURL = "http://163.5.84.208:3000/api";
+    static let apiURL = "http://127.0.0.1:3000/api"
+    static let loginURL = "/login"
+    static let registerURL = "/register"
     
     static let countriesUrl = "/countries"
-    static let accountEditionUrl = "/me";
+    static let accountEditionUrl = "/me"
     static let eventsUrl = "/events"
     static let checkTokenUrl = "/check_token"
     static let relationsUrl = "/messages/relations"
     static let messagesUrl = "/messages"
+    static let newMessageUrl = "/messages/new"
 }
