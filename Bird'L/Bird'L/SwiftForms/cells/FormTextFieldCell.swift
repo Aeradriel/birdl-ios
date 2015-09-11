@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class FormTextFieldCell: FormBaseCell {
+public class FormTextFieldCell: FormBaseCell, UITextFieldDelegate {
 
     /// MARK: Cell views
     
@@ -31,6 +31,8 @@ public class FormTextFieldCell: FormBaseCell {
 
         titleLabel.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         textField.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        
+        textField.delegate = self
         
         contentView.addSubview(titleLabel)
         contentView.addSubview(textField)
@@ -149,5 +151,12 @@ public class FormTextFieldCell: FormBaseCell {
     internal func editingChanged(sender: UITextField) {
         let trimmedText = sender.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         rowDescriptor.value = trimmedText.characters.count > 0 ? trimmedText : nil
+    }
+    
+    //MARK: UITextField delegate
+    public func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
 }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class AccountViewController: FormViewController {
-    
+class AccountViewController: FormViewController, UITextFieldDelegate
+{
     //MARK: Variables
     let tags: [String : String] = [
         "birthdate": "date de naissance",
@@ -39,10 +39,20 @@ class AccountViewController: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let touch = UITapGestureRecognizer(target:self, action:"closeKeyboard")
+
+        //self.view.addGestureRecognizer(touch)
     }
     
     override func viewDidAppear(animated: Bool) {
         User.getBaseInfo(g_APICommunicator.token, errorHander: self.errorHandler, successHandler: self.updateUIWithUser)
+    }
+    
+    //MARK: Keyboard handling
+    func closeKeyboard()
+    {
+        self.view.endEditing(true)
     }
     
     //MARK: Checks
@@ -59,7 +69,7 @@ class AccountViewController: FormViewController {
         }
         return true
     }
-    
+
     //MARK: Callbacks
     func updateUIWithUser(userJson: [String : JSON])
     {

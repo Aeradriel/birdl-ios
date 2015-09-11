@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessagesViewController: JSQMessagesViewController
+class MessagesViewController: JSQMessagesViewController, UITextFieldDelegate
 {
     var relationId: Int!
     var username = ""
@@ -32,7 +32,14 @@ class MessagesViewController: JSQMessagesViewController
     
     override func viewDidAppear(animated: Bool)
     {
+        super.viewDidAppear(animated)
+        
         Message.with(self.relationId, successFunc: self.messagesDidLoad, errorFunc: self.errorHandler)
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(true)
     }
     
     //MARK: Callback
@@ -105,5 +112,17 @@ class MessagesViewController: JSQMessagesViewController
     
     override func didPressAccessoryButton(sender: UIButton!)
     {
+    }
+    
+    //MARK: Keyboard handling
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
+    {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
 }

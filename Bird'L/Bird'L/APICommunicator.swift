@@ -76,7 +76,6 @@ class APICommunicator
                     else {
                         errorFunc!("Unknown Error")
                     }
-                    
                 } else {
                     errorFunc!("Incorrect email or password")
                 }
@@ -104,7 +103,7 @@ class APICommunicator
                     error += value2.asString!
                 }
             }
-            else
+            else if value.isNull == false
             {
                 error = value.asString!
             }

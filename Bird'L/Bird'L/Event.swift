@@ -72,4 +72,64 @@ class Event : NSObject
                 }
         }
     }
+    
+    class func includesUser(eventId: Int, errorHandler errorFunc: ((String) -> Void), successHandler successFunc: () -> Void)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.checkEventUrl + "\(eventId)")
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "GET"
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil) {
+                    let json = JSON(data: data!)
+                    
+                    if let _ = json["event"].asDictionary
+                    {
+                        successFunc()
+                    }
+                    else
+                    {
+                        let error = APICommunicator.errorFromJson(json)
+                        
+                        errorFunc(error)
+                    }
+                }
+                else
+                {
+                    errorFunc("Can't reach server")
+                }
+        }
+    }
+    
+    class func register(eventId: Int, errorHandler errorFunc: ((String) -> Void), successHandler successFunc: () -> Void)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.registerEventUrl + "\(eventId)")
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "POST"
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil) {
+                    let json = JSON(data: data!)
+                    
+                    if let _ = json["event"].asDictionary
+                    {
+                        successFunc()
+                    }
+                    else
+                    {
+                        let error = APICommunicator.errorFromJson(json)
+                        
+                        errorFunc(error)
+                    }
+                }
+                else
+                {
+                    errorFunc("Can't reach server")
+                }
+        }
+    }
 }
