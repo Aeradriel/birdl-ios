@@ -11,6 +11,7 @@ import UIKit
 class EventSearchViewController: UITableViewController, UISearchResultsUpdating
 {
     var events: [Event] = []
+    var event: Event!
     var selectedEvent: [EventRow] = []
     var searchResult: [Event] = []
     var resultSearchController = UISearchController(searchResultsController: nil)
@@ -47,6 +48,7 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
         {
             let destinationVc: EventDetailViewController = segue.destinationViewController as! EventDetailViewController
             
+            destinationVc.event = event
             destinationVc.rows = self.selectedEvent
         }
     }
@@ -102,6 +104,8 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let selectedEvent = self.events[indexPath.row]
+        
+        self.event = events[indexPath.row]
         self.selectedEvent = []
         self.selectedEvent.append(EventBannerRow(imagePath: "BannerExample"))
         self.selectedEvent.append(EventTitleRow(title: selectedEvent.name))

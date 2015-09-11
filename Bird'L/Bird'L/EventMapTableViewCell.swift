@@ -34,7 +34,7 @@ class EventMapTableViewCell: EventDetailTableViewCell
             if placemarks != nil && placemarks!.count > 0
             {
                 let topResult = placemarks!.first
-                let placemark = MKPlacemark(placemark: topResult)
+                let placemark = MKPlacemark(placemark: topResult!)
                 var region = self.mapView.region
                 
                 region.center = (placemark.region as! CLCircularRegion).center

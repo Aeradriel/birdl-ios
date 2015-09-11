@@ -11,6 +11,7 @@ import UIKit
 class EventDetailViewController: UITableViewController
 {
     //MARK: Instance variables
+    var event: Event!
     var rows: [EventRow] = []
 
     //MARK: UIViewController methods

@@ -13,11 +13,12 @@ class MessagesViewController: JSQMessagesViewController
     var relationId: Int!
     var username = ""
     var messages = [JSQMessage]()
-    let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
+    let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor(red: 234/255, green: 103/255, blue: 32/255, alpha: 1.0))
     let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
 
     //MARK: UIViewController methods
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         self.automaticallyAdjustsScrollViewInsets = false
@@ -74,7 +75,7 @@ class MessagesViewController: JSQMessagesViewController
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource!
     {
-        let words = split(self.messages[indexPath.row].senderDisplayName.characters) { $0 == " " }.map { String($0) }
+        let words = self.messages[indexPath.row].senderDisplayName.characters.split() { $0 == " " }.map { String($0) }
         var initials = ""
         
         for i in 0...(words.count >= 2 ? 1 : 0)
