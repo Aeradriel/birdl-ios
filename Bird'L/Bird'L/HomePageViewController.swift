@@ -20,6 +20,8 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
 
         let nibName = UINib(nibName: "BadgeModuleCell", bundle:nil)
         
+        self.navigationController?.navigationBar.translucent = true
+        self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.registerNib(nibName, forCellReuseIdentifier: "BadgeModuleCell")
     }
 

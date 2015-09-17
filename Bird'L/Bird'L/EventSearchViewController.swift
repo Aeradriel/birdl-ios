@@ -109,7 +109,10 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
         self.selectedEvent = []
         self.selectedEvent.append(EventBannerRow(imagePath: "BannerExample"))
         self.selectedEvent.append(EventTitleRow(title: selectedEvent.name))
-        self.selectedEvent.append(EventDescRow(desc: selectedEvent.desc!))
+        if selectedEvent.desc != nil
+        {
+            self.selectedEvent.append(EventDescRow(desc: selectedEvent.desc!))
+        }
         self.selectedEvent.append(EventAddressRow(nbr: 47, street: "Rue du Coq", zipcode: "98400", city: "Trouville sur Siennes"))
         self.selectedEvent.append(EventMapRow(nbr: 47, street: "Rue du Coq", zipcode: "98400", city: "Trouville sur Siennes"))
         performSegueWithIdentifier("eventDetailsSegue", sender: self)

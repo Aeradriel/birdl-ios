@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -71,11 +71,11 @@
                                 <rect key="frame" x="20" y="8" width="217" height="21"/>
                                 <color key="backgroundColor" red="1" green="0.39476882167364924" blue="0.81036330564718195" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.060633840278943252" blue="0.080110909738955072" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Xkn-z0-Wyd" secondAttribute="width" multiplier="1:4" id="0pL-aA-V2Q"/>
                             <constraint firstItem="ftb-z8-HyM" firstAttribute="leading" secondItem="raR-vA-FUn" secondAttribute="leading" constant="20" symbolic="YES" id="1Lx-IL-Tci"/>
@@ -152,6 +152,7 @@
                     <constraint firstAttribute="bottom" secondItem="raR-vA-FUn" secondAttribute="bottom" id="p8g-A0-nbs"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="moduleTitle" destination="ftb-z8-HyM" id="wHt-Kf-h8w"/>
                 <outlet property="topLevelView" destination="raR-vA-FUn" id="lnv-TF-Zd2"/>

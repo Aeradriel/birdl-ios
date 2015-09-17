@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14E36b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -23,7 +23,7 @@
                                 <constraint firstAttribute="height" relation="lessThanOrEqual" constant="204" id="eA6-Kb-tyH"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                             <variation key="default">
                                 <mask key="constraints">
@@ -42,7 +42,6 @@
                                         <constraint firstAttribute="width" secondItem="5Ay-Sd-0Tt" secondAttribute="height" multiplier="26:15" id="ryR-Qt-dDy"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -72,6 +71,15 @@
                                 <userDefinedRuntimeAttribute type="number" keyPath="trackWidth">
                                     <real key="value" value="10"/>
                                 </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="trackFillColor">
+                                    <color key="value" red="0.73333333329999995" green="0.21176470589999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="trackBackgroundColor">
+                                    <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="centerFillColor">
+                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <variation key="default">
                                 <mask key="constraints">
@@ -85,7 +93,7 @@
                             </variation>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="1" green="0.0" blue="0.11936556212499649" alpha="0.0" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Jz3-rA-zcm" firstAttribute="top" secondItem="Row-Ia-Be4" secondAttribute="top" constant="20" symbolic="YES" id="8C8-53-8qc"/>
                         <constraint firstItem="LwE-kA-64a" firstAttribute="width" secondItem="Jz3-rA-zcm" secondAttribute="width" multiplier="1:2" id="HEh-hX-nzF"/>

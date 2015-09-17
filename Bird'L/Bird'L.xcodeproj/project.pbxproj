@@ -73,6 +73,7 @@
 		BFDF4CD41B39D33900D775D7 /* FormRowDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CC01B39D33900D775D7 /* FormRowDescriptor.swift */; };
 		BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CC11B39D33900D775D7 /* FormSectionDescriptor.swift */; };
 		BFDF4CD81B39D3B200D775D7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */; };
+		BFFB033E1BAB074600F00598 /* BirdlTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB033C1BAB074600F00598 /* BirdlTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
 		F4D2AD0A9B64C688A5EC650B /* libPods-Bird'L.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE31359DA5626DEF33CABF11 /* libPods-Bird'L.a */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +160,7 @@
 		BFDF4CC01B39D33900D775D7 /* FormRowDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRowDescriptor.swift; sourceTree = "<group>"; };
 		BFDF4CC11B39D33900D775D7 /* FormSectionDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSectionDescriptor.swift; sourceTree = "<group>"; };
 		BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		BFFB033C1BAB074600F00598 /* BirdlTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdlTabBarController.swift; sourceTree = "<group>"; };
 		CD9F76C4E770B53330BDE54B /* Pods-Bird'L.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bird'L.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bird'L/Pods-Bird'L.release.xcconfig"; sourceTree = "<group>"; };
 		CE31359DA5626DEF33CABF11 /* libPods-Bird'L.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bird'L.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -270,6 +272,7 @@
 				BF1F78BB1AB64631002100B5 /* Images.xcassets */,
 				BF1F78AF1AB64631002100B5 /* Supporting Files */,
 				BFC6BF151B4C17BB00B02CC0 /* Bird'L-Bridging-Header.h */,
+				BFFB033C1BAB074600F00598 /* BirdlTabBarController.swift */,
 			);
 			path = "Bird'L";
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				BFAC2E5D1B4067D90098B1E6 /* Event.swift in Sources */,
 				BFDF4CC81B39D33900D775D7 /* FormPickerCell.swift in Sources */,
 				BFDF4CD31B39D33900D775D7 /* FormDescriptor.swift in Sources */,
+				BFFB033E1BAB074600F00598 /* BirdlTabBarController.swift in Sources */,
 				BFDF4CCA1B39D33900D775D7 /* FormSelectorCell.swift in Sources */,
 				BFAC2E691B42A7500098B1E6 /* EventBannerTableViewCell.swift in Sources */,
 				01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */,
