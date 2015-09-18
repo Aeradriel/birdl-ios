@@ -29,6 +29,7 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
         
         self.tableView.registerNib(nib, forCellReuseIdentifier: "relationTableViewCell")
         self.tableView.rowHeight = 75
+        self.tableView.tableFooterView = UIView()
     }
 
     override func viewDidAppear(animated: Bool)

@@ -8,8 +8,10 @@
 
 import UIKit
 
-class EventSearchViewController: UITableViewController, UISearchResultsUpdating
+class EventSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating
 {
+    @IBOutlet weak var tableView: UITableView!
+    
     var events: [Event] = []
     var event: Event!
     var selectedEvent: [EventRow] = []
@@ -28,6 +30,7 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
         self.resultSearchController.searchBar.sizeToFit()
         
         self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        self.tableView.tableFooterView = UIView()
         self.tableView.reloadData()
     }
     
@@ -35,12 +38,6 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
     {
         Event.all(errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
@@ -68,12 +65,12 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
     }
     
     //MARK: UITableViewController delegate
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         if self.resultSearchController.active
         {
@@ -85,10 +82,12 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
         }
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventResultTableViewCell", forIndexPath: indexPath) as! EventResultTableViewCell
         
+        cell.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        cell.name.textColor = UIColor.whiteColor()
         if (self.resultSearchController.active) {
             cell.name!.text = self.searchResult[indexPath.row].name
 
@@ -101,7 +100,7 @@ class EventSearchViewController: UITableViewController, UISearchResultsUpdating
         }
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let selectedEvent = self.events[indexPath.row]
         

@@ -25,7 +25,8 @@ class AccountViewController: FormViewController, UITextFieldDelegate
     
     //MARK: UIViewController methods
     //TODO: Find a way to put call in viewDidAppear
-    required init(coder aDecoder: NSCoder) {
+    required init(coder aDecoder: NSCoder)
+    {
         super.init(coder: aDecoder)
         
         self.countries = Country.all(errorHandler: self.errorHandler)
@@ -40,9 +41,8 @@ class AccountViewController: FormViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let touch = UITapGestureRecognizer(target:self, action:"closeKeyboard")
-
-        //self.view.addGestureRecognizer(touch)
+        self.navigationController!.view.backgroundColor = UIColor(patternImage: UIImage(named: "color18")!)
+        self.tableView.backgroundColor = UIColor.clearColor()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -140,18 +140,20 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         
         section1.headerTitle = "Informations personnelles"
         row = FormRowDescriptor(tag: "fname", rowType: .Email, title: "Prénom")
-        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["textField.placeholder" : "John", "textField.textAlignment" : NSTextAlignment.Right.rawValue]
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["textField.placeholder" : "John", "textField.textAlignment" : NSTextAlignment.Right.rawValue, "backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "textField.textColor" : UIColor.orangeColor(), "titleLabel.textColor" : UIColor.whiteColor()]
         section1.addRow(row)
         row = FormRowDescriptor(tag: "lname", rowType: .Email, title: "Nom")
-        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["textField.placeholder" : "Doe", "textField.textAlignment" : NSTextAlignment.Right.rawValue]
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["textField.placeholder" : "Doe", "textField.textAlignment" : NSTextAlignment.Right.rawValue, "backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "textField.textColor" : UIColor.orangeColor(), "titleLabel.textColor" : UIColor.whiteColor()]
         section1.addRow(row)
         row = FormRowDescriptor(tag: "email", rowType: .Email, title: "Email")
-        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["textField.placeholder" : "john.doe@gmail.com", "textField.textAlignment" : NSTextAlignment.Right.rawValue]
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["textField.placeholder" : "john.doe@johndoe.com", "textField.textAlignment" : NSTextAlignment.Right.rawValue, "backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "textField.textColor" : UIColor.orangeColor(), "titleLabel.textColor" : UIColor.whiteColor()]
         section1.addRow(row)
         row = FormRowDescriptor(tag: "birthdate", rowType: .Date, title: "Date de naissance")
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "titleLabel.textColor" : UIColor.whiteColor()]
         section1.addRow(row)
         row = FormRowDescriptor(tag: "gender", rowType: .SegmentedControl, title: "Sexe")
         row.configuration[FormRowDescriptor.Configuration.Options] = [1, 2]
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "titleLabel.textColor" : UIColor.whiteColor(), "segmentedControl.tintColor" : UIColor.orangeColor()]
         row.configuration[FormRowDescriptor.Configuration.TitleFormatterClosure] =
             { value in
                 switch (value)
@@ -168,6 +170,7 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         section1.addRow(row)
         row = FormRowDescriptor(tag: "country", rowType: .Picker, title: "Pays")
         row.configuration[FormRowDescriptor.Configuration.Options] = self.countriesId
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "titleLabel.textColor" : UIColor.whiteColor()]
         row.configuration[FormRowDescriptor.Configuration.TitleFormatterClosure] =
             { value in
                 switch (value)
@@ -182,12 +185,15 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         let section2 = FormSectionDescriptor()
         
         section2.footerTitle = "Nous avons besoin de votre mot de passe pour enregistrer les changements sur votre profil"
-        section2.addRow(FormRowDescriptor(tag: "password", rowType: .Password, title: "Mot de passe"))
+        row = FormRowDescriptor(tag: "password", rowType: .Password, title: "Mot de passe")
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "titleLabel.textColor" : UIColor.whiteColor(), "textField.textColor" : UIColor.orangeColor()]
+        section2.addRow(row)
         
         // Submit
         let section3 = FormSectionDescriptor()
-        
+
         row = FormRowDescriptor(tag: "submit", rowType: .Button, title: "Submit")
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor.orangeColor(), "titleLabel.textColor" : UIColor.whiteColor()]
         row.configuration[FormRowDescriptor.Configuration.DidSelectClosure] = {
             self.formSubmitted()
         } as DidSelectClosure

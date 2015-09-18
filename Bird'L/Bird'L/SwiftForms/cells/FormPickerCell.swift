@@ -24,7 +24,6 @@ public class FormPickerCell: FormValueCell, UIPickerViewDelegate, UIPickerViewDa
         picker.delegate = self
         picker.dataSource = self
         hiddenTextField.inputView = picker
-        
         contentView.addSubview(hiddenTextField)
     }
     
