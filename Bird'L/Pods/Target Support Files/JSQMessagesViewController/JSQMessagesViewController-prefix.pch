@@ -2,4 +2,3 @@
 #import <UIKit/UIKit.h>
 #endif
 
-#import "Pods-Bird'L-environment.h"
