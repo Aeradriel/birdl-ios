@@ -36,7 +36,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="color18" translatesAutoresizingMaskIntoConstraints="NO" id="TRh-Pg-Ptn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ta_mere_thib" translatesAutoresizingMaskIntoConstraints="NO" id="TRh-Pg-Ptn">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tte-fc-msG">
@@ -470,7 +470,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color18" translatesAutoresizingMaskIntoConstraints="NO" id="2UM-dP-fHr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ta_mere_thib" translatesAutoresizingMaskIntoConstraints="NO" id="2UM-dP-fHr">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xop-dm-MYA">
@@ -715,7 +715,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color18" translatesAutoresizingMaskIntoConstraints="NO" id="Wm8-Qy-oSl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ta_mere_thib" translatesAutoresizingMaskIntoConstraints="NO" id="Wm8-Qy-oSl">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoL-4G-ZPc">
@@ -987,7 +987,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="49" id="yw0-ql-ySR"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="color18" translatesAutoresizingMaskIntoConstraints="NO" id="Z1r-QL-Nlz">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ta_mere_thib" translatesAutoresizingMaskIntoConstraints="NO" id="Z1r-QL-Nlz">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                             </imageView>
                         </subviews>
@@ -1051,6 +1051,7 @@
         <image name="logo_birdl_HD_alone" width="2526" height="2239"/>
         <image name="male" width="24" height="24"/>
         <image name="notifications" width="24" height="24"/>
+        <image name="ta_mere_thib" width="432" height="768"/>
     </resources>
     <color key="tintColor" red="1" green="0.50008201451373357" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
