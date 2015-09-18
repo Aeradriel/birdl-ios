@@ -85,7 +85,7 @@ class SignupViewController2: UIViewController {
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     
-    @IBOutlet weak var genderPicker: UISwitch!
+    @IBOutlet var genderControl: UISegmentedControl!
     @IBOutlet weak var birthDatePicker: UIDatePicker!
     
     var username : String!
@@ -130,7 +130,14 @@ class SignupViewController2: UIViewController {
             svc.password = self.password;
             svc.firstName = self.firstNameField.text;
             svc.lastName = self.lastNameField.text;
-            svc.gender = self.genderPicker.on
+            
+            
+            if (self.genderControl.selectedSegmentIndex == 0) {
+                svc.gender = false;
+            }
+            else {
+                svc.gender = true;
+            }
         
             let timeFormatter = NSDateFormatter()
             timeFormatter.dateFormat = "yyyy/M/d"

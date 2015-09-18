@@ -27,8 +27,8 @@
 		BF377F9B1B50044700099040 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF377F9A1B50044700099040 /* Message.swift */; };
 		BF44DE281B512A6C007A3F05 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44DE271B512A6B007A3F05 /* User.swift */; };
 		BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
-		BF9270231BAC10FC003C7DFB /* RelationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
-		BF9270251BAC121C003C7DFB /* RelationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		BF9270231BAC10FC003C7DFB /* RelationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */; };
+		BF9270251BAC121C003C7DFB /* RelationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */; };
 		BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */; };
 		BFAC2E571B4062E70098B1E6 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */; };
 		BFAC2E5A1B40630A0098B1E6 /* EventResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */; };
@@ -75,7 +75,7 @@
 		BFDF4CD41B39D33900D775D7 /* FormRowDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CC01B39D33900D775D7 /* FormRowDescriptor.swift */; };
 		BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CC11B39D33900D775D7 /* FormSectionDescriptor.swift */; };
 		BFDF4CD81B39D3B200D775D7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */; };
-		BFFB033E1BAB074600F00598 /* BirdlTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB033C1BAB074600F00598 /* BirdlTabBarController.swift */; settings = {ASSET_TAGS = (); }; };
+		BFFB033E1BAB074600F00598 /* BirdlTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB033C1BAB074600F00598 /* BirdlTabBarController.swift */; };
 		F4D2AD0A9B64C688A5EC650B /* libPods-Bird'L.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE31359DA5626DEF33CABF11 /* libPods-Bird'L.a */; };
 /* End PBXBuildFile section */
 
@@ -540,7 +540,7 @@
 				TargetAttributes = {
 					BF1F78AB1AB64630002100B5 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = KQWVHFR4W7;
+						DevelopmentTeam = DPPEF7NRF2;
 					};
 					BF1F78C31AB64631002100B5 = {
 						CreatedOnToolsVersion = 6.2;
@@ -829,11 +829,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Bird'L/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Birdl.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bird'L/Bird'L-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -845,11 +847,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Bird'L/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Birdl.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bird'L/Bird'L-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
