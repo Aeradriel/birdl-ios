@@ -27,6 +27,8 @@
 		BF377F9B1B50044700099040 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF377F9A1B50044700099040 /* Message.swift */; };
 		BF44DE281B512A6C007A3F05 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44DE271B512A6B007A3F05 /* User.swift */; };
 		BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
+		BF9270231BAC10FC003C7DFB /* RelationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		BF9270251BAC121C003C7DFB /* RelationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */; };
 		BFAC2E571B4062E70098B1E6 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */; };
 		BFAC2E5A1B40630A0098B1E6 /* EventResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */; };
@@ -113,6 +115,8 @@
 		BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird_LTests.swift; sourceTree = "<group>"; };
 		BF377F9A1B50044700099040 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BF44DE271B512A6B007A3F05 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RelationTableViewCell.xib; sourceTree = "<group>"; };
+		BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationTableViewCell.swift; sourceTree = "<group>"; };
 		BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSearchViewController.swift; sourceTree = "<group>"; };
 		BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResultTableViewCell.swift; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 				BF1F78B81AB64631002100B5 /* Main.storyboard */,
 				BF113C5E1B308ADB005B87FF /* BadgeView.xib */,
 				BF02BCF11B33563C007532A1 /* BadgeModuleCell.xib */,
+				BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 			children = (
 				BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */,
 				BFDE16FC1B4E6A0800BCB73F /* MessagesListTableViewController.swift */,
+				BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -577,6 +583,7 @@
 				BF1F78BC1AB64631002100B5 /* Images.xcassets in Resources */,
 				BFAC2E5B1B40630A0098B1E6 /* EventResultTableViewCell.xib in Resources */,
 				BFAC2E841B42D0FF0098B1E6 /* EventAddressTableViewCell.xib in Resources */,
+				BF9270231BAC10FC003C7DFB /* RelationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +655,7 @@
 				BF1F78B71AB64631002100B5 /* LoginViewController.swift in Sources */,
 				BFDF4CC71B39D33900D775D7 /* FormDateCell.swift in Sources */,
 				BFAC2E7C1B42B1D10098B1E6 /* EventDescTableViewCell.swift in Sources */,
+				BF9270251BAC121C003C7DFB /* RelationTableViewCell.swift in Sources */,
 				BF1F78B21AB64631002100B5 /* AppDelegate.swift in Sources */,
 				BFAC2E5D1B4067D90098B1E6 /* Event.swift in Sources */,
 				BFDF4CC81B39D33900D775D7 /* FormPickerCell.swift in Sources */,
