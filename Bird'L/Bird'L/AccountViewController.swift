@@ -192,8 +192,8 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         // Submit
         let section3 = FormSectionDescriptor()
 
-        row = FormRowDescriptor(tag: "submit", rowType: .Button, title: "Submit")
-        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor.orangeColor(), "titleLabel.textColor" : UIColor.whiteColor()]
+        row = FormRowDescriptor(tag: "submit", rowType: .Button, title: "Valider")
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "titleLabel.textColor" : UIColor.orangeColor()]
         row.configuration[FormRowDescriptor.Configuration.DidSelectClosure] = {
             self.formSubmitted()
         } as DidSelectClosure

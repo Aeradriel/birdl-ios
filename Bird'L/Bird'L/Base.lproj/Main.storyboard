@@ -184,7 +184,6 @@
         <!--Root View Controller-->
         <scene sceneID="RCO-rr-SQL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gYZ-Mp-7cO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="DGr-j0-4HK" customClass="AccountViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="T46-zU-pgV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
@@ -198,6 +197,7 @@
                     <navigationItem key="navigationItem" title="Root View Controller" id="Iwa-r6-k8r"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gYZ-Mp-7cO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1468.5" y="1743.5"/>
         </scene>
