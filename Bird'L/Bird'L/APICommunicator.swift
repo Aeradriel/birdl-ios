@@ -49,7 +49,6 @@ class APICommunicator
         }
     }
     
-    //TODO: Proper error messages
     func authenticateUser(email : String, password : String, success: (() -> Void)?, errorFunc: ((String) -> Void)?)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.loginURL);

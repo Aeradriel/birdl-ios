@@ -103,7 +103,6 @@ class User : NSObject
         }
     }
     
-    //TODO: Not class function
     class func update(userDictionary user: NSDictionary, password: String, errorHandler errorFunc: ((String) -> Void)?, successHandler successFunc: (() -> Void)?)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.accountEditionUrl)

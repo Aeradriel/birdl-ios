@@ -41,7 +41,7 @@ class AccountViewController: FormViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController!.view.backgroundColor = UIColor(patternImage: UIImage(named: "color18")!)
+        self.navigationController!.view.backgroundColor = UIColor(patternImage: UIImage(named: "ta_mere_thib")!)
         self.tableView.backgroundColor = UIColor.clearColor()
     }
     
@@ -186,7 +186,7 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         
         section2.footerTitle = "Nous avons besoin de votre mot de passe pour enregistrer les changements sur votre profil"
         row = FormRowDescriptor(tag: "password", rowType: .Password, title: "Mot de passe")
-        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "titleLabel.textColor" : UIColor.whiteColor(), "textField.textColor" : UIColor.orangeColor()]
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "titleLabel.textColor" : UIColor.whiteColor(), "textField.textColor" : UIColor.orangeColor(), "textField.textAlignment" : NSTextAlignment.Right.rawValue]
         section2.addRow(row)
         
         // Submit

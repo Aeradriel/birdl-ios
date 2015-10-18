@@ -10,8 +10,8 @@ import Foundation
 
 struct netConfig
 {
-    static let apiURL = "http://10.224.9.208:3000/api";
-    //static let apiURL = "http://163.5.84.208:3000/api";
+    //static let apiURL = "http://10.224.9.208:3000/api";
+    static let apiURL = "http://163.5.84.208:3000/api";
     //static let apiURL = "http://127.0.0.1:3000/api"
     static let loginURL = "/login"
     static let registerURL = "/register"
