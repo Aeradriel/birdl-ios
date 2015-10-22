@@ -70,6 +70,17 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         return true
     }
 
+    //MARK: Disconnect
+    func disconnect()
+    {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let loginVc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+        
+        userDefaults.removeObjectForKey("access-token")
+        userDefaults.synchronize()
+        self.presentViewController(loginVc, animated: true, completion: nil)
+    }
+    
     //MARK: Callbacks
     func updateUIWithUser(userJson: [String : JSON])
     {
@@ -199,7 +210,17 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         } as DidSelectClosure
         section3.addRow(row)
         
-        form.sections = [section1, section2, section3]
+        // Disconnect
+        let section4 = FormSectionDescriptor()
+        
+        row = FormRowDescriptor(tag: "disconnect", rowType: .Button, title: "Déconnexion")
+        row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "titleLabel.textColor" : UIColor.redColor()]
+        row.configuration[FormRowDescriptor.Configuration.DidSelectClosure] = {
+            self.disconnect()
+            } as DidSelectClosure
+        section4.addRow(row)
+        
+        form.sections = [section1, section2, section3, section4]
         self.form = form
     }
 }

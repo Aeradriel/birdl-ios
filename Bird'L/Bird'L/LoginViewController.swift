@@ -8,12 +8,14 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
-
+class LoginViewController: UIViewController
+{
+    //MARK: Variables
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    //MARK: UIViewController delegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.passwordTextField.secureTextEntry = true
@@ -22,16 +24,14 @@ class LoginViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    func DismissKeyboard(){
+    //MARK: Callbacks
+    func DismissKeyboard()
+    {
         view.endEditing(true)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func signinSucceed() -> Void {
+    
+    func signinSucceed() -> Void
+    {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         userDefaults.setValue(g_APICommunicator.token, forKey: "access-token")
@@ -39,7 +39,8 @@ class LoginViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func signinError(result : String) -> Void {
+    func signinError(result : String) -> Void
+    {
         let alertController = UIAlertController(title: "Error", message:
             result, preferredStyle: UIAlertControllerStyle.Alert)
         
@@ -47,12 +48,14 @@ class LoginViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func signinButtonUp(sender: AnyObject) {
+    @IBAction func signinButtonUp(sender: AnyObject)
+    {
         g_APICommunicator.authenticateUser(loginField.text!, password: passwordTextField.text!, success: signinSucceed, errorFunc: signinError);
         
     }
     
-    @IBAction func signupButtonUp(sender: AnyObject) {
+    @IBAction func signupButtonUp(sender: AnyObject)
+    {
     }
 }
 

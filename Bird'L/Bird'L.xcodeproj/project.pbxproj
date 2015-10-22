@@ -27,7 +27,6 @@
 		BF377F9B1B50044700099040 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF377F9A1B50044700099040 /* Message.swift */; };
 		BF3E14471BCFE142008825F5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3E14451BCFE142008825F5 /* Interface.storyboard */; };
 		BF3E14501BCFE142008825F5 /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BF3E144F1BCFE142008825F5 /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		BF3E14571BCFE142008825F5 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E14561BCFE142008825F5 /* InterfaceController.swift */; };
 		BF3E14591BCFE142008825F5 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E14581BCFE142008825F5 /* ExtensionDelegate.swift */; };
 		BF3E145B1BCFE142008825F5 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E145A1BCFE142008825F5 /* NotificationController.swift */; };
 		BF3E145D1BCFE142008825F5 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E145C1BCFE142008825F5 /* GlanceController.swift */; };
@@ -62,8 +61,9 @@
 		BFAC2E871B42E4D10098B1E6 /* EventMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */; };
 		BFAC2E881B42E4D10098B1E6 /* EventMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */; };
 		BFAC2E8A1B42F4F10098B1E6 /* EventMapRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */; };
-		BFC023D21BCFF4BF00F580E5 /* MessagesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC023D11BCFF4BF00F580E5 /* MessagesInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
-		BFC023D41BCFFA1200F580E5 /* ContactListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC023D31BCFFA1200F580E5 /* ContactListRow.swift */; settings = {ASSET_TAGS = (); }; };
+		BFC023D21BCFF4BF00F580E5 /* ContactsListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC023D11BCFF4BF00F580E5 /* ContactsListInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
+		BFC023D41BCFFA1200F580E5 /* ContactsListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC023D31BCFFA1200F580E5 /* ContactsListRow.swift */; settings = {ASSET_TAGS = (); }; };
+		BFC023D61BD3D80400F580E5 /* MessagesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC023D51BD3D80400F580E5 /* MessagesInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		BFC6BF141B4C177000B02CC0 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */; };
 		BFDE16FD1B4E6A0800BCB73F /* MessagesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE16FC1B4E6A0800BCB73F /* MessagesListTableViewController.swift */; };
 		BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CA61B38582B00D775D7 /* Country.swift */; };
@@ -88,6 +88,9 @@
 		BFDF4CD41B39D33900D775D7 /* FormRowDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CC01B39D33900D775D7 /* FormRowDescriptor.swift */; };
 		BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CC11B39D33900D775D7 /* FormSectionDescriptor.swift */; };
 		BFDF4CD81B39D3B200D775D7 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */; };
+		BFEA2B9F1BD403A5003827FF /* EventDayTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA2B9E1BD403A5003827FF /* EventDayTableRow.swift */; settings = {ASSET_TAGS = (); }; };
+		BFEA2BA11BD403DA003827FF /* EventTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA2BA01BD403DA003827FF /* EventTableRow.swift */; settings = {ASSET_TAGS = (); }; };
+		BFEA2BA31BD4043E003827FF /* EventsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEA2BA21BD4043E003827FF /* EventsInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		BFFB033E1BAB074600F00598 /* BirdlTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFB033C1BAB074600F00598 /* BirdlTabBarController.swift */; };
 		F4D2AD0A9B64C688A5EC650B /* libPods-Bird'L.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE31359DA5626DEF33CABF11 /* libPods-Bird'L.a */; };
 /* End PBXBuildFile section */
@@ -171,7 +174,6 @@
 		BF3E144A1BCFE142008825F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3E144F1BCFE142008825F5 /* WatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3E14551BCFE142008825F5 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		BF3E14561BCFE142008825F5 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		BF3E14581BCFE142008825F5 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		BF3E145A1BCFE142008825F5 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		BF3E145C1BCFE142008825F5 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
@@ -204,8 +206,9 @@
 		BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapTableViewCell.swift; sourceTree = "<group>"; };
 		BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMapTableViewCell.xib; sourceTree = "<group>"; };
 		BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapRow.swift; sourceTree = "<group>"; };
-		BFC023D11BCFF4BF00F580E5 /* MessagesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesInterfaceController.swift; path = Messages/MessagesInterfaceController.swift; sourceTree = "<group>"; };
-		BFC023D31BCFFA1200F580E5 /* ContactListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactListRow.swift; path = Messages/ContactListRow.swift; sourceTree = "<group>"; };
+		BFC023D11BCFF4BF00F580E5 /* ContactsListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsListInterfaceController.swift; path = Messages/ContactsListInterfaceController.swift; sourceTree = "<group>"; };
+		BFC023D31BCFFA1200F580E5 /* ContactsListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsListRow.swift; path = Messages/ContactsListRow.swift; sourceTree = "<group>"; };
+		BFC023D51BD3D80400F580E5 /* MessagesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesInterfaceController.swift; path = Messages/MessagesInterfaceController.swift; sourceTree = "<group>"; };
 		BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		BFC6BF151B4C17BB00B02CC0 /* Bird'L-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bird'L-Bridging-Header.h"; sourceTree = "<group>"; };
 		BFDE16FC1B4E6A0800BCB73F /* MessagesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewController.swift; sourceTree = "<group>"; };
@@ -231,6 +234,9 @@
 		BFDF4CC01B39D33900D775D7 /* FormRowDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormRowDescriptor.swift; sourceTree = "<group>"; };
 		BFDF4CC11B39D33900D775D7 /* FormSectionDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormSectionDescriptor.swift; sourceTree = "<group>"; };
 		BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		BFEA2B9E1BD403A5003827FF /* EventDayTableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventDayTableRow.swift; path = Events/EventDayTableRow.swift; sourceTree = "<group>"; };
+		BFEA2BA01BD403DA003827FF /* EventTableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventTableRow.swift; path = Events/EventTableRow.swift; sourceTree = "<group>"; };
+		BFEA2BA21BD4043E003827FF /* EventsInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsInterfaceController.swift; path = Events/EventsInterfaceController.swift; sourceTree = "<group>"; };
 		BFFB033C1BAB074600F00598 /* BirdlTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BirdlTabBarController.swift; sourceTree = "<group>"; };
 		CD9F76C4E770B53330BDE54B /* Pods-Bird'L.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bird'L.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bird'L/Pods-Bird'L.release.xcconfig"; sourceTree = "<group>"; };
 		CE31359DA5626DEF33CABF11 /* libPods-Bird'L.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bird'L.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -439,13 +445,12 @@
 		BF3E14531BCFE142008825F5 /* WatchApp Extension */ = {
 			isa = PBXGroup;
 			children = (
+				BFEA2B9D1BD40352003827FF /* Events */,
+				BFEA2B9C1BD402EE003827FF /* Messages */,
 				BF3E145E1BCFE142008825F5 /* ComplicationController.swift */,
 				BF3E14581BCFE142008825F5 /* ExtensionDelegate.swift */,
 				BF3E145C1BCFE142008825F5 /* GlanceController.swift */,
-				BF3E14561BCFE142008825F5 /* InterfaceController.swift */,
-				BFC023D11BCFF4BF00F580E5 /* MessagesInterfaceController.swift */,
 				BF3E145A1BCFE142008825F5 /* NotificationController.swift */,
-				BFC023D31BCFFA1200F580E5 /* ContactListRow.swift */,
 				BF3E14601BCFE142008825F5 /* Assets.xcassets */,
 				BF3E14621BCFE142008825F5 /* Info.plist */,
 				BF3E14541BCFE142008825F5 /* Supporting Files */,
@@ -598,6 +603,26 @@
 				BFDF4CD71B39D3B200D775D7 /* AccountViewController.swift */,
 			);
 			name = Account;
+			sourceTree = "<group>";
+		};
+		BFEA2B9C1BD402EE003827FF /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				BFC023D31BCFFA1200F580E5 /* ContactsListRow.swift */,
+				BFC023D11BCFF4BF00F580E5 /* ContactsListInterfaceController.swift */,
+				BFC023D51BD3D80400F580E5 /* MessagesInterfaceController.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		BFEA2B9D1BD40352003827FF /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				BFEA2B9E1BD403A5003827FF /* EventDayTableRow.swift */,
+				BFEA2BA21BD4043E003827FF /* EventsInterfaceController.swift */,
+				BFEA2BA01BD403DA003827FF /* EventTableRow.swift */,
+			);
+			name = Events;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -897,12 +922,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF3E145B1BCFE142008825F5 /* NotificationController.swift in Sources */,
+				BFEA2B9F1BD403A5003827FF /* EventDayTableRow.swift in Sources */,
 				BF3E14591BCFE142008825F5 /* ExtensionDelegate.swift in Sources */,
 				BF3E145F1BCFE142008825F5 /* ComplicationController.swift in Sources */,
-				BFC023D21BCFF4BF00F580E5 /* MessagesInterfaceController.swift in Sources */,
-				BF3E14571BCFE142008825F5 /* InterfaceController.swift in Sources */,
+				BFC023D61BD3D80400F580E5 /* MessagesInterfaceController.swift in Sources */,
+				BFC023D21BCFF4BF00F580E5 /* ContactsListInterfaceController.swift in Sources */,
+				BFEA2BA31BD4043E003827FF /* EventsInterfaceController.swift in Sources */,
 				BF3E145D1BCFE142008825F5 /* GlanceController.swift in Sources */,
-				BFC023D41BCFFA1200F580E5 /* ContactListRow.swift in Sources */,
+				BFEA2BA11BD403DA003827FF /* EventTableRow.swift in Sources */,
+				BFC023D41BCFFA1200F580E5 /* ContactsListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
