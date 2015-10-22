@@ -8,7 +8,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchApp" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc">
                     <items>
                         <imageView alignment="left" image="logo_birdl_HD_alone" id="Mcd-cY-AEl"/>
                         <label alignment="center" text="Coming Soon !" textAlignment="left" id="1I2-8Y-n87"/>
@@ -26,14 +26,14 @@
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
         </scene>
-        <!--Messages Interface Controller-->
+        <!--contactsListInterface-->
         <scene sceneID="RZa-Cr-l3e">
             <objects>
-                <controller hidesWhenLoading="NO" id="v9I-zH-d66" customClass="MessagesInterfaceController" customModule="WatchApp_Extension">
+                <controller identifier="contactsListInterface" hidesWhenLoading="NO" id="v9I-zH-d66" customClass="ContactsListInterfaceController" customModule="WatchApp_Extension">
                     <items>
                         <table alignment="left" id="iYy-2G-Gez">
                             <items>
-                                <tableRow identifier="ContactListRow" id="3J8-Nx-Uge" customClass="ContactListRow" customModule="WatchApp_Extension">
+                                <tableRow identifier="ContactListRow" id="3J8-Nx-Uge" customClass="ContactsListRow" customModule="WatchApp_Extension">
                                     <group key="rootItem" width="1" alignment="left" id="CgD-XR-hu8">
                                         <items>
                                             <label alignment="left" verticalAlignment="center" text="Label" id="U5C-OB-Stj"/>
@@ -48,22 +48,69 @@
                     </items>
                     <connections>
                         <outlet property="table" destination="iYy-2G-Gez" id="nFH-as-Ahu"/>
+                        <segue destination="Xrb-vH-qzE" kind="relationship" relationship="nextPage" id="TXg-6g-UYW"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="432" y="347"/>
         </scene>
+        <!--eventInterface-->
+        <scene sceneID="Dci-FR-Tx8">
+            <objects>
+                <controller identifier="eventInterface" hidesWhenLoading="NO" id="Xrb-vH-qzE" customClass="EventsInterfaceController" customModule="WatchApp_Extension">
+                    <items>
+                        <table alignment="left" id="ImL-nq-vfu">
+                            <items>
+                                <tableRow identifier="dayTableRow" id="pVm-50-Slh" customClass="EventDayTableRow" customModule="WatchApp_Extension">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="A3G-2a-LI0">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="bottom" text="Label" numberOfLines="0" id="D3B-MX-oI8">
+                                                <color key="textColor" red="1" green="0.0" blue="0.13783269309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dayLabel" destination="D3B-MX-oI8" id="lOR-ao-Ko0"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="eventTableRow" id="0Fd-uA-bQS" customClass="EventTableRow" customModule="WatchApp_Extension">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="k1b-pF-2Vd">
+                                        <items>
+                                            <label alignment="left" text="Label" numberOfLines="0" id="jBO-TH-ssv">
+                                                <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                            </label>
+                                            <label alignment="left" text="Label" id="kN1-Ew-Ycs">
+                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="eventDetailsLabel" destination="kN1-Ew-Ycs" id="tBI-MJ-5Oh"/>
+                                        <outlet property="eventTitleLabel" destination="jBO-TH-ssv" id="169-c0-Kv5"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="ImL-nq-vfu" id="fMc-Ox-ofc"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="640" y="347"/>
+        </scene>
         <!--messagesInterface-->
         <scene sceneID="7cQ-VQ-cl8">
             <objects>
-                <controller identifier="messagesInterface" hidesWhenLoading="NO" id="lXG-JN-Q5G">
+                <controller identifier="messagesInterface" hidesWhenLoading="NO" id="lXG-JN-Q5G" customClass="MessagesInterfaceController" customModule="WatchApp_Extension">
                     <items>
                         <imageView alignment="left" image="logo_birdl_HD_alone" id="H9G-lD-qlj"/>
                         <label alignment="center" text="Coming Soon !" textAlignment="left" id="2Xj-1C-nrv"/>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="650" y="347"/>
+            <point key="canvasLocation" x="432" y="126"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
@@ -84,7 +131,7 @@
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
             </objects>
-            <point key="canvasLocation" x="235" y="570"/>
+            <point key="canvasLocation" x="235" y="574"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
@@ -100,14 +147,14 @@
                     </connections>
                 </notificationController>
             </objects>
-            <point key="canvasLocation" x="235" y="804"/>
+            <point key="canvasLocation" x="235" y="808"/>
         </scene>
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
                 <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="WatchApp" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="432" y="804"/>
+            <point key="canvasLocation" x="432" y="808"/>
         </scene>
     </scenes>
 </document>
