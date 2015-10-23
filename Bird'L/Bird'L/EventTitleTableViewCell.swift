@@ -27,6 +27,7 @@ class EventTitleTableViewCell: EventDetailTableViewCell
         if let titleRow = row as? EventTitleRow
         {
             self.title.text = titleRow.title
+            self.title.font = UIFont(name: "Lato-Black", size: 20)
         }
     }
 }

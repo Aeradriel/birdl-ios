@@ -8,9 +8,11 @@
 
 import UIKit
 
-class EventDetailViewController: UITableViewController
+class EventDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     //MARK: Instance variables
+    @IBOutlet weak var tableView: UITableView!
+
     var event: Event!
     var rows: [EventRow] = []
 
@@ -36,22 +38,22 @@ class EventDetailViewController: UITableViewController
     }
         
     //MARK: UITableViewController delegate
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return self.rows.count
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         return CGFloat(self.rows[indexPath.row].height)
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier(self.rows[indexPath.row].cellIdentifier, forIndexPath: indexPath) as! EventDetailTableViewCell
         

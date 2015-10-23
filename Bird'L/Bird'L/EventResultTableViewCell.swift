@@ -8,8 +8,8 @@
 
 import UIKit
 
-class EventResultTableViewCell: UITableViewCell {
-
+class EventResultTableViewCell: UITableViewCell
+{
     @IBOutlet weak var name: UILabel!
     
     override func awakeFromNib() {

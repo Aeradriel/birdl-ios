@@ -106,7 +106,7 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.event = events[indexPath.row]
         self.selectedEvent = []
-        self.selectedEvent.append(EventBannerRow(imagePath: "BannerExample"))
+        //self.selectedEvent.append(EventBannerRow(imagePath: "BannerExample"))
         self.selectedEvent.append(EventTitleRow(title: selectedEvent.name))
         if selectedEvent.desc != nil
         {
@@ -114,7 +114,9 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
         }
         self.selectedEvent.append(EventAddressRow(nbr: 47, street: "Rue du Coq", zipcode: "98400", city: "Trouville sur Siennes"))
         self.selectedEvent.append(EventMapRow(nbr: 47, street: "Rue du Coq", zipcode: "98400", city: "Trouville sur Siennes"))
+        self.hidesBottomBarWhenPushed = true
         performSegueWithIdentifier("eventDetailsSegue", sender: self)
+        self.hidesBottomBarWhenPushed = false
     }
     
     //MARK: UISearchResultsUpdating delegate

@@ -30,6 +30,9 @@ class EventAddressTableViewCell: EventDetailTableViewCell
             
             addressLitteral += "\(addressRow.zipcode) \(addressRow.city)"
             self.address.text = addressLitteral
+            self.address.textColor = UIColor.whiteColor()
+            self.address.textAlignment = .Center
+            self.address.font = UIFont(name: "Lato-Light", size: 13)
         }
     }
 }

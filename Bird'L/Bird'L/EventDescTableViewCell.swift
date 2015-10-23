@@ -27,6 +27,9 @@ class EventDescTableViewCell: EventDetailTableViewCell
         if let descRow = row as? EventDescRow
         {
             self.desc.text = descRow.desc
+            self.desc.textColor = UIColor.whiteColor()
+            self.desc.textAlignment = .Center
+            self.desc.font = UIFont(name: "Lato-Light", size: 13)
         }
     }
 }
