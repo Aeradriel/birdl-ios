@@ -14,8 +14,6 @@ class BirdlTabBarController: UITabBarController
     {
         super.viewDidLoad()
         
-        UITabBar.appearance().translucent = true
-        UITabBar.appearance().backgroundImage = UIImage()
-        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().tintColor = UIColor.blackColor()
     }
 }

@@ -33,16 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
-
-    func loadLogin()
-    {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("loginNavigationController") as UIViewController
-        self.window?.rootViewController?.presentViewController(vc, animated: false, completion: nil)
-    }
     
     func applicationDidBecomeActive(application: UIApplication) {
-        g_APICommunicator.checkToken(self.loadLogin)
     }
 
     func applicationWillTerminate(application: UIApplication) {

@@ -24,7 +24,7 @@ class APICommunicator
     }
     
     //MARK: Authentication
-    func checkToken(errorHandler: () -> Void)
+    func checkToken(successFunc: () -> Void, errorHandler: (() -> Void)?)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.checkTokenUrl)
         let request = NSMutableURLRequest(URL: url!)
@@ -37,14 +37,24 @@ class APICommunicator
                 {
                     let httpResponse = response as! NSHTTPURLResponse
                 
-                    if httpResponse.statusCode != 200
+                    if httpResponse.statusCode == 200
                     {
-                        errorHandler()
+                        successFunc()
+                    }
+                    else
+                    {
+                        if errorHandler != nil
+                        {
+                            errorHandler!()
+                        }
                     }
                 }
                 else
                 {
-                    errorHandler()
+                    if errorHandler != nil
+                    {
+                        errorHandler!()
+                    }
                 }
         }
     }

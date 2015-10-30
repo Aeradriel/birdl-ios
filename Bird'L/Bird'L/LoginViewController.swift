@@ -15,13 +15,31 @@ class LoginViewController: UIViewController
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    var homeViewController: BirdlTabBarController!
+    
     //MARK: UIViewController delegate
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.passwordTextField.secureTextEntry = true
         
+        self.passwordTextField.secureTextEntry = true
+        self.homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as! BirdlTabBarController
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.translucent = true
+        self.checkToken()
+    }
+    
+    //MARK: Token check
+    func loadHomeViewController()
+    {
+        self.showViewController(self.homeViewController, sender: self)
+    }
+    
+    func checkToken()
+    {
+        g_APICommunicator.checkToken(self.loadHomeViewController, errorHandler: nil)
     }
     
     //MARK: Callbacks
@@ -36,7 +54,7 @@ class LoginViewController: UIViewController
         
         userDefaults.setValue(g_APICommunicator.token, forKey: "access-token")
         userDefaults.synchronize()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.showViewController(self.homeViewController, sender: self)
     }
     
     func signinError(result : String) -> Void

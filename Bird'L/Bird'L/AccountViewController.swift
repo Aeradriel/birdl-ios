@@ -19,34 +19,52 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         "password": "mot de passe",
         "country": "pays"
     ]
+    var countriesRow: FormRowDescriptor!
     var countries: [Country] = []
     var countriesId: [Int] = []
     var countriesValue: [Int : String] = [Int : String]()
     
     //MARK: UIViewController methods
-    //TODO: Find a way to put call in viewDidAppear
     required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
-        
-        self.countries = Country.all(errorHandler: self.errorHandler)
-        for country in self.countries
-        {
-            self.countriesId.append(country.id)
-            self.countriesValue[country.id] = country.name
-        }
-        self.loadForm()
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
         self.navigationController!.view.backgroundColor = UIColor(patternImage: UIImage(named: "ta_mere_thib")!)
         self.tableView.backgroundColor = UIColor.clearColor()
+        Country.all(self.loadCountries, errorHandler: self.errorHandler)
+        self.loadForm()
+        
+        super.viewDidLoad()
     }
     
     override func viewDidAppear(animated: Bool) {
         User.getBaseInfo(g_APICommunicator.token, errorHander: self.errorHandler, successHandler: self.updateUIWithUser)
+    }
+    
+    //MARK: Loading countries
+    func loadCountries(countries: [Country])
+    {
+        let row = self.countriesRow
+        
+        self.countries = countries
+        for country in self.countries
+        {
+            
+            self.countriesId.append(country.id)
+            self.countriesValue[country.id] = country.name
+            row.configuration[FormRowDescriptor.Configuration.Options] = self.countriesId
+            row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "titleLabel.textColor" : UIColor.whiteColor()]
+            row.configuration[FormRowDescriptor.Configuration.TitleFormatterClosure] =
+                { value in
+                    switch (value)
+                    {
+                    default:
+                        return self.countriesValue[value as! Int]
+                    }
+                } as TitleFormatterClosure
+        }
     }
     
     //MARK: Keyboard handling
@@ -74,11 +92,10 @@ class AccountViewController: FormViewController, UITextFieldDelegate
     func disconnect()
     {
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        let loginVc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
         
         userDefaults.removeObjectForKey("access-token")
         userDefaults.synchronize()
-        self.presentViewController(loginVc, animated: true, completion: nil)
+        self.tabBarController?.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     //MARK: Callbacks
@@ -180,16 +197,8 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         row.value = 1
         section1.addRow(row)
         row = FormRowDescriptor(tag: "country", rowType: .Picker, title: "Pays")
-        row.configuration[FormRowDescriptor.Configuration.Options] = self.countriesId
         row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["backgroundColor" : UIColor(red: 0, green: 0, blue: 0, alpha: 0.4), "titleLabel.textColor" : UIColor.whiteColor()]
-        row.configuration[FormRowDescriptor.Configuration.TitleFormatterClosure] =
-            { value in
-                switch (value)
-                {
-                default:
-                    return self.countriesValue[value as! Int]
-                }
-            } as TitleFormatterClosure
+        self.countriesRow = row
         section1.addRow(row)
         
         // Password

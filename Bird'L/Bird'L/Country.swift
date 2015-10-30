@@ -35,47 +35,40 @@ class Country : NSObject
     }
     
     //MARK: ActiveRecord functions
-    class func all(errorHandler errorFunc: ((String) -> Void)?) -> [Country]
+    class func all(successFunc: ([Country]) -> Void, errorHandler errorFunc: ((String) -> Void)?)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.countriesUrl)
         let request = NSMutableURLRequest(URL: url!)
         var ret: [Country] = []
-        var response: NSURLResponse?
-        var data: NSData?
         
         request.HTTPMethod = "GET"
-        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
-        do
-        {
-            data = try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
-        }
-        catch let error as NSError
-        {
-            data = nil
-            
-            if errorFunc != nil
-            {
-                errorFunc!(error.localizedDescription)
-            }
-        }
-        if data != nil
-        {
-            let json = JSON(data: data!)
-            if let countries = json["countries"].asArray
-            {
-                for country in countries
-                {
-                    let newCountry = Country(id: country["id"].asInt!, andName: country["name"].asString, andLanguage: country["language"].asString, andI18nKey: country["i18n_key"].asString, andAvailable: country["available"].asBool!)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil) {
+                    let json = JSON(data: data!)
                     
-                    ret.append(newCountry)
+                    if let countries = json["countries"].asArray
+                    {
+                        for country in countries
+                        {
+                            let newCountry = Country(id: country["id"].asInt!, andName: country["name"].asString, andLanguage: country["language"].asString, andI18nKey: country["i18n_key"].asString, andAvailable: country["available"].asBool!)
+                            
+                            ret.append(newCountry)
+                        }
+                        successFunc(ret)
+                    }
+                    else if errorFunc != nil
+                    {
+                        errorFunc!(APICommunicator.errorFromJson(json))
+                    }
                 }
-            }
-            else if errorFunc != nil
-            {
-                errorFunc!(APICommunicator.errorFromJson(json))
-            }
+                else
+                {
+                    if errorFunc != nil
+                    {
+                        errorFunc!("Can't reach server")
+                    }
+                }
         }
-        return ret
     }
-
 }

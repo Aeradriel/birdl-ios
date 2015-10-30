@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UIPickerViewDelegate {
     
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var usernameField: UITextField!
@@ -197,7 +197,7 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         
         view.addGestureRecognizer(tap)
-        self.countries = Country.all(errorHandler: nil)
+        Country.all(self.loadCountries, errorHandler: nil)
         self.selectedCountry = countries.first
     }
     
@@ -208,6 +208,13 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
     
     func DismissKeyboard(){
         self.view.endEditing(true)
+    }
+    
+    //MARK: Load Countries
+    func loadCountries(countries: [Country])
+    {
+        self.countries = countries
+        self.countryPicker.reloadAllComponents()
     }
     
     //MARK: UIPickerView mmethods
@@ -244,7 +251,7 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
             { (action) in
                 self.presentViewController(alertController, animated: true, completion: nil)                
         }));
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.showViewController(vc, sender: self)
     }
     
     func signupError(result: String) -> Void {
