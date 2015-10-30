@@ -60,11 +60,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dez-lJ-dmN">
                                 <rect key="frame" x="0.0" y="571" width="375" height="48"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.98431372549019602" green="0.60784313725490191" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.40392156862745099" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
                                 <state key="normal" title="Signup">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="1" green="0.49803921568627452" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="136" y="407" width="49" height="30"/>
@@ -87,7 +87,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5tw-nd-Kx3">
                                 <rect key="frame" x="0.0" y="619" width="375" height="48"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.29411764705882354" green="0.51372549019607838" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.15686274509803921" green="0.50196078431372548" blue="0.72549019607843135" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="BYm-MI-Hh1"/>
                                 </constraints>
@@ -651,6 +651,7 @@
                                     <constraint firstAttribute="width" constant="150" id="N2G-QV-Fc0"/>
                                     <constraint firstAttribute="width" constant="150" id="eLs-Jw-qex"/>
                                 </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <variation key="default">
@@ -669,6 +670,7 @@
                                     <constraint firstAttribute="width" secondItem="lCh-In-hir" secondAttribute="height" multiplier="5:1" id="G2X-0T-cfa"/>
                                     <constraint firstAttribute="width" constant="150" id="zvh-0c-TEi"/>
                                 </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
@@ -686,6 +688,7 @@
                                     <constraint firstAttribute="width" secondItem="rri-hz-tJ8" secondAttribute="height" multiplier="5:1" id="GOU-3j-WxZ"/>
                                     <constraint firstAttribute="width" constant="150" id="siB-wC-yGJ"/>
                                 </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
