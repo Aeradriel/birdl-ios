@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController
+class LoginViewController: UIViewController, UITextFieldDelegate
 {
     //MARK: Variables
     @IBOutlet weak var passwordTextField: UITextField!
@@ -22,7 +22,6 @@ class LoginViewController: UIViewController
         super.viewDidLoad()
         
         self.passwordTextField.secureTextEntry = true
-        self.homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as! BirdlTabBarController
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -30,7 +29,21 @@ class LoginViewController: UIViewController
         self.navigationController!.navigationBar.translucent = true
         self.loginField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
         self.passwordField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
+        self.loginField.delegate = self
+        self.passwordTextField.delegate = self
         self.checkToken()
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        self.homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as! BirdlTabBarController
+    }
+    
+    //MARK: UITextField delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
     
     //MARK: Token check

@@ -708,7 +708,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwV-b0-CtB">
                                 <rect key="frame" x="0.0" y="688" width="414" height="48"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.29411764709999999" green="0.51372549020000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="3pM-LY-cuY"/>
                                     <constraint firstAttribute="height" constant="48" id="F9y-Wp-oad"/>
@@ -899,35 +899,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoL-4G-ZPc">
-                                <rect key="frame" x="0.0" y="688" width="414" height="48"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.29411764709999999" green="0.51372549020000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="xoL-4G-ZPc" secondAttribute="height" multiplier="69:8" id="38i-sm-euj"/>
-                                    <constraint firstAttribute="width" secondItem="xoL-4G-ZPc" secondAttribute="height" multiplier="69:8" id="NFm-Yr-CCl"/>
-                                    <constraint firstAttribute="width" secondItem="xoL-4G-ZPc" secondAttribute="height" multiplier="16:15" id="YTb-2B-BEV"/>
-                                    <constraint firstAttribute="width" secondItem="xoL-4G-ZPc" secondAttribute="height" multiplier="207:22" id="l2G-SZ-C79"/>
-                                    <constraint firstAttribute="width" constant="414" id="mRH-xd-5hY"/>
-                                </constraints>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="38i-sm-euj"/>
-                                        <exclude reference="NFm-Yr-CCl"/>
-                                        <exclude reference="YTb-2B-BEV"/>
-                                        <exclude reference="l2G-SZ-C79"/>
-                                        <exclude reference="mRH-xd-5hY"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="nextButtonUp:" destination="z5L-OW-eRx" eventType="touchUpInside" id="vF0-lt-X2Z"/>
-                                    <segue destination="1LJ-K4-34W" kind="show" identifier="signupSegue2" id="KaN-BY-4I5"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VrM-ea-FjC">
                                 <rect key="frame" x="155" y="218" width="150" height="30"/>
                                 <animations/>
@@ -1037,6 +1008,35 @@
                                     <segment title="Female"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xoL-4G-ZPc">
+                                <rect key="frame" x="0.0" y="688" width="414" height="48"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xoL-4G-ZPc" secondAttribute="height" multiplier="69:8" id="38i-sm-euj"/>
+                                    <constraint firstAttribute="width" secondItem="xoL-4G-ZPc" secondAttribute="height" multiplier="69:8" id="NFm-Yr-CCl"/>
+                                    <constraint firstAttribute="width" secondItem="xoL-4G-ZPc" secondAttribute="height" multiplier="16:15" id="YTb-2B-BEV"/>
+                                    <constraint firstAttribute="width" secondItem="xoL-4G-ZPc" secondAttribute="height" multiplier="207:22" id="l2G-SZ-C79"/>
+                                    <constraint firstAttribute="width" constant="414" id="mRH-xd-5hY"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="38i-sm-euj"/>
+                                        <exclude reference="NFm-Yr-CCl"/>
+                                        <exclude reference="YTb-2B-BEV"/>
+                                        <exclude reference="l2G-SZ-C79"/>
+                                        <exclude reference="mRH-xd-5hY"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="nextButtonUp:" destination="z5L-OW-eRx" eventType="touchUpInside" id="vF0-lt-X2Z"/>
+                                    <segue destination="1LJ-K4-34W" kind="show" identifier="signupSegue2" id="KaN-BY-4I5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.2666666667" green="0.1647058824" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1161,7 +1161,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k2F-V9-1cE">
                                 <rect key="frame" x="0.0" y="688" width="414" height="48"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.29411764709999999" green="0.51372549020000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.50196078430000002" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Create Account !">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
