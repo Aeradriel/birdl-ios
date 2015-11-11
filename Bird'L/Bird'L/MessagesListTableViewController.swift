@@ -28,18 +28,23 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
         let nib = UINib(nibName: "RelationTableViewCell", bundle: nil)
         
         self.tableView.registerNib(nib, forCellReuseIdentifier: "relationTableViewCell")
-        self.tableView.rowHeight = 75
         self.tableView.tableFooterView = UIView()
-    }
-
-    override func viewDidAppear(animated: Bool)
-    {        
-        User.relations(errorHandler: self.errorHandler, successHandler: self.relationsDidLoad)
+        self.tableView.estimatedRowHeight = 150
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    override func didReceiveMemoryWarning()
+    override func viewDidAppear(animated: Bool)
     {
-        super.didReceiveMemoryWarning()
+        super.viewDidAppear(animated)
+        
+        User.relations(errorHandler: self.errorHandler, successHandler: self.relationsDidLoad)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidDisappear(animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
@@ -79,9 +84,7 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
     {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("relationTableViewCell") as! RelationTableViewCell
 
-        cell.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-        cell.name?.textColor = UIColor.whiteColor()
-        cell.lastMessage?.textColor = UIColor.whiteColor()
+        cell.backgroundColor = UIColor.clearColor()
         cell.name?.text = self.relations[indexPath.row]["name"] as? String
         //TODO: Dynamic
         cell.lastMessage?.text = "Apercu du dernier message envoyé dans la conversation"

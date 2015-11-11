@@ -13,11 +13,14 @@ class RelationTableViewCell: UITableViewCell
     //MARK: Variables
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var lastMessage: UILabel!
+    @IBOutlet weak var cellBackgroundView: UIView!
     
     //MARK: UITableViewCell methods
     override func awakeFromNib()
     {
         super.awakeFromNib()
+        
+        self.cellBackgroundView.layer.cornerRadius = 8
     }
 
     override func setSelected(selected: Bool, animated: Bool)

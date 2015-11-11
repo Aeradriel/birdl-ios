@@ -20,7 +20,6 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
 
         let nibName = UINib(nibName: "BadgeModuleCell", bundle:nil)
         
-        self.navigationController?.navigationBar.translucent = true
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.registerNib(nibName, forCellReuseIdentifier: "BadgeModuleCell")
     }
@@ -31,7 +30,14 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
 
     override func viewDidAppear(animated: Bool)
     {
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        super.viewDidAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidDisappear(animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     //MARK: -
