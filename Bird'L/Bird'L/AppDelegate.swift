@@ -10,10 +10,11 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
+    
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         return true
@@ -97,7 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         return managedObjectContext
     }()
 
-    // MARK: - Core Data Saving support
+    //MARK: - Core Data Saving support
 
     func saveContext () {
         if let moc = self.managedObjectContext
@@ -113,6 +114,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate
             }
         }
     }
-
 }
 

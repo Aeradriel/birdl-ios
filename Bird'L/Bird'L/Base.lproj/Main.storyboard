@@ -66,7 +66,7 @@
                                 <animations/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress"/>
                                 <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="75" y="269" width="170" height="30"/>
                                 </variation>
@@ -303,7 +303,7 @@
                             <outlet property="delegate" destination="DGr-j0-4HK" id="bar-0p-1Bc"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Profil" image="male" id="oSv-xb-O9K"/>
+                    <tabBarItem key="tabBarItem" title="Profil" image="profile" id="oSv-xb-O9K"/>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Iwa-r6-k8r"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
@@ -519,7 +519,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="tintColor" red="0.73333333329999995" green="0.21176470589999999" blue="0.34509803919999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="pjr-b7-oMz" kind="relationship" relationship="viewControllers" id="Wxw-tF-WBg"/>
@@ -556,7 +558,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="CBe-9K-E4r"/>
@@ -1134,13 +1136,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" width="24" height="24"/>
-        <image name="email" width="24" height="24"/>
-        <image name="home" width="24" height="24"/>
+        <image name="calendar" width="256" height="256"/>
+        <image name="email" width="256" height="256"/>
+        <image name="home" width="256" height="256"/>
         <image name="logo_birdl_HD" width="8000" height="2239"/>
         <image name="logo_birdl_HD_alone" width="2526" height="2239"/>
-        <image name="male" width="24" height="24"/>
-        <image name="notifications" width="24" height="24"/>
+        <image name="notifications" width="256" height="256"/>
+        <image name="profile" width="256" height="256"/>
         <image name="ta_mere_thib" width="432" height="768"/>
     </resources>
     <color key="tintColor" red="1" green="0.50008201451373357" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

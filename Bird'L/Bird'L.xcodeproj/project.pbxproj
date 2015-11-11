@@ -36,7 +36,6 @@
 		BF3E14771BCFE998008825F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3E14751BCFE978008825F5 /* Assets.xcassets */; };
 		BF44DE281B512A6C007A3F05 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44DE271B512A6B007A3F05 /* User.swift */; };
 		BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
-		BF61834C1BF3A8340097ECF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF61834B1BF3A8340097ECF7 /* Images.xcassets */; };
 		BF6183621BF3A8940097ECF7 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF61834E1BF3A8940097ECF7 /* Lato-Black.ttf */; };
 		BF6183631BF3A8940097ECF7 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF61834F1BF3A8940097ECF7 /* Lato-BlackItalic.ttf */; };
 		BF6183641BF3A8940097ECF7 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF6183501BF3A8940097ECF7 /* Lato-Bold.ttf */; };
@@ -57,6 +56,7 @@
 		BF6183731BF3A8940097ECF7 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF61835F1BF3A8940097ECF7 /* Lato-ThinItalic.ttf */; };
 		BF6183741BF3A8940097ECF7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF6183601BF3A8940097ECF7 /* OFL.txt */; };
 		BF6183751BF3A8940097ECF7 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF6183611BF3A8940097ECF7 /* README.txt */; };
+		BF6183771BF3B8840097ECF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6183761BF3B8840097ECF7 /* Images.xcassets */; };
 		BF9270231BAC10FC003C7DFB /* RelationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */; };
 		BF9270251BAC121C003C7DFB /* RelationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */; };
 		BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */; };
@@ -201,7 +201,6 @@
 		BF3E14621BCFE142008825F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3E14751BCFE978008825F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF44DE271B512A6B007A3F05 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		BF61834B1BF3A8340097ECF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF61834E1BF3A8940097ECF7 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		BF61834F1BF3A8940097ECF7 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		BF6183501BF3A8940097ECF7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -222,6 +221,7 @@
 		BF61835F1BF3A8940097ECF7 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		BF6183601BF3A8940097ECF7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		BF6183611BF3A8940097ECF7 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		BF6183761BF3B8840097ECF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RelationTableViewCell.xib; sourceTree = "<group>"; };
 		BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationTableViewCell.swift; sourceTree = "<group>"; };
 		BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSearchViewController.swift; sourceTree = "<group>"; };
@@ -407,8 +407,8 @@
 		BF1F78AF1AB64631002100B5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BF6183761BF3B8840097ECF7 /* Images.xcassets */,
 				BF61834D1BF3A8940097ECF7 /* Lato2OFL */,
-				BF61834B1BF3A8340097ECF7 /* Images.xcassets */,
 				BF1F78B31AB64631002100B5 /* Bird_L.xcdatamodeld */,
 				BF1F78B11AB64631002100B5 /* AppDelegate.swift */,
 				BF1F78B01AB64631002100B5 /* Info.plist */,
@@ -825,6 +825,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF6183691BF3A8940097ECF7 /* Lato-HeavyItalic.ttf in Resources */,
+				BF6183771BF3B8840097ECF7 /* Images.xcassets in Resources */,
 				BF61836D1BF3A8940097ECF7 /* Lato-Medium.ttf in Resources */,
 				BF6183701BF3A8940097ECF7 /* Lato-Semibold.ttf in Resources */,
 				BF61836A1BF3A8940097ECF7 /* Lato-Italic.ttf in Resources */,
@@ -842,7 +843,6 @@
 				BF6183711BF3A8940097ECF7 /* Lato-SemiboldItalic.ttf in Resources */,
 				BF6183741BF3A8940097ECF7 /* OFL.txt in Resources */,
 				BF02BCF21B33563C007532A1 /* BadgeModuleCell.xib in Resources */,
-				BF61834C1BF3A8340097ECF7 /* Images.xcassets in Resources */,
 				BFAC2E771B42ABC60098B1E6 /* EventTitleTableViewCell.xib in Resources */,
 				BFAC2E7D1B42B1D10098B1E6 /* EventDescTableViewCell.xib in Resources */,
 				BF113C5F1B308ADB005B87FF /* BadgeView.xib in Resources */,
