@@ -27,13 +27,21 @@ class SignupViewController: UIViewController, UIPickerViewDelegate {
         self.passwordField2.attributedPlaceholder = NSAttributedString(string: "Password confirmation", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
     }
     
-    override func didReceiveMemoryWarning() {
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
-    @IBAction func nextButtonUp(sender: AnyObject) {
+    @IBAction func nextButtonUp(sender: AnyObject)
+    {
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
