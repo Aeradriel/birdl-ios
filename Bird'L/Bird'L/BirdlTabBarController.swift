@@ -16,7 +16,8 @@ class BirdlTabBarController: UITabBarController
     
         let tbSize = self.tabBar.bounds.size
         
-        self.tabBar.backgroundImage = self.imageWithColor(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1), size: self.tabBar.bounds.size)
+        self.tabBar.translucent = true
+        self.tabBar.backgroundImage = self.imageWithColor(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.8), size: self.tabBar.bounds.size)
         self.tabBar.tintColor = UIColor.whiteColor()
         self.tabBar.selectionIndicatorImage = self.imageWithColor(UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1), size: CGSizeMake(tbSize.width / 5, tbSize.height))
         
@@ -47,7 +48,7 @@ class BirdlTabBarController: UITabBarController
     func imageWithColor(color: UIColor, size: CGSize) -> UIImage
     {
         let rect = CGRectMake(0, 0, size.width, size.height)
-        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        UIGraphicsBeginImageContextWithOptions(size, true, 0)
         color.setFill()
         UIRectFill(rect)
         let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
