@@ -20,7 +20,7 @@ class RelationTableViewCell: UITableViewCell
     {
         super.awakeFromNib()
         
-        self.cellBackgroundView.layer.cornerRadius = 8
+        //self.cellBackgroundView.layer.cornerRadius = 8
     }
 
     override func setSelected(selected: Bool, animated: Bool)

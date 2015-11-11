@@ -36,7 +36,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     
     override func viewDidAppear(animated: Bool)
     {
+        super.viewDidAppear(animated)
+        
         self.homeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as! BirdlTabBarController
+    }
+    
+    override func viewDidDisappear(animated: Bool)
+    {
+        super.viewDidDisappear(animated)
     }
     
     //MARK: UITextField delegate

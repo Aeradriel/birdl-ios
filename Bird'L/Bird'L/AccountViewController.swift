@@ -31,7 +31,7 @@ class AccountViewController: FormViewController, UITextFieldDelegate
     }
     
     override func viewDidLoad() {
-        self.navigationController!.view.backgroundColor = UIColor(red: 40/256, green: 128/256, blue: 185/256, alpha: 1)
+        self.navigationController!.view.backgroundColor = UIColor(red: 0.36, green: 0.53, blue: 0.77, alpha: 1)
         self.tableView.backgroundColor = UIColor.clearColor()
         Country.all(self.loadCountries, errorHandler: self.errorHandler)
         self.loadForm()
@@ -39,18 +39,12 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(animated: Bool)
+    override func viewWillAppear(animated: Bool)
     {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         
         User.getBaseInfo(g_APICommunicator.token, errorHander: self.errorHandler, successHandler: self.updateUIWithUser)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    override func viewDidDisappear(animated: Bool)
-    {
-        super.viewDidDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     //MARK: Loading countries

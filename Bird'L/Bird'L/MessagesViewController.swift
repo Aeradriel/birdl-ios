@@ -30,16 +30,12 @@ class MessagesViewController: JSQMessagesViewController, UITextFieldDelegate
         self.inputToolbar!.maximumHeight = 150
     }
     
-    override func viewDidAppear(animated: Bool)
+    override func viewWillAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
         
         Message.with(self.relationId, successFunc: self.messagesDidLoad, errorFunc: self.errorHandler)
-    }
-    
-    override func viewWillAppear(animated: Bool)
-    {
-        super.viewWillAppear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     //MARK: Callback

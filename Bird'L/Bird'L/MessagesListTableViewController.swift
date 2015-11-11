@@ -33,9 +33,9 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    override func viewDidAppear(animated: Bool)
+    override func viewWillAppear(animated: Bool)
     {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
         
         User.relations(errorHandler: self.errorHandler, successHandler: self.relationsDidLoad)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -44,7 +44,6 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
     override func viewDidDisappear(animated: Bool)
     {
         super.viewDidDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

@@ -37,19 +37,10 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewWillAppear(animated: Bool)
     {
+        super.viewWillAppear(animated)
+
         Event.all(errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
-    }
-    
-    override func viewDidAppear(animated: Bool)
-    {
-        super.viewDidAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
-    override func viewDidDisappear(animated: Bool)
-    {
-        super.viewDidDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

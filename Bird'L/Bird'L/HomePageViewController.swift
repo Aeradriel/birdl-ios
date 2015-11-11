@@ -28,16 +28,16 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         super.didReceiveMemoryWarning()
     }
 
-    override func viewDidAppear(animated: Bool)
+    override func viewWillAppear(animated: Bool)
     {
-        super.viewDidAppear(animated)
+        super.viewWillAppear(animated)
+        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidDisappear(animated: Bool)
     {
         super.viewDidDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     //MARK: -
