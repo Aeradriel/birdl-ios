@@ -39,7 +39,6 @@ class SignupViewController: UIViewController, UIPickerViewDelegate {
         super.didReceiveMemoryWarning()
     }
 
-
     @IBAction func nextButtonUp(sender: AnyObject)
     {
     }
@@ -107,12 +106,12 @@ class SignupViewController2: UIViewController {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
+        
+        self.firstNameField.attributedPlaceholder = NSAttributedString(string: "First name", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
+        self.lastNameField.attributedPlaceholder = NSAttributedString(string: "Last name", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
         self.birthDatePicker.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.birthDatePicker.datePickerMode = .CountDownTimer
+        self.birthDatePicker.datePickerMode = .Date
     }
     
     @IBAction func nextButtonUp(sender: AnyObject) {
@@ -212,7 +211,6 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
         view.addGestureRecognizer(tap)
         Country.all(self.loadCountries, errorHandler: nil)
         self.selectedCountry = countries.first
-        self.countryPicker.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
     }
     
     override func didReceiveMemoryWarning() {
@@ -231,9 +229,13 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
         self.countryPicker.reloadAllComponents()
     }
     
-    //MARK: UIPickerView mmethods
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return self.countries[row].name
+    //MARK: UIPickerView methods
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString?
+    {
+        let titleData = self.countries[row].name
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName : UIColor.whiteColor()])
+        
+        return myTitle
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
