@@ -107,6 +107,7 @@ class SignupViewController2: UIViewController {
         super.viewDidLoad()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
+        self.birthDatePicker.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
     }
     
     override func didReceiveMemoryWarning() {
@@ -211,6 +212,7 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
         view.addGestureRecognizer(tap)
         Country.all(self.loadCountries, errorHandler: nil)
         self.selectedCountry = countries.first
+        self.countryPicker.setValue(UIColor.whiteColor(), forKeyPath: "textColor")
     }
     
     override func didReceiveMemoryWarning() {
