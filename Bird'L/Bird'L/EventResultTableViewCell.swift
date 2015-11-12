@@ -11,12 +11,18 @@ import UIKit
 class EventResultTableViewCell: UITableViewCell
 {
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var slotsLabel: UILabel!
+    @IBOutlet weak var cellBackgroundView: UIView!
     
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
+        
+        //self.cellBackgroundView.layer.cornerRadius = 8
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(selected: Bool, animated: Bool)
+    {
         super.setSelected(selected, animated: animated)
     }
     

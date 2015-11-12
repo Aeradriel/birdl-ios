@@ -33,10 +33,13 @@ class EventDetailViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableView.registerNib(nibName, forCellReuseIdentifier: "EventMapTableViewCell")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
         
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     //MARK: UITableViewController delegate
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {

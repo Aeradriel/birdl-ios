@@ -28,8 +28,7 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
         let nib = UINib(nibName: "RelationTableViewCell", bundle: nil)
         
         self.tableView.registerNib(nib, forCellReuseIdentifier: "relationTableViewCell")
-        self.tableView.tableFooterView = UIView()
-        self.tableView.estimatedRowHeight = 150
+        self.tableView.estimatedRowHeight = 110
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
