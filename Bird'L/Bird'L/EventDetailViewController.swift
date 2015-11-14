@@ -41,6 +41,7 @@ class EventDetailViewController: UIViewController, UICollectionViewDataSource, U
         self.collectionView.registerNib(nibName, forCellWithReuseIdentifier: "EventMapTableViewCell")
         self.navigationBar.topItem!.title = self.aTitle;
     }
+    
     func setEventTitle(title: String) {
         self.aTitle = title;
     }

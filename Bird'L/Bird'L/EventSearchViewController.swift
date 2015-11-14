@@ -17,7 +17,7 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
     var selectedEvent: [EventRow] = []
     var searchResult: [Event] = []
     var resultSearchController = UISearchController(searchResultsController: nil)
-
+    
     //MARK: UIViewController functions
     override func viewDidLoad()
     {
@@ -32,13 +32,14 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.tableView.tableHeaderView = self.resultSearchController.searchBar
         self.tableView.tableFooterView = UIView()
-        self.tableView.reloadData()
+        self.tableView.estimatedRowHeight = 150
+        self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-
+        
         Event.all(errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -91,16 +92,16 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventResultTableViewCell", forIndexPath: indexPath) as! EventResultTableViewCell
         
-        cell.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-        cell.name.textColor = UIColor.whiteColor()
-        if (self.resultSearchController.active) {
+        if (self.resultSearchController.active)
+        {
             cell.name!.text = self.searchResult[indexPath.row].name
-
+            cell.name!.text = "x/\(self.searchResult[indexPath.row].maxSlots) places occupés"
             return cell
         }
-        else {
-            cell.name!.text = self.events   [indexPath.row].name
-            
+        else
+        {
+            cell.name!.text = self.events[indexPath.row].name
+            cell.slotsLabel!.text = "x/\(self.events[indexPath.row].maxSlots) places occupés"
             return cell
         }
     }
