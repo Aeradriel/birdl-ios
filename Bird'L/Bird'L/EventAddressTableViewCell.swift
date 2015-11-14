@@ -8,18 +8,19 @@
 
 import UIKit
 
-class EventAddressTableViewCell: EventDetailTableViewCell
+class EventAddressTableViewCell: EventDetailCollectionViewCell
 {
-    @IBOutlet weak var address: UITextView!
     
+    
+    @IBOutlet weak var address: UILabel!
     //MARK: UITableViewCell methods
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    //override func setSelected(selected: Bool, animated: Bool) {
+    //    super.setSelected(selected, animated: animated)
+    //}
     
     //MARK: Custom methods
     override func fillCell(row: EventRow)

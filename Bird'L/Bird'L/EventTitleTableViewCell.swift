@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventTitleTableViewCell: EventDetailTableViewCell
+class EventTitleTableViewCell: EventDetailCollectionViewCell
 {
     @IBOutlet weak var title: UILabel!
     
@@ -17,9 +17,9 @@ class EventTitleTableViewCell: EventDetailTableViewCell
         super.awakeFromNib()
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    //override func setSelected(selected: Bool, animated: Bool) {
+    //    super.setSelected(selected, animated: animated)
+    //}
     
     //MARK: Custom methods
     override func fillCell(row: EventRow)

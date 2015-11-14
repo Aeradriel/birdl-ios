@@ -8,18 +8,18 @@
 
 import UIKit
 
-class EventBannerTableViewCell: EventDetailTableViewCell
+class EventBannerTableViewCell: EventDetailCollectionViewCell
 {
-    @IBOutlet weak var banner: UIImageView!
     
+    @IBOutlet weak var banner: UIImageView!
     //MARK: UITableViewCell methods
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    //override func setSelected(selected: Bool, animated: Bool) {
+    //    super.setSelected(selected, animated: animated)
+    //}
     
     //MARK: Custom methods
     override func fillCell(row: EventRow)

@@ -8,19 +8,26 @@
 
 import UIKit
 
-class EventDetailTableViewCell: UITableViewCell
+class EventDetailCollectionViewCell: UICollectionViewCell
 {
     //MARK: UITableViewCell methods
     override func awakeFromNib() {
         super.awakeFromNib()
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    //func setSelected(selected: Bool, animated: Bool) {
+    //    super.setSelected(selected, animated: animated)
+    //}
 
     //MARK: Custom methods
     func fillCell(row: EventRow)
     {
+    }
+    
+    func getRatioHeight() -> CGFloat {
+        return CGFloat(0.2);
+    }
+    func getRatioWidth() -> CGFloat {
+        return CGFloat(1);
     }
 }
