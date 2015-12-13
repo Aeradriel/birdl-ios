@@ -8,17 +8,47 @@
 
 import UIKit
 import CoreData
+import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate
+class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate
 {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
+        if #available(iOS 9.0, *)
+        {
+            if (WCSession.isSupported())
+            {
+                let watchSession = WCSession.defaultSession()
+                
+                watchSession.delegate = self
+                watchSession.activateSession();
+            }
+        }
+        else
+        {
+        }
         return true
     }
-
+    
+    @available(iOS 9.0, *)
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void)
+    {
+        User.relations(errorHandler: { (err) -> Void in
+            print("\(err)")
+            }) { (relations) -> Void in
+                replyHandler(["relations" : relations])
+        }
+    }
+    
+    @available(iOS 9.0, *)
+    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject])
+    {
+        print("lol")
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

@@ -23,7 +23,7 @@ struct netConfig
     static let registerEventUrl = "/event/register/"
     static let checkEventUrl = "/event/check/"
     static let checkTokenUrl = "/check_token/"
-    static let relationsUrl = "/messages/relations/"
+    static let relationsUrl = "/user/relations/"
     static let messagesUrl = "/messages/"
     static let newMessageUrl = "/messages/new/"
 }

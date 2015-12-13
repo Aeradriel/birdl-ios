@@ -8,13 +8,14 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 class ContactsListInterfaceController: WKInterfaceController
 {
     //MARK: -
     //MARK: Variables
     @IBOutlet var table: WKInterfaceTable!
-    var contacts = [ "Jésus", "Zeus", "Thibaut" ]
+    var contacts: [[ String : AnyObject ]] = [[ String : AnyObject ]]()
     
     //MARK: -
     //MARK: WKIntefaceController delegate
@@ -28,8 +29,32 @@ class ContactsListInterfaceController: WKInterfaceController
     override func willActivate()
     {
         super.willActivate()
+        
+        if (WCSession.defaultSession().reachable)
+        {
+            let dic = [ "request" : "contactList" ]
+            WCSession.defaultSession().sendMessage(dic, replyHandler: self.didReceiveContactsList, errorHandler:
+                { (err) -> Void in
+                    print("\(err)")
+            })
+        }
+        else
+        {
+        }
     }
 
+    func didReceiveContactsList(contactsList: [String : AnyObject])
+    {
+        if let contacts = contactsList["relations"] as? [[String : AnyObject]]
+        {
+            if (contacts != self.contacts)
+            {
+                self.contacts = contacts
+                self.setupTable()
+            }
+        }
+    }
+    
     override func didDeactivate()
     {
         super.didDeactivate()
@@ -45,7 +70,7 @@ class ContactsListInterfaceController: WKInterfaceController
         {
             if let row = self.table.rowControllerAtIndex(i) as? ContactsListRow
             {
-                row.contactName.setText(self.contacts[i])
+                row.contactName.setText(self.contacts[i]["name"] as? String)
             }
         }
     }

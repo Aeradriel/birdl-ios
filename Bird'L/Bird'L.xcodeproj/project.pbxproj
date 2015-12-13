@@ -191,6 +191,7 @@
 		BF1F78C41AB64631002100B5 /* Bird'LTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bird'LTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F78C91AB64631002100B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird_LTests.swift; sourceTree = "<group>"; };
+		BF33C0141C1D8F07003EA353 /* Bird'L.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bird'L.entitlements"; sourceTree = "<group>"; };
 		BF377F9A1B50044700099040 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BF3E14431BCFE142008825F5 /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3E14461BCFE142008825F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -387,6 +388,7 @@
 		BF1F78AE1AB64631002100B5 /* Bird'L */ = {
 			isa = PBXGroup;
 			children = (
+				BF33C0141C1D8F07003EA353 /* Bird'L.entitlements */,
 				BF92FDD31C1ACB6B00ECE6CE /* Notifications */,
 				BFC6BF121B4C175000B02CC0 /* Messages */,
 				BFDF4D091B3AA68500D775D7 /* Account */,
@@ -791,6 +793,11 @@
 					BF1F78AB1AB64630002100B5 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = KQWVHFR4W7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					BF1F78C31AB64631002100B5 = {
 						CreatedOnToolsVersion = 6.2;
@@ -1161,7 +1168,8 @@
 			baseConfigurationReference = 7D0B48FDD6A9DA82C21A70BB /* Pods-Bird'L.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Thibaut Roche (8JZVS4794A)";
+				CODE_SIGN_ENTITLEMENTS = "Bird'L/Bird'L.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1187,7 +1195,8 @@
 			baseConfigurationReference = CD9F76C4E770B53330BDE54B /* Pods-Bird'L.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Thibaut Roche (8JZVS4794A)";
+				CODE_SIGN_ENTITLEMENTS = "Bird'L/Bird'L.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
