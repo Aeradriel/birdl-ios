@@ -53,8 +53,15 @@ class Event : NSObject
                     {
                         for event in events
                         {
-                            let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: event["address_id"].asInt!, language: event["language"].asString)
+                            var address = 0
                             
+                            if (event["address_id"].asInt != nil)
+                            {
+                                address = event["address_id"].asInt!
+                            }
+                            
+                            let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: address, language: event["language"].asString)
+                         
                             ret.append(newEvent)
                         }
                         successFunc(ret)
