@@ -10,5 +10,6 @@
 #define Bird_L_Bridging_Header_h
 
 #import <JSQMessagesViewController/JSQMessages.h>
+#import "MBProgressHUD.h"
 
 #endif /* Bird_L_Bridging_Header_h */
