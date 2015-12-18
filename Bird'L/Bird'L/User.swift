@@ -197,7 +197,7 @@ class User : NSObject
                         {
                             let relation = rel.asDictionary!
                             
-                            ret.append(["id" : relation["id"]!.asInt!, "name" : relation["name"]!.asString!])
+                            ret.append(["id" : relation["id"]!.asInt!, "name" : "\(relation["first_name"]!.asString!) \(relation["last_name"]!.asString!)"])
                         }
                         successFunc(ret)
                     }

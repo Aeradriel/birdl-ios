@@ -11,6 +11,10 @@
 		01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9381C1ADE46E300E09C0B /* SignupViewController.swift */; };
 		01D5F5261B338073003EEF39 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D5F5251B338073003EEF39 /* json.swift */; };
 		01D5F5281B338B65003EEF39 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D5F5271B338B65003EEF39 /* Config.swift */; };
+		523242661BF649EC000D7EBB /* EventBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523242651BF649EC000D7EBB /* EventBannerCell.xib */; };
+		523242681BF64DB7000D7EBB /* EventDescCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523242671BF64DB7000D7EBB /* EventDescCell.xib */; };
+		5232426A1BF64DD0000D7EBB /* EventAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523242691BF64DD0000D7EBB /* EventAddressCell.xib */; };
+		5232426C1BF64DDE000D7EBB /* EventMapCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5232426B1BF64DDE000D7EBB /* EventMapCell.xib */; };
 		BF02BCED1B330558007532A1 /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02BCEC1B330558007532A1 /* BadgeView.swift */; };
 		BF02BCEF1B3355F5007532A1 /* BadgeModuleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF02BCEE1B3355F5007532A1 /* BadgeModuleCell.swift */; };
 		BF02BCF21B33563C007532A1 /* BadgeModuleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF02BCF11B33563C007532A1 /* BadgeModuleCell.xib */; };
@@ -59,6 +63,7 @@
 		BF6183771BF3B8840097ECF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6183761BF3B8840097ECF7 /* Images.xcassets */; };
 		BF9270231BAC10FC003C7DFB /* RelationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */; };
 		BF9270251BAC121C003C7DFB /* RelationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */; };
+		BF92FDD51C1ACCB400ECE6CE /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92FDD41C1ACCB400ECE6CE /* NotificationsTableViewController.swift */; };
 		BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */; };
 		BFAC2E571B4062E70098B1E6 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */; };
 		BFAC2E5A1B40630A0098B1E6 /* EventResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */; };
@@ -66,20 +71,15 @@
 		BFAC2E5D1B4067D90098B1E6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E5C1B4067D90098B1E6 /* Event.swift */; };
 		BFAC2E641B42A5CC0098B1E6 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E631B42A5CC0098B1E6 /* EventRow.swift */; };
 		BFAC2E691B42A7500098B1E6 /* EventBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E671B42A7500098B1E6 /* EventBannerTableViewCell.swift */; };
-		BFAC2E6A1B42A7500098B1E6 /* EventBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E681B42A7500098B1E6 /* EventBannerTableViewCell.xib */; };
 		BFAC2E6C1B42A8DA0098B1E6 /* EventDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E6B1B42A8DA0098B1E6 /* EventDetailTableViewCell.swift */; };
 		BFAC2E6F1B42A9850098B1E6 /* EventBannerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E6E1B42A9850098B1E6 /* EventBannerRow.swift */; };
 		BFAC2E711B42AB240098B1E6 /* EventTitleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E701B42AB240098B1E6 /* EventTitleRow.swift */; };
 		BFAC2E761B42ABC60098B1E6 /* EventTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E741B42ABC60098B1E6 /* EventTitleTableViewCell.swift */; };
-		BFAC2E771B42ABC60098B1E6 /* EventTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E751B42ABC60098B1E6 /* EventTitleTableViewCell.xib */; };
 		BFAC2E791B42ADCC0098B1E6 /* EventDescRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E781B42ADCC0098B1E6 /* EventDescRow.swift */; };
 		BFAC2E7C1B42B1D10098B1E6 /* EventDescTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E7A1B42B1D10098B1E6 /* EventDescTableViewCell.swift */; };
-		BFAC2E7D1B42B1D10098B1E6 /* EventDescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E7B1B42B1D10098B1E6 /* EventDescTableViewCell.xib */; };
 		BFAC2E7F1B42D0160098B1E6 /* EventAddressRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E7E1B42D0160098B1E6 /* EventAddressRow.swift */; };
 		BFAC2E831B42D0FF0098B1E6 /* EventAddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E811B42D0FF0098B1E6 /* EventAddressTableViewCell.swift */; };
-		BFAC2E841B42D0FF0098B1E6 /* EventAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E821B42D0FF0098B1E6 /* EventAddressTableViewCell.xib */; };
 		BFAC2E871B42E4D10098B1E6 /* EventMapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */; };
-		BFAC2E881B42E4D10098B1E6 /* EventMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */; };
 		BFAC2E8A1B42F4F10098B1E6 /* EventMapRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */; };
 		BFC023D21BCFF4BF00F580E5 /* ContactsListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC023D11BCFF4BF00F580E5 /* ContactsListInterfaceController.swift */; };
 		BFC023D41BCFFA1200F580E5 /* ContactsListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC023D31BCFFA1200F580E5 /* ContactsListRow.swift */; };
@@ -169,6 +169,10 @@
 		01A9381C1ADE46E300E09C0B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		01D5F5251B338073003EEF39 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		01D5F5271B338B65003EEF39 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		523242651BF649EC000D7EBB /* EventBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventBannerCell.xib; sourceTree = "<group>"; };
+		523242671BF64DB7000D7EBB /* EventDescCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescCell.xib; sourceTree = "<group>"; };
+		523242691BF64DD0000D7EBB /* EventAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventAddressCell.xib; sourceTree = "<group>"; };
+		5232426B1BF64DDE000D7EBB /* EventMapCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMapCell.xib; sourceTree = "<group>"; };
 		7D0B48FDD6A9DA82C21A70BB /* Pods-Bird'L.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bird'L.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bird'L/Pods-Bird'L.debug.xcconfig"; sourceTree = "<group>"; };
 		BF02BCEC1B330558007532A1 /* BadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		BF02BCEE1B3355F5007532A1 /* BadgeModuleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeModuleCell.swift; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 		BF1F78C41AB64631002100B5 /* Bird'LTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bird'LTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F78C91AB64631002100B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF1F78CA1AB64631002100B5 /* Bird_LTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bird_LTests.swift; sourceTree = "<group>"; };
+		BF33C0141C1D8F07003EA353 /* Bird'L.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Bird'L.entitlements"; sourceTree = "<group>"; };
 		BF377F9A1B50044700099040 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		BF3E14431BCFE142008825F5 /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3E14461BCFE142008825F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -224,6 +229,7 @@
 		BF6183761BF3B8840097ECF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RelationTableViewCell.xib; sourceTree = "<group>"; };
 		BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationTableViewCell.swift; sourceTree = "<group>"; };
+		BF92FDD41C1ACCB400ECE6CE /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
 		BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventSearchViewController.swift; sourceTree = "<group>"; };
 		BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventResultTableViewCell.swift; sourceTree = "<group>"; };
@@ -231,20 +237,15 @@
 		BFAC2E5C1B4067D90098B1E6 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		BFAC2E631B42A5CC0098B1E6 /* EventRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
 		BFAC2E671B42A7500098B1E6 /* EventBannerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBannerTableViewCell.swift; sourceTree = "<group>"; };
-		BFAC2E681B42A7500098B1E6 /* EventBannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventBannerTableViewCell.xib; sourceTree = "<group>"; };
 		BFAC2E6B1B42A8DA0098B1E6 /* EventDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BFAC2E6E1B42A9850098B1E6 /* EventBannerRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventBannerRow.swift; sourceTree = "<group>"; };
 		BFAC2E701B42AB240098B1E6 /* EventTitleRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTitleRow.swift; sourceTree = "<group>"; };
 		BFAC2E741B42ABC60098B1E6 /* EventTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTitleTableViewCell.swift; sourceTree = "<group>"; };
-		BFAC2E751B42ABC60098B1E6 /* EventTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTitleTableViewCell.xib; sourceTree = "<group>"; };
 		BFAC2E781B42ADCC0098B1E6 /* EventDescRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDescRow.swift; sourceTree = "<group>"; };
 		BFAC2E7A1B42B1D10098B1E6 /* EventDescTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDescTableViewCell.swift; sourceTree = "<group>"; };
-		BFAC2E7B1B42B1D10098B1E6 /* EventDescTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescTableViewCell.xib; sourceTree = "<group>"; };
 		BFAC2E7E1B42D0160098B1E6 /* EventAddressRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAddressRow.swift; sourceTree = "<group>"; };
 		BFAC2E811B42D0FF0098B1E6 /* EventAddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventAddressTableViewCell.swift; sourceTree = "<group>"; };
-		BFAC2E821B42D0FF0098B1E6 /* EventAddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventAddressTableViewCell.xib; sourceTree = "<group>"; };
 		BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapTableViewCell.swift; sourceTree = "<group>"; };
-		BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMapTableViewCell.xib; sourceTree = "<group>"; };
 		BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMapRow.swift; sourceTree = "<group>"; };
 		BFC023D11BCFF4BF00F580E5 /* ContactsListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsListInterfaceController.swift; path = Messages/ContactsListInterfaceController.swift; sourceTree = "<group>"; };
 		BFC023D31BCFFA1200F580E5 /* ContactsListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsListRow.swift; path = Messages/ContactsListRow.swift; sourceTree = "<group>"; };
@@ -387,6 +388,8 @@
 		BF1F78AE1AB64631002100B5 /* Bird'L */ = {
 			isa = PBXGroup;
 			children = (
+				BF33C0141C1D8F07003EA353 /* Bird'L.entitlements */,
+				BF92FDD31C1ACB6B00ECE6CE /* Notifications */,
 				BFC6BF121B4C175000B02CC0 /* Messages */,
 				BFDF4D091B3AA68500D775D7 /* Account */,
 				BFDF4CD61B39D34F00D775D7 /* Models */,
@@ -534,6 +537,14 @@
 			path = Lato2OFL;
 			sourceTree = "<group>";
 		};
+		BF92FDD31C1ACB6B00ECE6CE /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				BF92FDD41C1ACCB400ECE6CE /* NotificationsTableViewController.swift */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
 		BF9D8FC01B374D630098F785 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,17 +567,16 @@
 		BFAC2E661B42A71D0098B1E6 /* Rows */ = {
 			isa = PBXGroup;
 			children = (
-				BFAC2E671B42A7500098B1E6 /* EventBannerTableViewCell.swift */,
-				BFAC2E681B42A7500098B1E6 /* EventBannerTableViewCell.xib */,
 				BFAC2E6B1B42A8DA0098B1E6 /* EventDetailTableViewCell.swift */,
+				BFAC2E671B42A7500098B1E6 /* EventBannerTableViewCell.swift */,
+				523242651BF649EC000D7EBB /* EventBannerCell.xib */,
 				BFAC2E741B42ABC60098B1E6 /* EventTitleTableViewCell.swift */,
-				BFAC2E751B42ABC60098B1E6 /* EventTitleTableViewCell.xib */,
 				BFAC2E7A1B42B1D10098B1E6 /* EventDescTableViewCell.swift */,
-				BFAC2E7B1B42B1D10098B1E6 /* EventDescTableViewCell.xib */,
+				523242671BF64DB7000D7EBB /* EventDescCell.xib */,
 				BFAC2E811B42D0FF0098B1E6 /* EventAddressTableViewCell.swift */,
-				BFAC2E821B42D0FF0098B1E6 /* EventAddressTableViewCell.xib */,
+				523242691BF64DD0000D7EBB /* EventAddressCell.xib */,
 				BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */,
-				BFAC2E861B42E4D10098B1E6 /* EventMapTableViewCell.xib */,
+				5232426B1BF64DDE000D7EBB /* EventMapCell.xib */,
 			);
 			name = Rows;
 			sourceTree = "<group>";
@@ -783,6 +793,11 @@
 					BF1F78AB1AB64630002100B5 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = KQWVHFR4W7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					BF1F78C31AB64631002100B5 = {
 						CreatedOnToolsVersion = 6.2;
@@ -829,11 +844,11 @@
 				BF61836D1BF3A8940097ECF7 /* Lato-Medium.ttf in Resources */,
 				BF6183701BF3A8940097ECF7 /* Lato-Semibold.ttf in Resources */,
 				BF61836A1BF3A8940097ECF7 /* Lato-Italic.ttf in Resources */,
-				BFAC2E6A1B42A7500098B1E6 /* EventBannerTableViewCell.xib in Resources */,
 				BF61836E1BF3A8940097ECF7 /* Lato-MediumItalic.ttf in Resources */,
 				BF6183751BF3A8940097ECF7 /* README.txt in Resources */,
 				BF61836B1BF3A8940097ECF7 /* Lato-Light.ttf in Resources */,
 				BF6183731BF3A8940097ECF7 /* Lato-ThinItalic.ttf in Resources */,
+				523242681BF64DB7000D7EBB /* EventDescCell.xib in Resources */,
 				BF6183681BF3A8940097ECF7 /* Lato-Heavy.ttf in Resources */,
 				BF6183641BF3A8940097ECF7 /* Lato-Bold.ttf in Resources */,
 				BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */,
@@ -842,19 +857,21 @@
 				BF6183661BF3A8940097ECF7 /* Lato-Hairline.ttf in Resources */,
 				BF6183711BF3A8940097ECF7 /* Lato-SemiboldItalic.ttf in Resources */,
 				BF6183741BF3A8940097ECF7 /* OFL.txt in Resources */,
+				5232426C1BF64DDE000D7EBB /* EventMapCell.xib in Resources */,
 				BF02BCF21B33563C007532A1 /* BadgeModuleCell.xib in Resources */,
 				BFAC2E771B42ABC60098B1E6 /* EventTitleTableViewCell.xib in Resources */,
 				BFAC2E7D1B42B1D10098B1E6 /* EventDescTableViewCell.xib in Resources */,
+				BF61834C1BF3A8340097ECF7 /* Images.xcassets in Resources */,
+				5232426A1BF64DD0000D7EBB /* EventAddressCell.xib in Resources */,
 				BF113C5F1B308ADB005B87FF /* BadgeView.xib in Resources */,
 				BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */,
-				BFAC2E881B42E4D10098B1E6 /* EventMapTableViewCell.xib in Resources */,
 				BFAC2E5B1B40630A0098B1E6 /* EventResultTableViewCell.xib in Resources */,
 				BF6183721BF3A8940097ECF7 /* Lato-Thin.ttf in Resources */,
 				BF6183671BF3A8940097ECF7 /* Lato-HairlineItalic.ttf in Resources */,
 				BF61836C1BF3A8940097ECF7 /* Lato-LightItalic.ttf in Resources */,
+				523242661BF649EC000D7EBB /* EventBannerCell.xib in Resources */,
 				BF6183621BF3A8940097ECF7 /* Lato-Black.ttf in Resources */,
 				BF61836F1BF3A8940097ECF7 /* Lato-Regular.ttf in Resources */,
-				BFAC2E841B42D0FF0098B1E6 /* EventAddressTableViewCell.xib in Resources */,
 				BF9270231BAC10FC003C7DFB /* RelationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -979,6 +996,7 @@
 				BFAC2E641B42A5CC0098B1E6 /* EventRow.swift in Sources */,
 				01D5F5261B338073003EEF39 /* json.swift in Sources */,
 				BFAC2E761B42ABC60098B1E6 /* EventTitleTableViewCell.swift in Sources */,
+				BF92FDD51C1ACCB400ECE6CE /* NotificationsTableViewController.swift in Sources */,
 				BFAC2E7F1B42D0160098B1E6 /* EventAddressRow.swift in Sources */,
 				BFDF4CCD1B39D33900D775D7 /* FormSwitchCell.swift in Sources */,
 				BFDF4CC51B39D33900D775D7 /* FormButtonCell.swift in Sources */,
@@ -1153,8 +1171,16 @@
 			baseConfigurationReference = 7D0B48FDD6A9DA82C21A70BB /* Pods-Bird'L.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Thibaut Roche (8JZVS4794A)";
+				CODE_SIGN_ENTITLEMENTS = "Bird'L/Bird'L.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JSQMessagesViewController\"",
+					"\"${PODS_ROOT}/BuildHeaders\"/**",
+					"\"${PODS_ROOT}/Headers/Public/JSQSystemSoundPlayer\"",
+				);
 				INFOPLIST_FILE = "Bird'L/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1163,6 +1189,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bird'L/Bird'L-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/BuildHeaders\"/**";
 			};
 			name = Debug;
 		};
@@ -1171,8 +1198,16 @@
 			baseConfigurationReference = CD9F76C4E770B53330BDE54B /* Pods-Bird'L.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Thibaut Roche (8JZVS4794A)";
+				CODE_SIGN_ENTITLEMENTS = "Bird'L/Bird'L.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/JSQMessagesViewController\"",
+					"\"${PODS_ROOT}/BuildHeaders\"/**",
+					"\"${PODS_ROOT}/Headers/Public/JSQSystemSoundPlayer\"",
+				);
 				INFOPLIST_FILE = "Bird'L/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1181,6 +1216,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bird'L/Bird'L-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "\"${PODS_ROOT}/BuildHeaders\"/**";
 			};
 			name = Release;
 		};

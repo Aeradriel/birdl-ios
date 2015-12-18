@@ -10,8 +10,9 @@ import Foundation
 
 struct netConfig
 {
-    //static let apiURL = "http://10.224.9.208:3000/api";
-    static let apiURL = "http://163.5.84.208:3000/api";
+    static let apiURL = "http://birdl.xyz:3000/api";
+    //static let apiURL = "http://10.224.9.208:3000/api"; // epitech ip interne
+    //static let apiURL = "http://163.5.84.208:3000/api"; // epitech ip externe
     //static let apiURL = "http://127.0.0.1:3000/api"
     static let loginURL = "/login"
     static let registerURL = "/register"
@@ -22,7 +23,7 @@ struct netConfig
     static let registerEventUrl = "/event/register/"
     static let checkEventUrl = "/event/check/"
     static let checkTokenUrl = "/check_token/"
-    static let relationsUrl = "/messages/relations/"
+    static let relationsUrl = "/user/relations/"
     static let messagesUrl = "/messages/"
     static let newMessageUrl = "/messages/new/"
 }

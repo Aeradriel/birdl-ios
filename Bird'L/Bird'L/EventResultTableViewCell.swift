@@ -25,5 +25,4 @@ class EventResultTableViewCell: UITableViewCell
     {
         super.setSelected(selected, animated: animated)
     }
-    
 }

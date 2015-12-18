@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EventMapTableViewCell" id="M2j-qA-5eH" customClass="EventMapTableViewCell" customModule="Bird_L" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="252" height="229"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="252" height="229"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ir3-FO-dB6">
+                        <rect key="frame" x="0.0" y="0.0" width="252" height="229"/>
+                        <animations/>
+                    </mapView>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ir3-FO-dB6" secondAttribute="trailing" id="GKn-Jw-9av"/>
+                <constraint firstAttribute="bottom" secondItem="Ir3-FO-dB6" secondAttribute="bottom" id="OdU-tZ-hDY"/>
+                <constraint firstItem="Ir3-FO-dB6" firstAttribute="leading" secondItem="M2j-qA-5eH" secondAttribute="leading" id="bVY-fQ-9x2"/>
+                <constraint firstItem="Ir3-FO-dB6" firstAttribute="top" secondItem="M2j-qA-5eH" secondAttribute="top" id="dI1-Z7-qag"/>
+            </constraints>
+            <size key="customSize" width="252" height="229"/>
+            <connections>
+                <outlet property="mapView" destination="Ir3-FO-dB6" id="isv-FS-8ss"/>
+            </connections>
+            <point key="canvasLocation" x="491" y="348.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

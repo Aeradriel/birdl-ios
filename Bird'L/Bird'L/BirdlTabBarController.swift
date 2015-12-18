@@ -15,7 +15,7 @@ class BirdlTabBarController: UITabBarController
         super.viewDidLoad()
     
         let tbSize = self.tabBar.bounds.size
-        
+
         self.tabBar.translucent = true
         self.tabBar.backgroundImage = self.imageWithColor(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.8), size: self.tabBar.bounds.size)
         self.tabBar.tintColor = UIColor.whiteColor()

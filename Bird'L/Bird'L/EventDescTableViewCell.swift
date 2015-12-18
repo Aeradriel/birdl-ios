@@ -8,18 +8,18 @@
 
 import UIKit
 
-class EventDescTableViewCell: EventDetailTableViewCell
+class EventDescTableViewCell: EventDetailCollectionViewCell
 {
-    @IBOutlet weak var desc: UITextView!
-    
+
+    @IBOutlet weak var desc: UILabel!
     //MARK: UITableViewCell methods
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    //override func setSelected(selected: Bool, animated: Bool) {
+     //   super.setSelected(selected, animated: animated)
+    //}
     
     //MARK: Custom methods
     override func fillCell(row: EventRow)
@@ -27,6 +27,7 @@ class EventDescTableViewCell: EventDetailTableViewCell
         if let descRow = row as? EventDescRow
         {
             self.desc.text = descRow.desc
+            print(descRow.desc);
             self.desc.textColor = UIColor.whiteColor()
             self.desc.textAlignment = .Center
             self.desc.font = UIFont(name: "Lato-Light", size: 13)

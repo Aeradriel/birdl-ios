@@ -17,7 +17,7 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
     var selectedEvent: [EventRow] = []
     var searchResult: [Event] = []
     var resultSearchController = UISearchController(searchResultsController: nil)
-
+    
     //MARK: UIViewController functions
     override func viewDidLoad()
     {
@@ -39,7 +39,7 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-
+        
         Event.all(errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -52,6 +52,7 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
             
             destinationVc.event = event
             destinationVc.rows = self.selectedEvent
+            destinationVc.setEventTitle(event.name);
         }
     }
     
@@ -111,8 +112,7 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.event = events[indexPath.row]
         self.selectedEvent = []
-        //self.selectedEvent.append(EventBannerRow(imagePath: "BannerExample"))
-        self.selectedEvent.append(EventTitleRow(title: selectedEvent.name))
+        self.selectedEvent.append(EventBannerRow(imagePath: "bowling"))
         if selectedEvent.desc != nil
         {
             self.selectedEvent.append(EventDescRow(desc: selectedEvent.desc!))
