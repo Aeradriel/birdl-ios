@@ -20,8 +20,11 @@ class Event : NSObject
     var ownerId: Int!
     var addressId: Int!
     var language: String?
+    var belongsToCurrentUser = false;
+    var currentUserRegistered : Bool?
+    var users: [User] = []
     
-    init(id: Int, name: String, type: String, minSlots: Int, maxSlots: Int, date: String, desc: String?, ownerId: Int, addressId: Int!, language: String?)
+    init(id: Int, name: String, type: String, minSlots: Int, maxSlots: Int, date: String, desc: String?, ownerId: Int, addressId: Int!, language: String?, currentUserRegistered: Bool)
     {
         self.id = id
         self.name = name
@@ -33,6 +36,7 @@ class Event : NSObject
         self.ownerId = ownerId
         self.addressId = addressId
         self.language = language
+        self.currentUserRegistered = currentUserRegistered
     }
     
     //MARK: ActiveRecord methods
@@ -53,8 +57,21 @@ class Event : NSObject
                     {
                         for event in events
                         {
-                            let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: event["address_id"].asInt!, language: event["language"].asString)
+                            let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: event["address_id"].asInt, language: event["language"].asString, currentUserRegistered: true)
                             
+                            if let users = event["users"].asArray {
+                                for user in users {
+                                    newEvent.users.append(User(userJson: user))
+                                }
+                                print(newEvent.users.count)
+                            }
+                            
+                            if (newEvent.ownerId == User.currentUser().id) {
+                                newEvent.belongsToCurrentUser = true;
+                            }
+                            else {
+                                newEvent.belongsToCurrentUser = false;
+                            }
                             ret.append(newEvent)
                         }
                         successFunc(ret)
@@ -131,5 +148,14 @@ class Event : NSObject
                     errorFunc("Can't reach server")
                 }
         }
+    }
+    
+    func isCurrentUserRegistered() -> Bool {
+        for user in self.users {
+            if (user.id == User.currentUser().id) {
+                return true
+            }
+        }
+        return false
     }
 }

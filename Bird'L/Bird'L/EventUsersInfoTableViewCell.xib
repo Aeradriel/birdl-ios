@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventUsersInfoTableViewCell" rowHeight="94" id="zII-5c-jd6" customClass="EventUsersInfoTableViewCell" customModule="Bird_L" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zII-5c-jd6" id="MzU-zc-5Hn">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="93.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event registrated users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7h-5d-JWw">
+                        <rect key="frame" x="8" y="8" width="304" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current User Registration Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vh-jP-5rg">
+                        <rect key="frame" x="8" y="37" width="304" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="L7h-5d-JWw" firstAttribute="leading" secondItem="MzU-zc-5Hn" secondAttribute="leadingMargin" id="DUC-yP-dgZ"/>
+                    <constraint firstItem="L7h-5d-JWw" firstAttribute="top" secondItem="MzU-zc-5Hn" secondAttribute="topMargin" id="QAe-CF-VMf"/>
+                    <constraint firstItem="9vh-jP-5rg" firstAttribute="trailing" secondItem="MzU-zc-5Hn" secondAttribute="trailingMargin" id="TS4-M6-0ca"/>
+                    <constraint firstItem="9vh-jP-5rg" firstAttribute="top" secondItem="L7h-5d-JWw" secondAttribute="bottom" constant="8" id="XCz-eP-c5s"/>
+                    <constraint firstItem="9vh-jP-5rg" firstAttribute="leading" secondItem="MzU-zc-5Hn" secondAttribute="leadingMargin" id="cRG-FD-ZgF"/>
+                    <constraint firstItem="L7h-5d-JWw" firstAttribute="trailing" secondItem="MzU-zc-5Hn" secondAttribute="trailingMargin" id="fQM-5f-7pE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="eventInfoLabel" destination="L7h-5d-JWw" id="fwG-Jg-o48"/>
+                <outlet property="eventRegistrationInfoLabel" destination="9vh-jP-5rg" id="F8N-7x-owY"/>
+            </connections>
+            <point key="canvasLocation" x="244" y="160"/>
+        </tableViewCell>
+    </objects>
+</document>

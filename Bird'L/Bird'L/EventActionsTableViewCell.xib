@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventActionsTableViewCell" rowHeight="133" id="GN1-bS-erZ" customClass="EventActionsTableViewCell" customModule="Bird_L" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GN1-bS-erZ" id="E0b-ju-h5I">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="132.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTB-1D-u25">
+                        <rect key="frame" x="132" y="52" width="57" height="30"/>
+                        <state key="normal" title="Register"/>
+                        <connections>
+                            <action selector="registerButtonPressed:" destination="GN1-bS-erZ" eventType="touchUpInside" id="EBm-JR-tCw"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="BTB-1D-u25" firstAttribute="centerX" secondItem="E0b-ju-h5I" secondAttribute="centerX" id="FmV-hk-jDW"/>
+                    <constraint firstItem="BTB-1D-u25" firstAttribute="centerY" secondItem="E0b-ju-h5I" secondAttribute="centerY" id="sTM-Vu-6KN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <gestureRecognizers/>
+            <connections>
+                <outlet property="registerButton" destination="BTB-1D-u25" id="5RC-3O-Xzg"/>
+            </connections>
+            <point key="canvasLocation" x="248" y="225.5"/>
+        </tableViewCell>
+    </objects>
+</document>

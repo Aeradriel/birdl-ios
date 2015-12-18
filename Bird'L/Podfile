@@ -3,6 +3,7 @@
 
 target 'Bird\'L' do
   pod 'JSQMessagesViewController'
+  pod 'MBProgressHUD'
 end
 
 target 'Bird\'LTests' do
