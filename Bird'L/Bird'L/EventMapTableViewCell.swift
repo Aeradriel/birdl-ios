@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class EventMapTableViewCell: EventDetailCollectionViewCell
+class EventMapTableViewCell: EventDetailTableViewCell
 {
     
     @IBOutlet weak var mapView: MKMapView!

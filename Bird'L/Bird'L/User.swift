@@ -44,6 +44,24 @@ class User : NSObject
         }
     }
     
+    init(userJson: JSON)
+    {
+        super.init()
+        
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy/MM/dd"
+            
+            let date = dateFormatter.dateFromString(userJson["birthdate"].asString!)
+        
+            self.id = userJson["id"].asInt!
+            self.firstName = userJson["first_name"].asString!
+            self.lastName = userJson["last_name"].asString!
+            self.email = userJson["email"].asString!
+            self.gender = userJson["gender"].asInt!
+            self.birthdate = date!
+        
+    }
+    
     //MARK: Singleton implementation
     class func currentUser() -> User
     {

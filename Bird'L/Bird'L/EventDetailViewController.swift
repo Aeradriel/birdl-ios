@@ -8,38 +8,38 @@
 
 import UIKit
 
-class EventDetailViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, RFQuiltLayoutDelegate
+class EventDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-    
     //MARK: Instance variables
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
+    
     var event: Event!
     var rows: [EventRow] = []
-    var aTitle: String!
     
     //MARK: UIViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.collectionView.dataSource = self;
-        self.collectionView.delegate = self;
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
         
-        let layout = RFQuiltLayout()
-        layout.blockPixels = CGSizeMake(self.collectionView.bounds.size.width,self.collectionView.bounds.size.height / 5.0) //default
-        layout.delegate = self;
-        self.collectionView.setCollectionViewLayout(layout, animated: false);
-        var nibName = UINib(nibName: "EventBannerCell", bundle:nil)
+        var nibName = UINib(nibName: "EventBannerTableViewCell", bundle:nil)
+        self.tableView.registerNib(nibName, forCellReuseIdentifier: "EventBannerTableViewCell")
         
-        self.collectionView.registerNib(nibName, forCellWithReuseIdentifier: "EventBannerTableViewCell")
-        nibName = UINib(nibName: "EventDescCell", bundle:nil)
-        self.collectionView.registerNib(nibName, forCellWithReuseIdentifier: "EventDescTableViewCell")
-        nibName = UINib(nibName: "EventAddressCell", bundle:nil)
-        self.collectionView.registerNib(nibName, forCellWithReuseIdentifier: "EventAddressTableViewCell")
-        nibName = UINib(nibName: "EventMapCell", bundle:nil)
-        self.collectionView.registerNib(nibName, forCellWithReuseIdentifier: "EventMapTableViewCell")
-        self.navigationBar.topItem!.title = self.aTitle;
+        nibName = UINib(nibName: "EventTitleTableViewCell", bundle:nil)
+        self.tableView.registerNib(nibName, forCellReuseIdentifier: "EventTitleTableViewCell")
+        
+        nibName = UINib(nibName: "EventDescTableViewCell", bundle:nil)
+        self.tableView.registerNib(nibName, forCellReuseIdentifier: "EventDescTableViewCell")
+        
+        nibName = UINib(nibName: "EventAddressTableViewCell", bundle:nil)
+        self.tableView.registerNib(nibName, forCellReuseIdentifier: "EventAddressTableViewCell")
+        
+        nibName = UINib(nibName: "EventMapTableViewCell", bundle:nil)
+        self.tableView.registerNib(nibName, forCellReuseIdentifier: "EventMapTableViewCell")
+        
+        nibName = UINib(nibName: "EventUsersInfoTableViewCell", bundle:nil)
+        self.tableView.registerNib(nibName, forCellReuseIdentifier: "EventUsersInfoTableViewCell")
+        
+        nibName = UINib(nibName: "EventActionsTableViewCell", bundle:nil)
+        self.tableView.registerNib(nibName, forCellReuseIdentifier: "EventActionsTableViewCell")
     }
     
     override func viewWillAppear(animated: Bool)
@@ -49,42 +49,42 @@ class EventDetailViewController: UIViewController, UICollectionViewDataSource, U
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    func setEventTitle(title: String)
-    {
-        self.aTitle = title;
-    }
-
     //MARK: UITableViewController delegate
-    func numberOfSectionsInCollectioneView(tableView: UICollectionView) -> Int
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         return 1
     }
-        
-    @IBAction func backButtonTapped(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true);
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return self.rows.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier(self.rows[indexPath.row].cellIdentifier, forIndexPath: indexPath) as! EventDetailCollectionViewCell
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return CGFloat(self.rows[indexPath.row].height)
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier(self.rows[indexPath.row].cellIdentifier, forIndexPath: indexPath) as! EventDetailTableViewCell
         
+        cell.event = self.event;
         cell.fillCell(self.rows[indexPath.row])
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-    {
-        print("rows count");
-        print(self.rows.count)
-        return self.rows.count
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if (self.rows[indexPath.row].cellIdentifier == "EventUsersInfoTableViewCell") {
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.performSegueWithIdentifier("showEventUsers", sender: self)
+        }
     }
     
-    func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        print("rows size");
-        if (indexPath.row % 2 == 0) {
-            return CGSizeMake(100, 50);
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showEventUsers") {
+            let vc = segue.destinationViewController as! EventUsersViewController
+            vc.event = self.event
         }
-        
-        return CGSizeMake(50, 50);
-        
     }
 }

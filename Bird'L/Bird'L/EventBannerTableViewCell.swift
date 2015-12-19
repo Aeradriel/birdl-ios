@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventBannerTableViewCell: EventDetailCollectionViewCell
+class EventBannerTableViewCell: EventDetailTableViewCell
 {
     
     @IBOutlet weak var banner: UIImageView!

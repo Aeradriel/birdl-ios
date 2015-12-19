@@ -52,7 +52,6 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
             
             destinationVc.event = event
             destinationVc.rows = self.selectedEvent
-            destinationVc.setEventTitle(event.name);
         }
     }
     
@@ -95,13 +94,13 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
         if (self.resultSearchController.active)
         {
             cell.name!.text = self.searchResult[indexPath.row].name
-            cell.name!.text = "x/\(self.searchResult[indexPath.row].maxSlots) places occupés"
+            cell.name!.text = "\(self.searchResult[indexPath.row].users.count)/\(self.searchResult[indexPath.row].maxSlots) places occupées"
             return cell
         }
         else
         {
             cell.name!.text = self.events[indexPath.row].name
-            cell.slotsLabel!.text = "x/\(self.events[indexPath.row].maxSlots) places occupés"
+            cell.slotsLabel!.text = "\(self.events[indexPath.row].users.count)/\(self.events[indexPath.row].maxSlots) places occupées"
             return cell
         }
     }
@@ -119,6 +118,8 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
         }
         self.selectedEvent.append(EventAddressRow(nbr: 47, street: "Rue du Coq", zipcode: "98400", city: "Trouville sur Siennes"))
         self.selectedEvent.append(EventMapRow(nbr: 47, street: "Rue du Coq", zipcode: "98400", city: "Trouville sur Siennes"))
+        self.selectedEvent.append(EventUsersInfoRow(_registered: false, _nbrRegistered: selectedEvent.minSlots, _maxRegistered: selectedEvent.maxSlots))
+        self.selectedEvent.append(EventActionsRow(_registered: false, _nbrRegistered: selectedEvent.minSlots, _maxRegistered: selectedEvent.maxSlots))
         self.hidesBottomBarWhenPushed = true
         performSegueWithIdentifier("eventDetailsSegue", sender: self)
         self.hidesBottomBarWhenPushed = false

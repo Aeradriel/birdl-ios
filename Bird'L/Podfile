@@ -4,6 +4,7 @@
 target 'Bird\'L' do
   pod 'JSQMessagesViewController'
   pod 'RFQuiltLayout'
+  pod 'MBProgressHUD'
 end
 
 target 'Bird\'LTests' do

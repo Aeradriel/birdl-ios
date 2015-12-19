@@ -51,12 +51,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     //MARK: Token check
     func loadHomeViewController()
     {
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
         self.showViewController(self.homeViewController, sender: self)
     }
     
     func checkToken()
     {
-        g_APICommunicator.checkToken(self.loadHomeViewController, errorHandler: nil)
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        g_APICommunicator.checkToken(self.loadHomeViewController) { () -> Void in
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
+        }
     }
     
     //MARK: Callbacks
@@ -67,6 +71,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     
     func signinSucceed() -> Void
     {
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         userDefaults.setValue(g_APICommunicator.token, forKey: "access-token")
@@ -76,6 +81,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     
     func signinError(result : String) -> Void
     {
+        MBProgressHUD.hideHUDForView(self.view, animated: true)
         let alertController = UIAlertController(title: "Error", message:
             result, preferredStyle: UIAlertControllerStyle.Alert)
         
@@ -85,6 +91,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     
     @IBAction func signinButtonUp(sender: AnyObject)
     {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         g_APICommunicator.authenticateUser(loginField.text!, password: passwordTextField.text!, success: signinSucceed, errorFunc: signinError);
         
     }

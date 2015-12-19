@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventDescTableViewCell: EventDetailCollectionViewCell
+class EventDescTableViewCell: EventDetailTableViewCell
 {
 
     @IBOutlet weak var desc: UILabel!

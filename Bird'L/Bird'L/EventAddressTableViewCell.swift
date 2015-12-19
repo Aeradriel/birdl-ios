@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventAddressTableViewCell: EventDetailCollectionViewCell
+class EventAddressTableViewCell: EventDetailTableViewCell
 {
     
     

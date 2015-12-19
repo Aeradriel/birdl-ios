@@ -114,7 +114,10 @@ class APICommunicator
             }
             else if value.isNull == false
             {
-                error = value.asString!
+                if (value.isString)
+                {
+                    error = value.asString!
+                }
             }
             error += "\n"
         }

@@ -11,6 +11,14 @@
 		01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9381C1ADE46E300E09C0B /* SignupViewController.swift */; };
 		01D5F5261B338073003EEF39 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D5F5251B338073003EEF39 /* json.swift */; };
 		01D5F5281B338B65003EEF39 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D5F5271B338B65003EEF39 /* Config.swift */; };
+		1847E3691C1E00E400FED5B4 /* EventActionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1847E3681C1E00E400FED5B4 /* EventActionsTableViewCell.xib */; };
+		1847E36B1C1E011D00FED5B4 /* EventActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847E36A1C1E011D00FED5B4 /* EventActionsTableViewCell.swift */; };
+		1847E36D1C1E042300FED5B4 /* EventActionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847E36C1C1E042300FED5B4 /* EventActionsRow.swift */; };
+		18A9EB981C2316AC0039FAF6 /* EventUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */; };
+		18A9EB9C1C2317810039FAF6 /* EventUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9EB9B1C2317810039FAF6 /* EventUserTableViewCell.swift */; };
+		18A9EB9E1C231AE60039FAF6 /* EventUsersInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9EB9D1C231AE60039FAF6 /* EventUsersInfoTableViewCell.swift */; };
+		18A9EBA01C231B530039FAF6 /* EventUsersInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A9EB9F1C231B530039FAF6 /* EventUsersInfoTableViewCell.xib */; };
+		18A9EBA21C231CD00039FAF6 /* EventUsersInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9EBA11C231CD00039FAF6 /* EventUsersInfoRow.swift */; };
 		523242661BF649EC000D7EBB /* EventBannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523242651BF649EC000D7EBB /* EventBannerCell.xib */; };
 		523242681BF64DB7000D7EBB /* EventDescCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523242671BF64DB7000D7EBB /* EventDescCell.xib */; };
 		5232426A1BF64DD0000D7EBB /* EventAddressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 523242691BF64DD0000D7EBB /* EventAddressCell.xib */; };
@@ -39,6 +47,10 @@
 		BF3E14761BCFE978008825F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3E14751BCFE978008825F5 /* Assets.xcassets */; };
 		BF3E14771BCFE998008825F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3E14751BCFE978008825F5 /* Assets.xcassets */; };
 		BF44DE281B512A6C007A3F05 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44DE271B512A6B007A3F05 /* User.swift */; };
+		BF494AF71C244F43000D2966 /* EventBannerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF494AF61C244F43000D2966 /* EventBannerTableViewCell.xib */; };
+		BF494AF91C244FF9000D2966 /* EventDescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF494AF81C244FF9000D2966 /* EventDescTableViewCell.xib */; };
+		BF494AFB1C24503A000D2966 /* EventAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF494AFA1C24503A000D2966 /* EventAddressTableViewCell.xib */; };
+		BF494AFD1C245092000D2966 /* EventMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF494AFC1C245092000D2966 /* EventMapTableViewCell.xib */; };
 		BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
 		BF6183621BF3A8940097ECF7 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF61834E1BF3A8940097ECF7 /* Lato-Black.ttf */; };
 		BF6183631BF3A8940097ECF7 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF61834F1BF3A8940097ECF7 /* Lato-BlackItalic.ttf */; };
@@ -169,6 +181,14 @@
 		01A9381C1ADE46E300E09C0B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		01D5F5251B338073003EEF39 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		01D5F5271B338B65003EEF39 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		1847E3681C1E00E400FED5B4 /* EventActionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventActionsTableViewCell.xib; sourceTree = "<group>"; };
+		1847E36A1C1E011D00FED5B4 /* EventActionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventActionsTableViewCell.swift; sourceTree = "<group>"; };
+		1847E36C1C1E042300FED5B4 /* EventActionsRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventActionsRow.swift; sourceTree = "<group>"; };
+		18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUsersTableViewCell.swift; sourceTree = "<group>"; };
+		18A9EB9B1C2317810039FAF6 /* EventUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUserTableViewCell.swift; sourceTree = "<group>"; };
+		18A9EB9D1C231AE60039FAF6 /* EventUsersInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUsersInfoTableViewCell.swift; sourceTree = "<group>"; };
+		18A9EB9F1C231B530039FAF6 /* EventUsersInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventUsersInfoTableViewCell.xib; sourceTree = "<group>"; };
+		18A9EBA11C231CD00039FAF6 /* EventUsersInfoRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUsersInfoRow.swift; sourceTree = "<group>"; };
 		523242651BF649EC000D7EBB /* EventBannerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventBannerCell.xib; sourceTree = "<group>"; };
 		523242671BF64DB7000D7EBB /* EventDescCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescCell.xib; sourceTree = "<group>"; };
 		523242691BF64DD0000D7EBB /* EventAddressCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventAddressCell.xib; sourceTree = "<group>"; };
@@ -206,6 +226,10 @@
 		BF3E14621BCFE142008825F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF3E14751BCFE978008825F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF44DE271B512A6B007A3F05 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF494AF61C244F43000D2966 /* EventBannerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventBannerTableViewCell.xib; sourceTree = "<group>"; };
+		BF494AF81C244FF9000D2966 /* EventDescTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescTableViewCell.xib; sourceTree = "<group>"; };
+		BF494AFA1C24503A000D2966 /* EventAddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventAddressTableViewCell.xib; sourceTree = "<group>"; };
+		BF494AFC1C245092000D2966 /* EventMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMapTableViewCell.xib; sourceTree = "<group>"; };
 		BF61834E1BF3A8940097ECF7 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		BF61834F1BF3A8940097ECF7 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		BF6183501BF3A8940097ECF7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -560,6 +584,7 @@
 			children = (
 				BFAC2E661B42A71D0098B1E6 /* Rows */,
 				BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */,
+				18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */,
 			);
 			name = EventDetail;
 			sourceTree = "<group>";
@@ -568,15 +593,24 @@
 			isa = PBXGroup;
 			children = (
 				BFAC2E6B1B42A8DA0098B1E6 /* EventDetailTableViewCell.swift */,
+				BF494AF61C244F43000D2966 /* EventBannerTableViewCell.xib */,
 				BFAC2E671B42A7500098B1E6 /* EventBannerTableViewCell.swift */,
 				523242651BF649EC000D7EBB /* EventBannerCell.xib */,
 				BFAC2E741B42ABC60098B1E6 /* EventTitleTableViewCell.swift */,
+				BF494AF81C244FF9000D2966 /* EventDescTableViewCell.xib */,
 				BFAC2E7A1B42B1D10098B1E6 /* EventDescTableViewCell.swift */,
 				523242671BF64DB7000D7EBB /* EventDescCell.xib */,
 				BFAC2E811B42D0FF0098B1E6 /* EventAddressTableViewCell.swift */,
 				523242691BF64DD0000D7EBB /* EventAddressCell.xib */,
 				BFAC2E851B42E4D10098B1E6 /* EventMapTableViewCell.swift */,
 				5232426B1BF64DDE000D7EBB /* EventMapCell.xib */,
+				1847E3681C1E00E400FED5B4 /* EventActionsTableViewCell.xib */,
+				1847E36A1C1E011D00FED5B4 /* EventActionsTableViewCell.swift */,
+				18A9EB9B1C2317810039FAF6 /* EventUserTableViewCell.swift */,
+				18A9EB9D1C231AE60039FAF6 /* EventUsersInfoTableViewCell.swift */,
+				BF494AFC1C245092000D2966 /* EventMapTableViewCell.xib */,
+				18A9EB9F1C231B530039FAF6 /* EventUsersInfoTableViewCell.xib */,
+				BF494AFA1C24503A000D2966 /* EventAddressTableViewCell.xib */,
 			);
 			name = Rows;
 			sourceTree = "<group>";
@@ -590,6 +624,8 @@
 				BFAC2E781B42ADCC0098B1E6 /* EventDescRow.swift */,
 				BFAC2E7E1B42D0160098B1E6 /* EventAddressRow.swift */,
 				BFAC2E891B42F4F10098B1E6 /* EventMapRow.swift */,
+				1847E36C1C1E042300FED5B4 /* EventActionsRow.swift */,
+				18A9EBA11C231CD00039FAF6 /* EventUsersInfoRow.swift */,
 			);
 			name = EventRows;
 			sourceTree = "<group>";
@@ -717,6 +753,7 @@
 				2FD0D05CFDF254361741F7FF /* Copy Pods Resources */,
 				BF44DE261B51293D007A3F05 /* Run Script */,
 				BF3E146D1BCFE142008825F5 /* Embed Watch Content */,
+				5280DF7396E485EA68F67471 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -843,6 +880,8 @@
 				BF6183771BF3B8840097ECF7 /* Images.xcassets in Resources */,
 				BF61836D1BF3A8940097ECF7 /* Lato-Medium.ttf in Resources */,
 				BF6183701BF3A8940097ECF7 /* Lato-Semibold.ttf in Resources */,
+				BF494AF71C244F43000D2966 /* EventBannerTableViewCell.xib in Resources */,
+				BF494AFB1C24503A000D2966 /* EventAddressTableViewCell.xib in Resources */,
 				BF61836A1BF3A8940097ECF7 /* Lato-Italic.ttf in Resources */,
 				BF61836E1BF3A8940097ECF7 /* Lato-MediumItalic.ttf in Resources */,
 				BF6183751BF3A8940097ECF7 /* README.txt in Resources */,
@@ -858,13 +897,13 @@
 				BF6183711BF3A8940097ECF7 /* Lato-SemiboldItalic.ttf in Resources */,
 				BF6183741BF3A8940097ECF7 /* OFL.txt in Resources */,
 				5232426C1BF64DDE000D7EBB /* EventMapCell.xib in Resources */,
+				BF494AF91C244FF9000D2966 /* EventDescTableViewCell.xib in Resources */,
 				BF02BCF21B33563C007532A1 /* BadgeModuleCell.xib in Resources */,
-				BFAC2E771B42ABC60098B1E6 /* EventTitleTableViewCell.xib in Resources */,
-				BFAC2E7D1B42B1D10098B1E6 /* EventDescTableViewCell.xib in Resources */,
-				BF61834C1BF3A8340097ECF7 /* Images.xcassets in Resources */,
 				5232426A1BF64DD0000D7EBB /* EventAddressCell.xib in Resources */,
+				BF494AFD1C245092000D2966 /* EventMapTableViewCell.xib in Resources */,
 				BF113C5F1B308ADB005B87FF /* BadgeView.xib in Resources */,
 				BF1F78BF1AB64631002100B5 /* LaunchScreen.xib in Resources */,
+				18A9EBA01C231B530039FAF6 /* EventUsersInfoTableViewCell.xib in Resources */,
 				BFAC2E5B1B40630A0098B1E6 /* EventResultTableViewCell.xib in Resources */,
 				BF6183721BF3A8940097ECF7 /* Lato-Thin.ttf in Resources */,
 				BF6183671BF3A8940097ECF7 /* Lato-HairlineItalic.ttf in Resources */,
@@ -872,6 +911,7 @@
 				523242661BF649EC000D7EBB /* EventBannerCell.xib in Resources */,
 				BF6183621BF3A8940097ECF7 /* Lato-Black.ttf in Resources */,
 				BF61836F1BF3A8940097ECF7 /* Lato-Regular.ttf in Resources */,
+				1847E3691C1E00E400FED5B4 /* EventActionsTableViewCell.xib in Resources */,
 				BF9270231BAC10FC003C7DFB /* RelationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -917,6 +957,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bird'L/Pods-Bird'L-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5280DF7396E485EA68F67471 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bird'L/Pods-Bird'L-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AB8997B52D5E6EBD6B97F7CB /* Check Pods Manifest.lock */ = {
@@ -968,11 +1023,14 @@
 				BFDF4CC81B39D33900D775D7 /* FormPickerCell.swift in Sources */,
 				BFDF4CD31B39D33900D775D7 /* FormDescriptor.swift in Sources */,
 				BFFB033E1BAB074600F00598 /* BirdlTabBarController.swift in Sources */,
+				1847E36D1C1E042300FED5B4 /* EventActionsRow.swift in Sources */,
 				BFDF4CCA1B39D33900D775D7 /* FormSelectorCell.swift in Sources */,
 				BFAC2E691B42A7500098B1E6 /* EventBannerTableViewCell.swift in Sources */,
 				01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */,
 				BFDF4CCB1B39D33900D775D7 /* FormSliderCell.swift in Sources */,
+				18A9EBA21C231CD00039FAF6 /* EventUsersInfoRow.swift in Sources */,
 				BFAC2E711B42AB240098B1E6 /* EventTitleRow.swift in Sources */,
+				18A9EB981C2316AC0039FAF6 /* EventUsersTableViewCell.swift in Sources */,
 				BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */,
 				BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */,
 				BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */,
@@ -988,6 +1046,7 @@
 				BFDF4CCF1B39D33900D775D7 /* FormTextViewCell.swift in Sources */,
 				BFDF4CD21B39D33900D775D7 /* FormViewController.swift in Sources */,
 				BF02BCEF1B3355F5007532A1 /* BadgeModuleCell.swift in Sources */,
+				1847E36B1C1E011D00FED5B4 /* EventActionsTableViewCell.swift in Sources */,
 				BF1F78B51AB64631002100B5 /* Bird_L.xcdatamodeld in Sources */,
 				BF44DE281B512A6C007A3F05 /* User.swift in Sources */,
 				BFDE16FD1B4E6A0800BCB73F /* MessagesListTableViewController.swift in Sources */,
@@ -1005,6 +1064,7 @@
 				BFDF4CD01B39D33900D775D7 /* FormOptionsSelectorController.swift in Sources */,
 				BF0A90BA1B3097B600571062 /* CircleProgressView.swift in Sources */,
 				BFAC2E571B4062E70098B1E6 /* EventDetailViewController.swift in Sources */,
+				18A9EB9E1C231AE60039FAF6 /* EventUsersInfoTableViewCell.swift in Sources */,
 				BFDF4CC41B39D33900D775D7 /* FormValueCell.swift in Sources */,
 				BFAC2E871B42E4D10098B1E6 /* EventMapTableViewCell.swift in Sources */,
 				BFDF4CD41B39D33900D775D7 /* FormRowDescriptor.swift in Sources */,
@@ -1012,6 +1072,7 @@
 				BFDF4CCC1B39D33900D775D7 /* FormStepperCell.swift in Sources */,
 				BFDF4CCE1B39D33900D775D7 /* FormTextFieldCell.swift in Sources */,
 				BFDF4CD81B39D3B200D775D7 /* AccountViewController.swift in Sources */,
+				18A9EB9C1C2317810039FAF6 /* EventUserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

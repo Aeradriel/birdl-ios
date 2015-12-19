@@ -11,5 +11,6 @@
 
 #import <JSQMessagesViewController/JSQMessages.h>
 #import <RFQuiltLayout.h>
+#import "MBProgressHUD.h"
 
 #endif /* Bird_L_Bridging_Header_h */

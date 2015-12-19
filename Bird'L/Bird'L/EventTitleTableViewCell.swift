@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventTitleTableViewCell: EventDetailCollectionViewCell
+class EventTitleTableViewCell: EventDetailTableViewCell
 {
     @IBOutlet weak var title: UILabel!
     

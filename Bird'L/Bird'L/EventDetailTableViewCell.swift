@@ -8,8 +8,10 @@
 
 import UIKit
 
-class EventDetailCollectionViewCell: UICollectionViewCell
+class EventDetailTableViewCell: UITableViewCell
 {
+    var event : Event!
+    
     //MARK: UITableViewCell methods
     override func awakeFromNib() {
         super.awakeFromNib()
