@@ -51,6 +51,8 @@
 		BF494AF91C244FF9000D2966 /* EventDescTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF494AF81C244FF9000D2966 /* EventDescTableViewCell.xib */; };
 		BF494AFB1C24503A000D2966 /* EventAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF494AFA1C24503A000D2966 /* EventAddressTableViewCell.xib */; };
 		BF494AFD1C245092000D2966 /* EventMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF494AFC1C245092000D2966 /* EventMapTableViewCell.xib */; };
+		BF494AFF1C25B4F1000D2966 /* MessageSentTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF494AFE1C25B4F1000D2966 /* MessageSentTableRow.swift */; };
+		BF494B011C25B819000D2966 /* MessageReceivedTableRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF494B001C25B819000D2966 /* MessageReceivedTableRow.swift */; };
 		BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF1F78B81AB64631002100B5 /* Main.storyboard */; };
 		BF6183621BF3A8940097ECF7 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF61834E1BF3A8940097ECF7 /* Lato-Black.ttf */; };
 		BF6183631BF3A8940097ECF7 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF61834F1BF3A8940097ECF7 /* Lato-BlackItalic.ttf */; };
@@ -230,6 +232,8 @@
 		BF494AF81C244FF9000D2966 /* EventDescTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDescTableViewCell.xib; sourceTree = "<group>"; };
 		BF494AFA1C24503A000D2966 /* EventAddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventAddressTableViewCell.xib; sourceTree = "<group>"; };
 		BF494AFC1C245092000D2966 /* EventMapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMapTableViewCell.xib; sourceTree = "<group>"; };
+		BF494AFE1C25B4F1000D2966 /* MessageSentTableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageSentTableRow.swift; path = Messages/MessageSentTableRow.swift; sourceTree = "<group>"; };
+		BF494B001C25B819000D2966 /* MessageReceivedTableRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessageReceivedTableRow.swift; path = Messages/MessageReceivedTableRow.swift; sourceTree = "<group>"; };
 		BF61834E1BF3A8940097ECF7 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		BF61834F1BF3A8940097ECF7 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
 		BF6183501BF3A8940097ECF7 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -725,6 +729,8 @@
 				BFC023D31BCFFA1200F580E5 /* ContactsListRow.swift */,
 				BFC023D11BCFF4BF00F580E5 /* ContactsListInterfaceController.swift */,
 				BFC023D51BD3D80400F580E5 /* MessagesInterfaceController.swift */,
+				BF494AFE1C25B4F1000D2966 /* MessageSentTableRow.swift */,
+				BF494B001C25B819000D2966 /* MessageReceivedTableRow.swift */,
 			);
 			name = Messages;
 			sourceTree = "<group>";
@@ -1093,8 +1099,10 @@
 				BF3E14591BCFE142008825F5 /* ExtensionDelegate.swift in Sources */,
 				BF3E145F1BCFE142008825F5 /* ComplicationController.swift in Sources */,
 				BFC023D61BD3D80400F580E5 /* MessagesInterfaceController.swift in Sources */,
+				BF494AFF1C25B4F1000D2966 /* MessageSentTableRow.swift in Sources */,
 				BFC023D21BCFF4BF00F580E5 /* ContactsListInterfaceController.swift in Sources */,
 				BFEA2BA31BD4043E003827FF /* EventsInterfaceController.swift in Sources */,
+				BF494B011C25B819000D2966 /* MessageReceivedTableRow.swift in Sources */,
 				BF3E145D1BCFE142008825F5 /* GlanceController.swift in Sources */,
 				BFEA2BA11BD403DA003827FF /* EventTableRow.swift in Sources */,
 				BFC023D41BCFFA1200F580E5 /* ContactsListRow.swift in Sources */,

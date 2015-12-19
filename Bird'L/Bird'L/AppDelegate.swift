@@ -37,10 +37,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate
     @available(iOS 9.0, *)
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void)
     {
-        User.relations(errorHandler: { (err) -> Void in
-            print("\(err)")
-            }) { (relations) -> Void in
-                replyHandler(["relations" : relations])
+        if (message["request"] as? String == "contactList")
+        {
+            User.relations(errorHandler: { (err) -> Void in
+                print("\(err)")
+                }) { (relations) -> Void in
+                    replyHandler(["relations" : relations])
+            }
+        }
+        else if (message["request"] as? String == "messageList")
+        {
+            if let id = message["id"] as? Int
+            {
+                Message.with(id, successFunc: { (messages) -> Void in
+                    var messagesDic = [[String : AnyObject]]()
+                    
+                    for message in messages
+                    {
+                            messagesDic.append(message.toDictionary())
+                    }
+                    
+                    replyHandler(["messages" : messagesDic])
+                    }, errorFunc: { (err) -> Void in
+                        print("\(err)")
+                })
+            }
         }
     }
     

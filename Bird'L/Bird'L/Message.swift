@@ -27,6 +27,19 @@ class Message : NSObject
         self.content = content
     }
     
+    func toDictionary() -> [String : AnyObject]
+    {
+        var dic         = [String : AnyObject]()
+        
+        dic["id"] = self.id
+        dic["senderId"] = self.sender_id
+        dic["senderName"] = self.sender_name
+        dic["receiverId"] = self.receiver_id
+        dic["receiverName"] = self.receiver_name
+        dic["content"] = self.content
+        return dic
+    }
+    
     class func with(relation: Int, successFunc: ([Message]) -> Void, errorFunc: (String) -> Void)
     {
         let url = NSURL(string: netConfig.apiURL + netConfig.messagesUrl + "?relation=" + String(relation))

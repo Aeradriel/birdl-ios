@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WatchConnectivity
 
 class User : NSObject
 {
@@ -71,6 +72,24 @@ class User : NSObject
     class func setCurrentUser(userInfos: [String : JSON])
     {
         self.current = User(userInfos: userInfos)
+        
+        if #available(iOS 9.0, *)
+        {
+            if (WCSession.defaultSession().reachable)
+            {
+                do
+                {
+                    try WCSession.defaultSession().updateApplicationContext(["userId" : self.current.id])
+                }
+                catch
+                {
+                    print("User::setCurrentUser => Unable to update application context")
+                }
+            }
+        }
+        else
+        {
+        }
     }
     
     //MARK: Private checks

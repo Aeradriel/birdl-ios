@@ -15,6 +15,7 @@ class ContactsListInterfaceController: WKInterfaceController
     //MARK: -
     //MARK: Variables
     @IBOutlet var table: WKInterfaceTable!
+    
     var contacts: [[ String : AnyObject ]] = [[ String : AnyObject ]]()
     
     //MARK: -

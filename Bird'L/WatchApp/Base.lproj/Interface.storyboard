@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -105,9 +105,35 @@
             <objects>
                 <controller identifier="messagesInterface" hidesWhenLoading="NO" id="lXG-JN-Q5G" customClass="MessagesInterfaceController" customModule="WatchApp_Extension">
                     <items>
-                        <imageView alignment="left" image="logo_birdl_HD_alone" id="H9G-lD-qlj"/>
-                        <label alignment="center" text="Coming Soon !" textAlignment="left" id="2Xj-1C-nrv"/>
+                        <table alignment="left" id="VHU-Zm-k7e">
+                            <items>
+                                <tableRow identifier="messageSentRow" id="TTL-BF-SU8" customClass="MessageSentTableRow" customModule="WatchApp_Extension">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="eSN-ve-6pp">
+                                        <items>
+                                            <label alignment="right" text="Label" textAlignment="right" numberOfLines="0" id="gzr-Gw-btz"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="textLabel" destination="gzr-Gw-btz" id="O64-XA-shq"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="messageReceivedRow" id="XuC-7p-h9G" customClass="MessageReceivedTableRow" customModule="WatchApp_Extension">
+                                    <group key="rootItem" width="1" alignment="left" layout="vertical" id="HtM-qY-wB0">
+                                        <items>
+                                            <label alignment="left" text="Label" textAlignment="left" numberOfLines="0" id="nFJ-GS-SCX"/>
+                                        </items>
+                                        <color key="backgroundColor" red="0.11372549019607843" green="0.38431372549019605" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="textLabel" destination="nFJ-GS-SCX" id="qdA-Nu-RPG"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
+                    <connections>
+                        <outlet property="table" destination="VHU-Zm-k7e" id="SPy-Qk-Hdm"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="432" y="126"/>
