@@ -48,7 +48,7 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
     {
         if (segue.identifier == "eventDetailsSegue")
         {
-            let destinationVc: EventDetailViewController = segue.destinationViewController as! EventDetailViewController
+            let destinationVc: EventViewController = segue.destinationViewController as! EventViewController
             
             destinationVc.event = event
             destinationVc.rows = self.selectedEvent

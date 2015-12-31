@@ -11,6 +11,7 @@
 		01A9381D1ADE46E300E09C0B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A9381C1ADE46E300E09C0B /* SignupViewController.swift */; };
 		01D5F5261B338073003EEF39 /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D5F5251B338073003EEF39 /* json.swift */; };
 		01D5F5281B338B65003EEF39 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D5F5271B338B65003EEF39 /* Config.swift */; };
+		1817E5F11C354FC000A91F67 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1817E5F01C354FC000A91F67 /* EventViewController.swift */; };
 		1847E3691C1E00E400FED5B4 /* EventActionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1847E3681C1E00E400FED5B4 /* EventActionsTableViewCell.xib */; };
 		1847E36B1C1E011D00FED5B4 /* EventActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847E36A1C1E011D00FED5B4 /* EventActionsTableViewCell.swift */; };
 		1847E36D1C1E042300FED5B4 /* EventActionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847E36C1C1E042300FED5B4 /* EventActionsRow.swift */; };
@@ -183,6 +184,7 @@
 		01A9381C1ADE46E300E09C0B /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		01D5F5251B338073003EEF39 /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		01D5F5271B338B65003EEF39 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		1817E5F01C354FC000A91F67 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		1847E3681C1E00E400FED5B4 /* EventActionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventActionsTableViewCell.xib; sourceTree = "<group>"; };
 		1847E36A1C1E011D00FED5B4 /* EventActionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventActionsTableViewCell.swift; sourceTree = "<group>"; };
 		1847E36C1C1E042300FED5B4 /* EventActionsRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventActionsRow.swift; sourceTree = "<group>"; };
@@ -589,6 +591,7 @@
 				BFAC2E661B42A71D0098B1E6 /* Rows */,
 				BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */,
 				18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */,
+				1817E5F01C354FC000A91F67 /* EventViewController.swift */,
 			);
 			name = EventDetail;
 			sourceTree = "<group>";
@@ -1069,6 +1072,7 @@
 				BF02BCFA1B337298007532A1 /* Badge.swift in Sources */,
 				BFDF4CD01B39D33900D775D7 /* FormOptionsSelectorController.swift in Sources */,
 				BF0A90BA1B3097B600571062 /* CircleProgressView.swift in Sources */,
+				1817E5F11C354FC000A91F67 /* EventViewController.swift in Sources */,
 				BFAC2E571B4062E70098B1E6 /* EventDetailViewController.swift in Sources */,
 				18A9EB9E1C231AE60039FAF6 /* EventUsersInfoTableViewCell.swift in Sources */,
 				BFDF4CC41B39D33900D775D7 /* FormValueCell.swift in Sources */,

@@ -20,23 +20,31 @@ class Event : NSObject
     var ownerId: Int!
     var addressId: Int!
     var language: String?
+    var location: String?
     var belongsToCurrentUser = false;
     var currentUserRegistered : Bool?
     var users: [User] = []
     
-    init(id: Int, name: String, type: String, minSlots: Int, maxSlots: Int, date: String, desc: String?, ownerId: Int, addressId: Int!, language: String?, currentUserRegistered: Bool)
+    init(id: Int, name: String, type: String, minSlots: Int, maxSlots: Int, date: String, desc: String?, ownerId: Int, addressId: Int!, language: String?, currentUserRegistered: Bool, location: String)
     {
         self.id = id
         self.name = name
         self.type = type
         self.minSlots = minSlots
         self.maxSlots = maxSlots
-        // self.date = 
+        let dateFormatter = NSDateFormatter()
+        print(date)
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let nsdate = dateFormatter.dateFromString(date)
+        self.date = nsdate;
         self.desc = desc
         self.ownerId = ownerId
         self.addressId = addressId
         self.language = language
         self.currentUserRegistered = currentUserRegistered
+        self.location = location
+        print(self.name)
+        print(self.location)
     }
     
     //MARK: ActiveRecord methods
@@ -58,12 +66,17 @@ class Event : NSObject
                         for event in events
                         {
                             var address = 0
+                            var location : String = "";
                             
                             if (event["address_id"].asInt != nil)
                             {
                                 address = event["address_id"].asInt!
                             }
-                            let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: event["address_id"].asInt, language: event["language"].asString, currentUserRegistered: true)
+                            let locationJson = event["location"];
+                            if (!locationJson.isNull) {
+                                location = locationJson.asString!
+                            }
+                            let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: address, language: event["language"].asString, currentUserRegistered: true, location: location)
                             
                             if let users = event["users"].asArray {
                                 for user in users {
