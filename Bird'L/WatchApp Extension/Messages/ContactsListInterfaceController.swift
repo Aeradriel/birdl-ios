@@ -41,6 +41,7 @@ class ContactsListInterfaceController: WKInterfaceController
         }
         else
         {
+            print("WCSession is not reachable")
         }
     }
 

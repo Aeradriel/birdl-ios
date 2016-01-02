@@ -63,12 +63,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate
                 })
             }
         }
-    }
-    
-    @available(iOS 9.0, *)
-    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject])
-    {
-        print("lol")
+        else if (message["request"] as? String == "eventList")
+        {
+            Event.all(errorHandler: { (err) -> Void in
+                print("\(err)")
+                }, successHandler: { (events) -> Void in
+                    var eventsDic = [[String : AnyObject]]()
+                    
+                    for event in events
+                    {
+                        eventsDic.append(event.toDictionary())
+                    }
+                    
+                    replyHandler(["events" : eventsDic])
+            })
+        }
     }
     
     func applicationWillResignActive(application: UIApplication) {

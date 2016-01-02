@@ -8,7 +8,7 @@
 
 import WatchKit
 import Foundation
-
+import WatchConnectivity
 
 class EventsInterfaceController: WKInterfaceController
 {
@@ -16,7 +16,9 @@ class EventsInterfaceController: WKInterfaceController
     //MARK: Variables
     @IBOutlet var table: WKInterfaceTable!
     
-    var rowTypes: [String] = ["dayTableRow", "eventTableRow", "dayTableRow", "eventTableRow"]
+    var events: [[String : AnyObject]] = [[String : AnyObject]]()
+    var rowTypes: [String] = [String]()
+    
     
     //MARK: -
     //MARK: WKInterface delegate
@@ -30,8 +32,39 @@ class EventsInterfaceController: WKInterfaceController
     override func willActivate()
     {
         super.willActivate()
+        
+        if (WCSession.defaultSession().reachable)
+        {
+            let dic = [ "request" : "eventList" ]
+            WCSession.defaultSession().sendMessage(dic, replyHandler: self.didReceiveEventsList, errorHandler:
+                { (err) -> Void in
+                    print("\(err)")
+            })
+        }
+        else
+        {
+            print("WCSession is not reachable")
+        }
     }
 
+    func didReceiveEventsList(eventsList: [String : AnyObject])
+    {
+        if let events = eventsList["events"] as? [[String : AnyObject]]
+        {
+            if (events != self.events)
+            {
+                self.events = events
+                self.rowTypes = [String]()
+                for _ in self.events
+                {
+                    self.rowTypes.append("dayTableRow");
+                    self.rowTypes.append("eventTableRow");
+                }
+                self.setupTable()
+            }
+        }
+    }
+    
     override func didDeactivate()
     {
         super.didDeactivate()

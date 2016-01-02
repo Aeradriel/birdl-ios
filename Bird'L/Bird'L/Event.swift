@@ -39,6 +39,22 @@ class Event : NSObject
         self.currentUserRegistered = currentUserRegistered
     }
     
+    func toDictionary() -> [String : AnyObject]
+    {
+        var dic         = [String : AnyObject]()
+        
+        dic["id"] = self.id
+        dic["type"] = self.type
+        dic["minSlots"] = self.minSlots
+        dic["maxSlots"] = self.maxSlots
+        dic["date"] = self.date
+        dic["desc"] = self.desc
+        dic["ownerId"] = self.ownerId
+        dic["addressId"] = self.addressId
+        dic["language"] = self.language
+        return dic
+    }
+    
     //MARK: ActiveRecord methods
     class func all(errorHandler errorFunc: ((String) -> Void), successHandler successFunc: ([Event]) -> Void)
     {

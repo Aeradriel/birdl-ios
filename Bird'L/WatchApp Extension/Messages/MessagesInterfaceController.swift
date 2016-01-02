@@ -54,6 +54,7 @@ class MessagesInterfaceController: WKInterfaceController
         }
         else
         {
+            print("WCSession is not reachable")
         }
     }
 
