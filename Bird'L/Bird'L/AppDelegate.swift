@@ -56,7 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate
                     {
                             messagesDic.append(message.toDictionary())
                     }
-                    
                     replyHandler(["messages" : messagesDic])
                     }, errorFunc: { (err) -> Void in
                         print("\(err)")
@@ -74,7 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate
                     {
                         eventsDic.append(event.toDictionary())
                     }
-                    
                     replyHandler(["events" : eventsDic])
             })
         }

@@ -63,6 +63,18 @@ class User : NSObject
         
     }
     
+    func toDictionary() -> [String : AnyObject]
+    {
+        var dic         = [String : AnyObject]()
+        
+        dic["id"] = self.id
+        dic["firstName"] = self.firstName
+        dic["lastName"] = self.lastName
+        dic["email"] = self.email
+        dic["gender"] = self.gender
+        return dic
+    }
+    
     //MARK: Singleton implementation
     class func currentUser() -> User
     {

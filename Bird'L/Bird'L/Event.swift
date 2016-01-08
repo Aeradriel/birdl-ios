@@ -16,6 +16,7 @@ class Event : NSObject
     var minSlots: Int!
     var maxSlots: Int!
     var date: NSDate!
+    var end: NSDate!
     var desc: String?
     var ownerId: Int!
     var addressId: Int!
@@ -24,14 +25,25 @@ class Event : NSObject
     var currentUserRegistered : Bool?
     var users: [User] = []
     
-    init(id: Int, name: String, type: String, minSlots: Int, maxSlots: Int, date: String, desc: String?, ownerId: Int, addressId: Int!, language: String?, currentUserRegistered: Bool)
+    init(id: Int, name: String, type: String, minSlots: Int, maxSlots: Int, date: String?, end: String?, desc: String?, ownerId: Int, addressId: Int!, language: String?, currentUserRegistered: Bool)
     {
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+
         self.id = id
         self.name = name
         self.type = type
         self.minSlots = minSlots
         self.maxSlots = maxSlots
-        // self.date = 
+        if date != nil
+        {
+            self.date = dateFormatter.dateFromString(date!)
+        }
+        if end != nil
+        {
+            self.end = dateFormatter.dateFromString(end!)
+        }
         self.desc = desc
         self.ownerId = ownerId
         self.addressId = addressId
@@ -44,10 +56,12 @@ class Event : NSObject
         var dic         = [String : AnyObject]()
         
         dic["id"] = self.id
+        dic["name"] = self.name
         dic["type"] = self.type
         dic["minSlots"] = self.minSlots
         dic["maxSlots"] = self.maxSlots
         dic["date"] = self.date
+        dic["end"] = self.end
         dic["desc"] = self.desc
         dic["ownerId"] = self.ownerId
         dic["addressId"] = self.addressId
@@ -79,7 +93,7 @@ class Event : NSObject
                             {
                                 address = event["address_id"].asInt!
                             }
-                            let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: event["address_id"].asInt, language: event["language"].asString, currentUserRegistered: true)
+                            let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString, end: event["end"].asString, desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: event["address_id"].asInt, language: event["language"].asString, currentUserRegistered: true)
                             
                             if let users = event["users"].asArray {
                                 for user in users {

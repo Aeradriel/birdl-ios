@@ -53,12 +53,18 @@ class EventsInterfaceController: WKInterfaceController
         {
             if (events != self.events)
             {
+                var i = 0
+
                 self.events = events
                 self.rowTypes = [String]()
                 for _ in self.events
                 {
-                    self.rowTypes.append("dayTableRow");
-                    self.rowTypes.append("eventTableRow");
+                    if (i < 5)
+                    {
+                        self.rowTypes.append("dayTableRow");
+                        self.rowTypes.append("eventTableRow");
+                    }
+                    i++;
                 }
                 self.setupTable()
             }
@@ -78,17 +84,35 @@ class EventsInterfaceController: WKInterfaceController
         
         for var i = 0; i < table.numberOfRows; i++
         {
+            let event = self.events[i / 2]
+            let dateFormatter = NSDateFormatter()
+            //let dateFormatterDay = NSDateFormatter()
+            var dateBegin = ""
+            //var dateBeginDay = ""
+            var dateEnd = ""
+
+            dateFormatter.dateFormat = "hh:mm"
+            //dateFormatterDay.dateFormat = "EEE. d MMM."
+            if event["date"] != nil
+            {
+                dateBegin = dateFormatter.stringFromDate(event["date"] as! NSDate)
+                //dateBeginDay = dateFormatterDay.stringFromDate(event["date"] as! NSDate)
+            }
+            if (event["end"] != nil)
+            {
+                dateEnd = dateFormatter.stringFromDate(event["end"] as! NSDate)
+            }
             switch rowTypes[i]
             {
             case "dayTableRow":
                 let row = table.rowControllerAtIndex(i) as! EventDayTableRow
                 
-                row.dayLabel.setText("Lun. 19 oct.")
+                row.dayLabel.setText("")
             case "eventTableRow":
                 let row = table.rowControllerAtIndex(i) as! EventTableRow
                 
-                row.eventTitleLabel.setText("Entraînement de Volley-Ball")
-                row.eventDetailsLabel.setText("14 rue carnot, Villejuif, France\n20:30-22:30")
+                row.eventTitleLabel.setText("\(event["name"]!)")
+                row.eventDetailsLabel.setText("\(event["location"])\n\(dateBegin)-\(dateEnd)")
             default: ()
             }
         }
