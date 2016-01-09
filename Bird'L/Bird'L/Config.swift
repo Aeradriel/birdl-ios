@@ -26,4 +26,5 @@ struct netConfig
     static let relationsUrl = "/user/relations/"
     static let messagesUrl = "/messages/"
     static let newMessageUrl = "/messages/new/"
+    static let notificationsUrl = "/notifications"
 }

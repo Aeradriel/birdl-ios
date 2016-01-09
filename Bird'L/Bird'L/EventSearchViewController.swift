@@ -41,7 +41,6 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewWillAppear(animated)
         
         Event.all(errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

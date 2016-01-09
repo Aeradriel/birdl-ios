@@ -44,7 +44,6 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         super.viewWillAppear(animated)
         
         User.getBaseInfo(g_APICommunicator.token, errorHander: self.errorHandler, successHandler: self.updateUIWithUser)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     //MARK: Loading countries

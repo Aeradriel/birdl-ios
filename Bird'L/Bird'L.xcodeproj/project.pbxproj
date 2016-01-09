@@ -39,7 +39,6 @@
 		BF3E14471BCFE142008825F5 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF3E14451BCFE142008825F5 /* Interface.storyboard */; };
 		BF3E14501BCFE142008825F5 /* WatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BF3E144F1BCFE142008825F5 /* WatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BF3E14591BCFE142008825F5 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E14581BCFE142008825F5 /* ExtensionDelegate.swift */; };
-		BF3E145B1BCFE142008825F5 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E145A1BCFE142008825F5 /* NotificationController.swift */; };
 		BF3E145D1BCFE142008825F5 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E145C1BCFE142008825F5 /* GlanceController.swift */; };
 		BF3E145F1BCFE142008825F5 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3E145E1BCFE142008825F5 /* ComplicationController.swift */; };
 		BF3E14611BCFE142008825F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF3E14601BCFE142008825F5 /* Assets.xcassets */; };
@@ -75,6 +74,8 @@
 		BF6183741BF3A8940097ECF7 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF6183601BF3A8940097ECF7 /* OFL.txt */; };
 		BF6183751BF3A8940097ECF7 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BF6183611BF3A8940097ECF7 /* README.txt */; };
 		BF6183771BF3B8840097ECF7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6183761BF3B8840097ECF7 /* Images.xcassets */; };
+		BF7E90111C3FFFEE002B6AEF /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E90101C3FFFEE002B6AEF /* NotificationController.swift */; };
+		BF7E90131C4001FF002B6AEF /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7E90121C4001FF002B6AEF /* Notification.swift */; };
 		BF9270231BAC10FC003C7DFB /* RelationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */; };
 		BF9270251BAC121C003C7DFB /* RelationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */; };
 		BF92FDD51C1ACCB400ECE6CE /* NotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF92FDD41C1ACCB400ECE6CE /* NotificationsTableViewController.swift */; };
@@ -221,7 +222,6 @@
 		BF3E144F1BCFE142008825F5 /* WatchApp Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchApp Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF3E14551BCFE142008825F5 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		BF3E14581BCFE142008825F5 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		BF3E145A1BCFE142008825F5 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		BF3E145C1BCFE142008825F5 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		BF3E145E1BCFE142008825F5 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		BF3E14601BCFE142008825F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -255,6 +255,8 @@
 		BF6183601BF3A8940097ECF7 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		BF6183611BF3A8940097ECF7 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		BF6183761BF3B8840097ECF7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BF7E90101C3FFFEE002B6AEF /* NotificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		BF7E90121C4001FF002B6AEF /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		BF9270221BAC10FC003C7DFB /* RelationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RelationTableViewCell.xib; sourceTree = "<group>"; };
 		BF9270241BAC121C003C7DFB /* RelationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationTableViewCell.swift; sourceTree = "<group>"; };
 		BF92FDD41C1ACCB400ECE6CE /* NotificationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewController.swift; sourceTree = "<group>"; };
@@ -522,7 +524,7 @@
 				BF3E145E1BCFE142008825F5 /* ComplicationController.swift */,
 				BF3E14581BCFE142008825F5 /* ExtensionDelegate.swift */,
 				BF3E145C1BCFE142008825F5 /* GlanceController.swift */,
-				BF3E145A1BCFE142008825F5 /* NotificationController.swift */,
+				BF7E90101C3FFFEE002B6AEF /* NotificationController.swift */,
 				BF3E14601BCFE142008825F5 /* Assets.xcassets */,
 				BF3E14621BCFE142008825F5 /* Info.plist */,
 				BF3E14541BCFE142008825F5 /* Supporting Files */,
@@ -711,6 +713,7 @@
 				BFAC2E5C1B4067D90098B1E6 /* Event.swift */,
 				BF377F9A1B50044700099040 /* Message.swift */,
 				BF44DE271B512A6B007A3F05 /* User.swift */,
+				BF7E90121C4001FF002B6AEF /* Notification.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1036,6 +1039,7 @@
 				BFDF4CCB1B39D33900D775D7 /* FormSliderCell.swift in Sources */,
 				18A9EBA21C231CD00039FAF6 /* EventUsersInfoRow.swift in Sources */,
 				BFAC2E711B42AB240098B1E6 /* EventTitleRow.swift in Sources */,
+				BF7E90131C4001FF002B6AEF /* Notification.swift in Sources */,
 				18A9EB981C2316AC0039FAF6 /* EventUsersTableViewCell.swift in Sources */,
 				BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */,
 				BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */,
@@ -1094,13 +1098,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF3E145B1BCFE142008825F5 /* NotificationController.swift in Sources */,
 				BFEA2B9F1BD403A5003827FF /* EventDayTableRow.swift in Sources */,
 				BF3E14591BCFE142008825F5 /* ExtensionDelegate.swift in Sources */,
 				BF3E145F1BCFE142008825F5 /* ComplicationController.swift in Sources */,
 				BFC023D61BD3D80400F580E5 /* MessagesInterfaceController.swift in Sources */,
 				BF494AFF1C25B4F1000D2966 /* MessageSentTableRow.swift in Sources */,
 				BFC023D21BCFF4BF00F580E5 /* ContactsListInterfaceController.swift in Sources */,
+				BF7E90111C3FFFEE002B6AEF /* NotificationController.swift in Sources */,
 				BFEA2BA31BD4043E003827FF /* EventsInterfaceController.swift in Sources */,
 				BF494B011C25B819000D2966 /* MessageReceivedTableRow.swift in Sources */,
 				BF3E145D1BCFE142008825F5 /* GlanceController.swift in Sources */,

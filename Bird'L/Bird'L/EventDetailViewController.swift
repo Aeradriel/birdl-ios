@@ -45,8 +45,6 @@ class EventDetailViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-        
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     //MARK: UITableViewController delegate

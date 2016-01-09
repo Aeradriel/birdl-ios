@@ -37,7 +37,6 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
         super.viewWillAppear(animated)
         
         User.relations(errorHandler: self.errorHandler, successHandler: self.relationsDidLoad)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidDisappear(animated: Bool)

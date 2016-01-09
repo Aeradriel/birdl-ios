@@ -32,14 +32,18 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
     {
         super.viewWillAppear(animated)
         
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationController?.navigationBar.translucent = false
+        
+        self.navigationController!.navigationBar.barTintColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.8)
+        //self.navigationController!.navigationBar.shadowImage = self.imageWithColor(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.8), size: CGSizeMake(375, 44))
     }
     
     override func viewDidDisappear(animated: Bool)
     {
         super.viewDidDisappear(animated)
     }
-
+    
     //MARK: -
     //MARK: UITableViewController functions
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -76,5 +80,17 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
             location.addSubview(badgeView)
         }
         return cell
+    }
+    
+    //MARK: Helpers
+    func imageWithColor(color: UIColor, size: CGSize) -> UIImage
+    {
+        let rect = CGRectMake(0, 0, size.width, size.height)
+        UIGraphicsBeginImageContextWithOptions(size, true, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }

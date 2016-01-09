@@ -35,7 +35,6 @@ class MessagesViewController: JSQMessagesViewController, UITextFieldDelegate
         super.viewDidAppear(animated)
         
         Message.with(self.relationId, successFunc: self.messagesDidLoad, errorFunc: self.errorHandler)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     //MARK: Callback

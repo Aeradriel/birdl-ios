@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
+
         if #available(iOS 9.0, *)
         {
             if (WCSession.isSupported())

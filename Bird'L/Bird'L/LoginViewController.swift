@@ -24,14 +24,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         self.passwordTextField.secureTextEntry = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        self.navigationController!.navigationBar.translucent = true
         self.loginField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
         self.passwordField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
         self.loginField.delegate = self
         self.passwordTextField.delegate = self
         self.checkToken()
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        self.navigationController!.navigationBar.translucent = true
     }
     
     override func viewDidAppear(animated: Bool)

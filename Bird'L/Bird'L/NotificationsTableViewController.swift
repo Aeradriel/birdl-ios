@@ -10,7 +10,9 @@ import UIKit
 
 class NotificationsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var  tableView:          UITableView!
+    
+    var                 notifications:      [Notification] = []
     
     //MARK: - UIViewController delegate
     override func viewDidLoad()
@@ -18,26 +20,38 @@ class NotificationsTableViewController: UIViewController, UITableViewDataSource,
         super.viewDidLoad()
     }
 
-    override func didReceiveMemoryWarning()
+    override func viewDidAppear(animated: Bool)
     {
-        super.didReceiveMemoryWarning()
+        super.viewDidAppear(animated)
+        
+        
+        Notification.all({ (notifications) -> Void in
+            self.notifications = notifications
+            self.tableView.reloadData()
+            }) { (error) -> Void in
+            print("\(error)")
+        }
     }
 
     //MARK: - UITableView data source
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 0
+        return 1
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 0
+        return self.notifications.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
+        let         cell    = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)//tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let         notif   = self.notifications[indexPath.row]
+        
+        cell.textLabel!.text = notif.subject
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.detailTextLabel?.text = notif.desc
         return cell
     }
 }
