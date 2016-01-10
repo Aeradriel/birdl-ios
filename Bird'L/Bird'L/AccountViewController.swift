@@ -43,6 +43,8 @@ class AccountViewController: FormViewController, UITextFieldDelegate
     {
         super.viewWillAppear(animated)
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        self.tabBarController?.navigationItem.title = self.title
         User.getBaseInfo(g_APICommunicator.token, errorHander: self.errorHandler, successHandler: self.updateUIWithUser)
     }
     

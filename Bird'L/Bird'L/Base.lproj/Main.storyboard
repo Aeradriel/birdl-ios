@@ -241,7 +241,7 @@
         <!--Accueil-->
         <scene sceneID="ky0-Ls-jUz">
             <objects>
-                <viewController id="pjr-b7-oMz" customClass="HomePageViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Accueil" id="pjr-b7-oMz" customClass="HomePageViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B6V-l7-AeW"/>
                         <viewControllerLayoutGuide type="bottom" id="bPS-m9-6Un"/>
@@ -275,12 +275,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldP-Co-2Dh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820.5" y="985.5"/>
+            <point key="canvasLocation" x="843.5" y="985.5"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Mon Compte-->
         <scene sceneID="RCO-rr-SQL">
             <objects>
-                <tableViewController id="DGr-j0-4HK" customClass="AccountViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Mon Compte" id="DGr-j0-4HK" customClass="AccountViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="T46-zU-pgV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -301,7 +301,7 @@
         <!--Messages-->
         <scene sceneID="JwR-LC-icg">
             <objects>
-                <viewController id="rjd-o5-1iH" customClass="MessagesListTableViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Messages" id="rjd-o5-1iH" customClass="MessagesListTableViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y3t-YM-hUB"/>
                         <viewControllerLayoutGuide type="bottom" id="3I5-lE-kaq"/>
@@ -362,7 +362,7 @@
         <!--Notifications-->
         <scene sceneID="1vu-jo-aHL">
             <objects>
-                <viewController id="7Id-s5-NST" customClass="NotificationsTableViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Notifications" id="7Id-s5-NST" customClass="NotificationsTableViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hYD-WF-MLY"/>
                         <viewControllerLayoutGuide type="bottom" id="ehb-Ul-bHr"/>
@@ -403,7 +403,7 @@
         <!--Événements-->
         <scene sceneID="H2S-M6-ZiS">
             <objects>
-                <viewController id="m2L-5E-eBF" customClass="EventSearchViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Événements" id="m2L-5E-eBF" customClass="EventSearchViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YQQ-8n-CDo"/>
                         <viewControllerLayoutGuide type="bottom" id="E95-Ib-5wW"/>

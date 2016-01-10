@@ -34,9 +34,9 @@ class HomePageViewController: UIViewController, UITableViewDelegate, UITableView
         
         self.tabBarController?.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationController?.navigationBar.translucent = false
-        
         self.navigationController!.navigationBar.barTintColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.8)
-        //self.navigationController!.navigationBar.shadowImage = self.imageWithColor(UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.8), size: CGSizeMake(375, 44))
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        self.tabBarController?.navigationItem.title = self.title
     }
     
     override func viewDidDisappear(animated: Bool)

@@ -24,7 +24,8 @@ class NotificationsTableViewController: UIViewController, UITableViewDataSource,
     {
         super.viewDidAppear(animated)
         
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        self.tabBarController?.navigationItem.title = self.title
         Notification.all({ (notifications) -> Void in
             self.notifications = notifications
             self.tableView.reloadData()

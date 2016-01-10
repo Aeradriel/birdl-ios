@@ -36,6 +36,8 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
     {
         super.viewWillAppear(animated)
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        self.tabBarController?.navigationItem.title = self.title
         User.relations(errorHandler: self.errorHandler, successHandler: self.relationsDidLoad)
     }
     

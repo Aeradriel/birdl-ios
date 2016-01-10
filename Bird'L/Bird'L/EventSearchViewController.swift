@@ -40,6 +40,8 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
     {
         super.viewWillAppear(animated)
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        self.tabBarController?.navigationItem.title = self.title
         Event.all(errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
     }
     
