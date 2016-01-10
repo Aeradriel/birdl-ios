@@ -73,6 +73,37 @@ class Notification: NSObject
         }
     }
     
+    class func setRead(successFunc: () -> Void, errorFunc: (String) -> Void)
+    {
+        let url = NSURL(string: netConfig.apiURL + netConfig.notificationsUrl)
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "PUT"
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil)
+                {
+                    let ret = String(data: data!, encoding: NSUTF8StringEncoding)
+                    
+                    if ret == "\"OK\""
+                    {
+                        successFunc()
+                    }
+                    else
+                    {
+                        let error = APICommunicator.errorFromJson(JSON(data: data!))
+                        
+                        errorFunc(error)
+                    }
+                }
+                else
+                {
+                    errorFunc("Cannot reach server")
+                }
+        }
+    }
+    
     //MARK: Private checks
     private class func notifJsonIsValid(notifJson: [String : JSON]) -> Bool
     {

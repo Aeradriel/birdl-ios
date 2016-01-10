@@ -32,6 +32,11 @@ class NotificationsTableViewController: UIViewController, UITableViewDataSource,
             }) { (error) -> Void in
             print("\(error)")
         }
+        Notification.setRead({ () -> Void in
+            self.tabBarController!.tabBar.items![4].badgeValue = nil
+            }) { (erro) -> Void in
+                NSLog("Could not set notifications as read")
+        }
     }
 
     //MARK: - UITableView data source
