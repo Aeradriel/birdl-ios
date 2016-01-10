@@ -28,6 +28,27 @@ class BirdlTabBarController: UITabBarController
             item.image = self.scaleUIImageToSize(item.image!, size: CGSizeMake(24, 24)).imageWithRenderingMode(.AlwaysOriginal)
             item.selectedImage = item.image?.imageWithRenderingMode(.AlwaysOriginal)
         }
+        Notification.all({ (notifications) -> Void in
+            var unread: [Notification] = []
+            
+            for notif in notifications
+            {
+                if notif.seen == false
+                {
+                    unread.append(notif)
+                }
+            }
+            if unread.count > 0
+            {
+                self.tabBar.items![4].badgeValue = "\(unread.count)"
+            }
+            else
+            {
+                self.tabBar.items![4].badgeValue = nil
+            }
+            }) { (error) -> Void in
+                print("\(error)")
+        }
     }
     
     //MARK: Helpers
