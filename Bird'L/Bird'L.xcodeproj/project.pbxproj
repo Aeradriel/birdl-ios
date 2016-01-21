@@ -99,6 +99,9 @@
 		BFC023D21BCFF4BF00F580E5 /* ContactsListInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC023D11BCFF4BF00F580E5 /* ContactsListInterfaceController.swift */; };
 		BFC023D41BCFFA1200F580E5 /* ContactsListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC023D31BCFFA1200F580E5 /* ContactsListRow.swift */; };
 		BFC023D61BD3D80400F580E5 /* MessagesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC023D51BD3D80400F580E5 /* MessagesInterfaceController.swift */; };
+		BFC62FB21C5172FC00B554F5 /* TinyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC62FB11C5172FC00B554F5 /* TinyTabBar.swift */; };
+		BFC62FB41C51785100B554F5 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC62FB31C51785100B554F5 /* TabView.swift */; };
+		BFC62FB61C51785A00B554F5 /* TabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC62FB51C51785A00B554F5 /* TabView.xib */; };
 		BFC6BF141B4C177000B02CC0 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */; };
 		BFDE16FD1B4E6A0800BCB73F /* MessagesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE16FC1B4E6A0800BCB73F /* MessagesListTableViewController.swift */; };
 		BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CA61B38582B00D775D7 /* Country.swift */; };
@@ -280,6 +283,9 @@
 		BFC023D11BCFF4BF00F580E5 /* ContactsListInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsListInterfaceController.swift; path = Messages/ContactsListInterfaceController.swift; sourceTree = "<group>"; };
 		BFC023D31BCFFA1200F580E5 /* ContactsListRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContactsListRow.swift; path = Messages/ContactsListRow.swift; sourceTree = "<group>"; };
 		BFC023D51BD3D80400F580E5 /* MessagesInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MessagesInterfaceController.swift; path = Messages/MessagesInterfaceController.swift; sourceTree = "<group>"; };
+		BFC62FB11C5172FC00B554F5 /* TinyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyTabBar.swift; sourceTree = "<group>"; };
+		BFC62FB31C51785100B554F5 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		BFC62FB51C51785A00B554F5 /* TabView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabView.xib; sourceTree = "<group>"; };
 		BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		BFC6BF151B4C17BB00B02CC0 /* Bird'L-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bird'L-Bridging-Header.h"; sourceTree = "<group>"; };
 		BFDE16FC1B4E6A0800BCB73F /* MessagesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewController.swift; sourceTree = "<group>"; };
@@ -502,6 +508,9 @@
 				BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */,
 				BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */,
 				BFAC2E591B40630A0098B1E6 /* EventResultTableViewCell.xib */,
+				BFC62FB11C5172FC00B554F5 /* TinyTabBar.swift */,
+				BFC62FB31C51785100B554F5 /* TabView.swift */,
+				BFC62FB51C51785A00B554F5 /* TabView.xib */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -897,6 +906,7 @@
 				BF61836B1BF3A8940097ECF7 /* Lato-Light.ttf in Resources */,
 				BF6183731BF3A8940097ECF7 /* Lato-ThinItalic.ttf in Resources */,
 				523242681BF64DB7000D7EBB /* EventDescCell.xib in Resources */,
+				BFC62FB61C51785A00B554F5 /* TabView.xib in Resources */,
 				BF6183681BF3A8940097ECF7 /* Lato-Heavy.ttf in Resources */,
 				BF6183641BF3A8940097ECF7 /* Lato-Bold.ttf in Resources */,
 				BF5B51E51AB65D12003E6272 /* Main.storyboard in Resources */,
@@ -1020,6 +1030,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFDF4CC61B39D33900D775D7 /* FormCheckCell.swift in Sources */,
+				BFC62FB21C5172FC00B554F5 /* TinyTabBar.swift in Sources */,
 				BFDF4CD11B39D33900D775D7 /* FormSelector.swift in Sources */,
 				BF02BCED1B330558007532A1 /* BadgeView.swift in Sources */,
 				BFC6BF141B4C177000B02CC0 /* MessagesViewController.swift in Sources */,
@@ -1040,6 +1051,7 @@
 				18A9EBA21C231CD00039FAF6 /* EventUsersInfoRow.swift in Sources */,
 				BFAC2E711B42AB240098B1E6 /* EventTitleRow.swift in Sources */,
 				BF7E90131C4001FF002B6AEF /* Notification.swift in Sources */,
+				BFC62FB41C51785100B554F5 /* TabView.swift in Sources */,
 				18A9EB981C2316AC0039FAF6 /* EventUsersTableViewCell.swift in Sources */,
 				BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */,
 				BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */,

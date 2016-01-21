@@ -70,9 +70,9 @@ class Event : NSObject
     }
     
     //MARK: ActiveRecord methods
-    class func all(errorHandler errorFunc: ((String) -> Void), successHandler successFunc: ([Event]) -> Void)
+    class func all(future: (Bool) = false, errorHandler errorFunc: ((String) -> Void), successHandler successFunc: ([Event]) -> Void)
     {
-        let url = NSURL(string: netConfig.apiURL + netConfig.eventsUrl)
+        let url = NSURL(string: netConfig.apiURL + (future ? netConfig.futureEventsUrl : netConfig.eventsUrl))
         let request = NSMutableURLRequest(URL: url!)
         
         request.HTTPMethod = "GET"

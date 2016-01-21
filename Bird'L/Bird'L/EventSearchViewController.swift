@@ -11,6 +11,7 @@ import UIKit
 class EventSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating
 {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tinyTabBar: TinyTabBar!
     
     var events: [Event] = []
     var event: Event!
@@ -34,6 +35,9 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableView.tableFooterView = UIView()
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        
+        self.tinyTabBar.tabs = [["title" : "Future", "controller" : UIViewController()], ["title" : "Past", "controller" : UIViewController()]]
+        self.tinyTabBar.backgroundColor = self.navigationController?.navigationBar.barTintColor
     }
     
     override func viewWillAppear(animated: Bool)
@@ -42,7 +46,7 @@ class EventSearchViewController: UIViewController, UITableViewDataSource, UITabl
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         self.tabBarController?.navigationItem.title = self.title
-        Event.all(errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
+        Event.all(true, errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
