@@ -8,19 +8,27 @@
 
 import UIKit
 
+protocol TinyTabBarDelegate
+{
+    func didSelectTab(index: Int)
+}
+
 class TinyTabBar: UIView
 {
+    //MARK: Variables
     private
     let             tabWidth:           CGFloat                 = 70
     let             defaultColor:       UIColor                 = UIColor.whiteColor()
     
     internal
-    var             tabs:               [[String : AnyObject]]  = []
+    var             tabs:               [String]                = []
     var             tabViews:           [TabView]               = []
-    var             controllers:        [UIViewController]      = []
     var             selectionColor:     UIColor?
-    var             selectedTabIndex:   Int                     = 0
+    var             selectedTabIndex:   Int?
+
+    var             delegate:           TinyTabBarDelegate?
     
+    //MARK: UIViewController delegate
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
@@ -32,30 +40,43 @@ class TinyTabBar: UIView
         
         var         i           = 0
         
+        self.tabViews = []
         for tab in self.tabs
         {
             let     tabView     = NSBundle.mainBundle().loadNibNamed("TabView", owner: self, options: nil).first as! TabView
             var     tabFrame    = self.frame
+            let     tapRecog    = UITapGestureRecognizer(target: self, action: "didTouchTab:")
             
             tabFrame.origin.x = CGFloat(i) * tabWidth
             tabFrame.origin.y = 0.0
             tabFrame.size.width = tabWidth
             tabView.frame = tabFrame
-            tabView.titleLabel.text = tab["title"] as? String
-            if i == self.selectedTabIndex {
-                tabView.selectionIndicator.hidden = false
-            } else {
-                tabView.selectionIndicator.hidden = true
-            }
+            tabView.titleLabel.text = tab
+            tabView.selectionIndicator.hidden = true
             if self.selectionColor != nil {
                 tabView.selectionIndicator.backgroundColor = self.selectionColor
             } else {
                 tabView.selectionIndicator.backgroundColor = defaultColor
             }
+            tabView.addGestureRecognizer(tapRecog);
             self.addSubview(tabView)
             self.tabViews.append(tabView)
-            self.controllers.append(tab["controller"] as! UIViewController)
             i++;
+        }
+    }
+    
+    //MARK: Tabs handling
+    func didTouchTab(tapRecog: UITapGestureRecognizer)
+    {
+        var         i       = 0
+
+        for tab in self.tabViews
+        {
+            if tab == tapRecog.view!
+            {
+                self.selectTab(i)
+            }
+            i++
         }
     }
     
@@ -72,6 +93,10 @@ class TinyTabBar: UIView
                 self.tabViews[i].selectionIndicator.hidden = true
             }
             i++
+        }
+        if self.delegate != nil
+        {
+            self.delegate?.didSelectTab(index)
         }
     }
 }

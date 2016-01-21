@@ -102,6 +102,7 @@
 		BFC62FB21C5172FC00B554F5 /* TinyTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC62FB11C5172FC00B554F5 /* TinyTabBar.swift */; };
 		BFC62FB41C51785100B554F5 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC62FB31C51785100B554F5 /* TabView.swift */; };
 		BFC62FB61C51785A00B554F5 /* TabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFC62FB51C51785A00B554F5 /* TabView.xib */; };
+		BFC62FB81C51907F00B554F5 /* EventListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC62FB71C51907F00B554F5 /* EventListTableViewController.swift */; };
 		BFC6BF141B4C177000B02CC0 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */; };
 		BFDE16FD1B4E6A0800BCB73F /* MessagesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDE16FC1B4E6A0800BCB73F /* MessagesListTableViewController.swift */; };
 		BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDF4CA61B38582B00D775D7 /* Country.swift */; };
@@ -286,6 +287,7 @@
 		BFC62FB11C5172FC00B554F5 /* TinyTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinyTabBar.swift; sourceTree = "<group>"; };
 		BFC62FB31C51785100B554F5 /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 		BFC62FB51C51785A00B554F5 /* TabView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabView.xib; sourceTree = "<group>"; };
+		BFC62FB71C51907F00B554F5 /* EventListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListTableViewController.swift; sourceTree = "<group>"; };
 		BFC6BF131B4C177000B02CC0 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		BFC6BF151B4C17BB00B02CC0 /* Bird'L-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bird'L-Bridging-Header.h"; sourceTree = "<group>"; };
 		BFDE16FC1B4E6A0800BCB73F /* MessagesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesListTableViewController.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				BFAC2E651B42A7110098B1E6 /* EventDetail */,
+				BFC62FB71C51907F00B554F5 /* EventListTableViewController.swift */,
 				BFAC2E541B4062D90098B1E6 /* EventSearchViewController.swift */,
 				BFAC2E581B40630A0098B1E6 /* EventResultTableViewCell.swift */,
 				BFAC2E591B40630A0098B1E6 /* EventResultTableViewCell.xib */,
@@ -598,8 +601,8 @@
 			isa = PBXGroup;
 			children = (
 				BFAC2E661B42A71D0098B1E6 /* Rows */,
-				BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */,
 				18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */,
+				BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */,
 			);
 			name = EventDetail;
 			sourceTree = "<group>";
@@ -1057,6 +1060,7 @@
 				BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */,
 				BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */,
 				BFAC2E6C1B42A8DA0098B1E6 /* EventDetailTableViewCell.swift in Sources */,
+				BFC62FB81C51907F00B554F5 /* EventListTableViewController.swift in Sources */,
 				BFDF4CA71B38582B00D775D7 /* Country.swift in Sources */,
 				BF377F9B1B50044700099040 /* Message.swift in Sources */,
 				BFAC2E791B42ADCC0098B1E6 /* EventDescRow.swift in Sources */,
