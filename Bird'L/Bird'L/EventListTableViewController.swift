@@ -8,14 +8,14 @@
 
 import UIKit
 
-class EventListTableViewController: UITableViewController, UISearchResultsUpdating
+class EventListTableViewController: UITableViewController, UISearchBarDelegate
 {
     var future: Bool = true
     var events: [Event] = []
     var event: Event!
     var selectedEvent: [EventRow] = []
     var searchResult: [Event] = []
-    var resultSearchController = UISearchController(searchResultsController: nil)
+    var searchBar: UISearchBar = UISearchBar()
     
     //MARK: UIViewController functions
     override func viewDidLoad()
@@ -27,11 +27,10 @@ class EventListTableViewController: UITableViewController, UISearchResultsUpdati
         self.view.backgroundColor = UIColor.clearColor()
         
         self.tableView.registerNib(nibName, forCellReuseIdentifier: "EventResultTableViewCell")
-        self.resultSearchController.searchResultsUpdater = self
-        self.resultSearchController.dimsBackgroundDuringPresentation = false
-        self.resultSearchController.searchBar.sizeToFit()
         
-        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+        self.searchBar.sizeToFit()
+        self.searchBar.delegate = self
+        self.tableView.tableHeaderView = self.searchBar
         self.tableView.tableFooterView = UIView()
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -80,7 +79,7 @@ class EventListTableViewController: UITableViewController, UISearchResultsUpdati
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
         {
-        if self.resultSearchController.active
+        if self.searchBar.text != ""
         {
             return self.searchResult.count
         }
@@ -94,10 +93,10 @@ class EventListTableViewController: UITableViewController, UISearchResultsUpdati
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("EventResultTableViewCell", forIndexPath: indexPath) as! EventResultTableViewCell
         
-        if (self.resultSearchController.active)
+        if self.searchBar.text != ""
         {
             cell.name!.text = self.searchResult[indexPath.row].name
-            cell.name!.text = "\(self.searchResult[indexPath.row].users.count)/\(self.searchResult[indexPath.row].maxSlots) places occupées"
+            cell.slotsLabel!.text = "\(self.searchResult[indexPath.row].users.count)/\(self.searchResult[indexPath.row].maxSlots) places occupées"
             return cell
         }
         else
@@ -128,12 +127,12 @@ class EventListTableViewController: UITableViewController, UISearchResultsUpdati
         self.hidesBottomBarWhenPushed = false
     }
     
-    //MARK: UISearchResultsUpdating delegate
-    func updateSearchResultsForSearchController(searchController: UISearchController)
+    //MARK: UISearchBar delegate
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String)
     {
         self.searchResult.removeAll(keepCapacity: false)
         
-        let searchPredicate = NSPredicate(format: "name CONTAINS[c] %@", self.resultSearchController.searchBar.text!)
+        let searchPredicate = NSPredicate(format: "name CONTAINS[c] %@", self.searchBar.text!)
         let array = (self.events as NSArray).filteredArrayUsingPredicate(searchPredicate)
         self.searchResult = array as! [Event]
         
