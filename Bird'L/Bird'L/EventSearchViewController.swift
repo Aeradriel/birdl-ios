@@ -14,6 +14,8 @@ class EventSearchViewController: UIViewController, TinyTabBarDelegate
     @IBOutlet weak var contentView: UIView!
     
     var controllers: [UIViewController] = []
+    var event: Event?
+    var eventRows: [EventRow] = []
     
     //MARK: UIViewController functions
     override func viewDidLoad()
@@ -25,6 +27,8 @@ class EventSearchViewController: UIViewController, TinyTabBarDelegate
         
         futureVC.future = true
         pastVC.future = false
+        futureVC.parent = self
+        pastVC.parent = self
         self.controllers.append(futureVC)
         self.controllers.append(pastVC)
         self.tinyTabBar.tabs = ["Future", "Past"]
@@ -42,6 +46,25 @@ class EventSearchViewController: UIViewController, TinyTabBarDelegate
         }
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         self.tabBarController?.navigationItem.title = self.title
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if (segue.identifier == "eventDetailsSegue")
+        {
+            let destinationVc: EventDetailViewController = segue.destinationViewController as! EventDetailViewController
+            
+            destinationVc.event = event
+            destinationVc.rows = self.eventRows
+        }
+    }
+    
+    //MARK: Show event
+    func showEvent(event: Event, rows: [EventRow])
+    {
+        self.event = event
+        self.eventRows = rows
+        self.performSegueWithIdentifier("eventDetailsSegue", sender: self)
     }
     
     //MARK: TinyTabBar delegate

@@ -16,6 +16,7 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
     var selectedEvent: [EventRow] = []
     var searchResult: [Event] = []
     var searchBar: UISearchBar = UISearchBar()
+    var parent: EventSearchViewController?
     
     //MARK: UIViewController functions
     override func viewDidLoad()
@@ -123,8 +124,10 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
         self.selectedEvent.append(EventUsersInfoRow(_registered: false, _nbrRegistered: selectedEvent.minSlots, _maxRegistered: selectedEvent.maxSlots))
         self.selectedEvent.append(EventActionsRow(_registered: false, _nbrRegistered: selectedEvent.minSlots, _maxRegistered: selectedEvent.maxSlots))
         self.hidesBottomBarWhenPushed = true
-        performSegueWithIdentifier("eventDetailsSegue", sender: self)
-        self.hidesBottomBarWhenPushed = false
+        if parent != nil
+        {
+            self.parent?.showEvent(event, rows: self.selectedEvent)
+        }
     }
     
     //MARK: UISearchBar delegate
