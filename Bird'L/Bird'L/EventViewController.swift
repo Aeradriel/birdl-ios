@@ -19,7 +19,7 @@ import Foundation
 import UIKit
 import EventKit
 
-class EventViewController: UITableViewController
+class EventViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     //MARK: Instance variables
     
@@ -43,64 +43,97 @@ class EventViewController: UITableViewController
     
     @IBOutlet weak var eventDate: UILabel!
     
-    
     @IBOutlet weak var eventDateTableViewCell: UITableViewCell!
     
     @IBOutlet weak var eventUsersInfoTableViewCell: UITableViewCell!
     
+    @IBOutlet weak var starRating: HCSStarRatingView!
+    
+    @IBOutlet weak var imagePickerButton: UILabel!
+    
+    
+    let imagePicker = UIImagePickerController()
     
     //MARK: UIViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
         self.eventTitle.text = self.event.name
         self.eventDesc.text = self.event.desc
-        self.eventAddress.text = self.event.location
-
-        self.eventUsersInfoTableViewCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        if (self.event.location?.characters.count <= 0) {
+            self.eventAddress.text = "There is no address for this event"
+        }
+        else {
+            self.eventAddress.text = self.event.location
+        }
+        
         
         self.eventDateTableViewCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        self.eventUsersInfoTableViewCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+
+        
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy hh:mm"
+        let dateString = dateFormatter.stringFromDate(self.event.date)
         
         if self.event.date != nil {
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "dd-MM-yyyy hh:mm"
-            let dateString = dateFormatter.stringFromDate(self.event.date)
+            
             self.eventDate.text = dateString
         }
         
-        if (self.event.belongsToCurrentUser == true) {
-            self.eventRegisterButton.hidden = true;
+        let today = NSDate();
+        if (self.event.date != nil && self.event.date.isLessThanDate(today)) {
+            
+            self.event.wasUserPresent();
+            // was user present = true
+            self.eventDate.text = dateString + " - This event is passed";
+            self.eventUsersInfo.text = "You were present to this event";
+            eventRegisterButton.setTitle("Rate this event", forState: .Normal)
+            
+            
+            
             
         }
-        else if (self.event.isCurrentUserRegistered()) {
-            self.eventRegisterButton.hidden = true;
-        }
         else {
-            if (self.event.users.count == 0) {
-                eventRegisterButton.setTitle("Be the first", forState: .Normal)
+            if (self.event.belongsToCurrentUser == true) {
+                self.eventRegisterButton.hidden = true;
+                
             }
-            else if (self.event.users.count == 1) {
-                eventRegisterButton.setTitle("Join him", forState: .Normal)
+            else if (self.event.isCurrentUserRegistered()) {
+                self.eventRegisterButton.hidden = true;
             }
             else {
-                self.eventRegisterButton.setTitle("Join them !", forState: .Normal)
-                self.eventRegisterButton.hidden = false;
+                if (self.event.users.count == 0) {
+                    eventRegisterButton.setTitle("Be the first", forState: .Normal)
+                }
+                else if (self.event.users.count == 1) {
+                    eventRegisterButton.setTitle("Join him", forState: .Normal)
+                }
+                else {
+                    self.eventRegisterButton.setTitle("Join them !", forState: .Normal)
+                    self.eventRegisterButton.hidden = false;
+                }
             }
-        }
         
-        if (self.event.belongsToCurrentUser == true) {
-            self.eventUsersInfo.text = "\(self.event.users.count) / " + String(self.event.maxSlots) + " People registered.";
-            self.eventRegistrationInfo.text = "You created this event."
-        }
-        else if (self.event.isCurrentUserRegistered()) {
-            self.eventUsersInfo.text = "\(self.event.users.count) / " + String(self.event.maxSlots) + " People registered.";
-            self.eventRegistrationInfo.text = "You are registered to this event."
-        }
-        else {
-            self.eventUsersInfo.text = "\(self.event.users.count) / " + String(self.event.maxSlots) + " People registered to this event";
-            self.eventRegistrationInfo.hidden = true
+            if (self.event.belongsToCurrentUser == true) {
+                print("toto1")
+                self.eventUsersInfo.text = "\(self.event.users.count) / " + String(self.event.maxSlots) + " People registered.";
+                self.eventRegistrationInfo.text = "You created this event."
+            }
+            else if (self.event.isCurrentUserRegistered()) {
+                print("toto4")
+                self.eventUsersInfo.text = "\(self.event.users.count) / " + String(self.event.maxSlots) + " People registered.";
+                self.eventRegistrationInfo.text = "You are registered to this event."
+            }
+            else {
+                print("toto3")
+                self.eventUsersInfo.text = "\(self.event.users.count) / " + String(self.event.maxSlots) + " People registered to this event";
+                self.eventRegistrationInfo.hidden = true
+            }
         }
         
         let geocoder = CLGeocoder()
@@ -138,7 +171,7 @@ class EventViewController: UITableViewController
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if (indexPath.row == 5)
+        if (indexPath.row == 4)
         {
             
             let alertController = UIAlertController(title: "Save Event ?", message: "Do you yant to save this event in your calendar ?", preferredStyle: .Alert)
@@ -188,6 +221,56 @@ class EventViewController: UITableViewController
         }
             
             
+    }
+
+    @IBAction func eventRegisterButtonPressed(sender: AnyObject) {
+        let today = NSDate();
+        if (self.event.date != nil && self.event.date.isLessThanDate(today)) {
+            MBProgressHUD.showHUDAddedTo( self.view , animated: true)
+            self.event.rate(Int(self.starRating.value)) { (response, data, error) -> Void in
+                MBProgressHUD.hideHUDForView( self.view , animated: true)
+                let alert = UIAlertController(title: "Alert", message: "Thanks for your rating !", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(UIAlertAction(title: "Close", style: UIAlertActionStyle.Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
+                
+            }
+        }
+        else {
+            MBProgressHUD.showHUDAddedTo( self.view , animated: true)
+            Event.register(event.id, errorHandler: errorRegister) { () -> Void in
+                MBProgressHUD.hideHUDForView( self.view , animated: true)
+                print("success")
+                
+            }
+        }
+    }
+    
+    func errorRegister(result: String) {
+        MBProgressHUD.hideHUDForView( self.view , animated: true)
+        print("error")
+        print(result)
+    }
+    
+    @IBAction func loadImageButtonTapped(sender: AnyObject) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.eventBanner.contentMode = .ScaleAspectFit
+            self.eventBanner.image = pickedImage
+            self.eventBanner.contentMode = UIViewContentMode.ScaleAspectFill;
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
         
 }
