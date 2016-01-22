@@ -52,12 +52,16 @@ class NotificationsTableViewController: UIViewController, UITableViewDataSource,
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let         cell    = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)//tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let         cell    = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: nil)
         let         notif   = self.notifications[indexPath.row]
         
         cell.textLabel!.text = notif.subject
         cell.detailTextLabel?.numberOfLines = 0
         cell.detailTextLabel?.text = notif.desc
+        if notif.seen == false
+        {
+            cell.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+        }
         return cell
     }
 }
