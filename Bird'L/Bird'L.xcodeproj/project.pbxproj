@@ -607,6 +607,8 @@
 				BFAC2E661B42A71D0098B1E6 /* Rows */,
 				18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */,
 				BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */,
+				18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */,
+				1817E5F01C354FC000A91F67 /* EventViewController.swift */,
 			);
 			name = EventDetail;
 			sourceTree = "<group>";
@@ -730,6 +732,7 @@
 				BF377F9A1B50044700099040 /* Message.swift */,
 				BF44DE271B512A6B007A3F05 /* User.swift */,
 				BF7E90121C4001FF002B6AEF /* Notification.swift */,
+				180357AE1C4947B6000C69AC /* Date.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";

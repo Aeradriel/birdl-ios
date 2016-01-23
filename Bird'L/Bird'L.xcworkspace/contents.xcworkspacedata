@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/pierre-olivier-maugis/Documents/Birdl/birdl-ios-last/birdl-ios/Bird&apos;L/Bird&apos;L.xcodeproj">
+      location = "group:Bird&apos;L.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

@@ -77,11 +77,13 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
         
         
         let dateFormatter = NSDateFormatter()
+        var dateString = ""
+        
         dateFormatter.dateFormat = "dd-MM-yyyy hh:mm"
-        let dateString = dateFormatter.stringFromDate(self.event.date)
         
         if self.event.date != nil {
-            
+            dateString = dateFormatter.stringFromDate(self.event.date)
+
             self.eventDate.text = dateString
         }
         

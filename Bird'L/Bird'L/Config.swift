@@ -28,4 +28,6 @@ struct netConfig
     static let messagesUrl = "/messages/"
     static let newMessageUrl = "/messages/new/"
     static let notificationsUrl = "/notifications"
+    static let eventPresenceURL = "/events/presence/"
+    static let eventRateURL = "/user/rate"
 }
