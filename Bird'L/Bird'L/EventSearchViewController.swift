@@ -48,11 +48,16 @@ class EventSearchViewController: UIViewController, TinyTabBarDelegate
         self.tabBarController?.navigationItem.title = self.title
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        print("viewWillDisappear")
+        self.navigationItem.hidesBackButton = false;
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         if (segue.identifier == "eventDetailsSegue")
         {
-            let destinationVc: EventDetailViewController = segue.destinationViewController as! EventDetailViewController
+            let destinationVc: EventViewController = segue.destinationViewController as! EventViewController
             
             destinationVc.event = event
             destinationVc.rows = self.eventRows

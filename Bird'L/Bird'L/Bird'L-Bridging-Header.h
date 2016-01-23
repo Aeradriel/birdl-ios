@@ -12,5 +12,6 @@
 #import <JSQMessagesViewController/JSQMessages.h>
 #import <RFQuiltLayout.h>
 #import "MBProgressHUD.h"
+#import <HCSStarRatingView/HCSStarRatingView.h>
 
 #endif /* Bird_L_Bridging_Header_h */

@@ -158,6 +158,23 @@
                                     <constraint firstAttribute="width" id="weO-bS-HDw"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dez-lJ-dmN">
+                                <rect key="frame" x="0.0" y="567" width="375" height="50"/>
+                                <color key="backgroundColor" red="0.92941176470588238" green="0.40392156862745099" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Medium" family="Lato" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                                <state key="normal" title="Signup">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="1" green="0.49803921568627452" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="136" y="407" width="49" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="signupButtonUp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pJg-Rk-Jzs"/>
+                                    <segue destination="7uK-LV-LwO" kind="show" id="UF7-tw-YZg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.26666666666666666" green="0.16470588235294117" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -451,22 +468,18 @@
                         <outlet property="contentView" destination="Fqd-4H-cuV" id="UhZ-kQ-MFO"/>
                         <outlet property="tinyTabBar" destination="I8b-kj-c4U" id="X62-2s-bAO"/>
                         <outlet property="view" destination="77t-HM-dqH" id="1GN-oa-JGb"/>
-                        <segue destination="Qg8-0A-QaJ" kind="show" identifier="eventDetailsSegue" id="6NK-8y-XZE"/>
+                        <segue destination="vc2-Xt-84e" kind="show" identifier="eventDetailsSegue" id="ZVl-rF-YA3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cfq-Bz-5cE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="820.5" y="3312.5"/>
         </scene>
-        <!--Event Detail View Controller-->
-        <scene sceneID="bsj-et-bhJ">
+        <!--Event View Controller-->
+        <scene sceneID="GqA-Qp-pPm">
             <objects>
-                <viewController id="Qg8-0A-QaJ" customClass="EventDetailViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="M0E-Ih-gEb"/>
-                        <viewControllerLayoutGuide type="bottom" id="32s-gh-obM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fOv-5N-Q5X">
+                <tableViewController id="vc2-Xt-84e" customClass="EventViewController" customModule="Bird_L" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="20y-wy-c0u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -488,13 +501,24 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="5qc-yd-N4N" id="oUd-Nm-z78"/>
-                        <segue destination="NEp-OJ-iXr" kind="show" identifier="showEventUsers" id="YS0-ZJ-Pxa"/>
+                        <outlet property="eventAddress" destination="yY1-US-7h6" id="CSn-at-vQZ"/>
+                        <outlet property="eventBanner" destination="0DJ-q7-qru" id="dij-Fk-Tqz"/>
+                        <outlet property="eventDate" destination="smk-3f-shq" id="ddb-1n-xCf"/>
+                        <outlet property="eventDateTableViewCell" destination="3xU-Xb-eTJ" id="Oig-dx-sxU"/>
+                        <outlet property="eventDesc" destination="qyv-Uh-hCB" id="g5K-dK-ixR"/>
+                        <outlet property="eventMap" destination="Ami-zj-9lP" id="1o8-2M-dnv"/>
+                        <outlet property="eventRegisterButton" destination="cw3-h4-jXo" id="STA-ho-hfh"/>
+                        <outlet property="eventRegistrationInfo" destination="QyH-x0-UfJ" id="2oo-fU-UES"/>
+                        <outlet property="eventTitle" destination="Dia-ca-191" id="PfG-7I-VV9"/>
+                        <outlet property="eventUsersInfo" destination="bzA-yw-Ozl" id="p6U-Le-38O"/>
+                        <outlet property="eventUsersInfoTableViewCell" destination="4hY-Ve-1bB" id="6vu-3t-jXZ"/>
+                        <outlet property="imagePickerButton" destination="Dia-ca-191" id="kIN-e7-Z52"/>
+                        <outlet property="starRating" destination="S9D-p4-uNb" id="h6T-YQ-G2U"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="31v-a4-t1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DA3-mt-BD0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516.5" y="3312.5"/>
+            <point key="canvasLocation" x="1405.5" y="3313.5"/>
         </scene>
         <!--Event Users View Controller-->
         <scene sceneID="8da-Q6-Fbq">
@@ -548,7 +572,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ef-iM-iIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2113.5" y="3312.5"/>
+            <point key="canvasLocation" x="2084.5" y="3312.5"/>
         </scene>
         <!--Birdl Tab Bar Controller-->
         <scene sceneID="E3b-de-Cmo">
@@ -1117,6 +1141,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="256" height="256"/>
+        <image name="camera-icon" width="512" height="512"/>
         <image name="email" width="256" height="256"/>
         <image name="home" width="256" height="256"/>
         <image name="logo_birdl_HD" width="8000" height="2239"/>

@@ -21,6 +21,7 @@ class Event : NSObject
     var ownerId: Int!
     var addressId: Int!
     var language: String?
+    var location: String?
     var belongsToCurrentUser = false;
     var currentUserRegistered : Bool?
     var users: [User] = []
@@ -49,6 +50,9 @@ class Event : NSObject
         self.addressId = addressId
         self.language = language
         self.currentUserRegistered = currentUserRegistered
+        self.location = location
+        print(self.name)
+        print(self.location)
     }
     
     func toDictionary() -> [String : AnyObject]
@@ -88,6 +92,7 @@ class Event : NSObject
                         for event in events
                         {
                             var address = 0
+                            var location : String = "";
                             
                             if (event["address_id"].asInt != nil)
                             {
@@ -193,5 +198,36 @@ class Event : NSObject
             }
         }
         return false
+    }
+    
+    func wasUserPresent() {
+        let url = NSURL(string: netConfig.apiURL + netConfig.eventPresenceURL + "?user_id=\(User.currentUser().id)&event_id=\(self.id)")
+        print (url);
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "GET"
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil) {
+                    let datastring = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("totototo:\(datastring)")
+                }
+        }
+    }
+    
+    func rate(rating: Int, completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
+        let url = NSURL(string: netConfig.apiURL + netConfig.eventRateURL)
+        print (url);
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "POST"
+        let bodyData = "user_id=\(User.currentUser()).id&event_id=\(self.id)&value=\(rating)"
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                completion(response, data, error)
+        }
     }
 }

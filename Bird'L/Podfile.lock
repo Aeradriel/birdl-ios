@@ -1,4 +1,5 @@
 PODS:
+  - HCSStarRatingView (1.4.3)
   - JSQMessagesViewController (7.2.0):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
@@ -6,11 +7,13 @@ PODS:
   - RFQuiltLayout (1.1.1)
 
 DEPENDENCIES:
+  - HCSStarRatingView
   - JSQMessagesViewController
   - MBProgressHUD
   - RFQuiltLayout
 
 SPEC CHECKSUMS:
+  HCSStarRatingView: bada6ae98258c3019531e0218030e2d5ad10765a
   JSQMessagesViewController: 73cab48aa92fc2d512f3b6724f3425cc47a19eb5
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
