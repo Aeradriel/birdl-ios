@@ -75,11 +75,16 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
     //MARK: UITableViewController delegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 1
+        return 2
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
+        return section == 0 ? "Événements auxquels je participe" : "Tous les événements"
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-        {
+    {
         if self.searchBar.text != ""
         {
             return self.searchResult.count
