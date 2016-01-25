@@ -12,9 +12,11 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
 {
     var future: Bool = true
     var events: [Event] = []
+    var userEvents: [Event] = []
     var event: Event!
     var selectedEvent: [EventRow] = []
     var searchResult: [Event] = []
+    var userEventsSearchResult: [Event] = []
     var searchBar: UISearchBar = UISearchBar()
     var parent: EventSearchViewController?
     
@@ -36,6 +38,7 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
         Event.all(self.future, errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
+        Event.all(self.future, userEvents: true, errorHandler: self.errorHandler, successHandler: self.eventsUserRetrieved)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -72,6 +75,12 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
         self.tableView.reloadData()
     }
     
+    func eventsUserRetrieved(events: [Event])
+    {
+        self.userEvents = events
+        self.tableView.reloadData()
+    }
+    
     //MARK: UITableViewController delegate
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
@@ -87,11 +96,11 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
     {
         if self.searchBar.text != ""
         {
-            return self.searchResult.count
+            return section == 0 ? self.userEventsSearchResult.count : self.searchResult.count
         }
         else
         {
-            return self.events.count
+            return section == 0 ? self.userEvents.count : self.events.count
         }
     }
     
@@ -101,14 +110,18 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
         
         if self.searchBar.text != ""
         {
-            cell.name!.text = self.searchResult[indexPath.row].name
-            cell.slotsLabel!.text = "\(self.searchResult[indexPath.row].users.count)/\(self.searchResult[indexPath.row].maxSlots) places occupées"
+            let event = indexPath.section == 0 ? self.userEventsSearchResult[indexPath.row] : searchResult[indexPath.row]
+            
+            cell.name!.text = event.name
+            cell.slotsLabel!.text = "\(event.users.count)/\(event.maxSlots) places occupées"
             return cell
         }
         else
         {
-            cell.name!.text = self.events[indexPath.row].name
-            cell.slotsLabel!.text = "\(self.events[indexPath.row].users.count)/\(self.events[indexPath.row].maxSlots) places occupées"
+            let event = indexPath.section == 0 ? self.userEvents[indexPath.row] : events[indexPath.row]
+            
+            cell.name!.text = event.name
+            cell.slotsLabel!.text = "\(event.users.count)/\(event.maxSlots) places occupées"
             return cell
         }
     }
@@ -142,7 +155,10 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
         
         let searchPredicate = NSPredicate(format: "name CONTAINS[c] %@", self.searchBar.text!)
         let array = (self.events as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        let array2 = (self.userEvents as NSArray).filteredArrayUsingPredicate(searchPredicate)
+        
         self.searchResult = array as! [Event]
+        self.searchResult = array2 as! [Event]
         
         self.tableView.reloadData()
     }
