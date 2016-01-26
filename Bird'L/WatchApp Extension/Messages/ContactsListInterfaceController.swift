@@ -31,6 +31,7 @@ class ContactsListInterfaceController: WKInterfaceController
     {
         super.willActivate()
         
+        self.setupTable()
         if (WCSession.defaultSession().reachable)
         {
             let dic = [ "request" : "contactList" ]
@@ -52,7 +53,7 @@ class ContactsListInterfaceController: WKInterfaceController
             if (contacts != self.contacts)
             {
                 self.contacts = contacts
-                self.setupTable()
+                self.performSelectorOnMainThread("setupTable", withObject: nil, waitUntilDone: false)
             }
         }
     }
@@ -66,6 +67,7 @@ class ContactsListInterfaceController: WKInterfaceController
     //MARK: WKInterfaceTable handling
     func setupTable()
     {
+        self.table.setNumberOfRows(0, withRowType: "ContactListRow")
         self.table.setNumberOfRows(self.contacts.count, withRowType: "ContactListRow")
         
         for (var i = 0; i < self.contacts.count; ++i)

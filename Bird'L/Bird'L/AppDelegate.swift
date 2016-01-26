@@ -66,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate
         }
         else if (message["request"] as? String == "eventList")
         {
-            Event.all(errorHandler: { (err) -> Void in
+            Event.all(true, userEvents: true, errorHandler: { (err) -> Void in
                 print("\(err)")
                 }, successHandler: { (events) -> Void in
                     var eventsDic = [[String : AnyObject]]()

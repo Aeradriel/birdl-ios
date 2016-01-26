@@ -33,6 +33,7 @@ class EventsInterfaceController: WKInterfaceController
     {
         super.willActivate()
         
+        self.setupTable()
         if (WCSession.defaultSession().reachable)
         {
             let dic = [ "request" : "eventList" ]
@@ -66,7 +67,7 @@ class EventsInterfaceController: WKInterfaceController
                     }
                     i++;
                 }
-                self.setupTable()
+                self.performSelectorOnMainThread("setupTable", withObject: nil, waitUntilDone: false)
             }
         }
     }
@@ -80,23 +81,23 @@ class EventsInterfaceController: WKInterfaceController
     //MARK: WKInterfaceTable handling
     func setupTable()
     {
+        self.table.setRowTypes([String]())
         self.table.setRowTypes(self.rowTypes)
-        
         for var i = 0; i < table.numberOfRows; i++
         {
             let event = self.events[i / 2]
             let dateFormatter = NSDateFormatter()
-            //let dateFormatterDay = NSDateFormatter()
+            let dateFormatterDay = NSDateFormatter()
             var dateBegin = ""
-            //var dateBeginDay = ""
+            var dateBeginDay = ""
             var dateEnd = ""
 
             dateFormatter.dateFormat = "hh:mm"
-            //dateFormatterDay.dateFormat = "EEE. d MMM."
+            dateFormatterDay.dateFormat = "EEE. d MMM."
             if event["date"] != nil
             {
                 dateBegin = dateFormatter.stringFromDate(event["date"] as! NSDate)
-                //dateBeginDay = dateFormatterDay.stringFromDate(event["date"] as! NSDate)
+                dateBeginDay = dateFormatterDay.stringFromDate(event["date"] as! NSDate)
             }
             if (event["end"] != nil)
             {
@@ -107,7 +108,7 @@ class EventsInterfaceController: WKInterfaceController
             case "dayTableRow":
                 let row = table.rowControllerAtIndex(i) as! EventDayTableRow
                 
-                row.dayLabel.setText("")
+                row.dayLabel.setText(dateBeginDay)
             case "eventTableRow":
                 let row = table.rowControllerAtIndex(i) as! EventTableRow
                 
