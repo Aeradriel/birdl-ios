@@ -60,11 +60,8 @@ class EventsInterfaceController: WKInterfaceController
                 self.rowTypes = [String]()
                 for _ in self.events
                 {
-                    if (i < 5)
-                    {
-                        self.rowTypes.append("dayTableRow");
-                        self.rowTypes.append("eventTableRow");
-                    }
+                    self.rowTypes.append("dayTableRow");
+                    self.rowTypes.append("eventTableRow");
                     i++;
                 }
                 self.performSelectorOnMainThread("setupTable", withObject: nil, waitUntilDone: false)
@@ -93,7 +90,7 @@ class EventsInterfaceController: WKInterfaceController
             var dateEnd = ""
 
             dateFormatter.dateFormat = "hh:mm"
-            dateFormatterDay.dateFormat = "EEE. d MMM."
+            dateFormatterDay.dateFormat = "EEE d MMM."
             if event["date"] != nil
             {
                 dateBegin = dateFormatter.stringFromDate(event["date"] as! NSDate)
@@ -113,7 +110,7 @@ class EventsInterfaceController: WKInterfaceController
                 let row = table.rowControllerAtIndex(i) as! EventTableRow
                 
                 row.eventTitleLabel.setText("\(event["name"]!)")
-                row.eventDetailsLabel.setText("\(event["location"])\n\(dateBegin)-\(dateEnd)")
+                row.eventDetailsLabel.setText("\(event["location"] == nil ? "" : "\(event["location"])\n")\(dateBegin)-\(dateEnd)")
             default: ()
             }
         }
