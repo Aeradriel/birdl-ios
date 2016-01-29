@@ -32,4 +32,5 @@ struct netConfig
     static let eventPresenceURL = "/events/presence/"
     static let eventRateURL = "/user/rate"
     static let eventUnregister = "/events/unregister/"
+    static let addRelationUrl = "/user/relations"
 }

@@ -90,6 +90,20 @@ class User : NSObject
         }
     }
     
+    func addRelation() {
+        let url = NSURL(string: netConfig.apiURL + netConfig.addRelationUrl)
+        print (url);
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "POST"
+        let bodyData = "user_id=\(self.id)"
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                print (data)
+        }
+    }
     
     //MARK: Singleton implementation
     class func currentUser() -> User
