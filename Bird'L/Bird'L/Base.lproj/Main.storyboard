@@ -285,6 +285,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="1" green="0.52941176470588236" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="DGr-j0-4HK" id="YiB-MR-1hE"/>
                             <outlet property="delegate" destination="DGr-j0-4HK" id="bar-0p-1Bc"/>
@@ -725,7 +726,6 @@
                         <outlet property="eventUsersInfo" destination="bzA-yw-Ozl" id="p6U-Le-38O"/>
                         <outlet property="eventUsersInfoTableViewCell" destination="4hY-Ve-1bB" id="6vu-3t-jXZ"/>
                         <outlet property="imagePickerButton" destination="Dia-ca-191" id="kIN-e7-Z52"/>
-                        <outlet property="starRating" destination="S9D-p4-uNb" id="h6T-YQ-G2U"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DA3-mt-BD0" userLabel="First Responder" sceneMemberID="firstResponder"/>

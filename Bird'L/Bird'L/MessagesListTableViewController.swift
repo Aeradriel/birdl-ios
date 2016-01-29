@@ -38,6 +38,7 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
         self.tabBarController?.navigationItem.title = self.title
+        MBProgressHUD.showHUDAddedTo( self.view , animated: true)
         User.relations(errorHandler: self.errorHandler, successHandler: self.relationsDidLoad)
     }
     
@@ -61,6 +62,7 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
     {
         self.relations = relations
         self.tableView.reloadData()
+        MBProgressHUD.hideHUDForView( self.view , animated: true)
     }
     
     func errorHandler(error: String)

@@ -75,10 +75,30 @@ class User : NSObject
         return dic
     }
     
+    func rate(rating: Int, event: Event, completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
+        let url = NSURL(string: netConfig.apiURL + netConfig.eventRateURL)
+        print (url);
+        let request = NSMutableURLRequest(URL: url!)
+        
+        request.HTTPMethod = "POST"
+        let bodyData = "user_id=\(self.id).id&event_id=\(event.id)&value=\(rating)"
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                completion(response, data, error)
+        }
+    }
+    
+    
     //MARK: Singleton implementation
     class func currentUser() -> User
     {
         return self.current
+    }
+    
+    class func getWithId(id : Int, completion : (user : User) -> Void) {
+        
     }
     
     class func setCurrentUser(userInfos: [String : JSON])

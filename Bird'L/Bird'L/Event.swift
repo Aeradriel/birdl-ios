@@ -25,6 +25,7 @@ class Event : NSObject
     var belongsToCurrentUser = false;
     var currentUserRegistered : Bool?
     var users: [User] = []
+    var owner: User?
     
     init(id: Int, name: String, type: String, minSlots: Int, maxSlots: Int, date: String?, end: String?, desc: String?, ownerId: Int, addressId: Int!, language: String?, currentUserRegistered: Bool, location: String)
     {
@@ -32,6 +33,33 @@ class Event : NSObject
         
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
 
+        self.id = id
+        self.name = name
+        self.type = type
+        self.minSlots = minSlots
+        self.maxSlots = maxSlots
+        if date != nil
+        {
+            self.date = dateFormatter.dateFromString(date!)
+        }
+        if end != nil
+        {
+            self.end = dateFormatter.dateFromString(end!)
+        }
+        self.desc = desc
+        self.ownerId = ownerId
+        self.addressId = addressId
+        self.language = language
+        self.currentUserRegistered = currentUserRegistered
+        self.location = location
+    }
+    
+    func reinit(id: Int, name: String, type: String, minSlots: Int, maxSlots: Int, date: String?, end: String?, desc: String?, ownerId: Int, addressId: Int!, language: String?, currentUserRegistered: Bool, location: String)
+    {
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        
         self.id = id
         self.name = name
         self.type = type
@@ -84,7 +112,7 @@ class Event : NSObject
                 if (data != nil) {
                     let json = JSON(data: data!)
                     var ret: [Event] = []
-                    
+                    print(data)
                     if let events = json["events"].asArray
                     {
                         for event in events
@@ -103,8 +131,15 @@ class Event : NSObject
                             let newEvent = Event(id: event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, end: event["end"].asString,  desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: address, language: event["language"].asString, currentUserRegistered: true, location: location)
                             
                             if let users = event["users"].asArray {
+                                var userObject : User?
                                 for user in users {
-                                    newEvent.users.append(User(userJson: user))
+                                    userObject = User(userJson: user)
+                                    if (userObject!.id == newEvent.ownerId) {
+                                        newEvent.owner = userObject
+                                    }
+                                    else {
+                                        newEvent.users.append(userObject!)
+                                    }
                                 }
                                 print(newEvent.users.count)
                             }
@@ -117,6 +152,8 @@ class Event : NSObject
                             }
                             ret.append(newEvent)
                         }
+                        
+                    
                         successFunc(ret)
                     }
                     else
@@ -202,8 +239,8 @@ class Event : NSObject
         return false
     }
     
-    func wasUserPresent() {
-        let url = NSURL(string: netConfig.apiURL + netConfig.eventPresenceURL + "?user_id=\(User.currentUser().id)&event_id=\(self.id)")
+    func wasUserPresent(user: User, completion: ((NSString) -> Void)) {
+        let url = NSURL(string: netConfig.apiURL + netConfig.eventPresenceURL + "?user_id=\(user.id)&event_id=\(self.id)")
         print (url);
         let request = NSMutableURLRequest(URL: url!)
         
@@ -213,18 +250,79 @@ class Event : NSObject
             { (response, data, error) in
                 if (data != nil) {
                     let datastring = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                    print("totototo:\(datastring)")
+                    print(datastring!)
                 }
         }
     }
     
-    func rate(rating: Int, completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
-        let url = NSURL(string: netConfig.apiURL + netConfig.eventRateURL)
+    func unregister(completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
+        let url = NSURL(string: netConfig.apiURL + netConfig.eventUnregister + "\(self.id)")
+        print (url);
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "POST"
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                completion(response, data, error)
+        }
+    }
+    
+    func reload(completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
+        let url = NSURL(string: netConfig.apiURL + netConfig.eventUrl + "?event_id=\(self.id)")
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "GET"
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil) {
+                    let json = JSON(data: data!)
+                    let events = json["events"].asArray
+                    var address = 0
+                    var location : String = "";
+                    for event in events!
+                    {
+                        if (event["id"].asInt == self.id) {
+                            if (event["address_id"].asInt != nil) {
+                                address = event["address_id"].asInt!
+                            }
+                            let locationJson = event["location"];
+                            if (!locationJson.isNull) {
+                                location = locationJson.asString!
+                            }
+                            self.reinit(event["id"].asInt!, name: event["name"].asString!, type: event["type"].asString!, minSlots: event["min_slots"].asInt!, maxSlots: event["max_slots"].asInt!, date: event["date"].asString!, end: event["end"].asString,  desc: event["desc"].asString, ownerId: event["owner_id"].asInt!, addressId: address, language: event["language"].asString, currentUserRegistered: true, location: location)
+                            if let users = event["users"].asArray {
+                                self.users = []
+                                var userObject : User?
+                                for user in users {
+                                    userObject = User(userJson: user)
+                                    if (userObject!.id == self.ownerId) {
+                                        self.owner = userObject
+                                    }
+                                    else {
+                                        self.users.append(userObject!)
+                                    }
+                                }
+                                self.currentUserRegistered = self.isCurrentUserRegistered()
+                                print("totot")
+                                print(self.currentUserRegistered)
+                            }
+                        
+                        
+                        }
+                    }
+                }
+                completion(response, data, error)
+        }
+    
+    }
+    
+    func validatePresence(user : User, was_there: Int, completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
+        let url = NSURL(string: netConfig.apiURL + netConfig.eventPresenceURL)
         print (url);
         let request = NSMutableURLRequest(URL: url!)
         
         request.HTTPMethod = "POST"
-        let bodyData = "user_id=\(User.currentUser()).id&event_id=\(self.id)&value=\(rating)"
+        let bodyData = "user_id=\(user.id).id&event_id=\(self.id)&was_there=\(was_there)"
         request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
         request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())

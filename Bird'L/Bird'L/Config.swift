@@ -20,6 +20,7 @@ struct netConfig
     static let countriesUrl = "/countries/"
     static let accountEditionUrl = "/me/"
     static let eventsUrl = "/events/"
+    static let eventUrl = "/events"
     static let futureEventsUrl = "/events/future"
     static let registerEventUrl = "/events/register/"
     static let checkEventUrl = "/events/check/"
@@ -30,4 +31,5 @@ struct netConfig
     static let notificationsUrl = "/notifications"
     static let eventPresenceURL = "/events/presence/"
     static let eventRateURL = "/user/rate"
+    static let eventUnregister = "/events/unregister/"
 }
