@@ -33,7 +33,7 @@ class MessagesViewController: JSQMessagesViewController, UITextFieldDelegate
     override func viewWillAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
-        
+        MBProgressHUD.showHUDAddedTo( self.view , animated: true)
         Message.with(self.relationId, successFunc: self.messagesDidLoad, errorFunc: self.errorHandler)
     }
     
@@ -48,6 +48,7 @@ class MessagesViewController: JSQMessagesViewController, UITextFieldDelegate
             self.messages += [newMessage]
         }
         self.collectionView!.reloadData()
+        MBProgressHUD.hideHUDForView( self.view , animated: true)
     }
     
     func messageDidNotPublish(error: String)

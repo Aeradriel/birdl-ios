@@ -37,9 +37,11 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
         self.tableView.tableFooterView = UIView()
         self.tableView.estimatedRowHeight = 150
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        MBProgressHUD.showHUDAddedTo( self.view , animated: true)
         Event.all(self.future, errorHandler: self.errorHandler, successHandler: self.eventsRetrieved)
         Event.all(self.future, userEvents: true, errorHandler: self.errorHandler, successHandler: self.eventsUserRetrieved)
     }
+    
     
     override func viewWillAppear(animated: Bool)
     {
@@ -79,6 +81,7 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
     {
         self.userEvents = events
         self.tableView.reloadData()
+        MBProgressHUD.hideHUDForView(self.view , animated: true)
     }
     
     //MARK: UITableViewController delegate
@@ -112,7 +115,7 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
         {
             let event = indexPath.section == 0 ? self.userEventsSearchResult[indexPath.row] : searchResult[indexPath.row]
             
-            cell.name!.text = event.name
+            cell.name!.text = event.name + (event.language != nil ? " - " + event.language! : "")
             cell.slotsLabel!.text = "\(event.users.count)/\(event.maxSlots) places occupées"
             return cell
         }
@@ -120,7 +123,7 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
         {
             let event = indexPath.section == 0 ? self.userEvents[indexPath.row] : events[indexPath.row]
             
-            cell.name!.text = event.name
+            cell.name!.text = event.name + (event.language != nil ? " - " + event.language! : "")
             cell.slotsLabel!.text = "\(event.users.count)/\(event.maxSlots) places occupées"
             return cell
         }
@@ -128,9 +131,9 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        let selectedEvent = self.events[indexPath.row]
+        let selectedEvent = indexPath.section == 0 ? self.userEvents[indexPath.row] : events[indexPath.row]
+        self.event = indexPath.section == 0 ? self.userEvents[indexPath.row] : events[indexPath.row]
         
-        self.event = events[indexPath.row]
         self.selectedEvent = []
         self.selectedEvent.append(EventBannerRow(imagePath: "bowling"))
         if selectedEvent.desc != nil
