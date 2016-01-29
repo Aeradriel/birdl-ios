@@ -1,0 +1,90 @@
+
+/* Class = "UITextField"; placeholder = "First name"; ObjectID = "0Oy-Fn-hSd"; */
+"0Oy-Fn-hSd.placeholder" = "First name";
+
+/* Class = "UITabBarItem"; title = "Notifications"; ObjectID = "3nS-Sc-twG"; */
+"3nS-Sc-twG.title" = "Notifications";
+
+/* Class = "UIButton"; normalTitle = "Signin"; ObjectID = "5tw-nd-Kx3"; */
+"5tw-nd-Kx3.normalTitle" = "Signin";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "6qk-4X-xsM"; */
+"6qk-4X-xsM.text" = "Password";
+
+/* Class = "UIViewController"; title = "Notifications"; ObjectID = "7Id-s5-NST"; */
+"7Id-s5-NST.title" = "Notifications";
+
+/* Class = "UITabBarItem"; title = "Événements"; ObjectID = "8nR-Id-2gN"; */
+"8nR-Id-2gN.title" = "Événements";
+
+/* Class = "UITabBarItem"; title = "Accueil"; ObjectID = "9vm-ij-W7W"; */
+"9vm-ij-W7W.title" = "Accueil";
+
+/* Class = "UILabel"; text = "Username"; ObjectID = "DCf-Ul-Phd"; */
+"DCf-Ul-Phd.text" = "Username";
+
+/* Class = "UITableViewController"; title = "Mon Compte"; ObjectID = "DGr-j0-4HK"; */
+"DGr-j0-4HK.title" = "Mon Compte";
+
+/* Class = "UIButton"; normalTitle = "Signup"; ObjectID = "Dez-lJ-dmN"; */
+"Dez-lJ-dmN.normalTitle" = "Signup";
+
+/* Class = "UINavigationItem"; title = "Root View Controller"; ObjectID = "Iwa-r6-k8r"; */
+"Iwa-r6-k8r.title" = "Root View Controller";
+
+/* Class = "UITabBarItem"; title = "Messages"; ObjectID = "OWP-2g-VS1"; */
+"OWP-2g-VS1.title" = "Messages";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "TwV-b0-CtB"; */
+"TwV-b0-CtB.normalTitle" = "Next";
+
+/* Class = "UITextField"; placeholder = "Last name"; ObjectID = "VrM-ea-FjC"; */
+"VrM-ea-FjC.placeholder" = "Last name";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "Xop-dm-MYA"; */
+"Xop-dm-MYA.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "cw3-h4-jXo"; */
+"cw3-h4-jXo.normalTitle" = "Register";
+
+/* Class = "UINavigationItem"; title = "Accueil"; ObjectID = "joi-xG-RKS"; */
+"joi-xG-RKS.title" = "Accueil";
+
+/* Class = "UIButton"; normalTitle = "Create Account !"; ObjectID = "k2F-V9-1cE"; */
+"k2F-V9-1cE.normalTitle" = "Create Account !";
+
+/* Class = "UITextField"; placeholder = "Password verification"; ObjectID = "lCh-In-hir"; */
+"lCh-In-hir.placeholder" = "Password verification";
+
+/* Class = "UIViewController"; title = "Événements"; ObjectID = "m2L-5E-eBF"; */
+"m2L-5E-eBF.title" = "Événements";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "mgU-ck-vW7"; */
+"mgU-ck-vW7.text" = "Email";
+
+/* Class = "UISegmentedControl"; n4f-2m-0Xm.segmentTitles[0] = "Male"; ObjectID = "n4f-2m-0Xm"; */
+"n4f-2m-0Xm.segmentTitles[0]" = "Male";
+
+/* Class = "UISegmentedControl"; n4f-2m-0Xm.segmentTitles[1] = "Female"; ObjectID = "n4f-2m-0Xm"; */
+"n4f-2m-0Xm.segmentTitles[1]" = "Female";
+
+/* Class = "UITabBarItem"; title = "Profil"; ObjectID = "oSv-xb-O9K"; */
+"oSv-xb-O9K.title" = "Profil";
+
+/* Class = "UIViewController"; title = "Accueil"; ObjectID = "pjr-b7-oMz"; */
+"pjr-b7-oMz.title" = "Accueil";
+
+/* Class = "UIViewController"; title = "Messages"; ObjectID = "rjd-o5-1iH"; */
+"rjd-o5-1iH.title" = "Messages";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "rri-hz-tJ8"; */
+"rri-hz-tJ8.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = " Password"; ObjectID = "tte-fc-msG"; */
+"tte-fc-msG.placeholder" = " Password";
+
+/* Class = "UITextField"; placeholder = " Login"; ObjectID = "xVT-pe-OzW"; */
+"xVT-pe-OzW.placeholder" = " Login";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "xoL-4G-ZPc"; */
+"xoL-4G-ZPc.normalTitle" = "Next";

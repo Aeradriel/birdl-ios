@@ -129,8 +129,8 @@ class AccountViewController: FormViewController, UITextFieldDelegate
     
     func userDidUpdate()
     {
-        let title = "Profil mis à jour"
-        let message = "Votre profil a bien été mis à jour"
+        let title = NSLocalizedString("profile_updated_title", comment: "")
+        let message = NSLocalizedString("profile_updated_message", comment: "")
         
         UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: "OK").show()
     }
@@ -151,7 +151,7 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         }
         if error != ""
         {
-            UIAlertView(title: "Erreur", message: error, delegate: nil, cancelButtonTitle: "OK").show()
+            UIAlertView(title: NSLocalizedString("error", comment: ""), message: error, delegate: nil, cancelButtonTitle: "OK").show()
         }
         else
         {
@@ -175,7 +175,7 @@ class AccountViewController: FormViewController, UITextFieldDelegate
         let section1 = FormSectionDescriptor()
         var row: FormRowDescriptor
         
-        section1.headerTitle = "Informations personnelles"
+        section1.headerTitle = NSLocalizedString("personal_informations", comment: "")
         row = FormRowDescriptor(tag: "fname", rowType: .Email, title: "Prénom")
         row.configuration[FormRowDescriptor.Configuration.CellConfiguration] = ["textField.placeholder" : "John", "textField.textAlignment" : NSTextAlignment.Right.rawValue, "backgroundColor" : color2, "textField.textColor" : color3, "titleLabel.textColor" : UIColor.blackColor()]
         section1.addRow(row)

@@ -26,7 +26,6 @@ class EventActionsTableViewCell: EventDetailTableViewCell
     //MARK: Custom methods
     override func fillCell(row: EventRow)
     {
-        let eventRow = row as! EventActionsRow;
         if (self.event.belongsToCurrentUser == true) {
             self.registerButton.hidden = true;
             

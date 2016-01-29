@@ -53,12 +53,12 @@ class MessagesViewController: JSQMessagesViewController, UITextFieldDelegate
     
     func messageDidNotPublish(error: String)
     {
-        UIAlertView(title: "Erreur", message: "Erreur lors de l'envoi du message\n\n\(error)", delegate: nil, cancelButtonTitle: "OK").show()
+        UIAlertView(title: NSLocalizedString("error", comment: ""), message: NSLocalizedString("error_sending_message", comment: "") + "\n\n\(error)", delegate: nil, cancelButtonTitle: "OK").show()
     }
 
     func errorHandler(error: String)
     {
-        UIAlertView(title: "Erreur", message: error, delegate: nil, cancelButtonTitle: "OK").show()
+        UIAlertView(title: NSLocalizedString("error", comment: ""), message: error, delegate: nil, cancelButtonTitle: "OK").show()
     }
     
     //MARK: JSQMessagesViewController methods

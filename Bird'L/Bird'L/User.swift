@@ -167,7 +167,7 @@ class User : NSObject
                 }
             }
             else {
-                errorFunc!("Can't reach server")
+                errorFunc!(NSLocalizedString("no_server", comment: ""))
             }
         }
     }
@@ -210,7 +210,7 @@ class User : NSObject
             else {
                 if errorFunc != nil
                 {
-                    errorFunc!("Can't reach server")
+                    errorFunc!(NSLocalizedString("no_server", comment: ""))
                 }
             }
         }
@@ -279,7 +279,7 @@ class User : NSObject
                 }
                 else
                 {
-                    errorFunc("Cannot reach server")
+                    errorFunc(NSLocalizedString("no_server", comment: ""))
                 }
         }
     }

@@ -1,0 +1,33 @@
+
+/* Class = "WKInterfaceLabel"; text = "Coming Soon !"; ObjectID = "1I2-8Y-n87"; */
+"1I2-8Y-n87.text" = "Coming Soon !";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "D3B-MX-oI8"; */
+"D3B-MX-oI8.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "U5C-OB-Stj"; */
+"U5C-OB-Stj.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Nouvelle alerte !"; ObjectID = "XkS-y5-khE"; */
+"XkS-y5-khE.text" = "Nouvelle alerte !";
+
+/* Class = "WKInterfaceMenuItem"; title = "Prochain événement"; ObjectID = "ceI-P5-sgZ"; */
+"ceI-P5-sgZ.title" = "Prochain événement";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "gzr-Gw-btz"; */
+"gzr-Gw-btz.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "jBO-TH-ssv"; */
+"jBO-TH-ssv.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "kN1-Ew-Ycs"; */
+"kN1-Ew-Ycs.text" = "Label";
+
+/* Class = "WKInterfaceLabel"; text = "Label"; ObjectID = "nFJ-GS-SCX"; */
+"nFJ-GS-SCX.text" = "Label";
+
+/* Class = "WKInterfaceMenuItem"; title = "Messages"; ObjectID = "tVg-1k-D0C"; */
+"tVg-1k-D0C.title" = "Messages";
+
+/* Class = "WKInterfaceLabel"; text = "Coming Soon"; ObjectID = "tfn-vg-dOi"; */
+"tfn-vg-dOi.text" = "Coming Soon";

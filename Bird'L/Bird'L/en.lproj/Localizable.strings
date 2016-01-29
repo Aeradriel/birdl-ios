@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  Bird'L
+
+  Created by Pierre-Olivier Maugis on 29/01/2016.
+  Copyright © 2016 Birdl. All rights reserved.
+*/
+
+lang = "EN";
+
+enter_same_password = "You must enter the same password in both fields";
+error = "Error";
+error_sending_message = "An error occured while sending the message";
+
+
+profile_updated_title = "Profile updated";
+profile_updated_message = "Your profile has been updated";
+
+all_events = "All events";
+no_server = "Can't reach server";
+personal_informations = "Personnal informations";
+cant_get_event_list = "Can't get event list";
+events_where_im_registered = "Events where i'm registered";
+occupied = "Occupied";
+event_creator = "Event creator";
+users_registered = "Registered users";
+presence_validation = "Presence validation";
+was_this_user_present_to_event = "Was this user present to your event ?";
+yes = "Yes";
+no = "No";
+no_address_for_event = "There is no address for this event";
+you_created_event = "You created this event.";
+no_more_place_for_event = "No more rooms left for this event";
+be_the_first = "Be the first !";
+join_him = "Join him !";
+join_them = "Join them !";
+registered = "Registered";
+save_event = "Save event ?";
+save_event_in_calendar = "Do you want to save this event in your calendar ?";
+done = "Done";
+error_sending_message = "Error sending message";
+email = "Email";
+password = "Password";
+password_confirmation = "Password confirmation";
+enter_same_password = "You must enter the sale password in both fields";
+password_at_least_eight = "Your password must be at least 8 characters long";
+email_not_valid = "Your email is not valid";
+must_enter_first_last_name = "You must enter a first and a last name";
+must_be_over_18 = "You must be over 18 to register to Bird'L";
+dismiss = "Dismiss";
+success = "Success";
+account_created = "Your account has been created";
+to_signin = "To signin";
+

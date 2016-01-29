@@ -77,7 +77,7 @@ class Message : NSObject
                 }
                 else
                 {
-                    errorFunc("Cannot reach server")
+                    errorFunc(NSLocalizedString("no_server", comment: ""))
                 }
         }
     }
@@ -113,7 +113,7 @@ class Message : NSObject
                 }
             }
             else {
-                errorFunc!("Can't reach server")
+                errorFunc!(NSLocalizedString("no_server", comment: ""))
             }
         }
     }
