@@ -38,7 +38,7 @@ class EventUsersViewController: UITableViewController
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        return section == 0 ? "Créateur de l'évènement" : "Participants"
+        return section == 0 ? NSLocalizedString("event_creator", comment: "") : NSLocalizedString("users_registered", comment: "")
     }
     
     
@@ -62,7 +62,6 @@ class EventUsersViewController: UITableViewController
             cell.userName.text = "\( self.event.users[indexPath.row].firstName) \( self.event.users[indexPath.row].lastName)"
             cell.userEmail.text = self.event.users[indexPath.row].email
             self.event.wasUserPresent(self.event.users[indexPath.row]) { (present) in
-                print ("was user \(self.event.users[indexPath.row].email) present : NSString")
                 if (present == "true") {
                     cell.backgroundColor = UIColor.greenColor()
                 }
@@ -80,10 +79,10 @@ class EventUsersViewController: UITableViewController
         
         selectedUser = (indexPath.section == 0 ? self.event.owner! : self.event.users[indexPath.row])
         if (self.event.date.isLessThanDate(today) && self.event.belongsToCurrentUser) {
-            let alertController = UIAlertController(title: "Presence validation", message: "Was this user present to your event ?", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: NSLocalizedString("presence_validation", comment: ""), message: NSLocalizedString("was_this_user_present_to_event", comment: ""), preferredStyle: .Alert)
             
             // Create the actions
-            let yesAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default) {
+            let yesAction = UIAlertAction(title: NSLocalizedString("yes", comment: ""), style: UIAlertActionStyle.Default) {
                 UIAlertAction in
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 self.event.validatePresence(selectedUser, was_there: 1) { (response, data, error) in
@@ -91,7 +90,7 @@ class EventUsersViewController: UITableViewController
                 }
             }
             
-            let noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel) {
+            let noAction = UIAlertAction(title: NSLocalizedString("no", comment: ""), style: UIAlertActionStyle.Cancel) {
                 UIAlertAction in
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 self.event.validatePresence(selectedUser, was_there: 0) { (response, data, error) in

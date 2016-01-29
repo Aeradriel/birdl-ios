@@ -67,7 +67,7 @@ class MessagesListTableViewController: UIViewController, UITableViewDataSource, 
     
     func errorHandler(error: String)
     {
-        UIAlertView(title: "Erreur", message: error, delegate: nil, cancelButtonTitle: "OK").show()
+        UIAlertView(title: NSLocalizedString("error", comment: ""), message: error, delegate: nil, cancelButtonTitle: "OK").show()
     }
 
     //MARK: TableView delegate

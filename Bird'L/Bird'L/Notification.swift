@@ -68,7 +68,7 @@ class Notification: NSObject
                 }
                 else
                 {
-                    errorFunc("Cannot reach server")
+                    errorFunc(NSLocalizedString("no_server", comment: ""))
                 }
         }
     }
@@ -99,7 +99,7 @@ class Notification: NSObject
                 }
                 else
                 {
-                    errorFunc("Cannot reach server")
+                    errorFunc(NSLocalizedString("no_server", comment: ""))
                 }
         }
     }

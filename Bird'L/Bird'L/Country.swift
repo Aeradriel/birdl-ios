@@ -66,7 +66,7 @@ class Country : NSObject
                 {
                     if errorFunc != nil
                     {
-                        errorFunc!("Can't reach server")
+                        errorFunc!(NSLocalizedString("no_server", comment: ""))
                     }
                 }
         }

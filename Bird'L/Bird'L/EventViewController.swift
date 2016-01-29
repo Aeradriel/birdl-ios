@@ -63,7 +63,7 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
         self.eventTitle.text = self.event.name
         self.eventDesc.text = self.event.desc
         if (self.event.location?.characters.count <= 0) {
-            self.eventAddress.text = "There is no address for this event"
+            self.eventAddress.text = NSLocalizedString("no_address_for_event", comment: "")
         }
         else {
             self.eventAddress.text = self.event.location
@@ -92,7 +92,7 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
         if (self.event.belongsToCurrentUser == true) {
             self.eventRegisterButton.hidden = true;
             
-            self.eventRegistrationInfo.text = "You created this event."
+            self.eventRegistrationInfo.text = NSLocalizedString("you_created_event", comment: "")
             
         }
         else if (self.event.isCurrentUserRegistered()) {
@@ -107,23 +107,23 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
         }
         else if (self.event.maxSlots <= self.event.users.count) {
             self.eventRegisterButton.hidden = true
-            self.eventRegistrationInfo.text = "There is no more places left for this event."
+            self.eventRegistrationInfo.text = NSLocalizedString("no_more_place_for_event", comment: "")
             self.eventRegistrationInfo.hidden = false;
         }
         else {
             if (self.event.users.count == 0) {
-                eventRegisterButton.setTitle("Be the first", forState: .Normal)
+                eventRegisterButton.setTitle(NSLocalizedString("be_the_first", comment: ""), forState: .Normal)
             }
             else if (self.event.users.count == 1) {
-                eventRegisterButton.setTitle("Join him", forState: .Normal)
+                eventRegisterButton.setTitle(NSLocalizedString("join_him", comment: ""), forState: .Normal)
             }
             else {
-                self.eventRegisterButton.setTitle("Join them !", forState: .Normal)
+                self.eventRegisterButton.setTitle(NSLocalizedString("join_them", comment: ""), forState: .Normal)
                 self.eventRegisterButton.hidden = false;
             }
             self.eventRegistrationInfo.hidden = true
         }
-        self.eventUsersInfo.text = "\(self.event.users.count) / " + String(self.event.maxSlots) + " People registered.";
+        self.eventUsersInfo.text = "\(self.event.users.count) / " + String(self.event.maxSlots) + " " + NSLocalizedString("registered", comment: "");
         
         
         let geocoder = CLGeocoder()
@@ -164,10 +164,10 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
         if (indexPath.row == 4)
         {
             
-            let alertController = UIAlertController(title: "Save Event ?", message: "Do you yant to save this event in your calendar ?", preferredStyle: .Alert)
+            let alertController = UIAlertController(title: NSLocalizedString("save_event", comment: ""), message: NSLocalizedString("save_event_in_calendar", comment: ""), preferredStyle: .Alert)
             
             // Create the actions
-            let okAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.Default) {
+            let okAction = UIAlertAction(title: NSLocalizedString("yes", comment: ""), style: UIAlertActionStyle.Default) {
                 UIAlertAction in
                 
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -196,7 +196,7 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
                 })
 
             }
-            let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Cancel) {
+            let cancelAction = UIAlertAction(title: NSLocalizedString("no", comment: ""), style: UIAlertActionStyle.Cancel) {
                 UIAlertAction in
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
             }

@@ -165,7 +165,7 @@ class Event : NSObject
                 }
                 else
                 {
-                    errorFunc("Can't reach server")
+                    errorFunc(NSLocalizedString("no_server", comment: ""))
                 }
         }
     }
@@ -195,7 +195,7 @@ class Event : NSObject
                 }
                 else
                 {
-                    errorFunc("Can't reach server")
+                    errorFunc(NSLocalizedString("no_server", comment: ""))
                 }
         }
     }
@@ -225,7 +225,7 @@ class Event : NSObject
                 }
                 else
                 {
-                    errorFunc("Can't reach server")
+                    errorFunc(NSLocalizedString("no_server", comment: ""))
                 }
         }
     }
@@ -241,7 +241,6 @@ class Event : NSObject
     
     func wasUserPresent(user: User, completion: ((NSString) -> Void)) {
         let url = NSURL(string: netConfig.apiURL + netConfig.eventPresenceURL + "?user_id=\(user.id)&event_id=\(self.id)")
-        print (url);
         let request = NSMutableURLRequest(URL: url!)
         
         request.HTTPMethod = "GET"
@@ -250,14 +249,13 @@ class Event : NSObject
             { (response, data, error) in
                 if (data != nil) {
                     let datastring = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                    print(datastring!)
+                    completion(datastring!)
                 }
         }
     }
     
     func unregister(completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
         let url = NSURL(string: netConfig.apiURL + netConfig.eventUnregister + "\(self.id)")
-        print (url);
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
         request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
@@ -303,8 +301,6 @@ class Event : NSObject
                                     }
                                 }
                                 self.currentUserRegistered = self.isCurrentUserRegistered()
-                                print("totot")
-                                print(self.currentUserRegistered)
                             }
                         
                         
@@ -318,7 +314,6 @@ class Event : NSObject
     
     func validatePresence(user : User, was_there: Int, completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
         let url = NSURL(string: netConfig.apiURL + netConfig.eventPresenceURL)
-        print (url);
         let request = NSMutableURLRequest(URL: url!)
         
         request.HTTPMethod = "POST"

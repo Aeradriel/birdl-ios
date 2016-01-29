@@ -66,9 +66,9 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
     //MARK: Callbacks
     func errorHandler(error: String)
     {
-        let message = "Impossible de récupérer la liste des événements\n" + error
+        let message = NSLocalizedString("cant_get_event_list", comment: "") + error
         
-        UIAlertView(title: "Erreur", message: message, delegate: nil, cancelButtonTitle: "OK").show()
+        UIAlertView(title: NSLocalizedString("error", comment: ""), message: message, delegate: nil, cancelButtonTitle: "OK").show()
     }
     
     func eventsRetrieved(events: [Event])
@@ -92,7 +92,7 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        return section == 0 ? "Événements auxquels je participe" : "Tous les événements"
+        return section == 0 ? NSLocalizedString("events_where_im_registered", comment: "") : NSLocalizedString("all_events", comment: "")
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
@@ -116,7 +116,7 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
             let event = indexPath.section == 0 ? self.userEventsSearchResult[indexPath.row] : searchResult[indexPath.row]
             
             cell.name!.text = event.name + (event.language != nil ? " - " + event.language! : "")
-            cell.slotsLabel!.text = "\(event.users.count)/\(event.maxSlots) places occupées"
+            cell.slotsLabel!.text = "\(event.users.count)/\(event.maxSlots) " + NSLocalizedString("occupied", comment: "")
             return cell
         }
         else
@@ -124,7 +124,7 @@ class EventListTableViewController: UITableViewController, UISearchBarDelegate
             let event = indexPath.section == 0 ? self.userEvents[indexPath.row] : events[indexPath.row]
             
             cell.name!.text = event.name + (event.language != nil ? " - " + event.language! : "")
-            cell.slotsLabel!.text = "\(event.users.count)/\(event.maxSlots) places occupées"
+            cell.slotsLabel!.text = "\(event.users.count)/\(event.maxSlots) " + NSLocalizedString("occupied", comment: "")
             return cell
         }
     }

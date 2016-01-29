@@ -22,9 +22,9 @@ class SignupViewController: UIViewController, UIPickerViewDelegate {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         view.addGestureRecognizer(tap)
         
-        self.usernameField.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
-        self.passwordField.attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
-        self.passwordField2.attributedPlaceholder = NSAttributedString(string: "Password confirmation", attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
+        self.usernameField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("email", comment: ""), attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
+        self.passwordField.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("password", comment: ""), attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
+        self.passwordField2.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("parsword_confirmation", comment: ""), attributes: [NSForegroundColorAttributeName : UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 0.8)])
     }
     
     override func viewWillAppear(animated: Bool)
@@ -47,15 +47,15 @@ class SignupViewController: UIViewController, UIPickerViewDelegate {
         if (identifier == "signupSegue1") {
             
             if ((self.passwordField.text != self.passwordField2.text)) {
-                self.displayError("Please enter the same password in both fields");
+                self.displayError(NSLocalizedString("enter_same_password", comment: ""));
                 return false;
             }
             else if (self.passwordField.text!.characters.count < 8) {
-                self.displayError("Your password must lenght more than 8 characters");
+                self.displayError(NSLocalizedString("password_at_least_eight", comment: ""));
                 return false
             }
             else if (!isValidEmail(self.usernameField.text!)) {
-                self.displayError("Your email is not valid");
+                self.displayError(NSLocalizedString("email_not_valid", comment: ""));
                 return false
             }
             return true;
@@ -123,11 +123,11 @@ class SignupViewController2: UIViewController {
         if (identifier == "signupSegue2") {
             
             if (self.firstNameField.text!.characters.count < 1 || self.lastNameField.text!.characters.count < 1) {
-                self.displayError("You must enter your first and last names")
+                self.displayError(NSLocalizedString("must_enter_first_last_name", comment: ""))
                 return false;
             }
             else if (calculateAge(self.birthDatePicker.date) < 18) {
-                self.displayError("You must be over 18 to create an account")
+                self.displayError(NSLocalizedString("must_be_over_18", comment: ""))
                 return false;
             }
             return true;
@@ -162,9 +162,9 @@ class SignupViewController2: UIViewController {
     }
     
     func displayError(result : String) -> Void {
-        let alertController = UIAlertController(title: "Error", message:
+        let alertController = UIAlertController(title: NSLocalizedString("error", comment: ""), message:
             result, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("dismiss", comment: ""), style: UIAlertActionStyle.Default,handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
@@ -258,12 +258,12 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
     
     //MARK: Callbacks
     func signupSucceed() -> Void {
-        let alertController = UIAlertController(title: "Success !", message:
-            "Your account has been created", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: NSLocalizedString("success", comment: ""), message:
+            NSLocalizedString("account_created", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("tabBarControllerLoggedIn") as UIViewController
         
-        alertController.addAction(UIAlertAction(title: "To Signin", style: UIAlertActionStyle.Default, handler:
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("to_signin", comment: ""), style: UIAlertActionStyle.Default, handler:
             { (action) in
                 self.presentViewController(alertController, animated: true, completion: nil)                
         }));
@@ -271,9 +271,9 @@ class SignupViewController3: UIViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func signupError(result: String) -> Void {
-        let alertController = UIAlertController(title: "Error", message:
+        let alertController = UIAlertController(title: NSLocalizedString("error", comment: ""), message:
             result, preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("dismiss", comment: ""), style: UIAlertActionStyle.Default,handler: nil))
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
