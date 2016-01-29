@@ -108,8 +108,8 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
         }
         else if (self.event.maxSlots <= self.event.users.count) {
             self.eventRegisterButton.hidden = true
-            self.eventRegistrationInfo.text = "There is no more places left for this event."
-            self.eventRegistrationInfo.hidden = false
+            self.eventRegistrationInfo.text = NSLocalizedString("no_more_place_for_event", comment: "")
+            self.eventRegistrationInfo.hidden = false;
         }
         else {
             if (self.event.users.count == 0) {
