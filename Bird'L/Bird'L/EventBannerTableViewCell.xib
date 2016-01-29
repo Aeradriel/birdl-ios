@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,10 +16,8 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bdy-wq-ynL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
-                        <animations/>
                     </imageView>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstItem="Bdy-wq-ynL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="0Kr-cc-hdZ"/>
                     <constraint firstAttribute="bottom" secondItem="Bdy-wq-ynL" secondAttribute="bottom" id="AOA-XV-ce2"/>
@@ -29,7 +27,6 @@
                     <constraint firstItem="Bdy-wq-ynL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="rU8-e8-abA"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="banner" destination="Bdy-wq-ynL" id="kJ9-GH-Oua"/>
             </connections>

@@ -31,7 +31,7 @@ class EventSearchViewController: UIViewController, TinyTabBarDelegate
         pastVC.parent = self
         self.controllers.append(futureVC)
         self.controllers.append(pastVC)
-        self.tinyTabBar.tabs = ["Future", "Past"]
+        self.tinyTabBar.tabs = ["Future", "All"]
         self.tinyTabBar.delegate = self
         self.tinyTabBar.backgroundColor = self.navigationController?.navigationBar.barTintColor
     }

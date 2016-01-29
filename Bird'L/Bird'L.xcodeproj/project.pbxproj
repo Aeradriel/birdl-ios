@@ -16,7 +16,7 @@
 		1847E3691C1E00E400FED5B4 /* EventActionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1847E3681C1E00E400FED5B4 /* EventActionsTableViewCell.xib */; };
 		1847E36B1C1E011D00FED5B4 /* EventActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847E36A1C1E011D00FED5B4 /* EventActionsTableViewCell.swift */; };
 		1847E36D1C1E042300FED5B4 /* EventActionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847E36C1C1E042300FED5B4 /* EventActionsRow.swift */; };
-		18A9EB981C2316AC0039FAF6 /* EventUsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */; };
+		18A9EB981C2316AC0039FAF6 /* EventUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9EB971C2316AC0039FAF6 /* EventUsersTableViewController.swift */; };
 		18A9EB9C1C2317810039FAF6 /* EventUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9EB9B1C2317810039FAF6 /* EventUserTableViewCell.swift */; };
 		18A9EB9E1C231AE60039FAF6 /* EventUsersInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9EB9D1C231AE60039FAF6 /* EventUsersInfoTableViewCell.swift */; };
 		18A9EBA01C231B530039FAF6 /* EventUsersInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A9EB9F1C231B530039FAF6 /* EventUsersInfoTableViewCell.xib */; };
@@ -195,7 +195,7 @@
 		1847E3681C1E00E400FED5B4 /* EventActionsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventActionsTableViewCell.xib; sourceTree = "<group>"; };
 		1847E36A1C1E011D00FED5B4 /* EventActionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventActionsTableViewCell.swift; sourceTree = "<group>"; };
 		1847E36C1C1E042300FED5B4 /* EventActionsRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventActionsRow.swift; sourceTree = "<group>"; };
-		18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUsersTableViewCell.swift; sourceTree = "<group>"; };
+		18A9EB971C2316AC0039FAF6 /* EventUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUsersTableViewController.swift; sourceTree = "<group>"; };
 		18A9EB9B1C2317810039FAF6 /* EventUserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUserTableViewCell.swift; sourceTree = "<group>"; };
 		18A9EB9D1C231AE60039FAF6 /* EventUsersInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventUsersInfoTableViewCell.swift; sourceTree = "<group>"; };
 		18A9EB9F1C231B530039FAF6 /* EventUsersInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventUsersInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -605,9 +605,8 @@
 			isa = PBXGroup;
 			children = (
 				BFAC2E661B42A71D0098B1E6 /* Rows */,
-				18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */,
 				BFAC2E561B4062E70098B1E6 /* EventDetailViewController.swift */,
-				18A9EB971C2316AC0039FAF6 /* EventUsersTableViewCell.swift */,
+				18A9EB971C2316AC0039FAF6 /* EventUsersTableViewController.swift */,
 				1817E5F01C354FC000A91F67 /* EventViewController.swift */,
 			);
 			name = EventDetail;
@@ -1063,7 +1062,7 @@
 				BFAC2E711B42AB240098B1E6 /* EventTitleRow.swift in Sources */,
 				BF7E90131C4001FF002B6AEF /* Notification.swift in Sources */,
 				BFC62FB41C51785100B554F5 /* TabView.swift in Sources */,
-				18A9EB981C2316AC0039FAF6 /* EventUsersTableViewCell.swift in Sources */,
+				18A9EB981C2316AC0039FAF6 /* EventUsersTableViewController.swift in Sources */,
 				BFDF4CC31B39D33900D775D7 /* FormTitleCell.swift in Sources */,
 				BFDF4CD51B39D33900D775D7 /* FormSectionDescriptor.swift in Sources */,
 				BFAC2E551B4062D90098B1E6 /* EventSearchViewController.swift in Sources */,

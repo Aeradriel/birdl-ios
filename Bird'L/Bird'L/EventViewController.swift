@@ -47,9 +47,9 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
     
     @IBOutlet weak var eventUsersInfoTableViewCell: UITableViewCell!
     
-    
     @IBOutlet weak var imagePickerButton: UILabel!
     
+    @IBOutlet weak var starRatingView: HCSStarRatingView!
     
     let imagePicker = UIImagePickerController()
     
@@ -101,14 +101,15 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
                 self.eventRegistrationInfo.hidden = true
             }
             else {
-                self.eventRegisterButton.hidden = true;
+                self.eventRegisterButton.hidden = false
+                self.eventRegisterButton.setTitle("Rate this event", forState: .Normal)
                 self.eventRegistrationInfo.text = ""
             }
         }
         else if (self.event.maxSlots <= self.event.users.count) {
             self.eventRegisterButton.hidden = true
             self.eventRegistrationInfo.text = "There is no more places left for this event."
-            self.eventRegistrationInfo.hidden = false;
+            self.eventRegistrationInfo.hidden = false
         }
         else {
             if (self.event.users.count == 0) {
@@ -209,29 +210,36 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
             self.presentViewController(alertController, animated: true, completion: nil)
             
         }
-            
-            
     }
 
     @IBAction func eventRegisterButtonPressed(sender: AnyObject) {
         let today = NSDate();
         if (self.event.date != nil && !self.event.date.isLessThanDate(today) && event.isCurrentUserRegistered()) {
-            MBProgressHUD.showHUDAddedTo( self.view , animated: true)
+            MBProgressHUD.showHUDAddedTo(self.view , animated: true)
             self.event.unregister() { (response, data, error) in
-                print(data )
-                print(response)
-                print(error)
                 self.reload()
                 MBProgressHUD.hideHUDForView( self.view , animated: true)
             }
+        } else if (self.event.date != nil && self.event.date.isLessThanDate(today)) {
+            User.rate(Int(self.starRatingView.value), user: self.event.owner!, event: self.event, completion: { (response, data, error) -> Void in
+                if error != nil {
+                    let message = "Une erreur est survenue lors de la notation."
+                    
+                    UIAlertView(title: "Erreur", message: message, delegate: nil, cancelButtonTitle: "OK").show()
+                    self.starRatingView.enabled = false
+                    self.eventRegisterButton.setTitle("", forState: .Normal)
+                } else {
+                    let message = "Vous avez noté l'organisateur avec succès !"
+                    
+                    UIAlertView(title: "Succès", message: message, delegate: nil, cancelButtonTitle: "OK").show()
+                }
+            })
         }
         else {
             MBProgressHUD.showHUDAddedTo( self.view , animated: true)
             Event.register(event.id, errorHandler: errorRegister) { () -> Void in
                 self.reload()
                 MBProgressHUD.hideHUDForView( self.view , animated: true)
-                print("success")
-                
             }
         }
     }
@@ -257,7 +265,6 @@ class EventViewController: UITableViewController, UIImagePickerControllerDelegat
         
         presentViewController(imagePicker, animated: true, completion: nil)
     }
-    
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {

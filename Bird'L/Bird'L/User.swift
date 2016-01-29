@@ -75,13 +75,13 @@ class User : NSObject
         return dic
     }
     
-    func rate(rating: Int, event: Event, completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
+    class func rate(rating: Int, user: User, event: Event, completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
         let url = NSURL(string: netConfig.apiURL + netConfig.eventRateURL)
         print (url);
         let request = NSMutableURLRequest(URL: url!)
         
         request.HTTPMethod = "POST"
-        let bodyData = "user_id=\(self.id).id&event_id=\(event.id)&value=\(rating)"
+        let bodyData = "user_id=\(user.id).id&event_id=\(event.id)&value=\(rating)"
         request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
         request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
