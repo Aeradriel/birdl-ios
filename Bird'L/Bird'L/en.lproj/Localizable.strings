@@ -51,4 +51,8 @@ dismiss = "Dismiss";
 success = "Success";
 account_created = "Your account has been created";
 to_signin = "To signin";
+add_relation = "Add relation";
+do_you_want_to_add_relation = "Do you want to add this user to your relations ?";
+relation_added = "Relation added";
+this_relation_was_added = "This user was added to you relations";
 

@@ -77,6 +77,11 @@ class EventUsersViewController: UITableViewController
         var selectedUser : User
         let today = NSDate();
         
+        
+        let closeAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel) {
+            UIAlertAction in
+        }
+        
         selectedUser = (indexPath.section == 0 ? self.event.owner! : self.event.users[indexPath.row])
         if (self.event.date.isLessThanDate(today) && self.event.belongsToCurrentUser) {
             let alertController = UIAlertController(title: NSLocalizedString("presence_validation", comment: ""), message: NSLocalizedString("was_this_user_present_to_event", comment: ""), preferredStyle: .Alert)
@@ -97,7 +102,6 @@ class EventUsersViewController: UITableViewController
                     print(data)
                 }
             }
-            
             // Add the actions
             alertController.addAction(yesAction)
             alertController.addAction(noAction)
@@ -108,6 +112,21 @@ class EventUsersViewController: UITableViewController
         else if (self.event.date.isLessThanDate(today)) {
             
         }
+        let relationController = UIAlertController(title: NSLocalizedString("add_relation", comment: ""), message: NSLocalizedString("do_you_want_to_add_relation", comment: ""), preferredStyle: .Alert)
+        let yesAction = UIAlertAction(title: NSLocalizedString("yes", comment: ""), style: UIAlertActionStyle.Default) {
+            UIAlertAction in
+            selectedUser.addRelation()
+            let addedController = UIAlertController(title: NSLocalizedString("relation_added", comment: ""), message: NSLocalizedString("this_relation_was_added", comment: ""), preferredStyle: .Alert)
+            addedController.addAction(closeAction)
+            self.presentViewController(addedController, animated: true, completion: nil)
+        }
+        
+        let noAction = UIAlertAction(title: NSLocalizedString("no", comment: ""), style: UIAlertActionStyle.Cancel) {
+            UIAlertAction in
+        }
+        relationController.addAction(yesAction)
+        relationController.addAction(noAction)
+        self.presentViewController(relationController, animated: true, completion: nil)
         
     }
 }
