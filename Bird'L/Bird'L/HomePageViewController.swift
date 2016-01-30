@@ -13,6 +13,14 @@ class HomePageViewController: UIViewController
     
     @IBOutlet weak var circleProgressView2: CircleProgressView!
     
+    
+    @IBOutlet weak var progressName1: UILabel!
+    
+    @IBOutlet weak var noBadgeLabel: UILabel!
+    
+    @IBOutlet weak var progressName4: UILabel!
+    @IBOutlet weak var progressName3: UILabel!
+    @IBOutlet weak var progressName2: UILabel!
     @IBOutlet weak var circleProgressView1: CircleProgressView!
     
     @IBOutlet weak var circleProgressView3: CircleProgressView!
@@ -24,8 +32,40 @@ class HomePageViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        MBProgressHUD.showHUDAddedTo( self.view , animated: true)
         User.getBadges() { badges, error in
-            print("lol")
+            if (badges.count > 0) {
+                self.circleProgressView1.progress = 1
+                self.progressName1.text = badges[0]["name"] as? String
+                self.noBadgeLabel.hidden = true
+            }
+            else {
+                self.circleProgressView1.hidden = true
+                    self.noBadgeLabel.hidden = false
+                self.noBadgeLabel.text = NSLocalizedString("no_badge", comment: "")
+            }
+            if (badges.count > 1) {
+                self.circleProgressView2.progress = 1
+                self.progressName1.text = badges[1]["name"] as? String
+            }
+            else {
+                self.circleProgressView2.hidden = true
+            }
+            if (badges.count > 2) {
+                self.circleProgressView3.progress = 1
+                self.progressName1.text = badges[2]["name"] as? String
+            }
+            else {
+                self.circleProgressView3.hidden = true
+            }
+            if (badges.count > 3) {
+                self.circleProgressView4.progress = 1
+                self.progressName1.text = badges[3]["name"] as? String
+            }
+            else {
+                self.circleProgressView4.hidden = true
+            }
+            MBProgressHUD.hideHUDForView( self.view , animated: true)
         }
     }
 

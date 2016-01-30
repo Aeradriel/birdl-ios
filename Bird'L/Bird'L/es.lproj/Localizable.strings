@@ -53,3 +53,4 @@ add_relation = " Añadir relación";
 do_you_want_to_add_relation = " Si desea añadir este usuario a sus relaciones ¿";
 relation_added = " Relación añadió";
 this_relation_was_added = " Este usuario ha sido agregado a sus relaciones";
+no_badge = "Usted no tiene una insignia";

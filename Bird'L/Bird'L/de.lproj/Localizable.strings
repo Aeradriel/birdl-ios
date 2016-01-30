@@ -61,5 +61,5 @@ add_relation = " Beziehung hinzufügen";
 do_you_want_to_add_relation = " Sie wollen diesen Benutzer auf Ihre Beziehungen hinzufügen?";
 relation_added = " Beziehung hinzugefügt";
 this_relation_was_added = " Dieser Benutzer hat, um Ihre Beziehungen aufgenommen worden";
-
+no_badge = "Sie brauchen nicht ein Abzeichen haben";
 

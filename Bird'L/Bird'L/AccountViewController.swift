@@ -24,9 +24,9 @@ class AccountViewController: FormViewController, UITextFieldDelegate
     var countriesId: [Int] = []
     var countriesValue: [Int : String] = [Int : String]()
     
-    var color1 = UIColor(red: 1, green: 135/255, blue: 117/255, alpha: 1)
-    var color2 = UIColor(red: 1, green: 173/255, blue: 102/255, alpha: 1)
-    var color3 = UIColor(red: 1, green: 117/255, blue: 147/255, alpha: 1)
+    var color1 = UIColor(red: 125/255, green: 205/255, blue: 232/255, alpha: 1)
+    var color2 = UIColor.yellowColor()
+    var color3 = UIColor(red: 125/255, green: 205/255, blue: 232/255, alpha: 1)
     
     //MARK: UIViewController methods
     required init(coder aDecoder: NSCoder)

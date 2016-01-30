@@ -123,6 +123,7 @@ class User : NSObject
                             let badge = b.asDictionary!
                             
                             ret.append(["id" : badge["id"]!.asInt!, "name" : "\(badge["name"]!.asString!) \(badge["icon_path"]!.asString!)"])
+                            let name = ret[0]["name"]
                         }
                         completion(ret, error)
                     }
