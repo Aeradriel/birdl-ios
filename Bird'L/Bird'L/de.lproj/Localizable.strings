@@ -6,49 +6,60 @@
  Copyright © 2016 Birdl. All rights reserved.
  */
 
-lang = "EN";
+/*
+ Localizable.strings
+ Bird'L
+ 
+ Created by Joffrey Riela on 29/01/2016.
+ Copyright © 2016 Birdl. All rights reserved.
+ */
 
-enter_same_password = "You must enter the same password in both fields";
-error = "Error";
-error_sending_message = "An error occured while sending the message";
+lang = "DE";
+
+enter_same_password = " Sie müssen das gleiche Kennwort in beide Felder eingeben";
+error = " Irrtum";
+error_sending_message = " Beim Versenden der Nachricht ist ein Fehler aufgetreten";
 
 
-profile_updated_title = "Profile updated";
-profile_updated_message = "Your profile has been updated";
+profile_updated_title = " Profil aktualisiert";
+profile_updated_message = " Ihr Profil wurde aktualisiert";
 
-all_events = "All events";
-no_server = "Can't reach server";
-personal_informations = "Personnal informations";
-cant_get_event_list = "Can't get event list";
-events_where_im_registered = "Events where i'm registered";
-occupied = "Occupied";
-event_creator = "Event creator";
-users_registered = "Registered users";
-presence_validation = "Presence validation";
-was_this_user_present_to_event = "Was this user present to your event ?";
-yes = "Yes";
-no = "No";
-no_address_for_event = "There is no address for this event";
-you_created_event = "You created this event.";
-no_more_place_for_event = "No more rooms left for this event";
-be_the_first = "Be the first !";
-join_him = "Join him !";
-join_them = "Join them !";
-registered = "Registered";
-save_event = "Save event ?";
-save_event_in_calendar = "Do you want to save this event in your calendar ?";
-done = "Done";
-error_sending_message = "Error sending message";
-email = "Email";
-password = "Password";
-password_confirmation = "Password confirmation";
-enter_same_password = "You must enter the sale password in both fields";
-password_at_least_eight = "Your password must be at least 8 characters long";
-email_not_valid = "Your email is not valid";
-must_enter_first_last_name = "You must enter a first and a last name";
-must_be_over_18 = "You must be over 18 to register to Bird'L";
-dismiss = "Dismiss";
-success = "Success";
-account_created = "Your account has been created";
-to_signin = "To signin";
+all_events = " Alle Veranstaltungen";
+no_server = " Nicht in der Lage, um den Server zu erreichen";
+personal_informations = " persönliche Informationen";
+cant_get_event_list = " Nicht in der Lage, um die Liste der Ereignisse abrufen";
+events_where_im_registered = " Veranstaltungen, wo ich bin registriert";
+occupied = " besetzt";
+event_creator = " Event Ersteller";
+users_registered = " Registrierte Nutzer";
+presence_validation = " Validierung der Gegenwart";
+was_this_user_present_to_event = " Dieser Benutzer war er bei Ihrer Veranstaltung zu präsentieren ?";
+yes = "Ja";
+no = "Nicht";
+no_address_for_event = " Es gibt keine Adresse für diese Veranstaltung";
+you_created_event = " Du bist der Schöpfer dieser Veranstaltung";
+no_more_place_for_event = " Es gibt mehr Plätze für diese Veranstaltung";
+be_the_first = " Seien Sie der Erste !";
+join_him = " Die anzuschließen!";
+join_them = " Begleiten Sie sie !";
+registered = " Registrierte";
+save_event = " Ereignis zu retten?";
+save_event_in_calendar = " Sie wollen dieses Ereignis in Ihrem Kalender zu speichern ?";
+done = " Abgeschlossen";
+email = " E-mail";
+password = " Passwort";
+password_confirmation = " Passwortbestätigung";
+password_at_least_eight = " Das Passwort muss mindestens 8 Zeichen lang sein";
+email_not_valid = " Ihre E-Mail ist ungültig";
+must_enter_first_last_name = " Sie müssen einen Vornamen und einen Nachnamen eingeben";
+must_be_over_18 = " Sie müssen über 18 Jahre alt, für Bird'L registrieren";
+dismiss = " in der Nähe";
+success = " Erfolg";
+account_created = "Ihr Konto erstellt wurde";
+to_signin = " Auf die Login-";
+add_relation = " Beziehung hinzufügen";
+do_you_want_to_add_relation = " Sie wollen diesen Benutzer auf Ihre Beziehungen hinzufügen?";
+relation_added = " Beziehung hinzugefügt";
+this_relation_was_added = " Dieser Benutzer hat, um Ihre Beziehungen aufgenommen worden";
+
 
