@@ -105,6 +105,20 @@ class User : NSObject
         }
     }
     
+    class func getBadges(completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
+        let url = NSURL(string: netConfig.apiURL + netConfig.userBadgesURL)
+        let request = NSMutableURLRequest(URL: url!)
+        request.HTTPMethod = "GET"
+        request.addValue(g_APICommunicator.token, forHTTPHeaderField: "Access-Token")
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
+            { (response, data, error) in
+                if (data != nil) {
+                   
+                }
+
+        }
+    }
+    
     //MARK: Singleton implementation
     class func currentUser() -> User
     {

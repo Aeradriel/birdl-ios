@@ -63,14 +63,21 @@ class EventUsersViewController: UITableViewController
             cell.userEmail.text = self.event.users[indexPath.row].email
             self.event.wasUserPresent(self.event.users[indexPath.row]) { (present) in
                 if (present == "true") {
-                    cell.backgroundColor = UIColor.greenColor()
+                    cell.backgroundColor = UIColor(red: 212/255, green: 1, blue: 212/255, alpha: 1)
                 }
                 else if (present == "false") {
-                    cell.backgroundColor = UIColor.redColor()
+                    cell.backgroundColor = UIColor(red: 1, green: 212/255, blue: 212/255, alpha: 1)
                 }
             }
         }
         return cell
+    }
+    
+    func reload() {
+        self.event.reload() { response, data, error in
+            self.viewDidLoad()
+            self.viewWillAppear(true)
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -91,7 +98,7 @@ class EventUsersViewController: UITableViewController
                 UIAlertAction in
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 self.event.validatePresence(selectedUser, was_there: 1) { (response, data, error) in
-                    print(response)
+                    self.reload()
                 }
             }
             
@@ -99,7 +106,7 @@ class EventUsersViewController: UITableViewController
                 UIAlertAction in
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 self.event.validatePresence(selectedUser, was_there: 0) { (response, data, error) in
-                    print(data)
+                    self.reload()
                 }
             }
             // Add the actions
