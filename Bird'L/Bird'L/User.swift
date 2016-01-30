@@ -105,7 +105,7 @@ class User : NSObject
         }
     }
     
-    class func getBadges(completion: ((NSURLResponse?, NSData?, NSError?) -> Void)) {
+    class func getBadges(completion: (([[String : AnyObject]], NSError?) -> Void)) {
         let url = NSURL(string: netConfig.apiURL + netConfig.userBadgesURL)
         let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "GET"
@@ -113,9 +113,29 @@ class User : NSObject
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue())
             { (response, data, error) in
                 if (data != nil) {
-                   
+                    let json = JSON(data: data!)
+                    var ret = [[String : AnyObject]]()
+                    
+                    if let badges = json["badges"].asArray
+                    {
+                        for b in badges
+                        {
+                            let badge = b.asDictionary!
+                            
+                            ret.append(["id" : badge["id"]!.asInt!, "name" : "\(badge["name"]!.asString!) \(badge["icon_path"]!.asString!)"])
+                        }
+                        completion(ret, error)
+                    }
+                    else
+                    {
+                        let error = APICommunicator.errorFromJson(json)
+                        
+                        completion([[String : AnyObject]](), NSError(domain: "birdl", code: 1, userInfo: ["localized_description" : error]))
+                    }
                 }
-
+                else {
+                    completion([[String : AnyObject]](), NSError(domain: "birdl", code: 1, userInfo: ["localized_description" : NSLocalizedString("no_server", comment: "")]))
+                }
         }
     }
     

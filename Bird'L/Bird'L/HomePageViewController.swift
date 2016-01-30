@@ -24,11 +24,9 @@ class HomePageViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        User.getBadges() { response, data, error in
-        
-            
+        User.getBadges() { badges, error in
+            print("lol")
         }
-
     }
 
     override func didReceiveMemoryWarning() {
